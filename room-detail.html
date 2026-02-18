@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Deluxe Room at Kings Court Hotel — four-poster bed, working stone fireplace, garden views. From £195 per night. Book directly for the best rate." />
+    <meta name="keywords"
+        content="Deluxe Room, Kings Court Hotel, Tudor hotel room, four-poster bed, Stratford-upon-Avon accommodation" />
+    <meta property="og:title" content="Deluxe Room — Kings Court Hotel" />
+    <meta property="og:description"
+        content="Beautifully appointed with a four-poster bed, exposed oak beams, and a working stone fireplace." />
+    <meta property="og:type" content="website" />
+    <title>Deluxe Room | Kings Court Hotel — Tudor Country Escape</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/room-detail.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ -->
+    <nav class="nav nav--scrolled" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link" aria-current="page">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       BREADCRUMB
+    ═══════════════════════════════════════ -->
+    <div class="rd-breadcrumb" aria-label="Breadcrumb">
+        <div class="container">
+            <nav class="rd-breadcrumb__nav">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <a href="rooms.html">Rooms &amp; Suites</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <span aria-current="page" id="rd-breadcrumb-current">Deluxe Room</span>
+            </nav>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       MAIN CONTENT — Two-column layout
+    ═══════════════════════════════════════ -->
+    <main class="rd-main" id="rd-main">
+        <div class="container">
+            <div class="rd-layout">
+
+                <!-- ════════════════════════════
+                   LEFT COLUMN — Content
+                ════════════════════════════ -->
+                <div class="rd-content" id="rd-content">
+
+                    <!-- Room Title Header -->
+                    <header class="rd-header reveal">
+                        <div class="rd-header__meta">
+                            <span class="rd-header__category" id="rd-category">Superior Room</span>
+                            <div class="rd-header__badges">
+                                <span class="rd-badge rd-badge--popular">
+                                    <i class="fa-solid fa-star" aria-hidden="true"></i> Most Popular
+                                </span>
+                                <span class="rd-badge rd-badge--aa">AA 4-Star</span>
+                            </div>
+                        </div>
+                        <h1 class="rd-header__title" id="rd-title">Deluxe Room</h1>
+                        <div class="rd-header__rating" aria-label="Guest rating: 4.9 out of 5">
+                            <span class="rd-stars" aria-hidden="true">★★★★★</span>
+                            <span class="rd-rating-num">4.9</span>
+                            <span class="rd-rating-count">(127 reviews)</span>
+                        </div>
+                    </header>
+
+
+                    <!-- ── IMAGE GALLERY SLIDER ── -->
+                    <section class="rd-gallery reveal" id="rd-gallery" aria-label="Room photo gallery">
+
+                        <!-- Main Slider -->
+                        <div class="rd-gallery__main" id="rd-gallery-main">
+                            <div class="rd-gallery__track" id="rd-gallery-track" role="list">
+
+                                <div class="rd-gallery__slide" role="listitem" data-index="0">
+                                    <img src="assets/images/rooms/room-deluxe.jpg"
+                                        alt="Deluxe Room — four-poster bed with stone fireplace" class="rd-gallery__img"
+                                        loading="eager" />
+                                </div>
+                                <div class="rd-gallery__slide" role="listitem" data-index="1">
+                                    <img src="assets/images/rooms/room-suite.jpg"
+                                        alt="Deluxe Room — sitting area with Chesterfield armchair"
+                                        class="rd-gallery__img" loading="lazy" />
+                                </div>
+                                <div class="rd-gallery__slide" role="listitem" data-index="2">
+                                    <img src="assets/images/rooms/room-classic.jpg"
+                                        alt="Deluxe Room — en-suite bathroom with roll-top bath" class="rd-gallery__img"
+                                        loading="lazy" />
+                                </div>
+                                <div class="rd-gallery__slide" role="listitem" data-index="3">
+                                    <img src="assets/images/rooms/room-deluxe.jpg"
+                                        alt="Deluxe Room — garden view from mullioned windows" class="rd-gallery__img"
+                                        loading="lazy" />
+                                </div>
+                                <div class="rd-gallery__slide" role="listitem" data-index="4">
+                                    <img src="assets/images/rooms/room-suite.jpg"
+                                        alt="Deluxe Room — evening ambience with fireplace lit" class="rd-gallery__img"
+                                        loading="lazy" />
+                                </div>
+
+                            </div><!-- /.rd-gallery__track -->
+
+                            <!-- Prev/Next Controls -->
+                            <button class="rd-gallery__arrow rd-gallery__arrow--prev" id="rd-gallery-prev"
+                                aria-label="Previous photo">
+                                <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+                            </button>
+                            <button class="rd-gallery__arrow rd-gallery__arrow--next" id="rd-gallery-next"
+                                aria-label="Next photo">
+                                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                            </button>
+
+                            <!-- Expand to Lightbox -->
+                            <button class="rd-gallery__expand" id="rd-gallery-expand"
+                                aria-label="View full screen gallery">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>View Gallery</span>
+                            </button>
+
+                            <!-- Slide Counter -->
+                            <div class="rd-gallery__counter" aria-live="polite" aria-atomic="true">
+                                <span id="rd-slide-current">1</span> / <span id="rd-slide-total">5</span>
+                            </div>
+                        </div><!-- /.rd-gallery__main -->
+
+                        <!-- Thumbnails -->
+                        <div class="rd-gallery__thumbs" id="rd-gallery-thumbs" role="list"
+                            aria-label="Gallery thumbnails">
+                            <button class="rd-gallery__thumb rd-gallery__thumb--active" data-thumb="0"
+                                aria-label="View photo 1" aria-pressed="true">
+                                <img src="assets/images/rooms/room-deluxe.jpg" alt="" loading="lazy" />
+                            </button>
+                            <button class="rd-gallery__thumb" data-thumb="1" aria-label="View photo 2"
+                                aria-pressed="false">
+                                <img src="assets/images/rooms/room-suite.jpg" alt="" loading="lazy" />
+                            </button>
+                            <button class="rd-gallery__thumb" data-thumb="2" aria-label="View photo 3"
+                                aria-pressed="false">
+                                <img src="assets/images/rooms/room-classic.jpg" alt="" loading="lazy" />
+                            </button>
+                            <button class="rd-gallery__thumb" data-thumb="3" aria-label="View photo 4"
+                                aria-pressed="false">
+                                <img src="assets/images/rooms/room-deluxe.jpg" alt="" loading="lazy" />
+                            </button>
+                            <button class="rd-gallery__thumb" data-thumb="4" aria-label="View photo 5"
+                                aria-pressed="false">
+                                <img src="assets/images/rooms/room-suite.jpg" alt="" loading="lazy" />
+                            </button>
+                        </div>
+
+                    </section><!-- /.rd-gallery -->
+
+
+                    <!-- ── ROOM DESCRIPTION ── -->
+                    <section class="rd-section reveal" id="rd-description" aria-labelledby="rd-desc-heading">
+                        <div class="rd-section__header">
+                            <span class="rd-section__label">About This Room</span>
+                            <h2 class="rd-section__title" id="rd-desc-heading">A Tudor Sanctuary</h2>
+                            <div class="rd-gold-line"></div>
+                        </div>
+                        <div class="rd-description__body">
+                            <p>
+                                Step into a world where centuries of history meet contemporary luxury. Our Deluxe Room
+                                is beautifully appointed with an original four-poster bed draped in the finest Egyptian
+                                cotton, exposed oak beams dating to 1642, and a working stone fireplace that casts a
+                                warm, flickering glow on winter evenings.
+                            </p>
+                            <p>
+                                Mullioned windows frame breathtaking views of the walled kitchen garden and rolling
+                                Warwickshire parkland beyond. The en-suite bathroom features a freestanding roll-top
+                                bath, a separate rainfall shower, and bespoke toiletries from our in-house spa
+                                collection.
+                            </p>
+                            <p>
+                                Every detail has been considered — from the hand-stitched cushions to the curated
+                                selection of local books and artwork. This is not simply a room; it is an experience
+                                that will remain with you long after your stay.
+                            </p>
+                        </div>
+
+                        <!-- Room Quick Facts -->
+                        <div class="rd-quick-facts">
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-ruler-combined" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">Room Size</span>
+                                <span class="rd-quick-fact__value">42 m²</span>
+                            </div>
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">Bed Type</span>
+                                <span class="rd-quick-fact__value">King Four-Poster</span>
+                            </div>
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">Sleeps</span>
+                                <span class="rd-quick-fact__value">2 Guests</span>
+                            </div>
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-eye" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">View</span>
+                                <span class="rd-quick-fact__value">Garden &amp; Parkland</span>
+                            </div>
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-floor" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">Floor</span>
+                                <span class="rd-quick-fact__value">First Floor</span>
+                            </div>
+                            <div class="rd-quick-fact">
+                                <i class="fa-solid fa-ban-smoking" aria-hidden="true"></i>
+                                <span class="rd-quick-fact__label">Smoking</span>
+                                <span class="rd-quick-fact__value">Non-Smoking</span>
+                            </div>
+                        </div>
+                    </section>
+
+
+                    <!-- ── AMENITIES ── -->
+                    <section class="rd-section reveal" id="rd-amenities" aria-labelledby="rd-amenities-heading">
+                        <div class="rd-section__header">
+                            <span class="rd-section__label">What's Included</span>
+                            <h2 class="rd-section__title" id="rd-amenities-heading">Room Amenities</h2>
+                            <div class="rd-gold-line"></div>
+                        </div>
+
+                        <div class="rd-amenities-grid">
+
+                            <div class="rd-amenity-group">
+                                <h3 class="rd-amenity-group__title">
+                                    <i class="fa-solid fa-bed" aria-hidden="true"></i> Bedroom
+                                </h3>
+                                <ul class="rd-amenity-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> King four-poster bed</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 400-thread Egyptian cotton
+                                        linen</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Working stone fireplace
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Blackout curtains</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bedside USB charging ports
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Pillow menu on request</li>
+                                </ul>
+                            </div>
+
+                            <div class="rd-amenity-group">
+                                <h3 class="rd-amenity-group__title">
+                                    <i class="fa-solid fa-bath" aria-hidden="true"></i> Bathroom
+                                </h3>
+                                <ul class="rd-amenity-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Freestanding roll-top bath
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Separate rainfall shower
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bespoke spa toiletries</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Heated towel rail</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Luxury bathrobes &amp;
+                                        slippers</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Hairdryer &amp; magnifying
+                                        mirror</li>
+                                </ul>
+                            </div>
+
+                            <div class="rd-amenity-group">
+                                <h3 class="rd-amenity-group__title">
+                                    <i class="fa-solid fa-tv" aria-hidden="true"></i> Technology
+                                </h3>
+                                <ul class="rd-amenity-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 55" Smart 4K TV</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> High-speed Wi-Fi (free)
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Bluetooth speaker</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Digital safe</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Telephone</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Laptop-friendly desk</li>
+                                </ul>
+                            </div>
+
+                            <div class="rd-amenity-group">
+                                <h3 class="rd-amenity-group__title">
+                                    <i class="fa-solid fa-concierge-bell" aria-hidden="true"></i> Services
+                                </h3>
+                                <ul class="rd-amenity-list">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Daily housekeeping</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Evening turndown service
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Room service (7am–11pm)
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Nespresso machine &amp; tea
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Minibar (stocked daily)
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Complimentary newspaper
+                                    </li>
+                                </ul>
+                            </div>
+
+                        </div><!-- /.rd-amenities-grid -->
+
+                        <!-- Included Highlights -->
+                        <div class="rd-included">
+                            <div class="rd-included__item">
+                                <i class="fa-solid fa-mug-saucer" aria-hidden="true"></i>
+                                <span>Breakfast Included</span>
+                            </div>
+                            <div class="rd-included__item">
+                                <i class="fa-solid fa-car" aria-hidden="true"></i>
+                                <span>Free Parking</span>
+                            </div>
+                            <div class="rd-included__item">
+                                <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                                <span>Free Wi-Fi</span>
+                            </div>
+                            <div class="rd-included__item">
+                                <i class="fa-solid fa-spa" aria-hidden="true"></i>
+                                <span>Spa Access</span>
+                            </div>
+                        </div>
+
+                    </section><!-- /.rd-amenities -->
+
+
+                    <!-- ── PRICE BREAKDOWN ── -->
+                    <section class="rd-section reveal" id="rd-pricing" aria-labelledby="rd-pricing-heading">
+                        <div class="rd-section__header">
+                            <span class="rd-section__label">Rates &amp; Packages</span>
+                            <h2 class="rd-section__title" id="rd-pricing-heading">Price Breakdown</h2>
+                            <div class="rd-gold-line"></div>
+                        </div>
+
+                        <div class="rd-pricing-cards">
+
+                            <div class="rd-rate-card rd-rate-card--featured">
+                                <div class="rd-rate-card__badge">Best Value</div>
+                                <div class="rd-rate-card__name">Bed &amp; Breakfast</div>
+                                <div class="rd-rate-card__price">
+                                    <span class="rd-rate-card__from">From</span>
+                                    <span class="rd-rate-card__amount">£195</span>
+                                    <span class="rd-rate-card__per">per night</span>
+                                </div>
+                                <ul class="rd-rate-card__includes">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full English breakfast</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free parking</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free Wi-Fi</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Spa access</li>
+                                </ul>
+                                <a href="booking.html?room=deluxe&rate=bb" class="btn btn--primary" id="rate-bb-btn">
+                                    Select This Rate
+                                </a>
+                            </div>
+
+                            <div class="rd-rate-card">
+                                <div class="rd-rate-card__name">Dinner, Bed &amp; Breakfast</div>
+                                <div class="rd-rate-card__price">
+                                    <span class="rd-rate-card__from">From</span>
+                                    <span class="rd-rate-card__amount">£265</span>
+                                    <span class="rd-rate-card__per">per night</span>
+                                </div>
+                                <ul class="rd-rate-card__includes">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full English breakfast</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> 3-course dinner for two
+                                    </li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free parking</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free Wi-Fi</li>
+                                </ul>
+                                <a href="booking.html?room=deluxe&rate=dbb" class="btn btn--ghost-gold"
+                                    id="rate-dbb-btn">
+                                    Select This Rate
+                                </a>
+                            </div>
+
+                            <div class="rd-rate-card">
+                                <div class="rd-rate-card__name">Room Only</div>
+                                <div class="rd-rate-card__price">
+                                    <span class="rd-rate-card__from">From</span>
+                                    <span class="rd-rate-card__amount">£165</span>
+                                    <span class="rd-rate-card__per">per night</span>
+                                </div>
+                                <ul class="rd-rate-card__includes">
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free parking</li>
+                                    <li><i class="fa-solid fa-check" aria-hidden="true"></i> Free Wi-Fi</li>
+                                    <li><i class="fa-solid fa-times" aria-hidden="true"></i> Breakfast not included</li>
+                                    <li><i class="fa-solid fa-times" aria-hidden="true"></i> Dinner not included</li>
+                                </ul>
+                                <a href="booking.html?room=deluxe&rate=ro" class="btn btn--ghost-gold" id="rate-ro-btn">
+                                    Select This Rate
+                                </a>
+                            </div>
+
+                        </div><!-- /.rd-pricing-cards -->
+
+                        <!-- Cancellation Policy -->
+                        <div class="rd-policy">
+                            <div class="rd-policy__item">
+                                <i class="fa-solid fa-rotate-left" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Free Cancellation</strong>
+                                    <span>Cancel up to 48 hours before arrival for a full refund</span>
+                                </div>
+                            </div>
+                            <div class="rd-policy__item">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Best Rate Guarantee</strong>
+                                    <span>Book direct for our lowest guaranteed rate</span>
+                                </div>
+                            </div>
+                            <div class="rd-policy__item">
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Check-in / Check-out</strong>
+                                    <span>Check-in from 3pm · Check-out by 11am</span>
+                                </div>
+                            </div>
+                        </div>
+
+                    </section><!-- /.rd-pricing -->
+
+
+                    <!-- ── GUEST REVIEWS ── -->
+                    <section class="rd-section reveal" id="rd-reviews" aria-labelledby="rd-reviews-heading">
+                        <div class="rd-section__header">
+                            <span class="rd-section__label">Guest Experiences</span>
+                            <h2 class="rd-section__title" id="rd-reviews-heading">What Guests Say</h2>
+                            <div class="rd-gold-line"></div>
+                        </div>
+
+                        <div class="rd-reviews-grid">
+
+                            <div class="rd-review">
+                                <div class="rd-review__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <blockquote class="rd-review__quote">
+                                    "The Deluxe Room was absolutely magical. The four-poster bed, the crackling fire,
+                                    the most extraordinary dinner — we never wanted to leave."
+                                </blockquote>
+                                <div class="rd-review__author">
+                                    <div class="rd-review__avatar" aria-hidden="true">S</div>
+                                    <div>
+                                        <div class="rd-review__name">Sarah &amp; James T.</div>
+                                        <div class="rd-review__meta">Anniversary Stay · November 2024</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rd-review">
+                                <div class="rd-review__stars" aria-label="5 out of 5 stars">★★★★★</div>
+                                <blockquote class="rd-review__quote">
+                                    "Woke up to mist over the garden — it felt like stepping back in time. The room
+                                    is immaculate, the bed divine, and the breakfast was outstanding."
+                                </blockquote>
+                                <div class="rd-review__author">
+                                    <div class="rd-review__avatar" aria-hidden="true">M</div>
+                                    <div>
+                                        <div class="rd-review__name">Michael H.</div>
+                                        <div class="rd-review__meta">Weekend Break · October 2024</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rd-review">
+                                <div class="rd-review__stars" aria-label="4 out of 5 stars">★★★★☆</div>
+                                <blockquote class="rd-review__quote">
+                                    "Stunning room with incredible character. The fireplace made it so romantic.
+                                    Staff were attentive and the turndown service was a lovely touch."
+                                </blockquote>
+                                <div class="rd-review__author">
+                                    <div class="rd-review__avatar" aria-hidden="true">A</div>
+                                    <div>
+                                        <div class="rd-review__name">Amanda F.</div>
+                                        <div class="rd-review__meta">Romantic Getaway · September 2024</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div><!-- /.rd-reviews-grid -->
+
+                    </section><!-- /.rd-reviews -->
+
+
+                    <!-- ── SIMILAR ROOMS ── -->
+                    <section class="rd-section reveal" id="rd-similar" aria-labelledby="rd-similar-heading">
+                        <div class="rd-section__header">
+                            <span class="rd-section__label">You May Also Like</span>
+                            <h2 class="rd-section__title" id="rd-similar-heading">Similar Rooms</h2>
+                            <div class="rd-gold-line"></div>
+                        </div>
+
+                        <div class="rd-similar-grid">
+
+                            <article class="room-card">
+                                <div class="room-card__image">
+                                    <img src="assets/images/rooms/room-suite.jpg" alt="Signature Suite"
+                                        loading="lazy" />
+                                    <span class="room-card__badge"
+                                        style="background:var(--clr-forest-dark);color:var(--clr-gold);border:1px solid var(--clr-gold);">Signature
+                                        Suite</span>
+                                </div>
+                                <div class="room-card__body">
+                                    <h3 class="room-card__title">Signature Suite</h3>
+                                    <p class="room-card__desc">Separate sitting room, private terrace, and butler
+                                        service.</p>
+                                    <div class="room-card__footer">
+                                        <div class="room-card__price">
+                                            <span class="room-card__price-from">From</span>
+                                            <span class="room-card__price-amount">£395</span>
+                                            <span class="room-card__price-night">per night</span>
+                                        </div>
+                                        <a href="room-detail.html?room=suite" class="btn btn--dark"
+                                            id="similar-suite-btn">View Room</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                            <article class="room-card">
+                                <div class="room-card__image">
+                                    <img src="assets/images/rooms/room-classic.jpg" alt="Classic Room" loading="lazy" />
+                                </div>
+                                <div class="room-card__body">
+                                    <h3 class="room-card__title">Classic Room</h3>
+                                    <p class="room-card__desc">Intimate and cosy with stone walls and courtyard views.
+                                    </p>
+                                    <div class="room-card__footer">
+                                        <div class="room-card__price">
+                                            <span class="room-card__price-from">From</span>
+                                            <span class="room-card__price-amount">£145</span>
+                                            <span class="room-card__price-night">per night</span>
+                                        </div>
+                                        <a href="room-detail.html?room=classic" class="btn btn--dark"
+                                            id="similar-classic-btn">View Room</a>
+                                    </div>
+                                </div>
+                            </article>
+
+                        </div><!-- /.rd-similar-grid -->
+
+                    </section><!-- /.rd-similar -->
+
+                </div><!-- /.rd-content -->
+
+
+                <!-- ════════════════════════════
+                   RIGHT COLUMN — Sticky Sidebar
+                ════════════════════════════ -->
+                <aside class="rd-sidebar" id="rd-sidebar" aria-label="Booking sidebar">
+
+                    <div class="rd-sidebar__inner" id="rd-sidebar-inner">
+
+                        <!-- Price Header -->
+                        <div class="rd-sidebar__price-header">
+                            <div class="rd-sidebar__price">
+                                <span class="rd-sidebar__price-from">From</span>
+                                <span class="rd-sidebar__price-amount" id="sidebar-price">£195</span>
+                                <span class="rd-sidebar__price-per">per night</span>
+                            </div>
+                            <div class="rd-sidebar__rating" aria-label="4.9 stars">
+                                <span class="rd-sidebar__stars" aria-hidden="true">★★★★★</span>
+                                <span>4.9</span>
+                            </div>
+                        </div>
+
+                        <!-- Availability Check Form -->
+                        <form class="rd-avail-form" id="rd-avail-form" novalidate aria-label="Check availability">
+
+                            <h3 class="rd-avail-form__title">
+                                <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                                Check Availability
+                            </h3>
+
+                            <div class="rd-avail-form__field">
+                                <label class="rd-avail-form__label" for="avail-checkin">
+                                    <i class="fa-regular fa-calendar" aria-hidden="true"></i> Check-In
+                                </label>
+                                <input class="rd-avail-form__input" type="date" id="avail-checkin" name="checkin"
+                                    aria-required="true" />
+                                <span class="rd-avail-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <div class="rd-avail-form__field">
+                                <label class="rd-avail-form__label" for="avail-checkout">
+                                    <i class="fa-regular fa-calendar" aria-hidden="true"></i> Check-Out
+                                </label>
+                                <input class="rd-avail-form__input" type="date" id="avail-checkout" name="checkout"
+                                    aria-required="true" />
+                                <span class="rd-avail-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+
+                            <div class="rd-avail-form__row">
+                                <div class="rd-avail-form__field">
+                                    <label class="rd-avail-form__label" for="avail-adults">
+                                        <i class="fa-solid fa-user" aria-hidden="true"></i> Adults
+                                    </label>
+                                    <select class="rd-avail-form__select" id="avail-adults" name="adults">
+                                        <option value="1">1</option>
+                                        <option value="2" selected>2</option>
+                                    </select>
+                                </div>
+                                <div class="rd-avail-form__field">
+                                    <label class="rd-avail-form__label" for="avail-children">
+                                        <i class="fa-solid fa-child" aria-hidden="true"></i> Children
+                                    </label>
+                                    <select class="rd-avail-form__select" id="avail-children" name="children">
+                                        <option value="0" selected>0</option>
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <!-- Price Summary (shown after dates selected) -->
+                            <div class="rd-avail-form__summary" id="avail-summary" hidden>
+                                <div class="rd-avail-form__summary-row">
+                                    <span id="summary-rate-label">£195 × 1 night</span>
+                                    <span id="summary-rate-total">£195</span>
+                                </div>
+                                <div class="rd-avail-form__summary-row">
+                                    <span>Breakfast (2 guests)</span>
+                                    <span>Included</span>
+                                </div>
+                                <div class="rd-avail-form__summary-row rd-avail-form__summary-row--total">
+                                    <span>Total</span>
+                                    <span id="summary-grand-total">£195</span>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="btn btn--primary rd-avail-form__submit" id="avail-submit">
+                                <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                                Book Now — Best Rate
+                            </button>
+
+                            <p class="rd-avail-form__note">
+                                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                                Free cancellation · No booking fees
+                            </p>
+
+                        </form><!-- /.rd-avail-form -->
+
+                        <!-- Sidebar Trust Items -->
+                        <div class="rd-sidebar__trust">
+                            <div class="rd-sidebar__trust-item">
+                                <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Need help?</strong>
+                                    <a href="tel:+441789123456">+44 (0)1789 123 456</a>
+                                </div>
+                            </div>
+                            <div class="rd-sidebar__trust-item">
+                                <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                                <div>
+                                    <strong>Email us</strong>
+                                    <a href="mailto:reservations@kingscourt.co.uk">reservations@kingscourt.co.uk</a>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.rd-sidebar__inner -->
+
+                </aside><!-- /.rd-sidebar -->
+
+            </div><!-- /.rd-layout -->
+        </div><!-- /.container -->
+    </main>
+
+
+    <!-- ═══════════════════════════════════════
+       LIGHTBOX OVERLAY
+    ═══════════════════════════════════════ -->
+    <div class="rd-lightbox" id="rd-lightbox" role="dialog" aria-modal="true" aria-label="Photo lightbox" hidden>
+        <div class="rd-lightbox__backdrop" id="rd-lightbox-backdrop"></div>
+
+        <button class="rd-lightbox__close" id="rd-lightbox-close" aria-label="Close lightbox">
+            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+
+        <button class="rd-lightbox__arrow rd-lightbox__arrow--prev" id="rd-lightbox-prev" aria-label="Previous photo">
+            <i class="fa-solid fa-chevron-left" aria-hidden="true"></i>
+        </button>
+
+        <div class="rd-lightbox__stage">
+            <img class="rd-lightbox__img" id="rd-lightbox-img" src="" alt="" />
+            <div class="rd-lightbox__caption" id="rd-lightbox-caption"></div>
+        </div>
+
+        <button class="rd-lightbox__arrow rd-lightbox__arrow--next" id="rd-lightbox-next" aria-label="Next photo">
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+        </button>
+
+        <div class="rd-lightbox__counter" aria-live="polite">
+            <span id="rd-lb-current">1</span> / <span id="rd-lb-total">5</span>
+        </div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       MOBILE BOOK NOW BAR (bottom fixed)
+    ═══════════════════════════════════════ -->
+    <div class="rd-mobile-bar" id="rd-mobile-bar" aria-label="Mobile booking bar">
+        <div class="rd-mobile-bar__price">
+            <span class="rd-mobile-bar__from">From</span>
+            <strong class="rd-mobile-bar__amount">£195</strong>
+            <span class="rd-mobile-bar__per">/ night</span>
+        </div>
+        <a href="#rd-sidebar" class="btn btn--primary rd-mobile-bar__btn" id="rd-mobile-book-btn">
+            <i class="fa-solid fa-lock" aria-hidden="true"></i>
+            Book Now
+        </a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">
+                        A magnificent Tudor manor house set within 40 acres of private Warwickshire countryside.
+                    </p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter/X"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Explore footer navigation">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="offers.html" class="footer__link">Special Offers</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information footer navigation">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Kings Court Hotel &amp; Estate. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/room-detail.js"></script>
+
+</body>
+
+</html>

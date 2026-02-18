@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Dine at Kings Court Hotel — The Garden Restaurant offers seasonal British cuisine, while The Twisted Boot Bar serves craft ales and light bites. Book a table today." />
+    <meta name="keywords"
+        content="Kings Court dining, Garden Restaurant, Twisted Boot Bar, hotel restaurant Warwickshire, fine dining Stratford-upon-Avon" />
+    <meta property="og:title" content="Dining — Kings Court Hotel" />
+    <meta property="og:description"
+        content="Two exceptional dining experiences under one Tudor roof — The Garden Restaurant and The Twisted Boot Bar." />
+    <meta property="og:type" content="website" />
+    <title>Dining | Kings Court Hotel — Garden Restaurant &amp; Twisted Boot Bar</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/dining-page.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="dining-page">
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link" aria-current="page">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       HERO — PARALLAX
+    ═══════════════════════════════════════ -->
+    <section class="dn-hero" id="dn-hero" aria-label="Dining hero">
+
+        <!-- Parallax background layer -->
+        <div class="dn-hero__bg" id="dn-hero-bg" aria-hidden="true">
+            <img src="assets/images/dining/dining-main.jpg"
+                alt="The Garden Restaurant at Kings Court Hotel — candlelit dining room" class="dn-hero__bg-img"
+                id="dn-hero-img" />
+        </div>
+
+        <!-- Gradient overlay -->
+        <div class="dn-hero__overlay" aria-hidden="true"></div>
+
+        <!-- Content -->
+        <div class="dn-hero__content">
+            <span class="dn-hero__eyebrow">Culinary Experiences</span>
+            <div class="dn-hero__script" aria-hidden="true">Savour &amp; Celebrate</div>
+            <h1 class="dn-hero__title">Dining at Kings Court</h1>
+            <div class="dn-hero__divider" aria-hidden="true">
+                <span class="dn-hero__divider-line"></span>
+                <i class="fa-solid fa-utensils dn-hero__divider-icon" aria-hidden="true"></i>
+                <span class="dn-hero__divider-line"></span>
+            </div>
+            <p class="dn-hero__subtitle">
+                Two exceptional dining experiences beneath one Tudor roof — from
+                seasonal fine dining to craft ales by a roaring fire.
+            </p>
+            <div class="dn-hero__actions">
+                <a href="#dn-reserve" class="btn btn--primary" id="hero-reserve-btn">
+                    <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                    Reserve a Table
+                </a>
+                <a href="#dn-restaurant" class="btn btn--outline-cream" id="hero-explore-btn">
+                    Explore Dining
+                </a>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="dn-hero__scroll" aria-hidden="true">
+            <span class="dn-hero__scroll-text">Scroll</span>
+            <div class="dn-hero__scroll-line"></div>
+        </div>
+
+        <!-- Breadcrumb -->
+        <nav class="dn-hero__breadcrumb" aria-label="Breadcrumb">
+            <a href="index.html">Home</a>
+            <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+            <span aria-current="page">Dining</span>
+        </nav>
+
+    </section><!-- /.dn-hero -->
+
+
+    <!-- ═══════════════════════════════════════
+       INTRO STRIP — Two venues
+    ═══════════════════════════════════════ -->
+    <section class="dn-intro" id="dn-intro" aria-label="Dining overview">
+        <div class="container">
+            <div class="dn-intro__grid">
+
+                <a href="#dn-restaurant" class="dn-intro__card" id="intro-restaurant-link">
+                    <div class="dn-intro__card-icon">
+                        <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                    </div>
+                    <div class="dn-intro__card-body">
+                        <h2 class="dn-intro__card-title">The Garden Restaurant</h2>
+                        <p class="dn-intro__card-desc">Seasonal British cuisine in an elegant Tudor dining room</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right dn-intro__card-arrow" aria-hidden="true"></i>
+                </a>
+
+                <div class="dn-intro__divider" aria-hidden="true">
+                    <div class="dn-intro__divider-line"></div>
+                    <div class="dn-intro__divider-diamond"></div>
+                    <div class="dn-intro__divider-line"></div>
+                </div>
+
+                <a href="#dn-bar" class="dn-intro__card" id="intro-bar-link">
+                    <div class="dn-intro__card-icon">
+                        <i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i>
+                    </div>
+                    <div class="dn-intro__card-body">
+                        <h2 class="dn-intro__card-title">The Twisted Boot Bar</h2>
+                        <p class="dn-intro__card-desc">Craft ales, cocktails &amp; light bites by a roaring fire</p>
+                    </div>
+                    <i class="fa-solid fa-arrow-right dn-intro__card-arrow" aria-hidden="true"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       SECTION DIVIDER — Gold ornamental
+    ═══════════════════════════════════════ -->
+    <div class="dn-gold-divider" aria-hidden="true">
+        <div class="dn-gold-divider__line"></div>
+        <div class="dn-gold-divider__ornament">
+            <span></span>
+            <i class="fa-solid fa-crown"></i>
+            <span></span>
+        </div>
+        <div class="dn-gold-divider__line"></div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       THE GARDEN RESTAURANT
+    ═══════════════════════════════════════ -->
+    <section class="dn-venue" id="dn-restaurant" aria-labelledby="restaurant-heading">
+
+        <!-- Parallax feature image -->
+        <div class="dn-venue__parallax" id="restaurant-parallax" aria-hidden="true">
+            <div class="dn-venue__parallax-img" id="restaurant-parallax-img"
+                style="background-image: url('assets/images/dining/dining-main.jpg');">
+            </div>
+            <div class="dn-venue__parallax-overlay"></div>
+            <div class="dn-venue__parallax-caption">
+                <span>The Garden Restaurant</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dn-venue__layout">
+
+                <!-- Left — Content -->
+                <div class="dn-venue__content reveal">
+
+                    <div class="dn-venue__header">
+                        <span class="dn-venue__eyebrow">
+                            <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                            Fine Dining
+                        </span>
+                        <h2 class="dn-venue__title" id="restaurant-heading">The Garden Restaurant</h2>
+                        <div class="dn-gold-line"></div>
+                    </div>
+
+                    <div class="dn-venue__body">
+                        <p>
+                            Step into our award-winning Garden Restaurant and discover a dining experience
+                            that celebrates the very best of British seasonal produce. Our head chef,
+                            trained at some of London's finest establishments, crafts menus that change
+                            with the seasons — drawing inspiration from our own walled kitchen garden
+                            and trusted local suppliers.
+                        </p>
+                        <p>
+                            The dining room itself is a masterpiece of Tudor architecture — exposed oak
+                            beams, stone mullioned windows, and candlelight that dances off centuries-old
+                            walls. Whether you're joining us for a leisurely Sunday lunch or a celebratory
+                            dinner, every visit is a memory in the making.
+                        </p>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="dn-venue__highlights">
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-seedling" aria-hidden="true"></i>
+                            <span>Kitchen Garden Produce</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-award" aria-hidden="true"></i>
+                            <span>AA Rosette Awarded</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-wine-glass" aria-hidden="true"></i>
+                            <span>Curated Wine List</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                            <span>Stone Fireplace Setting</span>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="dn-hours" id="restaurant-hours">
+                        <h3 class="dn-hours__title">
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                            Opening Hours
+                        </h3>
+                        <div class="dn-hours__grid">
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Breakfast</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">7:00am – 10:30am</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Lunch</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">12:00pm – 2:30pm</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Afternoon Tea</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">3:00pm – 5:00pm</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Dinner</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">6:30pm – 9:30pm</span>
+                            </div>
+                            <div class="dn-hours__row dn-hours__row--note">
+                                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                                <span>Open daily · Last orders 30 min before closing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Download -->
+                    <div class="dn-menu-btns">
+                        <a href="#" class="btn btn--primary dn-menu-btn" id="restaurant-menu-btn" download
+                            aria-label="Download Garden Restaurant menu PDF">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Download Menu
+                        </a>
+                        <a href="#dn-reserve" class="btn btn--ghost-gold" id="restaurant-reserve-btn">
+                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                            Reserve a Table
+                        </a>
+                    </div>
+
+                </div><!-- /.dn-venue__content -->
+
+                <!-- Right — Feature image card -->
+                <div class="dn-venue__image-col reveal">
+                    <div class="dn-venue__image-card">
+                        <img src="assets/images/dining/dining-main.jpg"
+                            alt="The Garden Restaurant interior — candlelit Tudor dining room" class="dn-venue__image"
+                            loading="lazy" />
+                        <div class="dn-venue__image-badge">
+                            <i class="fa-solid fa-award" aria-hidden="true"></i>
+                            <span>AA Rosette</span>
+                        </div>
+                    </div>
+
+                    <!-- Sample Menu Preview -->
+                    <div class="dn-menu-preview">
+                        <div class="dn-menu-preview__header">
+                            <span class="dn-menu-preview__label">Today's Highlights</span>
+                        </div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Starters</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>Smoked Salmon &amp; Dill Blini</span>
+                                    <span class="dn-menu-preview__price">£12</span>
+                                </li>
+                                <li>
+                                    <span>Garden Pea Velouté, Truffle Oil</span>
+                                    <span class="dn-menu-preview__price">£9</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dn-menu-preview__divider" aria-hidden="true"></div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Mains</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>28-Day Aged Warwickshire Beef</span>
+                                    <span class="dn-menu-preview__price">£34</span>
+                                </li>
+                                <li>
+                                    <span>Pan-Seared Sea Bass, Samphire</span>
+                                    <span class="dn-menu-preview__price">£28</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dn-menu-preview__divider" aria-hidden="true"></div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Desserts</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>Dark Chocolate Fondant</span>
+                                    <span class="dn-menu-preview__price">£10</span>
+                                </li>
+                                <li>
+                                    <span>Seasonal Fruit Pavlova</span>
+                                    <span class="dn-menu-preview__price">£9</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!-- /.dn-venue__image-col -->
+
+            </div><!-- /.dn-venue__layout -->
+        </div>
+
+    </section><!-- /.dn-restaurant -->
+
+
+    <!-- ═══════════════════════════════════════
+       GOLD DIVIDER
+    ═══════════════════════════════════════ -->
+    <div class="dn-gold-divider" aria-hidden="true">
+        <div class="dn-gold-divider__line"></div>
+        <div class="dn-gold-divider__ornament">
+            <span></span>
+            <i class="fa-solid fa-beer-mug-empty"></i>
+            <span></span>
+        </div>
+        <div class="dn-gold-divider__line"></div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       THE TWISTED BOOT BAR
+    ═══════════════════════════════════════ -->
+    <section class="dn-venue dn-venue--bar" id="dn-bar" aria-labelledby="bar-heading">
+
+        <!-- Parallax feature image -->
+        <div class="dn-venue__parallax" id="bar-parallax" aria-hidden="true">
+            <div class="dn-venue__parallax-img" id="bar-parallax-img"
+                style="background-image: url('assets/images/dining/dining-main.jpg');">
+            </div>
+            <div class="dn-venue__parallax-overlay dn-venue__parallax-overlay--dark"></div>
+            <div class="dn-venue__parallax-caption">
+                <span>The Twisted Boot Bar</span>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="dn-venue__layout dn-venue__layout--reverse">
+
+                <!-- Left — Feature image -->
+                <div class="dn-venue__image-col reveal">
+                    <div class="dn-venue__image-card dn-venue__image-card--bar">
+                        <img src="assets/images/dining/dining-main.jpg"
+                            alt="The Twisted Boot Bar — warm firelit bar with craft ales" class="dn-venue__image"
+                            loading="lazy" />
+                        <div class="dn-venue__image-badge dn-venue__image-badge--bar">
+                            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                            <span>Open Fire</span>
+                        </div>
+                    </div>
+
+                    <!-- Bar Drinks Preview -->
+                    <div class="dn-menu-preview dn-menu-preview--bar">
+                        <div class="dn-menu-preview__header">
+                            <span class="dn-menu-preview__label">On Tap &amp; Cellar</span>
+                        </div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Craft Ales</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>Kings Court Golden Ale</span>
+                                    <span class="dn-menu-preview__price">£5.50</span>
+                                </li>
+                                <li>
+                                    <span>Twisted Boot Stout</span>
+                                    <span class="dn-menu-preview__price">£5.80</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dn-menu-preview__divider" aria-hidden="true"></div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Cocktails</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>Tudor Rose Spritz</span>
+                                    <span class="dn-menu-preview__price">£12</span>
+                                </li>
+                                <li>
+                                    <span>Warwickshire Sour</span>
+                                    <span class="dn-menu-preview__price">£13</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="dn-menu-preview__divider" aria-hidden="true"></div>
+                        <div class="dn-menu-preview__course">
+                            <span class="dn-menu-preview__course-name">Bar Bites</span>
+                            <ul class="dn-menu-preview__items">
+                                <li>
+                                    <span>Charcuterie &amp; Cheese Board</span>
+                                    <span class="dn-menu-preview__price">£18</span>
+                                </li>
+                                <li>
+                                    <span>Truffle &amp; Parmesan Fries</span>
+                                    <span class="dn-menu-preview__price">£7</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div><!-- /.dn-venue__image-col -->
+
+                <!-- Right — Content -->
+                <div class="dn-venue__content reveal">
+
+                    <div class="dn-venue__header">
+                        <span class="dn-venue__eyebrow dn-venue__eyebrow--bar">
+                            <i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i>
+                            Bar &amp; Lounge
+                        </span>
+                        <h2 class="dn-venue__title" id="bar-heading">The Twisted Boot Bar</h2>
+                        <div class="dn-gold-line"></div>
+                    </div>
+
+                    <div class="dn-venue__body">
+                        <p>
+                            Named after the ancient twisted boot found during the hotel's restoration,
+                            The Twisted Boot Bar is the beating heart of Kings Court. Settle into a
+                            leather Chesterfield beside the inglenook fireplace, order a pint of our
+                            house-brewed Golden Ale, and let the world slow down.
+                        </p>
+                        <p>
+                            Our bar menu celebrates the best of British pub culture — elevated. From
+                            hand-crafted cocktails using local botanicals to a carefully curated whisky
+                            collection, there's something for every palate. Light bites are available
+                            throughout the day, perfect for a relaxed afternoon or a pre-dinner drink.
+                        </p>
+                    </div>
+
+                    <!-- Highlights -->
+                    <div class="dn-venue__highlights">
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i>
+                            <span>House-Brewed Ales</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                            <span>Inglenook Fireplace</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-martini-glass" aria-hidden="true"></i>
+                            <span>Craft Cocktails</span>
+                        </div>
+                        <div class="dn-venue__highlight">
+                            <i class="fa-solid fa-music" aria-hidden="true"></i>
+                            <span>Live Music Fridays</span>
+                        </div>
+                    </div>
+
+                    <!-- Opening Hours -->
+                    <div class="dn-hours dn-hours--bar" id="bar-hours">
+                        <h3 class="dn-hours__title">
+                            <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                            Opening Hours
+                        </h3>
+                        <div class="dn-hours__grid">
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Mon – Thu</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">11:00am – 11:00pm</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Friday</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">11:00am – 12:00am</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Saturday</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">10:00am – 12:00am</span>
+                            </div>
+                            <div class="dn-hours__row">
+                                <span class="dn-hours__day">Sunday</span>
+                                <span class="dn-hours__dots" aria-hidden="true"></span>
+                                <span class="dn-hours__time">12:00pm – 10:30pm</span>
+                            </div>
+                            <div class="dn-hours__row dn-hours__row--note">
+                                <i class="fa-solid fa-music" aria-hidden="true"></i>
+                                <span>Live music every Friday from 8:00pm</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Menu Download -->
+                    <div class="dn-menu-btns">
+                        <a href="#" class="btn btn--primary dn-menu-btn" id="bar-menu-btn" download
+                            aria-label="Download Twisted Boot Bar menu PDF">
+                            <i class="fa-solid fa-download" aria-hidden="true"></i>
+                            Download Bar Menu
+                        </a>
+                        <a href="#dn-reserve" class="btn btn--ghost-gold" id="bar-reserve-btn">
+                            <i class="fa-regular fa-calendar-check" aria-hidden="true"></i>
+                            Book a Table
+                        </a>
+                    </div>
+
+                </div><!-- /.dn-venue__content -->
+
+            </div><!-- /.dn-venue__layout -->
+        </div>
+
+    </section><!-- /.dn-bar -->
+
+
+    <!-- ═══════════════════════════════════════
+       GOLD DIVIDER
+    ═══════════════════════════════════════ -->
+    <div class="dn-gold-divider" aria-hidden="true">
+        <div class="dn-gold-divider__line"></div>
+        <div class="dn-gold-divider__ornament">
+            <span></span>
+            <i class="fa-solid fa-star"></i>
+            <span></span>
+        </div>
+        <div class="dn-gold-divider__line"></div>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       PRIVATE DINING CTA STRIP
+    ═══════════════════════════════════════ -->
+    <section class="dn-private" id="dn-private" aria-label="Private dining">
+        <div class="dn-private__bg" aria-hidden="true">
+            <div class="dn-private__bg-img" style="background-image: url('assets/images/dining/dining-main.jpg');">
+            </div>
+            <div class="dn-private__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="dn-private__content reveal">
+                <span class="dn-private__eyebrow">Exclusive Experiences</span>
+                <h2 class="dn-private__title">Private Dining &amp; Events</h2>
+                <div class="dn-gold-line" style="margin: 1rem auto;"></div>
+                <p class="dn-private__desc">
+                    Host an unforgettable private dinner, corporate lunch, or celebration in our
+                    exclusive Oak Room — a stunning private dining space for up to 24 guests,
+                    with bespoke menus crafted by our head chef.
+                </p>
+                <div class="dn-private__features">
+                    <div class="dn-private__feature">
+                        <i class="fa-solid fa-users" aria-hidden="true"></i>
+                        <span>Up to 24 guests</span>
+                    </div>
+                    <div class="dn-private__feature">
+                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                        <span>Bespoke menus</span>
+                    </div>
+                    <div class="dn-private__feature">
+                        <i class="fa-solid fa-wine-bottle" aria-hidden="true"></i>
+                        <span>Sommelier service</span>
+                    </div>
+                    <div class="dn-private__feature">
+                        <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
+                        <span>Welcome drinks</span>
+                    </div>
+                </div>
+                <a href="contact.html" class="btn btn--primary" id="private-enquire-btn">
+                    Enquire About Private Dining
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       RESERVATION FORM
+    ═══════════════════════════════════════ -->
+    <section class="dn-reserve" id="dn-reserve" aria-labelledby="reserve-heading">
+        <div class="container">
+
+            <div class="dn-reserve__header reveal">
+                <span class="dn-reserve__eyebrow">Make a Reservation</span>
+                <h2 class="dn-reserve__title" id="reserve-heading">Book Your Table</h2>
+                <div class="dn-gold-line" style="margin: 1rem auto;"></div>
+                <p class="dn-reserve__subtitle">
+                    Reserve your table at The Garden Restaurant or The Twisted Boot Bar.
+                    For parties of 8 or more, please call us directly.
+                </p>
+            </div>
+
+            <div class="dn-reserve__layout">
+
+                <!-- Form -->
+                <form class="dn-form" id="dn-reserve-form" novalidate aria-label="Table reservation form">
+
+                    <!-- Venue Selection -->
+                    <div class="dn-form__group dn-form__group--full">
+                        <label class="dn-form__label" id="venue-label">Select Venue</label>
+                        <div class="dn-form__venue-tabs" role="group" aria-labelledby="venue-label">
+                            <button type="button" class="dn-form__venue-tab dn-form__venue-tab--active"
+                                id="tab-restaurant" data-venue="restaurant" aria-pressed="true">
+                                <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                                The Garden Restaurant
+                            </button>
+                            <button type="button" class="dn-form__venue-tab" id="tab-bar" data-venue="bar"
+                                aria-pressed="false">
+                                <i class="fa-solid fa-beer-mug-empty" aria-hidden="true"></i>
+                                The Twisted Boot Bar
+                            </button>
+                        </div>
+                        <input type="hidden" id="form-venue" name="venue" value="restaurant" />
+                    </div>
+
+                    <!-- Name Row -->
+                    <div class="dn-form__row">
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-first-name">
+                                First Name <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <input class="dn-form__input" type="text" id="form-first-name" name="firstName"
+                                placeholder="James" autocomplete="given-name" aria-required="true" />
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-last-name">
+                                Last Name <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <input class="dn-form__input" type="text" id="form-last-name" name="lastName"
+                                placeholder="Thornton" autocomplete="family-name" aria-required="true" />
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <!-- Contact Row -->
+                    <div class="dn-form__row">
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-email">
+                                Email <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <input class="dn-form__input" type="email" id="form-email" name="email"
+                                placeholder="james@example.com" autocomplete="email" aria-required="true" />
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-phone">
+                                Phone <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <input class="dn-form__input" type="tel" id="form-phone" name="phone"
+                                placeholder="+44 7700 900123" autocomplete="tel" aria-required="true" />
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <!-- Date / Time / Guests Row -->
+                    <div class="dn-form__row dn-form__row--three">
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-date">
+                                <i class="fa-regular fa-calendar" aria-hidden="true"></i>
+                                Date <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <input class="dn-form__input" type="date" id="form-date" name="date" aria-required="true" />
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-time">
+                                <i class="fa-regular fa-clock" aria-hidden="true"></i>
+                                Time <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <select class="dn-form__select" id="form-time" name="time" aria-required="true">
+                                <option value="" disabled selected>Select time</option>
+                                <optgroup label="Lunch">
+                                    <option value="12:00">12:00 pm</option>
+                                    <option value="12:30">12:30 pm</option>
+                                    <option value="13:00">1:00 pm</option>
+                                    <option value="13:30">1:30 pm</option>
+                                    <option value="14:00">2:00 pm</option>
+                                </optgroup>
+                                <optgroup label="Afternoon Tea">
+                                    <option value="15:00">3:00 pm</option>
+                                    <option value="15:30">3:30 pm</option>
+                                    <option value="16:00">4:00 pm</option>
+                                    <option value="16:30">4:30 pm</option>
+                                </optgroup>
+                                <optgroup label="Dinner">
+                                    <option value="18:30">6:30 pm</option>
+                                    <option value="19:00">7:00 pm</option>
+                                    <option value="19:30">7:30 pm</option>
+                                    <option value="20:00">8:00 pm</option>
+                                    <option value="20:30">8:30 pm</option>
+                                    <option value="21:00">9:00 pm</option>
+                                </optgroup>
+                            </select>
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                        <div class="dn-form__group">
+                            <label class="dn-form__label" for="form-guests">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i>
+                                Guests <span class="dn-form__required" aria-hidden="true">*</span>
+                            </label>
+                            <select class="dn-form__select" id="form-guests" name="guests" aria-required="true">
+                                <option value="" disabled selected>Select</option>
+                                <option value="1">1 guest</option>
+                                <option value="2">2 guests</option>
+                                <option value="3">3 guests</option>
+                                <option value="4">4 guests</option>
+                                <option value="5">5 guests</option>
+                                <option value="6">6 guests</option>
+                                <option value="7">7 guests</option>
+                            </select>
+                            <span class="dn-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+                    </div>
+
+                    <!-- Occasion -->
+                    <div class="dn-form__group dn-form__group--full">
+                        <label class="dn-form__label" for="form-occasion">Special Occasion</label>
+                        <select class="dn-form__select" id="form-occasion" name="occasion">
+                            <option value="">No special occasion</option>
+                            <option value="birthday">Birthday</option>
+                            <option value="anniversary">Anniversary</option>
+                            <option value="proposal">Proposal</option>
+                            <option value="business">Business Lunch / Dinner</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Special Requests -->
+                    <div class="dn-form__group dn-form__group--full">
+                        <label class="dn-form__label" for="form-requests">
+                            Dietary Requirements &amp; Special Requests
+                        </label>
+                        <textarea class="dn-form__textarea" id="form-requests" name="requests"
+                            placeholder="Allergies, dietary requirements, high chair needed, etc." rows="4"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="dn-form__submit-row">
+                        <button type="submit" class="btn btn--primary dn-form__submit" id="reserve-submit-btn">
+                            <i class="fa-solid fa-check" aria-hidden="true"></i>
+                            Confirm Reservation
+                        </button>
+                        <p class="dn-form__note">
+                            <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                            We'll confirm your reservation by email within 2 hours.
+                        </p>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="dn-form__success" id="form-success" hidden role="alert" aria-live="polite">
+                        <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                        <div>
+                            <strong>Reservation Received!</strong>
+                            <p>Thank you — we'll confirm your table by email shortly. We look forward to welcoming you.
+                            </p>
+                        </div>
+                    </div>
+
+                </form><!-- /.dn-form -->
+
+                <!-- Sidebar info -->
+                <aside class="dn-reserve__aside" aria-label="Reservation information">
+
+                    <div class="dn-reserve__info-card">
+                        <h3 class="dn-reserve__info-title">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            Call Us Directly
+                        </h3>
+                        <p>For parties of 8 or more, or for same-day reservations, please call our reservations team.
+                        </p>
+                        <a href="tel:+441789123456" class="dn-reserve__phone">+44 (0)1789 123 456</a>
+                        <span class="dn-reserve__phone-hours">Mon–Sun · 8:00am – 9:00pm</span>
+                    </div>
+
+                    <div class="dn-reserve__info-card">
+                        <h3 class="dn-reserve__info-title">
+                            <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                            Good to Know
+                        </h3>
+                        <ul class="dn-reserve__info-list">
+                            <li>
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                Smart casual dress code for dinner
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                Children welcome at all times
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                Dogs welcome in The Twisted Boot Bar
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                Complimentary parking for diners
+                            </li>
+                            <li>
+                                <i class="fa-solid fa-check" aria-hidden="true"></i>
+                                Fully accessible venue
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="dn-reserve__info-card dn-reserve__info-card--gift">
+                        <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                        <h3>Gift Vouchers</h3>
+                        <p>Give the gift of exceptional dining with a Kings Court gift voucher.</p>
+                        <a href="contact.html" class="btn btn--ghost-gold" id="gift-voucher-btn"
+                            style="font-size:0.65rem; padding: 0.7rem 1.2rem;">
+                            Purchase Voucher
+                        </a>
+                    </div>
+
+                </aside>
+
+            </div><!-- /.dn-reserve__layout -->
+        </div>
+    </section><!-- /.dn-reserve -->
+
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">
+                        A magnificent Tudor manor house set within 40 acres of private Warwickshire countryside.
+                    </p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter/X"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Explore footer navigation">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="offers.html" class="footer__link">Special Offers</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information footer navigation">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:dining@kingscourt.co.uk"
+                            class="footer__contact-text">dining@kingscourt.co.uk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Kings Court Hotel &amp; Estate. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dining.js"></script>
+
+</body>
+
+</html>

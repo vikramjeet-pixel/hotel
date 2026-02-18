@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Host your next corporate event, conference, or meeting at Kings Court Hotel. Elegant Tudor meeting rooms with modern AV, high-speed Wi-Fi, and award-winning catering." />
+    <title>Events & Meetings | Kings Court Hotel — Corporate Venue Warwickshire</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏛️</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/events-page.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="events-page">
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link" aria-current="page">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="#ev-enquiry" class="btn btn--primary" style="margin-top:1rem;">Enquire Now</a>
+    </div>
+
+    <!-- ═══ HERO ═══ -->
+    <section class="ev-hero" id="ev-hero" aria-label="Events hero">
+        <div class="ev-hero__bg" aria-hidden="true">
+            <img src="assets/images/weddings/wedding-main.jpg" alt="Kings Court Hotel meeting and events venue"
+                class="ev-hero__bg-img" id="ev-hero-img" />
+        </div>
+        <div class="ev-hero__overlay" aria-hidden="true"></div>
+
+        <div class="ev-hero__content">
+            <nav class="ev-hero__breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                <span aria-current="page">Events</span>
+            </nav>
+            <span class="ev-hero__eyebrow">Corporate &amp; Private Events</span>
+            <h1 class="ev-hero__title">Where Business<br>Meets Inspiration</h1>
+            <div class="ev-hero__divider" aria-hidden="true">
+                <span></span><i class="fa-solid fa-briefcase"></i><span></span>
+            </div>
+            <p class="ev-hero__subtitle">
+                Historic grandeur meets modern capability. Five versatile event spaces, cutting-edge AV technology,
+                award-winning catering, and 28 luxury bedrooms — all within a magnificent Tudor estate.
+            </p>
+            <div class="ev-hero__actions">
+                <a href="#ev-enquiry" class="btn btn--primary ev-hero__cta" id="hero-enquire-btn">
+                    <i class="fa-regular fa-envelope" aria-hidden="true"></i> Request a Proposal
+                </a>
+                <a href="#ev-rooms" class="btn ev-hero__ghost" id="hero-rooms-btn">
+                    View Meeting Rooms
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats bar -->
+        <div class="ev-hero__stats" aria-label="Event venue key facts">
+            <div class="ev-stat">
+                <span class="ev-stat__num">5</span>
+                <span class="ev-stat__label">Event Spaces</span>
+            </div>
+            <div class="ev-stat__sep" aria-hidden="true"></div>
+            <div class="ev-stat">
+                <span class="ev-stat__num">300</span>
+                <span class="ev-stat__label">Max Delegates</span>
+            </div>
+            <div class="ev-stat__sep" aria-hidden="true"></div>
+            <div class="ev-stat">
+                <span class="ev-stat__num">28</span>
+                <span class="ev-stat__label">Bedrooms On-Site</span>
+            </div>
+            <div class="ev-stat__sep" aria-hidden="true"></div>
+            <div class="ev-stat">
+                <span class="ev-stat__num">40</span>
+                <span class="ev-stat__label">Acres of Grounds</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ TRUST STRIP ═══ -->
+    <section class="ev-trust" aria-label="Corporate credentials">
+        <div class="container">
+            <div class="ev-trust__grid">
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    <span>1Gbps Dedicated Wi-Fi</span>
+                </div>
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-video" aria-hidden="true"></i>
+                    <span>4K AV &amp; Video Conferencing</span>
+                </div>
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    <span>AA Rosette Catering</span>
+                </div>
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-car" aria-hidden="true"></i>
+                    <span>200+ Free Parking Spaces</span>
+                </div>
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                    <span>28 Luxury Bedrooms</span>
+                </div>
+                <div class="ev-trust__item">
+                    <i class="fa-solid fa-leaf" aria-hidden="true"></i>
+                    <span>Carbon Neutral Events</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ MEETING ROOMS ═══ -->
+    <section class="ev-rooms" id="ev-rooms" aria-labelledby="rooms-heading">
+        <div class="container">
+            <div class="ev-section-header reveal">
+                <span class="ev-eyebrow">Our Spaces</span>
+                <h2 class="ev-section-title" id="rooms-heading">Five Exceptional Event Spaces</h2>
+                <div class="ev-gold-line"></div>
+                <p class="ev-section-desc">From intimate boardroom meetings to large-scale conferences, every space at
+                    Kings Court combines historic character with professional-grade facilities.</p>
+            </div>
+
+            <!-- Room cards grid -->
+            <div class="ev-rooms__grid">
+
+                <!-- The Great Hall -->
+                <article class="ev-room-card ev-room-card--wide reveal" id="room-great-hall">
+                    <div class="ev-room-card__image-wrap">
+                        <img src="assets/images/weddings/wedding-main.jpg"
+                            alt="The Great Hall — large conference and banqueting space" class="ev-room-card__image"
+                            loading="lazy" />
+                        <div class="ev-room-card__overlay"></div>
+                        <div class="ev-room-card__badges">
+                            <span class="ev-badge ev-badge--gold">Largest Space</span>
+                            <span class="ev-badge">Up to 300</span>
+                        </div>
+                    </div>
+                    <div class="ev-room-card__body">
+                        <div class="ev-room-card__header">
+                            <div>
+                                <span class="ev-room-card__tag">Conference &amp; Banqueting</span>
+                                <h3 class="ev-room-card__title">The Great Hall</h3>
+                            </div>
+                            <div class="ev-room-card__size">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>280 m²</span>
+                            </div>
+                        </div>
+                        <p class="ev-room-card__desc">Our flagship event space — a soaring Tudor banqueting hall with
+                            original hammer-beam roof, stone fireplace, and natural daylight. Ideal for large
+                            conferences, product launches, gala dinners, and award ceremonies.</p>
+
+                        <!-- Capacity table -->
+                        <div class="ev-capacity" aria-label="Great Hall seating capacities">
+                            <div class="ev-capacity__title">
+                                <i class="fa-solid fa-users" aria-hidden="true"></i> Seating Configurations
+                            </div>
+                            <div class="ev-capacity__grid">
+                                <div class="ev-cap-item">
+                                    <span class="ev-cap-item__num">300</span>
+                                    <span class="ev-cap-item__label">Theatre</span>
+                                </div>
+                                <div class="ev-cap-item">
+                                    <span class="ev-cap-item__num">200</span>
+                                    <span class="ev-cap-item__label">Cabaret</span>
+                                </div>
+                                <div class="ev-cap-item">
+                                    <span class="ev-cap-item__num">180</span>
+                                    <span class="ev-cap-item__label">Banquet</span>
+                                </div>
+                                <div class="ev-cap-item">
+                                    <span class="ev-cap-item__num">250</span>
+                                    <span class="ev-cap-item__label">Reception</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Facilities -->
+                        <div class="ev-facilities">
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>4K Laser
+                                Projector</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>PA
+                                System</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Dedicated
+                                Wi-Fi</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Stage &amp;
+                                Lectern</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Breakout
+                                Rooms</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Natural
+                                Daylight</span>
+                        </div>
+                        <a href="#ev-enquiry" class="btn btn--primary ev-room-card__btn">Enquire About This Space</a>
+                    </div>
+                </article>
+
+                <!-- The Boardroom -->
+                <article class="ev-room-card reveal" id="room-boardroom">
+                    <div class="ev-room-card__image-wrap">
+                        <img src="assets/images/rooms/room-deluxe.jpg" alt="The Boardroom — executive meeting room"
+                            class="ev-room-card__image" loading="lazy" />
+                        <div class="ev-room-card__overlay"></div>
+                        <div class="ev-room-card__badges">
+                            <span class="ev-badge">Up to 20</span>
+                        </div>
+                    </div>
+                    <div class="ev-room-card__body">
+                        <div class="ev-room-card__header">
+                            <div>
+                                <span class="ev-room-card__tag">Executive Meetings</span>
+                                <h3 class="ev-room-card__title">The Boardroom</h3>
+                            </div>
+                            <div class="ev-room-card__size">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>65 m²</span>
+                            </div>
+                        </div>
+                        <p class="ev-room-card__desc">A refined executive space with a fixed boardroom table, leather
+                            seating, and oak-panelled walls. Perfect for senior leadership meetings, interviews, and
+                            confidential discussions.</p>
+                        <div class="ev-capacity" aria-label="Boardroom seating capacities">
+                            <div class="ev-capacity__title"><i class="fa-solid fa-users" aria-hidden="true"></i> Seating
+                                Configurations</div>
+                            <div class="ev-capacity__grid">
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">20</span><span
+                                        class="ev-cap-item__label">Boardroom</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">30</span><span
+                                        class="ev-cap-item__label">Theatre</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">20</span><span
+                                        class="ev-cap-item__label">U-Shape</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">24</span><span
+                                        class="ev-cap-item__label">Cabaret</span></div>
+                            </div>
+                        </div>
+                        <div class="ev-facilities">
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>85" 4K
+                                Display</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Video
+                                Conferencing</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Dedicated
+                                Wi-Fi</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check"
+                                    aria-hidden="true"></i>Whiteboard</span>
+                        </div>
+                        <a href="#ev-enquiry" class="btn btn--primary ev-room-card__btn">Enquire About This Space</a>
+                    </div>
+                </article>
+
+                <!-- The Oak Room -->
+                <article class="ev-room-card reveal" id="room-oak">
+                    <div class="ev-room-card__image-wrap">
+                        <img src="assets/images/rooms/room-suite.jpg"
+                            alt="The Oak Room — private meeting and dining room" class="ev-room-card__image"
+                            loading="lazy" />
+                        <div class="ev-room-card__overlay"></div>
+                        <div class="ev-room-card__badges">
+                            <span class="ev-badge">Up to 40</span>
+                        </div>
+                    </div>
+                    <div class="ev-room-card__body">
+                        <div class="ev-room-card__header">
+                            <div>
+                                <span class="ev-room-card__tag">Meetings &amp; Private Dining</span>
+                                <h3 class="ev-room-card__title">The Oak Room</h3>
+                            </div>
+                            <div class="ev-room-card__size">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>95 m²</span>
+                            </div>
+                        </div>
+                        <p class="ev-room-card__desc">400-year-old English oak panelling and candlelit ambiance make
+                            this the most atmospheric meeting space on the estate. Doubles as a private dining room for
+                            working lunches and client entertainment.</p>
+                        <div class="ev-capacity" aria-label="Oak Room seating capacities">
+                            <div class="ev-capacity__title"><i class="fa-solid fa-users" aria-hidden="true"></i> Seating
+                                Configurations</div>
+                            <div class="ev-capacity__grid">
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">40</span><span
+                                        class="ev-cap-item__label">Theatre</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">24</span><span
+                                        class="ev-cap-item__label">Boardroom</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">24</span><span
+                                        class="ev-cap-item__label">Dinner</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">30</span><span
+                                        class="ev-cap-item__label">U-Shape</span></div>
+                            </div>
+                        </div>
+                        <div class="ev-facilities">
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>75" Display
+                                Screen</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Wireless
+                                Presentation</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Dedicated
+                                Wi-Fi</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Flip
+                                Charts</span>
+                        </div>
+                        <a href="#ev-enquiry" class="btn btn--primary ev-room-card__btn">Enquire About This Space</a>
+                    </div>
+                </article>
+
+                <!-- The Garden Suite -->
+                <article class="ev-room-card reveal" id="room-garden">
+                    <div class="ev-room-card__image-wrap">
+                        <img src="assets/images/rooms/room-classic.jpg" alt="The Garden Suite — flexible event space"
+                            class="ev-room-card__image" loading="lazy" />
+                        <div class="ev-room-card__overlay"></div>
+                        <div class="ev-room-card__badges">
+                            <span class="ev-badge">Up to 80</span>
+                        </div>
+                    </div>
+                    <div class="ev-room-card__body">
+                        <div class="ev-room-card__header">
+                            <div>
+                                <span class="ev-room-card__tag">Flexible Events</span>
+                                <h3 class="ev-room-card__title">The Garden Suite</h3>
+                            </div>
+                            <div class="ev-room-card__size">
+                                <i class="fa-solid fa-expand" aria-hidden="true"></i>
+                                <span>140 m²</span>
+                            </div>
+                        </div>
+                        <p class="ev-room-card__desc">A bright, modern space with direct access to the walled garden
+                            terrace. Ideal for workshops, training days, product showcases, and team-building events
+                            with an outdoor element.</p>
+                        <div class="ev-capacity" aria-label="Garden Suite seating capacities">
+                            <div class="ev-capacity__title"><i class="fa-solid fa-users" aria-hidden="true"></i> Seating
+                                Configurations</div>
+                            <div class="ev-capacity__grid">
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">80</span><span
+                                        class="ev-cap-item__label">Theatre</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">60</span><span
+                                        class="ev-cap-item__label">Cabaret</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">40</span><span
+                                        class="ev-cap-item__label">Boardroom</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">100</span><span
+                                        class="ev-cap-item__label">Reception</span></div>
+                            </div>
+                        </div>
+                        <div class="ev-facilities">
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Dual
+                                Projectors</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Garden Terrace
+                                Access</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Dedicated
+                                Wi-Fi</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Breakout
+                                Space</span>
+                        </div>
+                        <a href="#ev-enquiry" class="btn btn--primary ev-room-card__btn">Enquire About This Space</a>
+                    </div>
+                </article>
+
+                <!-- The Terrace -->
+                <article class="ev-room-card reveal" id="room-terrace">
+                    <div class="ev-room-card__image-wrap">
+                        <img src="assets/images/weddings/wedding-main.jpg"
+                            alt="The Garden Terrace — outdoor event space" class="ev-room-card__image" loading="lazy" />
+                        <div class="ev-room-card__overlay"></div>
+                        <div class="ev-room-card__badges">
+                            <span class="ev-badge ev-badge--green">Outdoor</span>
+                            <span class="ev-badge">Up to 150</span>
+                        </div>
+                    </div>
+                    <div class="ev-room-card__body">
+                        <div class="ev-room-card__header">
+                            <div>
+                                <span class="ev-room-card__tag">Outdoor &amp; Summer Events</span>
+                                <h3 class="ev-room-card__title">The Garden Terrace</h3>
+                            </div>
+                            <div class="ev-room-card__size">
+                                <i class="fa-solid fa-sun" aria-hidden="true"></i>
+                                <span>May–Sep</span>
+                            </div>
+                        </div>
+                        <p class="ev-room-card__desc">Our stunning walled garden terrace provides an unrivalled outdoor
+                            setting for summer parties, team-building activities, BBQ receptions, and al-fresco dining
+                            events.</p>
+                        <div class="ev-capacity" aria-label="Garden Terrace seating capacities">
+                            <div class="ev-capacity__title"><i class="fa-solid fa-users" aria-hidden="true"></i> Seating
+                                Configurations</div>
+                            <div class="ev-capacity__grid">
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">150</span><span
+                                        class="ev-cap-item__label">Reception</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">100</span><span
+                                        class="ev-cap-item__label">Seated</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">80</span><span
+                                        class="ev-cap-item__label">BBQ</span></div>
+                                <div class="ev-cap-item"><span class="ev-cap-item__num">200</span><span
+                                        class="ev-cap-item__label">Drinks</span></div>
+                            </div>
+                        </div>
+                        <div class="ev-facilities">
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Outdoor AV
+                                Available</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Marquee
+                                Option</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>BBQ &amp;
+                                Catering</span>
+                            <span class="ev-facility"><i class="fa-solid fa-check" aria-hidden="true"></i>Team-Building
+                                Space</span>
+                        </div>
+                        <a href="#ev-enquiry" class="btn btn--primary ev-room-card__btn">Enquire About This Space</a>
+                    </div>
+                </article>
+
+            </div><!-- /.ev-rooms__grid -->
+        </div>
+    </section>
+
+    <!-- ═══ FACILITIES DEEP DIVE ═══ -->
+    <section class="ev-facilities-section" id="ev-facilities" aria-labelledby="facilities-heading">
+        <div class="container">
+            <div class="ev-section-header reveal">
+                <span class="ev-eyebrow">What's Included</span>
+                <h2 class="ev-section-title" id="facilities-heading">World-Class Facilities</h2>
+                <div class="ev-gold-line"></div>
+                <p class="ev-section-desc">Every event space at Kings Court is equipped with the technology and support
+                    your team needs to deliver exceptional results.</p>
+            </div>
+
+            <div class="ev-fac-grid">
+
+                <div class="ev-fac-card reveal" id="fac-av">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-display" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Audio Visual</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>4K laser projectors &amp; screens</li>
+                        <li>85" 4K interactive displays</li>
+                        <li>Professional PA systems</li>
+                        <li>Wireless microphones</li>
+                        <li>Stage lighting rigs</li>
+                        <li>Confidence monitors &amp; lecterns</li>
+                    </ul>
+                </div>
+
+                <div class="ev-fac-card reveal" id="fac-tech">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-wifi" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Connectivity</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>1Gbps dedicated fibre broadband</li>
+                        <li>Separate guest &amp; delegate networks</li>
+                        <li>Video conferencing (Zoom/Teams)</li>
+                        <li>Wireless presentation (Clickshare)</li>
+                        <li>Hybrid event streaming</li>
+                        <li>On-site IT support available</li>
+                    </ul>
+                </div>
+
+                <div class="ev-fac-card reveal" id="fac-catering">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-utensils" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Catering</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>AA Rosette head chef</li>
+                        <li>Working lunches &amp; buffets</li>
+                        <li>Gala dinner menus</li>
+                        <li>Dietary &amp; allergen options</li>
+                        <li>Barista coffee stations</li>
+                        <li>Licensed bar service</li>
+                    </ul>
+                </div>
+
+                <div class="ev-fac-card reveal" id="fac-support">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Event Support</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>Dedicated event coordinator</li>
+                        <li>On-site technical support</li>
+                        <li>Room setup &amp; breakdown</li>
+                        <li>Stationery &amp; flip charts</li>
+                        <li>Delegate packs available</li>
+                        <li>Post-event reporting</li>
+                    </ul>
+                </div>
+
+                <div class="ev-fac-card reveal" id="fac-accommodation">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-bed" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Accommodation</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>28 luxury bedrooms on-site</li>
+                        <li>Preferential delegate rates</li>
+                        <li>Bridal &amp; executive suites</li>
+                        <li>Full English breakfast included</li>
+                        <li>Early check-in available</li>
+                        <li>Group booking management</li>
+                    </ul>
+                </div>
+
+                <div class="ev-fac-card reveal" id="fac-extras">
+                    <div class="ev-fac-card__icon-wrap">
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                    </div>
+                    <h3 class="ev-fac-card__title">Added Extras</h3>
+                    <ul class="ev-fac-card__list">
+                        <li>200+ free parking spaces</li>
+                        <li>EV charging points</li>
+                        <li>Team-building activities</li>
+                        <li>40 acres for outdoor activities</li>
+                        <li>Helicopter landing pad</li>
+                        <li>Carbon-neutral event options</li>
+                    </ul>
+                </div>
+
+            </div><!-- /.ev-fac-grid -->
+        </div>
+    </section>
+
+    <!-- ═══ EVENT TYPES ═══ -->
+    <section class="ev-types" id="ev-types" aria-labelledby="types-heading">
+        <div class="ev-types__bg" aria-hidden="true">
+            <div class="ev-types__bg-img" style="background-image:url('assets/images/weddings/wedding-main.jpg');">
+            </div>
+            <div class="ev-types__overlay"></div>
+        </div>
+        <div class="container">
+            <div class="ev-section-header ev-section-header--light reveal">
+                <span class="ev-eyebrow ev-eyebrow--light">What We Host</span>
+                <h2 class="ev-section-title ev-section-title--light" id="types-heading">Events We Specialise In</h2>
+                <div class="ev-gold-line" style="margin:1rem auto;"></div>
+            </div>
+            <div class="ev-types__grid">
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i>
+                    <h3>Conferences</h3>
+                    <p>Full-day and multi-day conferences with breakout rooms, AV, and delegate catering packages.</p>
+                </div>
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+                    <h3>Corporate Away Days</h3>
+                    <p>Team-building, strategy days, and leadership retreats in a truly inspiring setting.</p>
+                </div>
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-graduation-cap" aria-hidden="true"></i>
+                    <h3>Training &amp; Workshops</h3>
+                    <p>Flexible classroom and workshop setups with all the technology your trainers need.</p>
+                </div>
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-trophy" aria-hidden="true"></i>
+                    <h3>Awards &amp; Gala Dinners</h3>
+                    <p>Spectacular gala evenings in The Great Hall with bespoke menus and full production support.</p>
+                </div>
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+                    <h3>Product Launches</h3>
+                    <p>Memorable launch events with staging, lighting, AV, and media-ready facilities.</p>
+                </div>
+                <div class="ev-type-card reveal">
+                    <i class="fa-solid fa-champagne-glasses" aria-hidden="true"></i>
+                    <h3>Christmas &amp; Summer Parties</h3>
+                    <p>Seasonal celebrations for teams of all sizes, with themed menus and entertainment.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ DDR PACKAGES ═══ -->
+    <section class="ev-packages" id="ev-packages" aria-labelledby="packages-heading">
+        <div class="container">
+            <div class="ev-section-header reveal">
+                <span class="ev-eyebrow">Day Delegate Rates</span>
+                <h2 class="ev-section-title" id="packages-heading">Simple, Transparent Pricing</h2>
+                <div class="ev-gold-line"></div>
+                <p class="ev-section-desc">Our all-inclusive day delegate packages take the complexity out of event
+                    planning. Everything you need, one clear price.</p>
+            </div>
+
+            <div class="ev-packages__grid">
+
+                <article class="ev-pkg-card reveal" id="pkg-essential">
+                    <div class="ev-pkg-card__header">
+                        <span class="ev-pkg-card__name">Essential DDR</span>
+                        <div class="ev-pkg-card__price">
+                            <span class="ev-pkg-card__amount">£55</span>
+                            <span class="ev-pkg-card__per">per delegate / day</span>
+                        </div>
+                    </div>
+                    <ul class="ev-pkg-card__includes">
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Main meeting room hire</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Arrival tea &amp; coffee</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Mid-morning refreshments</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Working lunch (buffet)</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Afternoon refreshments</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Standard AV equipment</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Stationery &amp; flip chart</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Free parking</li>
+                    </ul>
+                    <a href="#ev-enquiry" class="btn ev-pkg-card__btn ev-pkg-card__btn--outline"
+                        id="pkg-essential-btn">Get a Quote</a>
+                </article>
+
+                <article class="ev-pkg-card ev-pkg-card--featured reveal" id="pkg-premium">
+                    <div class="ev-pkg-card__ribbon">Most Popular</div>
+                    <div class="ev-pkg-card__header">
+                        <span class="ev-pkg-card__name">Premium DDR</span>
+                        <div class="ev-pkg-card__price">
+                            <span class="ev-pkg-card__amount">£85</span>
+                            <span class="ev-pkg-card__per">per delegate / day</span>
+                        </div>
+                    </div>
+                    <ul class="ev-pkg-card__includes">
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Main room + 1 breakout room</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Arrival pastries &amp; barista coffee
+                        </li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Mid-morning refreshments</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>3-course working lunch</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Afternoon tea &amp; cakes</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Full AV + video conferencing</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Delegate stationery packs</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Dedicated event coordinator</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Free parking + EV charging</li>
+                    </ul>
+                    <a href="#ev-enquiry" class="btn btn--primary ev-pkg-card__btn" id="pkg-premium-btn">Get a Quote</a>
+                </article>
+
+                <article class="ev-pkg-card reveal" id="pkg-residential">
+                    <div class="ev-pkg-card__header">
+                        <span class="ev-pkg-card__name">24hr Residential</span>
+                        <div class="ev-pkg-card__price">
+                            <span class="ev-pkg-card__amount">£195</span>
+                            <span class="ev-pkg-card__per">per delegate / 24hr</span>
+                        </div>
+                    </div>
+                    <ul class="ev-pkg-card__includes">
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Everything in Premium DDR</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Luxury bedroom (1 night)</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Full English breakfast</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>3-course gala dinner</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Evening bar &amp; entertainment</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Morning &amp; evening room hire</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Personal event concierge</li>
+                        <li><i class="fa-solid fa-check" aria-hidden="true"></i>Team-building activity</li>
+                    </ul>
+                    <a href="#ev-enquiry" class="btn ev-pkg-card__btn ev-pkg-card__btn--outline"
+                        id="pkg-residential-btn">Get a Quote</a>
+                </article>
+
+            </div>
+
+            <p class="ev-packages__note reveal">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                All prices exclude VAT. Bespoke packages available for groups of 50+. <a href="#ev-enquiry">Contact our
+                    events team</a> to discuss your specific requirements.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══ ENQUIRY FORM ═══ -->
+    <section class="ev-enquiry" id="ev-enquiry" aria-labelledby="enquiry-heading">
+        <div class="container">
+            <div class="ev-enquiry__layout">
+
+                <!-- Left info panel -->
+                <aside class="ev-enquiry__aside reveal">
+                    <div class="ev-enquiry__aside-header">
+                        <span class="ev-eyebrow">Get In Touch</span>
+                        <h2 class="ev-enquiry__aside-title" id="enquiry-heading">Request a Proposal</h2>
+                        <div class="ev-gold-line"></div>
+                    </div>
+                    <p class="ev-enquiry__aside-body">Tell us about your event and our dedicated events team will
+                        prepare a bespoke proposal within 24 hours.</p>
+
+                    <div class="ev-contact-cards">
+                        <div class="ev-contact-card">
+                            <i class="fa-solid fa-phone" aria-hidden="true"></i>
+                            <div>
+                                <div class="ev-contact-card__label">Call Our Events Team</div>
+                                <a href="tel:+441789123456" class="ev-contact-card__value">+44 (0)1789 123 456</a>
+                                <div class="ev-contact-card__hours">Mon–Fri · 8:00am – 6:00pm</div>
+                            </div>
+                        </div>
+                        <div class="ev-contact-card">
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
+                            <div>
+                                <div class="ev-contact-card__label">Email Us Directly</div>
+                                <a href="mailto:events@kingscourt.co.uk"
+                                    class="ev-contact-card__value">events@kingscourt.co.uk</a>
+                                <div class="ev-contact-card__hours">Response within 24 hours</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick facts -->
+                    <div class="ev-quick-facts">
+                        <div class="ev-quick-facts__title">Quick Facts</div>
+                        <div class="ev-quick-fact">
+                            <span class="ev-quick-fact__label">Largest Space</span>
+                            <span class="ev-quick-fact__value">300 delegates</span>
+                        </div>
+                        <div class="ev-quick-fact">
+                            <span class="ev-quick-fact__label">Smallest Space</span>
+                            <span class="ev-quick-fact__value">10 delegates</span>
+                        </div>
+                        <div class="ev-quick-fact">
+                            <span class="ev-quick-fact__label">Bedrooms On-Site</span>
+                            <span class="ev-quick-fact__value">28 rooms</span>
+                        </div>
+                        <div class="ev-quick-fact">
+                            <span class="ev-quick-fact__label">Parking</span>
+                            <span class="ev-quick-fact__value">200+ spaces (free)</span>
+                        </div>
+                        <div class="ev-quick-fact">
+                            <span class="ev-quick-fact__label">Nearest Station</span>
+                            <span class="ev-quick-fact__value">Stratford-upon-Avon (8 min)</span>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Form -->
+                <div class="ev-enquiry__form-wrap reveal">
+                    <form class="ev-form" id="ev-enquiry-form" novalidate aria-label="Event enquiry form">
+
+                        <div class="ev-form__section-title">Your Details</div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-firstname">First Name <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="ev-form__input" type="text" id="ev-firstname" name="firstname"
+                                    placeholder="Sarah" autocomplete="given-name" aria-required="true" />
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-lastname">Last Name <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="ev-form__input" type="text" id="ev-lastname" name="lastname"
+                                    placeholder="Johnson" autocomplete="family-name" aria-required="true" />
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-email">Email Address <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="ev-form__input" type="email" id="ev-email" name="email"
+                                    placeholder="sarah@company.com" autocomplete="email" aria-required="true" />
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-phone">Phone Number <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="ev-form__input" type="tel" id="ev-phone" name="phone"
+                                    placeholder="+44 7700 900123" autocomplete="tel" aria-required="true" />
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div class="ev-form__group ev-form__group--full">
+                            <label class="ev-form__label" for="ev-company">Company / Organisation <span
+                                    class="ev-form__req" aria-hidden="true">*</span></label>
+                            <input class="ev-form__input" type="text" id="ev-company" name="company"
+                                placeholder="Acme Ltd" autocomplete="organization" aria-required="true" />
+                            <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                        </div>
+
+                        <div class="ev-form__section-title">Event Details</div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-type">Event Type <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <select class="ev-form__select" id="ev-type" name="type" aria-required="true">
+                                    <option value="" disabled selected>Select type</option>
+                                    <option value="conference">Conference</option>
+                                    <option value="away-day">Corporate Away Day</option>
+                                    <option value="training">Training / Workshop</option>
+                                    <option value="gala">Gala Dinner / Awards</option>
+                                    <option value="launch">Product Launch</option>
+                                    <option value="party">Christmas / Summer Party</option>
+                                    <option value="other">Other</option>
+                                </select>
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-delegates">No. of Delegates <span
+                                        class="ev-form__req" aria-hidden="true">*</span></label>
+                                <select class="ev-form__select" id="ev-delegates" name="delegates" aria-required="true">
+                                    <option value="" disabled selected>Select range</option>
+                                    <option value="1-10">1 – 10</option>
+                                    <option value="11-25">11 – 25</option>
+                                    <option value="26-50">26 – 50</option>
+                                    <option value="51-100">51 – 100</option>
+                                    <option value="101-200">101 – 200</option>
+                                    <option value="201-300">201 – 300</option>
+                                </select>
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                        </div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-date">Preferred Date <span class="ev-form__req"
+                                        aria-hidden="true">*</span></label>
+                                <input class="ev-form__input" type="date" id="ev-date" name="date"
+                                    aria-required="true" />
+                                <span class="ev-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="ev-duration">Duration</label>
+                                <select class="ev-form__select" id="ev-duration" name="duration">
+                                    <option value="">Select duration</option>
+                                    <option value="half-day">Half Day</option>
+                                    <option value="full-day">Full Day</option>
+                                    <option value="2-days">2 Days</option>
+                                    <option value="3-plus">3+ Days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="ev-form__group ev-form__group--full">
+                            <label class="ev-form__label" for="ev-package">Package Interest</label>
+                            <select class="ev-form__select" id="ev-package" name="package">
+                                <option value="">Not sure yet — please advise</option>
+                                <option value="essential">Essential DDR (from £55pp)</option>
+                                <option value="premium">Premium DDR (from £85pp)</option>
+                                <option value="residential">24hr Residential (from £195pp)</option>
+                                <option value="bespoke">Bespoke — let's discuss</option>
+                            </select>
+                        </div>
+
+                        <!-- Facilities checkboxes -->
+                        <div class="ev-form__group ev-form__group--full">
+                            <div class="ev-form__label">Facilities Required</div>
+                            <div class="ev-form__checks">
+                                <label class="ev-form__check-label" for="req-av">
+                                    <input type="checkbox" id="req-av" name="req-av" class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>AV &amp; Projector</span>
+                                </label>
+                                <label class="ev-form__check-label" for="req-vc">
+                                    <input type="checkbox" id="req-vc" name="req-vc" class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>Video Conferencing</span>
+                                </label>
+                                <label class="ev-form__check-label" for="req-catering">
+                                    <input type="checkbox" id="req-catering" name="req-catering"
+                                        class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>Catering</span>
+                                </label>
+                                <label class="ev-form__check-label" for="req-accommodation">
+                                    <input type="checkbox" id="req-accommodation" name="req-accommodation"
+                                        class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>Accommodation</span>
+                                </label>
+                                <label class="ev-form__check-label" for="req-teambuilding">
+                                    <input type="checkbox" id="req-teambuilding" name="req-teambuilding"
+                                        class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>Team Building</span>
+                                </label>
+                                <label class="ev-form__check-label" for="req-streaming">
+                                    <input type="checkbox" id="req-streaming" name="req-streaming"
+                                        class="ev-form__checkbox" />
+                                    <span class="ev-form__check-box" aria-hidden="true"></span>
+                                    <span>Hybrid / Streaming</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="ev-form__group ev-form__group--full">
+                            <label class="ev-form__label" for="ev-notes">Additional Requirements</label>
+                            <textarea class="ev-form__textarea" id="ev-notes" name="notes" rows="4"
+                                placeholder="Tell us about your event objectives, any special requirements, or questions you have…"></textarea>
+                        </div>
+
+                        <button type="submit" class="btn btn--primary ev-form__submit" id="ev-submit-btn">
+                            <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                            Send Enquiry
+                        </button>
+
+                        <div class="ev-form__success" id="ev-form-success" hidden role="alert" aria-live="polite">
+                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                            <div>
+                                <strong>Enquiry Received!</strong>
+                                <p>Thank you — our events team will be in touch within 24 hours with a bespoke proposal.
+                                </p>
+                            </div>
+                        </div>
+
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Explore footer navigation">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Events footer navigation">
+                    <div class="footer__col-title">Events</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="#ev-rooms" class="footer__link">Meeting Rooms</a></li>
+                        <li><a href="#ev-facilities" class="footer__link">Facilities</a></li>
+                        <li><a href="#ev-packages" class="footer__link">DDR Packages</a></li>
+                        <li><a href="#ev-enquiry" class="footer__link">Request Proposal</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:events@kingscourt.co.uk"
+                            class="footer__contact-text">events@kingscourt.co.uk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Kings Court Hotel &amp; Estate. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/events.js"></script>
+</body>
+
+</html>
