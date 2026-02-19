@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Exclusive offers &amp; seasonal packages at Kings Court Hotel — a Tudor country escape near Stratford-upon-Avon. Book direct &amp; save 10%." />
+    <meta name="keywords"
+        content="hotel offers, special deals, Kings Court Hotel, Stratford-upon-Avon, seasonal packages, book direct, countryside breaks" />
+    <meta property="og:title" content="Special Offers — Kings Court Hotel" />
+    <meta property="og:description"
+        content="Save up to 30% with our exclusive seasonal offers. Book direct for the best rates at Kings Court Hotel." />
+    <meta property="og:type" content="website" />
+    <title>Special Offers | Kings Court Hotel — A Tudor Country Escape</title>
+
+    <!-- Favicon -->
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/offers-page.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link nav__link--active">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link nav__mobile-link--active">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       HERO — SPECIAL OFFERS
+  ═══════════════════════════════════════ -->
+    <section class="offers-hero" id="offers-hero" aria-labelledby="offers-hero-heading">
+
+        <div class="offers-hero__bg">
+            <img src="assets/images/hero/hero-main.jpg"
+                alt="Kings Court Hotel — Tudor manor at golden hour with stunning gardens" fetchpriority="high" />
+        </div>
+        <div class="offers-hero__overlay" aria-hidden="true"></div>
+
+        <!-- Floating particles -->
+        <div class="offers-hero__particles" aria-hidden="true">
+            <span class="particle">✦</span>
+            <span class="particle">✦</span>
+            <span class="particle">✦</span>
+            <span class="particle">✦</span>
+            <span class="particle">✦</span>
+        </div>
+
+        <div class="offers-hero__content">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__sep" aria-hidden="true">›</span>
+                <span aria-current="page">Offers</span>
+            </nav>
+            <span class="section-label" style="color:var(--clr-gold-light);">Exclusive Deals &amp; Packages</span>
+            <h1 id="offers-hero-heading">Unforgettable Stays,<br>Unmissable Prices</h1>
+            <div class="gold-divider"><span>💎</span></div>
+            <p class="offers-hero__subtitle">
+                From seasonal escapes to year-round indulgences, discover handcrafted packages
+                designed to make every stay at Kings Court extraordinary. <strong>Book direct for the
+                    best guaranteed rate.</strong>
+            </p>
+            <div class="offers-hero__ctas">
+                <a href="#seasonal-offers" class="btn btn--primary" id="offers-hero-view-btn">
+                    <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                    View Current Offers
+                </a>
+                <a href="#book-direct" class="btn btn--secondary" id="offers-hero-direct-btn">
+                    Book Direct &amp; Save
+                </a>
+            </div>
+        </div>
+
+        <!-- Stats strip -->
+        <div class="offers-hero__stats">
+            <div class="offers-hero__stat">
+                <span class="offers-hero__stat-number" data-count="30">0</span><span
+                    class="offers-hero__stat-suffix">%</span>
+                <span class="offers-hero__stat-label">Max Savings</span>
+            </div>
+            <div class="offers-hero__stat">
+                <span class="offers-hero__stat-number" data-count="10">0</span><span
+                    class="offers-hero__stat-suffix">%</span>
+                <span class="offers-hero__stat-label">Book Direct Discount</span>
+            </div>
+            <div class="offers-hero__stat">
+                <span class="offers-hero__stat-number" data-count="8">0</span>
+                <span class="offers-hero__stat-label">Exclusive Packages</span>
+            </div>
+            <div class="offers-hero__stat">
+                <span class="offers-hero__stat-number" data-count="365">0</span>
+                <span class="offers-hero__stat-label">Days of Deals</span>
+            </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="offers-hero__scroll" aria-hidden="true">
+            <span>Scroll</span>
+            <div class="offers-hero__scroll-line"></div>
+        </div>
+
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       BOOK DIRECT & SAVE 10%
+  ═══════════════════════════════════════ -->
+    <section class="book-direct" id="book-direct" aria-labelledby="book-direct-heading">
+        <div class="container">
+            <div class="book-direct__inner">
+                <div class="book-direct__icon" aria-hidden="true">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <div class="book-direct__content">
+                    <div class="book-direct__badge">Best Price Guarantee</div>
+                    <h2 id="book-direct-heading">Book Direct &amp; Save <span class="gold-highlight">10%</span></h2>
+                    <p>
+                        When you book directly through our website, you'll always receive our <strong>lowest
+                            available rate</strong> — guaranteed. Plus enjoy these exclusive book-direct perks:
+                    </p>
+                    <div class="book-direct__perks">
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>10% off our best available rate</span>
+                        </div>
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>Complimentary room upgrade (subject to availability)</span>
+                        </div>
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>Early check-in &amp; late check-out</span>
+                        </div>
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>Welcome drink on arrival</span>
+                        </div>
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>Free cancellation up to 48 hours before</span>
+                        </div>
+                        <div class="book-direct__perk">
+                            <i class="fa-solid fa-check-circle" aria-hidden="true"></i>
+                            <span>Loyalty points on every stay</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="book-direct__action">
+                    <div class="book-direct__save-badge">
+                        <span class="book-direct__save-number">10%</span>
+                        <span class="book-direct__save-text">OFF</span>
+                    </div>
+                    <a href="booking.html" class="btn btn--primary btn--lg" id="book-direct-btn">
+                        <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                        Book Direct Now
+                    </a>
+                    <span class="book-direct__note">Use code <strong>DIRECT10</strong> at checkout</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       SEASONAL OFFERS (with countdown timers)
+  ═══════════════════════════════════════ -->
+    <section class="seasonal-offers section" id="seasonal-offers" aria-labelledby="seasonal-heading">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <span class="section-label">Limited Time</span>
+                <span class="script-accent">Don't Miss Out</span>
+                <h2 id="seasonal-heading">Seasonal Offers</h2>
+                <div class="gold-line"></div>
+                <p>Our most sought-after deals — available for a limited time only. Each comes with a
+                    countdown, so don't delay.</p>
+            </div>
+
+            <div class="offers-grid" data-stagger>
+
+                <!-- Offer 1: Spring Escape -->
+                <article class="offer-card offer-card--featured reveal" id="offer-spring">
+                    <div class="offer-card__image">
+                        <img src="assets/images/hero/hero-main.jpg"
+                            alt="Spring gardens at Kings Court Hotel with blossoming trees" loading="lazy" />
+                        <div class="offer-card__urgency">
+                            <i class="fa-solid fa-fire" aria-hidden="true"></i>
+                            Most Popular
+                        </div>
+                        <div class="offer-card__discount">
+                            <span class="offer-card__discount-amount">30%</span>
+                            <span class="offer-card__discount-text">OFF</span>
+                        </div>
+                    </div>
+                    <div class="offer-card__body">
+                        <span class="offer-card__tag">Spring 2026</span>
+                        <h3 class="offer-card__title">Spring Garden Escape</h3>
+                        <div class="gold-line gold-line--left" style="margin:0.5rem 0;"></div>
+                        <p class="offer-card__desc">
+                            Awaken your senses with a springtime break in the Warwickshire countryside.
+                            Enjoy 30% off our best room rates, plus a complimentary afternoon tea for two.
+                        </p>
+                        <ul class="offer-card__includes">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 2 nights in a Deluxe Room</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full English breakfast daily</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Afternoon tea for two</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Access to gardens &amp; grounds
+                            </li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Complimentary parking</li>
+                        </ul>
+                        <div class="offer-card__pricing">
+                            <div class="offer-card__price-was">Was <s>£560</s></div>
+                            <div class="offer-card__price-now">
+                                <span class="offer-card__price-from">From</span>
+                                <span class="offer-card__price-amount">£392</span>
+                                <span class="offer-card__price-unit">per stay</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__countdown" data-countdown="2026-05-31T23:59:59"
+                            aria-label="Offer countdown">
+                            <div class="countdown__title">
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Offer ends in:
+                            </div>
+                            <div class="countdown__timer">
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-days>00</span>
+                                    <span class="countdown__label">Days</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-hours>00</span>
+                                    <span class="countdown__label">Hrs</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-minutes>00</span>
+                                    <span class="countdown__label">Min</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-seconds>00</span>
+                                    <span class="countdown__label">Sec</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="booking.html?offer=spring-escape" class="btn btn--primary offer-card__btn"
+                            id="offer-spring-btn">
+                            <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                            Book This Offer
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Offer 2: Summer Romance -->
+                <article class="offer-card reveal reveal--delay-1" id="offer-summer">
+                    <div class="offer-card__image">
+                        <img src="assets/images/weddings/wedding-main.jpg"
+                            alt="Summer sunset over Kings Court Hotel gardens" loading="lazy" />
+                        <div class="offer-card__urgency">
+                            <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+                            Selling Fast
+                        </div>
+                        <div class="offer-card__discount">
+                            <span class="offer-card__discount-amount">25%</span>
+                            <span class="offer-card__discount-text">OFF</span>
+                        </div>
+                    </div>
+                    <div class="offer-card__body">
+                        <span class="offer-card__tag">Summer 2026</span>
+                        <h3 class="offer-card__title">Summer Romance Package</h3>
+                        <div class="gold-line gold-line--left" style="margin:0.5rem 0;"></div>
+                        <p class="offer-card__desc">
+                            Long summer evenings, fine dining, and the tranquillity of the English
+                            countryside. The perfect romantic escape for two.
+                        </p>
+                        <ul class="offer-card__includes">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 2 nights in a Signature Suite</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 5-course tasting menu dinner</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Champagne on arrival</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Full breakfast each morning</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Late check-out until 2pm</li>
+                        </ul>
+                        <div class="offer-card__pricing">
+                            <div class="offer-card__price-was">Was <s>£1,180</s></div>
+                            <div class="offer-card__price-now">
+                                <span class="offer-card__price-from">From</span>
+                                <span class="offer-card__price-amount">£885</span>
+                                <span class="offer-card__price-unit">per stay</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__countdown" data-countdown="2026-08-31T23:59:59"
+                            aria-label="Offer countdown">
+                            <div class="countdown__title">
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Offer ends in:
+                            </div>
+                            <div class="countdown__timer">
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-days>00</span>
+                                    <span class="countdown__label">Days</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-hours>00</span>
+                                    <span class="countdown__label">Hrs</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-minutes>00</span>
+                                    <span class="countdown__label">Min</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-seconds>00</span>
+                                    <span class="countdown__label">Sec</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="booking.html?offer=summer-romance" class="btn btn--ghost-gold offer-card__btn"
+                            id="offer-summer-btn">
+                            <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                            Book This Offer
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Offer 3: Autumn Retreat -->
+                <article class="offer-card reveal reveal--delay-2" id="offer-autumn">
+                    <div class="offer-card__image">
+                        <img src="assets/images/rooms/room-deluxe.jpg" alt="Autumn colours in the Kings Court estate"
+                            loading="lazy" />
+                        <div class="offer-card__urgency offer-card__urgency--new">
+                            <i class="fa-solid fa-sparkles" aria-hidden="true"></i>
+                            New
+                        </div>
+                        <div class="offer-card__discount">
+                            <span class="offer-card__discount-amount">20%</span>
+                            <span class="offer-card__discount-text">OFF</span>
+                        </div>
+                    </div>
+                    <div class="offer-card__body">
+                        <span class="offer-card__tag">Autumn 2026</span>
+                        <h3 class="offer-card__title">Autumn Countryside Retreat</h3>
+                        <div class="gold-line gold-line--left" style="margin:0.5rem 0;"></div>
+                        <p class="offer-card__desc">
+                            Golden leaves, crackling fires, and hearty seasonal menus. Embrace the
+                            beauty of a Warwickshire autumn at Kings Court.
+                        </p>
+                        <ul class="offer-card__includes">
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> 2 nights in a Classic Room</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Dinner, bed &amp; breakfast</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Complimentary cream tea</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Guided estate walk</li>
+                            <li><i class="fa-solid fa-check" aria-hidden="true"></i> Complimentary parking</li>
+                        </ul>
+                        <div class="offer-card__pricing">
+                            <div class="offer-card__price-was">Was <s>£440</s></div>
+                            <div class="offer-card__price-now">
+                                <span class="offer-card__price-from">From</span>
+                                <span class="offer-card__price-amount">£352</span>
+                                <span class="offer-card__price-unit">per stay</span>
+                            </div>
+                        </div>
+                        <div class="offer-card__countdown" data-countdown="2026-11-30T23:59:59"
+                            aria-label="Offer countdown">
+                            <div class="countdown__title">
+                                <i class="fa-solid fa-clock" aria-hidden="true"></i> Offer ends in:
+                            </div>
+                            <div class="countdown__timer">
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-days>00</span>
+                                    <span class="countdown__label">Days</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-hours>00</span>
+                                    <span class="countdown__label">Hrs</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-minutes>00</span>
+                                    <span class="countdown__label">Min</span>
+                                </div>
+                                <div class="countdown__sep">:</div>
+                                <div class="countdown__block">
+                                    <span class="countdown__number" data-seconds>00</span>
+                                    <span class="countdown__label">Sec</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="booking.html?offer=autumn-retreat" class="btn btn--ghost-gold offer-card__btn"
+                            id="offer-autumn-btn">
+                            <i class="fa-solid fa-tag" aria-hidden="true"></i>
+                            Book This Offer
+                        </a>
+                    </div>
+                </article>
+
+            </div><!-- /.offers-grid -->
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       YEAR-ROUND PACKAGES
+  ═══════════════════════════════════════ -->
+    <section class="packages-section" id="packages" aria-labelledby="packages-heading">
+        <div class="packages-section__bg" aria-hidden="true">
+            <img src="assets/images/dining/dining-main.jpg" alt="Fine dining at Kings Court Hotel" loading="lazy" />
+        </div>
+        <div class="packages-section__overlay" aria-hidden="true"></div>
+
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label" style="color:var(--clr-gold-light);">Always Available</span>
+                <span class="script-accent" style="color:var(--clr-gold-light);">Indulge Anytime</span>
+                <h2 id="packages-heading" style="color:var(--clr-white);">Year-Round Packages</h2>
+                <div class="gold-line"></div>
+                <p style="color:rgba(255,255,255,0.8);">No countdown, no rush — these handcrafted experiences are
+                    available every day of the year.</p>
+            </div>
+
+            <div class="packages-grid" data-stagger>
+
+                <!-- Package 1: Dinner B&B -->
+                <article class="package-card reveal" id="pkg-dbb">
+                    <div class="package-card__icon" aria-hidden="true">
+                        <i class="fa-solid fa-utensils"></i>
+                    </div>
+                    <h3 class="package-card__title">Dinner, Bed &amp; Breakfast</h3>
+                    <div class="gold-line gold-line--left" style="margin:0.4rem 0;"></div>
+                    <p class="package-card__desc">
+                        The quintessential Kings Court experience. A three-course dinner in The Garden
+                        Restaurant, a restful night, and a full English breakfast.
+                    </p>
+                    <ul class="package-card__includes">
+                        <li>3-course dinner with wine pairing</li>
+                        <li>Overnight stay in room of your choice</li>
+                        <li>Full English or continental breakfast</li>
+                        <li>Access to grounds &amp; gardens</li>
+                    </ul>
+                    <div class="package-card__price">
+                        <span class="package-card__price-from">From</span>
+                        <span class="package-card__price-amount">£245</span>
+                        <span class="package-card__price-unit">per person</span>
+                    </div>
+                    <a href="booking.html?package=dbb" class="btn btn--ghost-gold" id="pkg-dbb-btn">
+                        Book This Package
+                    </a>
+                </article>
+
+                <!-- Package 2: Afternoon Tea -->
+                <article class="package-card reveal reveal--delay-1" id="pkg-tea">
+                    <div class="package-card__icon" aria-hidden="true">
+                        <i class="fa-solid fa-mug-hot"></i>
+                    </div>
+                    <h3 class="package-card__title">Afternoon Tea Experience</h3>
+                    <div class="gold-line gold-line--left" style="margin:0.4rem 0;"></div>
+                    <p class="package-card__desc">
+                        Delicate finger sandwiches, freshly baked scones, and an exquisite selection of
+                        pastries served in the Drawing Room or on the Garden Terrace.
+                    </p>
+                    <ul class="package-card__includes">
+                        <li>Traditional afternoon tea for two</li>
+                        <li>Glass of Champagne or Prosecco</li>
+                        <li>Selection of loose-leaf teas</li>
+                        <li>Garden terrace seating (weather permitting)</li>
+                    </ul>
+                    <div class="package-card__price">
+                        <span class="package-card__price-from">From</span>
+                        <span class="package-card__price-amount">£65</span>
+                        <span class="package-card__price-unit">per person</span>
+                    </div>
+                    <a href="booking.html?package=tea" class="btn btn--ghost-gold" id="pkg-tea-btn">
+                        Book This Package
+                    </a>
+                </article>
+
+                <!-- Package 3: Tasting Menu -->
+                <article class="package-card reveal reveal--delay-2" id="pkg-tasting">
+                    <div class="package-card__icon" aria-hidden="true">
+                        <i class="fa-solid fa-wine-glass"></i>
+                    </div>
+                    <h3 class="package-card__title">Chef's Tasting Menu</h3>
+                    <div class="gold-line gold-line--left" style="margin:0.4rem 0;"></div>
+                    <p class="package-card__desc">
+                        A seven-course culinary journey curated by Head Chef James Whitmore, paired
+                        with carefully selected wines from our 300-bottle cellar.
+                    </p>
+                    <ul class="package-card__includes">
+                        <li>7-course tasting menu</li>
+                        <li>Sommelier wine pairing</li>
+                        <li>Amuse-bouche &amp; petit fours</li>
+                        <li>Overnight stay &amp; breakfast</li>
+                    </ul>
+                    <div class="package-card__price">
+                        <span class="package-card__price-from">From</span>
+                        <span class="package-card__price-amount">£345</span>
+                        <span class="package-card__price-unit">per person</span>
+                    </div>
+                    <a href="booking.html?package=tasting" class="btn btn--ghost-gold" id="pkg-tasting-btn">
+                        Book This Package
+                    </a>
+                </article>
+
+                <!-- Package 4: Celebration -->
+                <article class="package-card reveal reveal--delay-3" id="pkg-celebration">
+                    <div class="package-card__icon" aria-hidden="true">
+                        <i class="fa-solid fa-champagne-glasses"></i>
+                    </div>
+                    <h3 class="package-card__title">Celebration Package</h3>
+                    <div class="gold-line gold-line--left" style="margin:0.4rem 0;"></div>
+                    <p class="package-card__desc">
+                        Mark your milestone in style. Whether it's a birthday, anniversary, or simply
+                        because — we'll make it an occasion to remember.
+                    </p>
+                    <ul class="package-card__includes">
+                        <li>2 nights in Signature Suite</li>
+                        <li>Champagne &amp; handmade chocolates</li>
+                        <li>5-course celebration dinner</li>
+                        <li>Personalised cake &amp; flowers</li>
+                    </ul>
+                    <div class="package-card__price">
+                        <span class="package-card__price-from">From</span>
+                        <span class="package-card__price-amount">£595</span>
+                        <span class="package-card__price-unit">per couple</span>
+                    </div>
+                    <a href="booking.html?package=celebration" class="btn btn--ghost-gold" id="pkg-celebration-btn">
+                        Book This Package
+                    </a>
+                </article>
+
+                <!-- Package 5: Country Walk -->
+                <article class="package-card reveal reveal--delay-4" id="pkg-walks">
+                    <div class="package-card__icon" aria-hidden="true">
+                        <i class="fa-solid fa-person-hiking"></i>
+                    </div>
+                    <h3 class="package-card__title">Country Walks &amp; Wellness</h3>
+                    <div class="gold-line gold-line--left" style="margin:0.4rem 0;"></div>
+                    <p class="package-card__desc">
+                        Reconnect with nature. Explore the Warwickshire countryside with guided walks,
+                        then unwind with a spa treatment and hearty seasonal fare.
+                    </p>
+                    <ul class="package-card__includes">
+                        <li>2 nights' accommodation</li>
+                        <li>Guided countryside walk</li>
+                        <li>60-minute spa treatment</li>
+                        <li>Dinner, bed &amp; breakfast daily</li>
+                    </ul>
+                    <div class="package-card__price">
+                        <span class="package-card__price-from">From</span>
+                        <span class="package-card__price-amount">£425</span>
+                        <span class="package-card__price-unit">per person</span>
+                    </div>
+                    <a href="booking.html?package=walks" class="btn btn--ghost-gold" id="pkg-walks-btn">
+                        Book This Package
+                    </a>
+                </article>
+
+            </div><!-- /.packages-grid -->
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       WHY BOOK WITH US — GUARANTEE STRIP
+  ═══════════════════════════════════════ -->
+    <section class="guarantee-strip" aria-label="Booking guarantees">
+        <div class="container">
+            <div class="guarantee-strip__inner">
+                <div class="guarantee-item reveal">
+                    <i class="fa-solid fa-shield-halved" aria-hidden="true"></i>
+                    <span>Best Price<br>Guarantee</span>
+                </div>
+                <div class="guarantee-item reveal reveal--delay-1">
+                    <i class="fa-solid fa-calendar-xmark" aria-hidden="true"></i>
+                    <span>Free Cancellation<br>up to 48hrs</span>
+                </div>
+                <div class="guarantee-item reveal reveal--delay-2">
+                    <i class="fa-solid fa-lock" aria-hidden="true"></i>
+                    <span>Secure<br>Booking</span>
+                </div>
+                <div class="guarantee-item reveal reveal--delay-3">
+                    <i class="fa-solid fa-headset" aria-hidden="true"></i>
+                    <span>24/7 Guest<br>Support</span>
+                </div>
+                <div class="guarantee-item reveal reveal--delay-4">
+                    <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                    <span>Exclusive<br>Book-Direct Perks</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       LOYALTY / NEWSLETTER CTA
+  ═══════════════════════════════════════ -->
+    <section class="loyalty-section section" id="loyalty" aria-labelledby="loyalty-heading">
+        <div class="container">
+            <div class="loyalty-section__inner reveal">
+
+                <div class="loyalty-section__content">
+                    <span class="section-label">Exclusive Access</span>
+                    <h2 id="loyalty-heading">Be the First to Know</h2>
+                    <div class="gold-line gold-line--left"></div>
+                    <p>
+                        Join our mailing list for early access to seasonal deals, members-only flash sales,
+                        complimentary upgrades, and exclusive event invitations. Your next extraordinary
+                        stay starts here.
+                    </p>
+                    <div class="loyalty-section__benefits">
+                        <div class="loyalty-benefit">
+                            <i class="fa-solid fa-envelope-open-text" aria-hidden="true"></i>
+                            <span>Early access to all offers</span>
+                        </div>
+                        <div class="loyalty-benefit">
+                            <i class="fa-solid fa-percent" aria-hidden="true"></i>
+                            <span>Members-only flash sales</span>
+                        </div>
+                        <div class="loyalty-benefit">
+                            <i class="fa-solid fa-gift" aria-hidden="true"></i>
+                            <span>Birthday &amp; anniversary treats</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="loyalty-section__form-wrap">
+                    <div class="loyalty-form-card">
+                        <h3>Sign Up for Offers</h3>
+                        <p>Join 5,000+ guests who never miss a deal.</p>
+                        <form class="loyalty-form" id="loyalty-form" novalidate>
+                            <div class="loyalty-form__field">
+                                <label for="loyalty-name">Full Name *</label>
+                                <input type="text" id="loyalty-name" name="name" placeholder="Sarah Johnson" required
+                                    autocomplete="name" />
+                                <span class="loyalty-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="loyalty-form__field">
+                                <label for="loyalty-email">Email Address *</label>
+                                <input type="email" id="loyalty-email" name="email" placeholder="sarah@example.com"
+                                    required autocomplete="email" />
+                                <span class="loyalty-form__error" role="alert" aria-live="polite"></span>
+                            </div>
+                            <div class="loyalty-form__consent">
+                                <input type="checkbox" id="loyalty-consent" name="consent" required />
+                                <label for="loyalty-consent">
+                                    I agree to receive exclusive offers and marketing emails from
+                                    Kings Court Hotel. View our
+                                    <a href="privacy-policy.html" target="_blank">Privacy Policy</a>.
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn--primary" id="loyalty-submit-btn">
+                                <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+                                Subscribe for Offers
+                            </button>
+                        </form>
+                        <div class="loyalty-form__success" id="loyalty-success" hidden>
+                            <i class="fa-solid fa-circle-check" aria-hidden="true"></i>
+                            <strong>Welcome!</strong> Check your inbox for your exclusive welcome offer.
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+
+            <div class="footer__top">
+
+                <!-- Brand -->
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">
+                        A magnificent Tudor manor house set within 40 acres of private Warwickshire countryside.
+                        Where history, luxury, and nature unite.
+                    </p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Follow us on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Follow us on Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Follow us on Twitter/X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="#" class="footer__social-link" aria-label="Watch us on YouTube">
+                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Explore -->
+                <nav aria-label="Explore footer navigation">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events &amp; Meetings</a></li>
+                        <li><a href="offers.html" class="footer__link">Special Offers</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                        <li><a href="blog.html" class="footer__link">Blog</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Information -->
+                <nav aria-label="Information footer navigation">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location &amp; Directions</a></li>
+                        <li><a href="testimonials.html" class="footer__link">Guest Reviews</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                        <li><a href="terms.html" class="footer__link">Terms &amp; Conditions</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Contact -->
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i
+                                class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i
+                                class="fa-solid fa-location-dot"></i></span>
+                        <span class="footer__contact-text">Kings Court Lane, Welford-on-Avon,<br>Stratford-upon-Avon,
+                            CV37 8EX</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i class="fa-regular fa-clock"></i></span>
+                        <span class="footer__contact-text">Reception: 24 hours<br>Check-in: 3pm · Check-out: 11am</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; <span id="footer-year"></span> Kings Court Hotel Ltd. All rights reserved.
+                </p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                    <a href="sitemap.xml" class="footer__legal-link">Sitemap</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- ── Footer Year Script ── -->
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+
+    <!-- ── JavaScript ── -->
+    <script src="js/main.js" defer></script>
+    <script src="js/offers.js" defer></script>
+
+</body>
+
+</html>
