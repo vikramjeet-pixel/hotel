@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Explore the visual splendor of Kings Court Hotel — from our Tudor architecture and landscaped gardens to our luxurious rooms and fine dining.">
+    <title>Gallery — Kings Court Hotel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/gallery-page.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link nav__link--active">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link nav__mobile-link--active">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       HERO — GALLERY
+  ═══════════════════════════════════════ -->
+    <header class="page-hero" id="gallery-hero">
+        <div class="page-hero__bg">
+            <img src="assets/images/hero/hero-main.jpg" alt="Kings Court Garden View" class="parallax-img">
+        </div>
+        <div class="page-hero__content container">
+            <span class="page-hero__eyebrow animate-fade-up">Visual Journey</span>
+            <h1 class="page-hero__title animate-fade-up" style="animation-delay: 0.1s;">Our Gallery</h1>
+            <div class="page-hero__divider animate-fade-up" style="animation-delay: 0.2s;">
+                <i class="fa-solid fa-diamond"></i>
+            </div>
+            <p class="page-hero__text animate-fade-up" style="animation-delay: 0.3s;">
+                Immerse yourself in the charm and elegance of our historic estate.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════
+       GALLERY MAIN
+  ═══════════════════════════════════════ -->
+    <main class="gallery-section section" id="gallery-main">
+        <div class="container">
+
+            <!-- Filter Tabs -->
+            <div class="gallery-filters animate-fade-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="rooms">Rooms</button>
+                <button class="filter-btn" data-filter="dining">Dining</button>
+                <button class="filter-btn" data-filter="weddings">Weddings</button>
+                <button class="filter-btn" data-filter="exterior">Exterior</button>
+            </div>
+
+            <!-- Masonry Grid -->
+            <div class="gallery-grid" id="gallery-grid">
+
+                <!-- Gallery Item 1: Rooms -->
+                <div class="gallery-item" data-category="rooms" data-index="0">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/rooms/room-classic.jpg" alt="Classic Room Interior" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Classic Luxury</h3>
+                                <span>Rooms & Suites</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Gallery Item 2: Hero/Exterior -->
+                <div class="gallery-item gallery-item--wide" data-category="exterior" data-index="1">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/hero/hero-main.jpg" alt="Hotel Exterior at Golden Hour" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Estate Grounds</h3>
+                                <span>Exterior</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Gallery Item 3: Dining -->
+                <div class="gallery-item" data-category="dining" data-index="2">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/dining/dining-main.jpg" alt="Fine Dining Restaurant" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>The Garden Restaurant</h3>
+                                <span>Dining</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Gallery Item 4: Weddings -->
+                <div class="gallery-item gallery-item--tall" data-category="weddings" data-index="3">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/weddings/wedding-main.jpg" alt="Outdoor Wedding Ceremony"
+                            loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Summer Weddings</h3>
+                                <span>Weddings & Events</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Gallery Item 5: Rooms -->
+                <div class="gallery-item" data-category="rooms" data-index="4">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/rooms/room-deluxe.jpg" alt="Deluxe Room with Garden View"
+                            loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Deluxe Comfort</h3>
+                                <span>Rooms & Suites</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Gallery Item 6: Rooms -->
+                <div class="gallery-item" data-category="rooms" data-index="5">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/rooms/room-suite.jpg" alt="Signature Suite Living Area" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Signature Suite</h3>
+                                <span>Rooms & Suites</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+                <!-- Duplicate item for layout balance (using header image again for exterior) -->
+                <div class="gallery-item" data-category="exterior" data-index="6">
+                    <figure class="gallery-item__figure">
+                        <img src="assets/images/hero/hero-main.jpg" alt="Manor House Detail"
+                            style="filter: brightness(0.9) contrast(1.1);" loading="lazy">
+                        <div class="gallery-item__overlay">
+                            <i class="fa-solid fa-expand gallery-item__icon"></i>
+                            <figcaption class="gallery-item__caption">
+                                <h3>Historic Architecture</h3>
+                                <span>Exterior</span>
+                            </figcaption>
+                        </div>
+                    </figure>
+                </div>
+
+            </div> <!-- /grid -->
+        </div>
+    </main>
+
+
+    <!-- ═══════════════════════════════════════
+       LIGHTBOX MODAL
+  ═══════════════════════════════════════ -->
+    <div class="lightbox" id="lightbox" aria-hidden="true" role="dialog" aria-modal="true">
+        <div class="lightbox__overlay"></div>
+
+        <button class="lightbox__close" aria-label="Close gallery">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+
+        <button class="lightbox__prev" aria-label="Previous image">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+        <div class="lightbox__content">
+            <figure class="lightbox__figure">
+                <img src="" alt="" class="lightbox__img">
+                <figcaption class="lightbox__caption">
+                    <h3 class="lightbox__title"></h3>
+                    <span class="lightbox__cat"></span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <button class="lightbox__next" aria-label="Next image">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <h2 class="footer__brand-name">Kings Court</h2>
+                    <p class="footer__brand-tagline">Hotel &amp; Estate</p>
+                    <p class="footer__brand-desc">
+                        A sanctuary of luxury and heritage in the heart of Warwickshire.
+                        Experience timeless elegance and modern comfort.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Navigation</h3>
+                    <nav class="footer__links">
+                        <a href="index.html" class="footer__link">Home</a>
+                        <a href="rooms.html" class="footer__link">Rooms &amp; Suites</a>
+                        <a href="dining.html" class="footer__link">Dining</a>
+                        <a href="weddings.html" class="footer__link">Weddings</a>
+                        <a href="offers.html" class="footer__link">Special Offers</a>
+                        <a href="gallery.html" class="footer__link">Gallery</a>
+                    </nav>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Information</h3>
+                    <nav class="footer__links">
+                        <a href="about.html" class="footer__link">About Us</a>
+                        <a href="location.html" class="footer__link">Location &amp; Directions</a>
+                        <a href="testimonials.html" class="footer__link">Guest Reviews</a>
+                        <a href="faq.html" class="footer__link">FAQ</a>
+                        <a href="contact.html" class="footer__link">Contact Us</a>
+                    </nav>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Contact</h3>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-phone footer__contact-icon"></i>
+                        <span class="footer__contact-text">+44 (0)1789 123 456</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        <span class="footer__contact-text">reservations@kingscourt.co.uk</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        <span class="footer__contact-text">
+                            Kings Court Lane, Welford-on-Avon,<br>
+                            Stratford-upon-Avon, CV37 8EX
+                        </span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fa-regular fa-clock footer__contact-icon"></i>
+                        <span class="footer__contact-text">
+                            Reception: 24 hours<br>
+                            Check-in: 3pm · Check-out: 11am
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; <span id="footer-year"></span> Kings Court Hotel Ltd. All rights reserved.
+                </p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                    <a href="sitemap.xml" class="footer__legal-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/gallery.js" defer></script>
+</body>
+
+</html>

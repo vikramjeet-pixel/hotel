@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Discover the rich history of Kings Court Hotel, a Tudor farmhouse estate blending heritage charm with modern luxury in Warwickshire.">
+    <title>About Us — Kings Court Hotel</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/utilities.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/about-page.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+  ═══════════════════════════════════════ -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel &amp; Estate</span>
+        </a>
+
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link nav__link--active">About</a></li>
+        </ul>
+
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link nav__mobile-link--active">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+
+    <!-- ═══════════════════════════════════════
+       HERO — ABOUT
+  ═══════════════════════════════════════ -->
+    <header class="page-hero" id="about-hero">
+        <div class="page-hero__bg">
+            <img src="assets/images/hero/hero-main.jpg" alt="Kings Court Historic Facade" class="parallax-img">
+        </div>
+        <div class="page-hero__content container">
+            <span class="page-hero__eyebrow animate-fade-up">Est. 1580</span>
+            <h1 class="page-hero__title animate-fade-up" style="animation-delay: 0.1s;">Our Heritage</h1>
+            <div class="page-hero__divider animate-fade-up" style="animation-delay: 0.2s;">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+            <p class="page-hero__text animate-fade-up" style="animation-delay: 0.3s;">
+                A timeless story of Tudor craftsmanship, family legacy, and the art of hospitality.
+            </p>
+        </div>
+    </header>
+
+
+    <!-- ═══════════════════════════════════════
+       STORY / HERITAGE
+  ═══════════════════════════════════════ -->
+    <section class="section about-story" id="our-story">
+        <div class="container about-story__container">
+            <div class="about-story__content reveal-left">
+                <span class="section-eyebrow">The Tale</span>
+                <h2 class="section-title">A Tudor Legacy</h2>
+                <p class="about-story__text">
+                    Nestled in the heart of Shakespeare’s Warwickshire, Kings Court Hotel began its life in 1580 as a
+                    humble Tudor farmhouse. Built from local stone and oak beams that still stand strong today, the
+                    original structure was a testament to the enduring craftsmanship of the Elizabethan era.
+                </p>
+                <p class="about-story__text">
+                    Through centuries of change, from a hardworking farmstead to a private manor retreat, the estate has
+                    always been a place of gathering. The ancient oak tree in our courtyard, rumored to be older than
+                    the house itself, has witnessed generations of travelers finding rest within these walls.
+                </p>
+                <div class="about-story__signature">
+                    <span>Preserving History</span>
+                </div>
+            </div>
+            <div class="about-story__media reveal-right">
+                <div class="about-story__img-wrap">
+                    <img src="assets/images/hero/hero-main.jpg" alt="Vintage view of Kings Court" class="sepia-filter">
+                </div>
+                <div class="about-story__decoration">
+                    <i class="fa-brands fa-fort-awesome"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       TIMELINE
+  ═══════════════════════════════════════ -->
+    <section class="section about-timeline" id="history-timeline">
+        <div class="container">
+            <div class="section-header text-center">
+                <span class="section-eyebrow">Through the Ages</span>
+                <h2 class="section-title">Our Journey</h2>
+                <div class="section-divider"></div>
+            </div>
+
+            <div class="timeline">
+                <!-- Timeline Item 1 -->
+                <div class="timeline__item reveal-up">
+                    <div class="timeline__date">1580</div>
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <h3>The Foundation</h3>
+                        <p>The original farmhouse is constructed. Tudor beams and stone fireplaces from this era remain
+                            key features of our Courtyard Rooms.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline__item reveal-up">
+                    <div class="timeline__date">1850</div>
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <h3>The Expansion</h3>
+                        <p>The estate expands into a private manor house. The gardens are landscaped, adding the rose
+                            pathways guests enjoy today.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 3 -->
+                <div class="timeline__item reveal-up">
+                    <div class="timeline__date">1985</div>
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <h3>Becoming a Hotel</h3>
+                        <p>Kings Court opens its doors to the public, transforming into a boutique hotel while carefully
+                            preserving its historic character.</p>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 4 -->
+                <div class="timeline__item reveal-up">
+                    <div class="timeline__date">Present</div>
+                    <div class="timeline__marker"></div>
+                    <div class="timeline__content">
+                        <h3>Modern Luxury</h3>
+                        <p>With award-winning dining and redesigned suites, we continue to honor our past while offering
+                            world-class comfort to modern travelers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       OWNER MESSAGE
+  ═══════════════════════════════════════ -->
+    <section class="section about-owner bg-cream" id="owner-message">
+        <div class="container about-owner__container">
+            <div class="about-owner__quote-icon">
+                <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <blockquote class="about-owner__blockquote reveal-up">
+                "Our mission has always been simple: to be custodians of this beautiful history while making every guest
+                feel like part of the family. Kings Court isn't just a hotel; it's a living story, and we invite you to
+                write your own chapter with us."
+            </blockquote>
+            <cite class="about-owner__cite reveal-up">
+                <span class="owner-name">— The Edwards Family</span>
+                <span class="owner-title">Proprietors since 1985</span>
+            </cite>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       MISSION / VALUES
+  ═══════════════════════════════════════ -->
+    <section class="section about-values" id="mission">
+        <div class="container">
+            <div class="values-grid">
+                <div class="value-card reveal-up" style="transition-delay: 0.1s;">
+                    <div class="value-card__icon"><i class="fa-solid fa-heart"></i></div>
+                    <h3>Genuine Care</h3>
+                    <p>We believe in hospitality that comes from the heart, ensuring every guest feels truly welcomed
+                        and valued.</p>
+                </div>
+                <div class="value-card reveal-up" style="transition-delay: 0.2s;">
+                    <div class="value-card__icon"><i class="fa-solid fa-leaf"></i></div>
+                    <h3>Sustainability</h3>
+                    <p>Committed to our environment, we source local produce and implement eco-friendly practices across
+                        the estate.</p>
+                </div>
+                <div class="value-card reveal-up" style="transition-delay: 0.3s;">
+                    <div class="value-card__icon"><i class="fa-solid fa-star"></i></div>
+                    <h3>Excellence</h3>
+                    <p>From the crispness of our linens to the flavor of our dishes, we strive for perfection in every
+                        detail.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <h2 class="footer__brand-name">Kings Court</h2>
+                    <p class="footer__brand-tagline">Hotel &amp; Estate</p>
+                    <p class="footer__brand-desc">
+                        A sanctuary of luxury and heritage in the heart of Warwickshire.
+                        Experience timeless elegance and modern comfort.
+                    </p>
+                    <div class="footer__social">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-twitter"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Navigation</h3>
+                    <nav class="footer__links">
+                        <a href="index.html" class="footer__link">Home</a>
+                        <a href="rooms.html" class="footer__link">Rooms &amp; Suites</a>
+                        <a href="dining.html" class="footer__link">Dining</a>
+                        <a href="weddings.html" class="footer__link">Weddings</a>
+                        <a href="offers.html" class="footer__link">Special Offers</a>
+                        <a href="gallery.html" class="footer__link">Gallery</a>
+                    </nav>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Information</h3>
+                    <nav class="footer__links">
+                        <a href="about.html" class="footer__link">About Us</a>
+                        <a href="location.html" class="footer__link">Location &amp; Directions</a>
+                        <a href="testimonials.html" class="footer__link">Guest Reviews</a>
+                        <a href="faq.html" class="footer__link">FAQ</a>
+                        <a href="contact.html" class="footer__link">Contact Us</a>
+                    </nav>
+                </div>
+
+                <div class="footer__col">
+                    <h3 class="footer__col-title">Contact</h3>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-phone footer__contact-icon"></i>
+                        <span class="footer__contact-text">+44 (0)1789 123 456</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-envelope footer__contact-icon"></i>
+                        <span class="footer__contact-text">reservations@kingscourt.co.uk</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <i class="fa-solid fa-location-dot footer__contact-icon"></i>
+                        <span class="footer__contact-text">
+                            Kings Court Lane, Welford-on-Avon,<br>
+                            Stratford-upon-Avon, CV37 8EX
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; <span id="footer-year"></span> Kings Court Hotel Ltd. All rights reserved.
+                </p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                    <a href="sitemap.xml" class="footer__legal-link">Sitemap</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        document.getElementById('footer-year').textContent = new Date().getFullYear();
+    </script>
+    <script src="js/main.js" defer></script>
+    <script src="js/about.js" defer></script>
+</body>
+
+</html>
