@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Read guest testimonials and reviews from Kings Court Hotel. Rated 4.8/5 across 500+ reviews." />
+    <title>Guest Reviews &amp; Testimonials | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .tm-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--clr-cream);
+            overflow: hidden
+        }
+
+        .tm-hero__bg {
+            position: absolute;
+            inset: 0;
+            z-index: 0
+        }
+
+        .tm-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .tm-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 25, 30, .5), rgba(10, 20, 18, .75));
+            z-index: 1
+        }
+
+        .tm-hero__content {
+            position: relative;
+            z-index: 2;
+            padding: 0 var(--space-md)
+        }
+
+        .tm-hero__eyebrow {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .tm-hero__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            line-height: 1.1;
+            margin-bottom: 1rem
+        }
+
+        /* Counters */
+        .tm-counters {
+            padding: var(--space-lg) 0;
+            background: var(--clr-forest)
+        }
+
+        .tm-counters__grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: var(--space-md);
+            text-align: center;
+            color: var(--clr-cream)
+        }
+
+        .tm-counter__number {
+            font-family: var(--font-serif);
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            color: var(--clr-gold);
+            line-height: 1
+        }
+
+        .tm-counter__label {
+            font-family: var(--font-sans);
+            font-size: .85rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-top: .5rem;
+            opacity: .75
+        }
+
+        /* Reviews Grid */
+        .tm-reviews {
+            padding: var(--space-xl) 0
+        }
+
+        .tm-reviews__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-md);
+            margin-top: var(--space-md)
+        }
+
+        .tm-review-card {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid rgba(0, 0, 0, .05);
+            transition: transform var(--transition-base), box-shadow var(--transition-base)
+        }
+
+        .tm-review-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-md)
+        }
+
+        .tm-review-card__stars {
+            color: var(--clr-gold);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            letter-spacing: 2px
+        }
+
+        .tm-review-card__quote {
+            font-family: var(--font-serif);
+            font-size: 1.15rem;
+            font-style: italic;
+            line-height: 1.7;
+            color: var(--clr-text);
+            margin-bottom: 1.25rem;
+            position: relative;
+            padding-left: 1.5rem;
+            border-left: 3px solid var(--clr-gold)
+        }
+
+        .tm-review-card__author {
+            display: flex;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .tm-review-card__avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--clr-forest);
+            color: var(--clr-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-serif);
+            font-size: 1.2rem;
+            font-weight: 600
+        }
+
+        .tm-review-card__name {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: .9rem;
+            color: var(--clr-forest)
+        }
+
+        .tm-review-card__meta {
+            font-size: .8rem;
+            color: var(--clr-text-muted)
+        }
+
+        /* Slider */
+        .tm-featured {
+            padding: var(--space-xl) 0;
+            background: var(--clr-cream-light)
+        }
+
+        .tm-slider {
+            position: relative;
+            overflow: hidden;
+            margin-top: var(--space-md)
+        }
+
+        .tm-slider__track {
+            display: flex;
+            transition: transform .5s ease
+        }
+
+        .tm-slider__slide {
+            min-width: 100%;
+            padding: 0 var(--space-md);
+            box-sizing: border-box
+        }
+
+        .tm-slider__featured {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            padding: var(--space-lg) var(--space-md);
+            background: var(--clr-white);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md)
+        }
+
+        .tm-slider__featured-stars {
+            color: var(--clr-gold);
+            font-size: 1.2rem;
+            letter-spacing: 3px;
+            margin-bottom: 1.5rem
+        }
+
+        .tm-slider__featured-quote {
+            font-family: var(--font-serif);
+            font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+            font-style: italic;
+            line-height: 1.8;
+            color: var(--clr-text);
+            margin-bottom: 1.5rem
+        }
+
+        .tm-slider__featured-name {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            color: var(--clr-forest)
+        }
+
+        .tm-slider__featured-meta {
+            font-size: .85rem;
+            color: var(--clr-text-muted);
+            margin-top: .25rem
+        }
+
+        .tm-slider__controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: var(--space-md)
+        }
+
+        .tm-slider__btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 2px solid var(--clr-gold);
+            background: transparent;
+            color: var(--clr-gold);
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .tm-slider__btn:hover {
+            background: var(--clr-gold);
+            color: var(--clr-white)
+        }
+
+        .tm-slider__dots {
+            display: flex;
+            gap: .5rem
+        }
+
+        .tm-slider__dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: var(--clr-gold-light);
+            opacity: .4;
+            cursor: pointer;
+            transition: opacity var(--transition-fast)
+        }
+
+        .tm-slider__dot.active {
+            opacity: 1;
+            background: var(--clr-gold)
+        }
+
+        @media(max-width:768px) {
+            .tm-counters__grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: var(--space-sm)
+            }
+
+            .tm-hero {
+                height: 40vh;
+                min-height: 280px
+            }
+
+            .tm-reviews__grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="tm-hero">
+        <div class="tm-hero__bg"><img src="assets/images/hero/hero-main.jpg" alt="Kings Court Hotel guests" /></div>
+        <div class="tm-hero__overlay"></div>
+        <div class="tm-hero__content">
+            <span class="tm-hero__eyebrow">Guest Reviews</span>
+            <h1 class="tm-hero__title">What Our Guests Say</h1>
+        </div>
+    </section>
+
+    <!-- ANIMATED COUNTERS -->
+    <section class="tm-counters" aria-label="Hotel statistics">
+        <div class="container">
+            <div class="tm-counters__grid">
+                <div class="reveal">
+                    <div class="tm-counter__number" data-count="4.8">0</div>
+                    <div class="tm-counter__label">★ Guest Rating</div>
+                </div>
+                <div class="reveal reveal--delay-1">
+                    <div class="tm-counter__number" data-count="500">0</div>
+                    <div class="tm-counter__label">Reviews</div>
+                </div>
+                <div class="reveal reveal--delay-2">
+                    <div class="tm-counter__number" data-count="38">0</div>
+                    <div class="tm-counter__label">Rooms &amp; Suites</div>
+                </div>
+                <div class="reveal reveal--delay-3">
+                    <div class="tm-counter__number" data-count="98">0</div>
+                    <div class="tm-counter__label">% Would Return</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURED SLIDER -->
+    <section class="tm-featured section" aria-label="Featured reviews">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Highlights</span>
+                <h2>Featured Reviews</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="tm-slider" id="tm-slider">
+                <div class="tm-slider__track" id="tm-track">
+                    <div class="tm-slider__slide">
+                        <div class="tm-slider__featured">
+                            <div class="tm-slider__featured-stars">★★★★★</div>
+                            <blockquote class="tm-slider__featured-quote">"Kings Court is simply magical. From the
+                                moment we arrived, the staff made us feel like royalty. The four-poster bed, the
+                                crackling fire, the most extraordinary dinner — we never wanted to leave."</blockquote>
+                            <div class="tm-slider__featured-name">Sarah &amp; James Thornton</div>
+                            <div class="tm-slider__featured-meta">Anniversary Stay · Deluxe Room</div>
+                        </div>
+                    </div>
+                    <div class="tm-slider__slide">
+                        <div class="tm-slider__featured">
+                            <div class="tm-slider__featured-stars">★★★★★</div>
+                            <blockquote class="tm-slider__featured-quote">"We had our wedding here in September and it
+                                was beyond our wildest dreams. The grounds are breathtaking, the food was exceptional,
+                                and our coordinator Charlotte was an absolute star."</blockquote>
+                            <div class="tm-slider__featured-name">Emily &amp; Robert Clarke</div>
+                            <div class="tm-slider__featured-meta">Wedding · September 2024</div>
+                        </div>
+                    </div>
+                    <div class="tm-slider__slide">
+                        <div class="tm-slider__featured">
+                            <div class="tm-slider__featured-stars">★★★★★</div>
+                            <blockquote class="tm-slider__featured-quote">"The Garden Restaurant alone is worth the
+                                trip. Chef Whitmore's tasting menu was the finest meal I've had in England. Paired with
+                                wines from their extraordinary cellar — unforgettable."</blockquote>
+                            <div class="tm-slider__featured-name">Michael Hargreaves</div>
+                            <div class="tm-slider__featured-meta">Dining Guest · TripAdvisor Review</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-slider__controls">
+                    <button class="tm-slider__btn" id="tm-prev" aria-label="Previous"><i
+                            class="fa-solid fa-chevron-left"></i></button>
+                    <div class="tm-slider__dots" id="tm-dots"></div>
+                    <button class="tm-slider__btn" id="tm-next" aria-label="Next"><i
+                            class="fa-solid fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ALL REVIEWS -->
+    <section class="tm-reviews section" aria-labelledby="reviews-heading">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">All Reviews</span>
+                <h2 id="reviews-heading">Guest Experiences</h2>
+                <div class="gold-line"></div>
+            </div>
+            <div class="tm-reviews__grid">
+                <div class="tm-review-card reveal">
+                    <div class="tm-review-card__stars">★★★★★</div>
+                    <blockquote class="tm-review-card__quote">A hidden gem in the Warwickshire countryside. The spa was
+                        heavenly and the afternoon tea was a real treat. Can't wait to return!</blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">L</div>
+                        <div>
+                            <div class="tm-review-card__name">Laura Bennett</div>
+                            <div class="tm-review-card__meta">Spa Weekend · Classic Room</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-review-card reveal reveal--delay-1">
+                    <div class="tm-review-card__stars">★★★★★</div>
+                    <blockquote class="tm-review-card__quote">Booked for a corporate retreat and Kings Court exceeded
+                        all expectations. The conference facilities were excellent and the team-building activities on
+                        the grounds were superb.</blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">D</div>
+                        <div>
+                            <div class="tm-review-card__name">David Whitaker</div>
+                            <div class="tm-review-card__meta">Corporate Event · October 2024</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-review-card reveal reveal--delay-2">
+                    <div class="tm-review-card__stars">★★★★★</div>
+                    <blockquote class="tm-review-card__quote">The attention to detail is remarkable. From the fresh
+                        flowers in the room to the turndown service with handmade chocolates — everything was perfect.
+                    </blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">A</div>
+                        <div>
+                            <div class="tm-review-card__name">Amanda Forsythe</div>
+                            <div class="tm-review-card__meta">Signature Suite · Returning Guest</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-review-card reveal">
+                    <div class="tm-review-card__stars">★★★★☆</div>
+                    <blockquote class="tm-review-card__quote">Lovely hotel with beautiful grounds. The breakfast was
+                        outstanding with a great selection. The room was comfortable and well-appointed, though the
+                        Wi-Fi could be stronger.</blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">P</div>
+                        <div>
+                            <div class="tm-review-card__name">Peter Robinson</div>
+                            <div class="tm-review-card__meta">Business Stay · Deluxe Room</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-review-card reveal reveal--delay-1">
+                    <div class="tm-review-card__stars">★★★★★</div>
+                    <blockquote class="tm-review-card__quote">We celebrated our 25th anniversary here and it was truly
+                        special. The Signature Suite was magnificent and the champagne and roses waiting for us were a
+                        beautiful surprise.</blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">R</div>
+                        <div>
+                            <div class="tm-review-card__name">Rachel &amp; Thomas Murray</div>
+                            <div class="tm-review-card__meta">Anniversary · Signature Suite</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="tm-review-card reveal reveal--delay-2">
+                    <div class="tm-review-card__stars">★★★★★</div>
+                    <blockquote class="tm-review-card__quote">Best country house hotel we've stayed in. The Tudor
+                        architecture is stunning and the staff go above and beyond. Already recommended it to everyone
+                        we know!</blockquote>
+                    <div class="tm-review-card__author">
+                        <div class="tm-review-card__avatar">J</div>
+                        <div>
+                            <div class="tm-review-card__name">John &amp; Susan Clark</div>
+                            <div class="tm-review-card__meta">Family Break · Two Rooms</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a><a href="#" class="footer__social-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                            class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#" class="footer__social-link"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+                </div>
+                <nav aria-label="Explore">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-phone"></i></span><a href="tel:+441789123456"
+                            class="footer__contact-text">+44 (0)1789 123 456</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-envelope"></i></span><a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd. All rights
+                    reserved.</p>
+                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
+                        href="terms.html" class="footer__legal-link">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Animated counters
+            const counters = document.querySelectorAll('[data-count]');
+            const counterObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const target = parseFloat(el.dataset.count);
+                        const isDecimal = target % 1 !== 0;
+                        const duration = 2000;
+                        const start = performance.now();
+                        const animate = (now) => {
+                            const elapsed = now - start;
+                            const progress = Math.min(elapsed / duration, 1);
+                            const eased = 1 - Math.pow(1 - progress, 3);
+                            const current = eased * target;
+                            el.textContent = isDecimal ? current.toFixed(1) : Math.floor(current) + (target >= 100 ? '+' : '');
+                            if (progress < 1) requestAnimationFrame(animate);
+                            else el.textContent = isDecimal ? target.toFixed(1) : (target >= 100 ? target + '+' : target);
+                        };
+                        requestAnimationFrame(animate);
+                        counterObserver.unobserve(el);
+                    }
+                });
+            }, { threshold: .5 });
+            counters.forEach(c => counterObserver.observe(c));
+
+            // Testimonial Slider
+            const track = document.getElementById('tm-track');
+            const slides = track?.querySelectorAll('.tm-slider__slide');
+            const dotsContainer = document.getElementById('tm-dots');
+            const prevBtn = document.getElementById('tm-prev');
+            const nextBtn = document.getElementById('tm-next');
+            let current = 0;
+            if (slides && slides.length) {
+                slides.forEach((_, i) => {
+                    const dot = document.createElement('div');
+                    dot.classList.add('tm-slider__dot');
+                    if (i === 0) dot.classList.add('active');
+                    dot.addEventListener('click', () => goTo(i));
+                    dotsContainer.appendChild(dot);
+                });
+                const goTo = (idx) => {
+                    current = idx;
+                    track.style.transform = `translateX(-${current * 100}%)`;
+                    dotsContainer.querySelectorAll('.tm-slider__dot').forEach((d, i) => d.classList.toggle('active', i === current));
+                };
+                prevBtn?.addEventListener('click', () => goTo(current > 0 ? current - 1 : slides.length - 1));
+                nextBtn?.addEventListener('click', () => goTo(current < slides.length - 1 ? current + 1 : 0));
+                setInterval(() => goTo(current < slides.length - 1 ? current + 1 : 0), 6000);
+            }
+        });
+    </script>
+</body>
+
+</html>

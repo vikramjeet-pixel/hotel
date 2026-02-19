@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Book your stay at Kings Court Hotel. Select dates, choose your room, and get an instant price estimate." />
+    <title>Book Your Stay | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .bk-hero {
+            position: relative;
+            height: 40vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--clr-cream);
+            overflow: hidden
+        }
+
+        .bk-hero__bg {
+            position: absolute;
+            inset: 0
+        }
+
+        .bk-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .bk-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 25, 30, .5), rgba(10, 20, 18, .7));
+            z-index: 1
+        }
+
+        .bk-hero__content {
+            position: relative;
+            z-index: 2
+        }
+
+        .bk-hero__eyebrow {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .bk-hero__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2rem, 5vw, 3.5rem)
+        }
+
+        .bk-main {
+            padding: var(--space-xl) 0;
+            background: var(--clr-cream-light)
+        }
+
+        .bk-grid {
+            display: grid;
+            grid-template-columns: 1.2fr .8fr;
+            gap: var(--space-lg);
+            align-items: start
+        }
+
+        .bk-form {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md)
+        }
+
+        .bk-form__title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--clr-forest);
+            margin-bottom: .5rem
+        }
+
+        .bk-form__subtitle {
+            color: var(--clr-text-muted);
+            margin-bottom: var(--space-md);
+            font-size: .95rem
+        }
+
+        .bk-form__row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem
+        }
+
+        .bk-form__group {
+            margin-bottom: 1.25rem
+        }
+
+        .bk-form__label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr-text);
+            margin-bottom: .5rem
+        }
+
+        .bk-form__input,
+        .bk-form__select {
+            width: 100%;
+            padding: .85rem 1rem;
+            border: 1.5px solid #ddd;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-size: .95rem;
+            transition: border-color var(--transition-fast);
+            background: var(--clr-cream-light);
+            box-sizing: border-box;
+            -webkit-appearance: none
+        }
+
+        .bk-form__select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5a5a' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center
+        }
+
+        .bk-form__input:focus,
+        .bk-form__select:focus {
+            outline: none;
+            border-color: var(--clr-gold);
+            box-shadow: 0 0 0 3px rgba(194, 164, 94, .15)
+        }
+
+        .bk-form__submit {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background: var(--clr-gold);
+            color: var(--clr-white);
+            font-family: var(--font-sans);
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background var(--transition-fast);
+            margin-top: .5rem
+        }
+
+        .bk-form__submit:hover {
+            background: var(--clr-gold-dark)
+        }
+
+        /* Guest Counter */
+        .bk-counter {
+            display: flex;
+            align-items: center;
+            gap: 1rem
+        }
+
+        .bk-counter__btn {
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            border: 1.5px solid var(--clr-gold);
+            background: transparent;
+            color: var(--clr-gold);
+            font-size: 1.2rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all var(--transition-fast)
+        }
+
+        .bk-counter__btn:hover {
+            background: var(--clr-gold);
+            color: var(--clr-white)
+        }
+
+        .bk-counter__value {
+            font-family: var(--font-serif);
+            font-size: 1.5rem;
+            min-width: 2rem;
+            text-align: center
+        }
+
+        /* Summary */
+        .bk-summary {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-md);
+            box-shadow: var(--shadow-md);
+            position: sticky;
+            top: 120px
+        }
+
+        .bk-summary__title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--clr-forest);
+            margin-bottom: var(--space-sm);
+            padding-bottom: var(--space-sm);
+            border-bottom: 2px solid var(--clr-gold)
+        }
+
+        .bk-summary__row {
+            display: flex;
+            justify-content: space-between;
+            padding: .6rem 0;
+            font-size: .95rem;
+            color: var(--clr-text);
+            border-bottom: 1px solid rgba(0, 0, 0, .05)
+        }
+
+        .bk-summary__row span:last-child {
+            font-weight: 600
+        }
+
+        .bk-summary__total {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0 0;
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--clr-forest);
+            font-weight: 700;
+            border-top: 2px solid var(--clr-forest);
+            margin-top: .5rem
+        }
+
+        .bk-summary__badge {
+            display: flex;
+            align-items: center;
+            gap: .5rem;
+            margin-top: var(--space-sm);
+            padding: var(--space-sm);
+            background: rgba(194, 164, 94, .08);
+            border-radius: var(--radius-sm);
+            color: var(--clr-forest);
+            font-size: .85rem
+        }
+
+        .bk-summary__badge i {
+            color: var(--clr-gold);
+            font-size: 1.1rem
+        }
+
+        .bk-features {
+            padding: var(--space-lg) 0
+        }
+
+        .bk-features__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: var(--space-md);
+            text-align: center
+        }
+
+        .bk-feature {
+            padding: var(--space-md)
+        }
+
+        .bk-feature__icon {
+            font-size: 2rem;
+            color: var(--clr-gold);
+            margin-bottom: .75rem
+        }
+
+        .bk-feature__title {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            margin-bottom: .3rem;
+            color: var(--clr-forest)
+        }
+
+        .bk-feature__text {
+            font-size: .9rem;
+            color: var(--clr-text-light);
+            line-height: 1.6
+        }
+
+        @media(max-width:768px) {
+            .bk-grid {
+                grid-template-columns: 1fr
+            }
+
+            .bk-form__row {
+                grid-template-columns: 1fr
+            }
+
+            .bk-summary {
+                position: static
+            }
+
+            .bk-hero {
+                height: 35vh;
+                min-height: 250px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="bk-hero">
+        <div class="bk-hero__bg"><img src="assets/images/hero/hero-main.jpg" alt="Book your stay at Kings Court" />
+        </div>
+        <div class="bk-hero__overlay"></div>
+        <div class="bk-hero__content">
+            <span class="bk-hero__eyebrow">Reservations</span>
+            <h1 class="bk-hero__title">Book Your Stay</h1>
+        </div>
+    </section>
+
+    <!-- BOOKING FORM -->
+    <section class="bk-main">
+        <div class="container">
+            <div class="bk-grid">
+                <div class="bk-form reveal">
+                    <h2 class="bk-form__title">Reservation Details</h2>
+                    <p class="bk-form__subtitle">Complete the form below to request a booking. Our team will confirm
+                        availability within 2 hours.</p>
+                    <form id="booking-form">
+                        <div class="bk-form__row">
+                            <div class="bk-form__group">
+                                <label class="bk-form__label" for="bk-checkin">Check-In Date</label>
+                                <input class="bk-form__input" type="date" id="bk-checkin" required />
+                            </div>
+                            <div class="bk-form__group">
+                                <label class="bk-form__label" for="bk-checkout">Check-Out Date</label>
+                                <input class="bk-form__input" type="date" id="bk-checkout" required />
+                            </div>
+                        </div>
+                        <div class="bk-form__group">
+                            <label class="bk-form__label" for="bk-room">Room Type</label>
+                            <select class="bk-form__select" id="bk-room">
+                                <option value="classic" data-price="195">Classic Room — £195/night</option>
+                                <option value="deluxe" data-price="275">Deluxe Room — £275/night</option>
+                                <option value="suite" data-price="395">Signature Suite — £395/night</option>
+                                <option value="bridal" data-price="495">Bridal Suite — £495/night</option>
+                                <option value="penthouse" data-price="650">Tudor Penthouse — £650/night</option>
+                            </select>
+                        </div>
+                        <div class="bk-form__group">
+                            <label class="bk-form__label">Guests</label>
+                            <div class="bk-counter">
+                                <button type="button" class="bk-counter__btn" id="guest-minus"
+                                    aria-label="Remove guest">−</button>
+                                <div class="bk-counter__value" id="guest-count">2</div>
+                                <button type="button" class="bk-counter__btn" id="guest-plus"
+                                    aria-label="Add guest">+</button>
+                            </div>
+                        </div>
+                        <div class="bk-form__row">
+                            <div class="bk-form__group">
+                                <label class="bk-form__label" for="bk-name">Full Name</label>
+                                <input class="bk-form__input" type="text" id="bk-name" placeholder="Your name"
+                                    required />
+                            </div>
+                            <div class="bk-form__group">
+                                <label class="bk-form__label" for="bk-email">Email</label>
+                                <input class="bk-form__input" type="email" id="bk-email" placeholder="email@example.com"
+                                    required />
+                            </div>
+                        </div>
+                        <div class="bk-form__group">
+                            <label class="bk-form__label" for="bk-requests">Special Requests</label>
+                            <input class="bk-form__input" type="text" id="bk-requests"
+                                placeholder="e.g. Late check-in, champagne on arrival" />
+                        </div>
+                        <button type="submit" class="bk-form__submit">Confirm Booking Request</button>
+                    </form>
+                </div>
+
+                <!-- Summary -->
+                <div class="bk-summary reveal reveal--delay-1" id="bk-summary">
+                    <h3 class="bk-summary__title">Pricing Summary</h3>
+                    <div class="bk-summary__row"><span>Room Type</span><span id="sum-room">Classic Room</span></div>
+                    <div class="bk-summary__row"><span>Check-In</span><span id="sum-checkin">—</span></div>
+                    <div class="bk-summary__row"><span>Check-Out</span><span id="sum-checkout">—</span></div>
+                    <div class="bk-summary__row"><span>Nights</span><span id="sum-nights">0</span></div>
+                    <div class="bk-summary__row"><span>Guests</span><span id="sum-guests">2</span></div>
+                    <div class="bk-summary__row"><span>Rate Per Night</span><span id="sum-rate">£195</span></div>
+                    <div class="bk-summary__total"><span>Estimated Total</span><span id="sum-total">£0</span></div>
+                    <div class="bk-summary__badge">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span><strong>Secure Booking</strong> — SSL encrypted. Free cancellation up to 48 hours before
+                            check-in.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="bk-features section">
+        <div class="container">
+            <div class="bk-features__grid">
+                <div class="bk-feature reveal">
+                    <div class="bk-feature__icon"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3 class="bk-feature__title">Secure Payment</h3>
+                    <p class="bk-feature__text">256-bit SSL encryption protects your data</p>
+                </div>
+                <div class="bk-feature reveal reveal--delay-1">
+                    <div class="bk-feature__icon"><i class="fa-solid fa-calendar-xmark"></i></div>
+                    <h3 class="bk-feature__title">Free Cancellation</h3>
+                    <p class="bk-feature__text">Cancel up to 48 hours before check-in</p>
+                </div>
+                <div class="bk-feature reveal reveal--delay-2">
+                    <div class="bk-feature__icon"><i class="fa-solid fa-tags"></i></div>
+                    <h3 class="bk-feature__title">Best Rate Guarantee</h3>
+                    <p class="bk-feature__text">Book direct for the lowest price guaranteed</p>
+                </div>
+                <div class="bk-feature reveal reveal--delay-3">
+                    <div class="bk-feature__icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3 class="bk-feature__title">24/7 Support</h3>
+                    <p class="bk-feature__text">Our concierge team is always available</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a><a href="#" class="footer__social-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                            class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#" class="footer__social-link"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+                </div>
+                <nav aria-label="Explore">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-phone"></i></span><a href="tel:+441789123456"
+                            class="footer__contact-text">+44 (0)1789 123 456</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-envelope"></i></span><a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd.</p>
+                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
+                        href="terms.html" class="footer__legal-link">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const checkin = document.getElementById('bk-checkin');
+            const checkout = document.getElementById('bk-checkout');
+            const roomSelect = document.getElementById('bk-room');
+            const guestCount = document.getElementById('guest-count');
+            const minusBtn = document.getElementById('guest-minus');
+            const plusBtn = document.getElementById('guest-plus');
+            let guests = 2;
+
+            // Set min dates
+            const today = new Date().toISOString().split('T')[0];
+            checkin.min = today; checkout.min = today;
+
+            // Guest counter
+            minusBtn.addEventListener('click', () => { if (guests > 1) { guests--; guestCount.textContent = guests; updateSummary(); } });
+            plusBtn.addEventListener('click', () => { if (guests < 8) { guests++; guestCount.textContent = guests; updateSummary(); } });
+
+            // Update summary on changes
+            [checkin, checkout, roomSelect].forEach(el => el.addEventListener('change', updateSummary));
+
+            function updateSummary() {
+                const opt = roomSelect.options[roomSelect.selectedIndex];
+                const price = parseInt(opt.dataset.price);
+                const roomName = opt.textContent.split('—')[0].trim();
+                document.getElementById('sum-room').textContent = roomName;
+                document.getElementById('sum-rate').textContent = '£' + price;
+                document.getElementById('sum-guests').textContent = guests;
+
+                if (checkin.value) {
+                    const d = new Date(checkin.value);
+                    document.getElementById('sum-checkin').textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                }
+                if (checkout.value) {
+                    const d = new Date(checkout.value);
+                    document.getElementById('sum-checkout').textContent = d.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric' });
+                }
+                if (checkin.value && checkout.value) {
+                    const ci = new Date(checkin.value), co = new Date(checkout.value);
+                    const nights = Math.max(0, Math.round((co - ci) / (1000 * 60 * 60 * 24)));
+                    document.getElementById('sum-nights').textContent = nights;
+                    document.getElementById('sum-total').textContent = '£' + (nights * price).toLocaleString();
+                }
+            }
+
+            // Auto-set checkout min
+            checkin.addEventListener('change', () => {
+                if (checkin.value) {
+                    const next = new Date(checkin.value);
+                    next.setDate(next.getDate() + 1);
+                    checkout.min = next.toISOString().split('T')[0];
+                    if (checkout.value && checkout.value <= checkin.value) checkout.value = '';
+                }
+            });
+
+            // Form submit
+            document.getElementById('booking-form')?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('Thank you! Your booking request has been received. Our team will confirm via email within 2 hours.');
+            });
+        });
+    </script>
+</body>
+
+</html>

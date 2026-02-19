@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Contact Kings Court Hotel. Enquiry form, phone, email, postal address and social links for reservations and enquiries." />
+    <title>Contact Us | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .ct-hero {
+            position: relative;
+            height: 45vh;
+            min-height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--clr-cream);
+            overflow: hidden
+        }
+
+        .ct-hero__bg {
+            position: absolute;
+            inset: 0
+        }
+
+        .ct-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .ct-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 25, 30, .5), rgba(10, 20, 18, .7));
+            z-index: 1
+        }
+
+        .ct-hero__content {
+            position: relative;
+            z-index: 2
+        }
+
+        .ct-hero__eyebrow {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .ct-hero__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 3.5rem)
+        }
+
+        .ct-main {
+            padding: var(--space-xl) 0
+        }
+
+        .ct-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: var(--space-lg);
+            align-items: start
+        }
+
+        /* Form */
+        .ct-form {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            padding: var(--space-lg);
+            box-shadow: var(--shadow-md)
+        }
+
+        .ct-form__title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--clr-forest);
+            margin-bottom: .5rem
+        }
+
+        .ct-form__subtitle {
+            color: var(--clr-text-muted);
+            margin-bottom: var(--space-md);
+            font-size: .95rem
+        }
+
+        .ct-form__group {
+            margin-bottom: 1.25rem
+        }
+
+        .ct-form__label {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr-text);
+            margin-bottom: .5rem
+        }
+
+        .ct-form__input,
+        .ct-form__textarea {
+            width: 100%;
+            padding: .85rem 1rem;
+            border: 1.5px solid #ddd;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-size: .95rem;
+            transition: border-color var(--transition-fast);
+            background: var(--clr-cream-light);
+            box-sizing: border-box
+        }
+
+        .ct-form__input:focus,
+        .ct-form__textarea:focus {
+            outline: none;
+            border-color: var(--clr-gold);
+            box-shadow: 0 0 0 3px rgba(194, 164, 94, .15)
+        }
+
+        .ct-form__input.error,
+        .ct-form__textarea.error {
+            border-color: #c0392b
+        }
+
+        .ct-form__error {
+            color: #c0392b;
+            font-size: .8rem;
+            margin-top: .3rem;
+            display: none
+        }
+
+        .ct-form__error.visible {
+            display: block
+        }
+
+        .ct-form__textarea {
+            min-height: 140px;
+            resize: vertical
+        }
+
+        .ct-form__submit {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            background: var(--clr-gold);
+            color: var(--clr-white);
+            font-family: var(--font-sans);
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background var(--transition-fast)
+        }
+
+        .ct-form__submit:hover {
+            background: var(--clr-gold-dark)
+        }
+
+        .ct-form__success {
+            display: none;
+            text-align: center;
+            padding: var(--space-md);
+            color: var(--clr-forest)
+        }
+
+        .ct-form__success.visible {
+            display: block
+        }
+
+        .ct-form__success i {
+            font-size: 3rem;
+            color: var(--clr-gold);
+            margin-bottom: 1rem;
+            display: block
+        }
+
+        /* Contact Info */
+        .ct-info__title {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            color: var(--clr-forest);
+            margin-bottom: var(--space-md)
+        }
+
+        .ct-info-item {
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(0, 0, 0, .06)
+        }
+
+        .ct-info-item__icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--clr-cream-light);
+            color: var(--clr-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1rem;
+            flex-shrink: 0
+        }
+
+        .ct-info-item__label {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: .85rem;
+            color: var(--clr-forest);
+            margin-bottom: .25rem
+        }
+
+        .ct-info-item__value {
+            color: var(--clr-text-light);
+            font-size: .95rem;
+            line-height: 1.6
+        }
+
+        .ct-info-item__value a {
+            color: var(--clr-gold-dark);
+            text-decoration: none
+        }
+
+        .ct-info-item__value a:hover {
+            text-decoration: underline
+        }
+
+        .ct-social {
+            margin-top: var(--space-md)
+        }
+
+        .ct-social__title {
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: .85rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+            color: var(--clr-text)
+        }
+
+        .ct-social__links {
+            display: flex;
+            gap: .75rem
+        }
+
+        .ct-social__link {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: var(--clr-forest);
+            color: var(--clr-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            transition: all var(--transition-fast);
+            text-decoration: none
+        }
+
+        .ct-social__link:hover {
+            background: var(--clr-gold);
+            transform: translateY(-2px)
+        }
+
+        .ct-map {
+            padding: var(--space-lg) 0
+        }
+
+        .ct-map iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm)
+        }
+
+        @media(max-width:768px) {
+            .ct-grid {
+                grid-template-columns: 1fr
+            }
+
+            .ct-hero {
+                height: 35vh;
+                min-height: 250px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="ct-hero">
+        <div class="ct-hero__bg"><img src="assets/images/hero/hero-main.jpg" alt="Contact Kings Court Hotel" /></div>
+        <div class="ct-hero__overlay"></div>
+        <div class="ct-hero__content">
+            <span class="ct-hero__eyebrow">Get in Touch</span>
+            <h1 class="ct-hero__title">Contact Us</h1>
+        </div>
+    </section>
+
+    <!-- CONTACT CONTENT -->
+    <section class="ct-main section">
+        <div class="container">
+            <div class="ct-grid">
+                <!-- Form -->
+                <div class="ct-form reveal" id="contact-form-wrapper">
+                    <h2 class="ct-form__title">Send an Enquiry</h2>
+                    <p class="ct-form__subtitle">We'd love to hear from you. Fill out the form below and our team will
+                        respond within 24 hours.</p>
+                    <form id="contact-form" novalidate>
+                        <div class="ct-form__group">
+                            <label class="ct-form__label" for="ct-name">Full Name *</label>
+                            <input class="ct-form__input" type="text" id="ct-name" name="name"
+                                placeholder="Enter your full name" required />
+                            <div class="ct-form__error" id="ct-name-error">Please enter your name.</div>
+                        </div>
+                        <div class="ct-form__group">
+                            <label class="ct-form__label" for="ct-email">Email Address *</label>
+                            <input class="ct-form__input" type="email" id="ct-email" name="email"
+                                placeholder="example@email.com" required />
+                            <div class="ct-form__error" id="ct-email-error">Please enter a valid email address.</div>
+                        </div>
+                        <div class="ct-form__group">
+                            <label class="ct-form__label" for="ct-phone">Phone Number</label>
+                            <input class="ct-form__input" type="tel" id="ct-phone" name="phone"
+                                placeholder="+44 (0)7..." />
+                            <div class="ct-form__error" id="ct-phone-error">Please enter a valid phone number.</div>
+                        </div>
+                        <div class="ct-form__group">
+                            <label class="ct-form__label" for="ct-subject">Subject *</label>
+                            <input class="ct-form__input" type="text" id="ct-subject" name="subject"
+                                placeholder="e.g. Room booking enquiry" required />
+                            <div class="ct-form__error" id="ct-subject-error">Please enter a subject.</div>
+                        </div>
+                        <div class="ct-form__group">
+                            <label class="ct-form__label" for="ct-message">Message *</label>
+                            <textarea class="ct-form__textarea" id="ct-message" name="message"
+                                placeholder="Tell us how we can help..." required></textarea>
+                            <div class="ct-form__error" id="ct-message-error">Please enter your message.</div>
+                        </div>
+                        <button type="submit" class="ct-form__submit">Send Enquiry</button>
+                    </form>
+                    <div class="ct-form__success" id="ct-success">
+                        <i class="fa-solid fa-circle-check"></i>
+                        <h3 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:.5rem">Thank You!</h3>
+                        <p>Your enquiry has been received. Our team will respond within 24 hours.</p>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="reveal reveal--delay-1">
+                    <h2 class="ct-info__title">Contact Information</h2>
+                    <div class="ct-info-item">
+                        <div class="ct-info-item__icon"><i class="fa-solid fa-phone"></i></div>
+                        <div>
+                            <div class="ct-info-item__label">Telephone</div>
+                            <div class="ct-info-item__value"><a href="tel:+441789123456">+44 (0)1789 123 456</a></div>
+                        </div>
+                    </div>
+                    <div class="ct-info-item">
+                        <div class="ct-info-item__icon"><i class="fa-solid fa-envelope"></i></div>
+                        <div>
+                            <div class="ct-info-item__label">Email</div>
+                            <div class="ct-info-item__value"><a
+                                    href="mailto:reservations@kingscourt.co.uk">reservations@kingscourt.co.uk</a></div>
+                        </div>
+                    </div>
+                    <div class="ct-info-item">
+                        <div class="ct-info-item__icon"><i class="fa-solid fa-location-dot"></i></div>
+                        <div>
+                            <div class="ct-info-item__label">Address</div>
+                            <div class="ct-info-item__value">Kings Court Lane, Welford-on-Avon,<br>Stratford-upon-Avon,
+                                Warwickshire,<br>CV37 8EX, United Kingdom</div>
+                        </div>
+                    </div>
+                    <div class="ct-info-item">
+                        <div class="ct-info-item__icon"><i class="fa-regular fa-clock"></i></div>
+                        <div>
+                            <div class="ct-info-item__label">Reception Hours</div>
+                            <div class="ct-info-item__value">24 hours, 7 days a week<br>Check-in: 3:00 PM · Check-out:
+                                11:00 AM</div>
+                        </div>
+                    </div>
+                    <div class="ct-social">
+                        <div class="ct-social__title">Follow Us</div>
+                        <div class="ct-social__links">
+                            <a href="#" class="ct-social__link" aria-label="Facebook"><i
+                                    class="fa-brands fa-facebook-f"></i></a>
+                            <a href="#" class="ct-social__link" aria-label="Instagram"><i
+                                    class="fa-brands fa-instagram"></i></a>
+                            <a href="#" class="ct-social__link" aria-label="Twitter/X"><i
+                                    class="fa-brands fa-x-twitter"></i></a>
+                            <a href="#" class="ct-social__link" aria-label="YouTube"><i
+                                    class="fa-brands fa-youtube"></i></a>
+                            <a href="#" class="ct-social__link" aria-label="TripAdvisor"><i
+                                    class="fa-brands fa-tripadvisor"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MAP -->
+    <section class="ct-map">
+        <div class="container">
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78985.97!2d-1.7073!3d52.1936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870d4b1e9e1b4b5%3A0x1234567890abcdef!2sStratford-upon-Avon%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890"
+                title="Kings Court Hotel map" allowfullscreen loading="lazy"></iframe>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a><a href="#" class="footer__social-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                            class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#" class="footer__social-link"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+                </div>
+                <nav aria-label="Explore">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-phone"></i></span><a href="tel:+441789123456"
+                            class="footer__contact-text">+44 (0)1789 123 456</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-envelope"></i></span><a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd.</p>
+                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
+                        href="terms.html" class="footer__legal-link">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const success = document.getElementById('ct-success');
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            const phoneRegex = /^[\+]?[\d\s\-\(\)]{7,}$/;
+
+            const validate = (id, condition) => {
+                const input = document.getElementById(id);
+                const error = document.getElementById(id + '-error');
+                if (!condition) { input.classList.add('error'); error.classList.add('visible'); return false; }
+                input.classList.remove('error'); error.classList.remove('visible'); return true;
+            };
+
+            form?.addEventListener('submit', (e) => {
+                e.preventDefault();
+                let valid = true;
+                valid = validate('ct-name', document.getElementById('ct-name').value.trim().length >= 2) && valid;
+                valid = validate('ct-email', emailRegex.test(document.getElementById('ct-email').value.trim())) && valid;
+                const phone = document.getElementById('ct-phone').value.trim();
+                if (phone) valid = validate('ct-phone', phoneRegex.test(phone)) && valid;
+                valid = validate('ct-subject', document.getElementById('ct-subject').value.trim().length >= 2) && valid;
+                valid = validate('ct-message', document.getElementById('ct-message').value.trim().length >= 10) && valid;
+                if (valid) { form.style.display = 'none'; success.classList.add('visible'); }
+            });
+
+            // Live clear errors
+            document.querySelectorAll('.ct-form__input,.ct-form__textarea').forEach(input => {
+                input.addEventListener('input', () => { input.classList.remove('error'); const err = document.getElementById(input.id + '-error'); err?.classList.remove('visible'); });
+            });
+        });
+    </script>
+</body>
+
+</html>

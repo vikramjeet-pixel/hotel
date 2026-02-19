@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Frequently asked questions about Kings Court Hotel — parking, pets, check-in times, cancellations, weddings and more." />
+    <title>FAQ | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .fq-hero {
+            position: relative;
+            height: 45vh;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--clr-cream);
+            overflow: hidden
+        }
+
+        .fq-hero__bg {
+            position: absolute;
+            inset: 0
+        }
+
+        .fq-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .fq-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 25, 30, .5), rgba(10, 20, 18, .7));
+            z-index: 1
+        }
+
+        .fq-hero__content {
+            position: relative;
+            z-index: 2
+        }
+
+        .fq-hero__eyebrow {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .fq-hero__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 3.5rem)
+        }
+
+        .fq-main {
+            padding: var(--space-xl) 0
+        }
+
+        .fq-categories {
+            display: flex;
+            flex-wrap: wrap;
+            gap: .75rem;
+            justify-content: center;
+            margin-bottom: var(--space-lg)
+        }
+
+        .fq-cat-btn {
+            padding: .6rem 1.5rem;
+            border: 1.5px solid var(--clr-gold);
+            border-radius: 50px;
+            background: transparent;
+            color: var(--clr-gold);
+            font-family: var(--font-sans);
+            font-size: .85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            letter-spacing: .05em
+        }
+
+        .fq-cat-btn:hover,
+        .fq-cat-btn.active {
+            background: var(--clr-gold);
+            color: var(--clr-white)
+        }
+
+        .fq-accordion {
+            max-width: 800px;
+            margin: 0 auto
+        }
+
+        .fq-item {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            margin-bottom: .75rem;
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            border: 1px solid rgba(0, 0, 0, .05);
+            transition: box-shadow var(--transition-fast)
+        }
+
+        .fq-item:hover {
+            box-shadow: var(--shadow-md)
+        }
+
+        .fq-item__header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 1.5rem;
+            cursor: pointer;
+            gap: 1rem;
+            transition: background var(--transition-fast)
+        }
+
+        .fq-item__header:hover {
+            background: var(--clr-cream-light)
+        }
+
+        .fq-item__question {
+            font-family: var(--font-serif);
+            font-size: 1.1rem;
+            color: var(--clr-forest);
+            line-height: 1.4;
+            flex: 1
+        }
+
+        .fq-item__icon {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            border: 1.5px solid var(--clr-gold);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            transition: all var(--transition-base);
+            color: var(--clr-gold);
+            font-size: .8rem
+        }
+
+        .fq-item.open .fq-item__icon {
+            background: var(--clr-gold);
+            color: var(--clr-white);
+            transform: rotate(45deg)
+        }
+
+        .fq-item__body {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease
+        }
+
+        .fq-item.open .fq-item__body {
+            max-height: 500px
+        }
+
+        .fq-item__answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--clr-text-light);
+            line-height: 1.8;
+            font-size: .95rem
+        }
+
+        .fq-cta {
+            padding: var(--space-xl) 0;
+            background: var(--clr-forest);
+            text-align: center;
+            color: var(--clr-cream)
+        }
+
+        .fq-cta__title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin-bottom: 1rem
+        }
+
+        .fq-cta__text {
+            opacity: .8;
+            margin-bottom: var(--space-md);
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .fq-cta__btn {
+            display: inline-block;
+            padding: .9rem 2.5rem;
+            background: var(--clr-gold);
+            color: var(--clr-white);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            font-size: .9rem;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            transition: background var(--transition-fast)
+        }
+
+        .fq-cta__btn:hover {
+            background: var(--clr-gold-dark)
+        }
+
+        @media(max-width:640px) {
+            .fq-hero {
+                height: 35vh;
+                min-height: 250px
+            }
+
+            .fq-categories {
+                gap: .5rem
+            }
+
+            .fq-cat-btn {
+                padding: .5rem 1rem;
+                font-size: .8rem
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="fq-hero">
+        <div class="fq-hero__bg"><img src="assets/images/hero/hero-main.jpg" alt="Kings Court Hotel" /></div>
+        <div class="fq-hero__overlay"></div>
+        <div class="fq-hero__content">
+            <span class="fq-hero__eyebrow">Help Centre</span>
+            <h1 class="fq-hero__title">Frequently Asked Questions</h1>
+        </div>
+    </section>
+
+    <!-- FAQ CONTENT -->
+    <section class="fq-main section">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-label">Quick Answers</span>
+                <h2>How Can We Help?</h2>
+                <div class="gold-line"></div>
+            </div>
+
+            <!-- Category Filters -->
+            <div class="fq-categories reveal">
+                <button class="fq-cat-btn active" data-cat="all">All</button>
+                <button class="fq-cat-btn" data-cat="general">General</button>
+                <button class="fq-cat-btn" data-cat="booking">Booking</button>
+                <button class="fq-cat-btn" data-cat="facilities">Facilities</button>
+                <button class="fq-cat-btn" data-cat="weddings">Weddings</button>
+                <button class="fq-cat-btn" data-cat="dining">Dining</button>
+            </div>
+
+            <div class="fq-accordion" id="fq-accordion">
+                <!-- General -->
+                <div class="fq-item reveal" data-category="general">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">What are the check-in and check-out times?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Check-in is from 3:00 PM and check-out is by 11:00 AM. Early
+                            check-in and late check-out may be available upon request, subject to availability. Please
+                            contact our reception team in advance.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="general">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Is there parking available at the hotel?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Yes! We offer complimentary on-site parking for all guests with 120
+                            spaces, including disabled bays and 4 EV charging points. The car park is CCTV monitored
+                            24/7. Coach parking is available by prior arrangement.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="general">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Are pets allowed at Kings Court Hotel?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">We welcome well-behaved dogs in our designated pet-friendly Classic
+                            Rooms at a supplement of £25 per night. Please inform us at the time of booking. We can
+                            provide dog beds, bowls, and our grounds are perfect for walks. Regrettably, pets are not
+                            permitted in the dining areas.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="general">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Is there Wi-Fi at the hotel?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Complimentary high-speed Wi-Fi is available throughout the hotel,
+                            including all guest rooms, public areas, and conference facilities.</div>
+                    </div>
+                </div>
+
+                <!-- Booking -->
+                <div class="fq-item reveal" data-category="booking">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">What is your cancellation policy?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Free cancellation is available up to 48 hours before check-in.
+                            Cancellations within 48 hours will incur a charge equal to one night's stay. No-shows will
+                            be charged the full booking amount. Special event and peak-period bookings may have
+                            different cancellation terms.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="booking">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Do you require a deposit?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">A credit card is required to guarantee all bookings. Standard
+                            reservations are charged at checkout. For suites and special packages, a 50% deposit may be
+                            requested at the time of booking.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="booking">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Can I modify my booking after confirmation?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Yes, you can modify your booking by contacting our reservations
+                            team directly. Changes are subject to availability. We recommend making changes at least 72
+                            hours before arrival.</div>
+                    </div>
+                </div>
+
+                <!-- Facilities -->
+                <div class="fq-item reveal" data-category="facilities">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Do you have a spa or wellness centre?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Our boutique spa offers a range of treatments using luxury organic
+                            products. Facilities include treatment rooms, a relaxation lounge, and access to our private
+                            gardens. Advance booking is recommended, especially on weekends.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="facilities">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Is the hotel accessible for disabled guests?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">We have ground-floor accessible rooms with wide doorways, roll-in
+                            showers, and grab rails. Our public areas are wheelchair accessible with ramp access. Please
+                            contact us before arrival so we can ensure your stay is as comfortable as possible.</div>
+                    </div>
+                </div>
+
+                <!-- Weddings -->
+                <div class="fq-item reveal" data-category="weddings">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Can we hold our wedding ceremony at Kings Court?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Absolutely! Kings Court is fully licensed for civil ceremonies and
+                            partnerships. We offer ceremonies in our Grand Hall, the Rose Garden (outdoor), and the
+                            Tudor Library. Our dedicated wedding coordinator will help plan every detail.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="weddings">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">How many guests can you accommodate for weddings?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">We can host intimate weddings from 20 guests up to grand
+                            celebrations for 200 guests. Our Grand Hall accommodates up to 150 for a seated dinner, or
+                            the marquee on the South Lawn can host up to 200.</div>
+                    </div>
+                </div>
+
+                <!-- Dining -->
+                <div class="fq-item reveal" data-category="dining">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Do I need to book the restaurant in advance?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">We strongly recommend booking The Garden Restaurant in advance,
+                            especially for weekends and holidays. Hotel guests receive priority seating. The Twisted
+                            Boot Bar serves food on a walk-in basis.</div>
+                    </div>
+                </div>
+                <div class="fq-item reveal" data-category="dining">
+                    <div class="fq-item__header">
+                        <div class="fq-item__question">Can you cater for dietary requirements?</div>
+                        <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
+                    </div>
+                    <div class="fq-item__body">
+                        <div class="fq-item__answer">Our kitchen happily accommodates vegetarian, vegan, gluten-free,
+                            and other dietary needs. Please inform us at the time of booking or on arrival so our chefs
+                            can prepare something special for you.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="fq-cta">
+        <div class="container reveal">
+            <h2 class="fq-cta__title">Still Have Questions?</h2>
+            <p class="fq-cta__text">Our friendly team is here to help with anything not covered above.</p>
+            <a href="contact.html" class="fq-cta__btn">Contact Us</a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a><a href="#" class="footer__social-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                            class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#" class="footer__social-link"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+                </div>
+                <nav aria-label="Explore">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-phone"></i></span><a href="tel:+441789123456"
+                            class="footer__contact-text">+44 (0)1789 123 456</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-envelope"></i></span><a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd.</p>
+                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
+                        href="terms.html" class="footer__legal-link">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Accordion
+            document.querySelectorAll('.fq-item__header').forEach(header => {
+                header.addEventListener('click', () => {
+                    const item = header.parentElement;
+                    const wasOpen = item.classList.contains('open');
+                    // Close all
+                    document.querySelectorAll('.fq-item.open').forEach(i => i.classList.remove('open'));
+                    // Toggle clicked
+                    if (!wasOpen) item.classList.add('open');
+                });
+            });
+
+            // Category filter
+            document.querySelectorAll('.fq-cat-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    document.querySelectorAll('.fq-cat-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    const cat = btn.dataset.cat;
+                    document.querySelectorAll('.fq-item').forEach(item => {
+                        item.style.display = (cat === 'all' || item.dataset.category === cat) ? 'block' : 'none';
+                    });
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

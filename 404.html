@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Page not found — Kings Court Hotel. The page you're looking for doesn't exist." />
+    <title>Page Not Found | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .err-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--clr-forest);
+            color: var(--clr-cream);
+            position: relative;
+            overflow: hidden
+        }
+
+        .err-page__bg {
+            position: absolute;
+            inset: 0;
+            opacity: .08
+        }
+
+        .err-page__bg::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(ellipse at 30% 40%, rgba(194, 164, 94, .2), transparent 60%), radial-gradient(ellipse at 70% 60%, rgba(194, 164, 94, .15), transparent 60%)
+        }
+
+        .err-page__content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            padding: var(--space-md);
+            max-width: 600px
+        }
+
+        .err-page__code {
+            font-family: var(--font-serif);
+            font-size: clamp(8rem, 20vw, 14rem);
+            line-height: 1;
+            color: transparent;
+            -webkit-text-stroke: 2px var(--clr-gold);
+            letter-spacing: -.05em;
+            position: relative
+        }
+
+        .err-page__code::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 3px;
+            background: var(--clr-gold)
+        }
+
+        .err-page__title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            margin: 2rem 0 1rem;
+            line-height: 1.3
+        }
+
+        .err-page__text {
+            opacity: .7;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+            font-size: 1rem
+        }
+
+        .err-page__actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .err-page__btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .85rem 2rem;
+            border-radius: var(--radius-sm);
+            font-family: var(--font-sans);
+            font-size: .9rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            text-decoration: none;
+            transition: all var(--transition-fast)
+        }
+
+        .err-page__btn--primary {
+            background: var(--clr-gold);
+            color: var(--clr-white)
+        }
+
+        .err-page__btn--primary:hover {
+            background: var(--clr-gold-dark);
+            transform: translateY(-2px)
+        }
+
+        .err-page__btn--secondary {
+            background: transparent;
+            border: 1.5px solid rgba(255, 255, 255, .3);
+            color: var(--clr-cream)
+        }
+
+        .err-page__btn--secondary:hover {
+            border-color: var(--clr-gold);
+            color: var(--clr-gold);
+            transform: translateY(-2px)
+        }
+
+        .err-page__links {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, .1)
+        }
+
+        .err-page__links-title {
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .err-page__quick-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap
+        }
+
+        .err-page__quick-link {
+            color: var(--clr-cream);
+            opacity: .6;
+            text-decoration: none;
+            font-size: .9rem;
+            transition: all var(--transition-fast)
+        }
+
+        .err-page__quick-link:hover {
+            opacity: 1;
+            color: var(--clr-gold)
+        }
+
+        /* Floating decorative elements */
+        .err-float {
+            position: absolute;
+            opacity: .06;
+            font-size: 4rem;
+            animation: errFloat 8s ease-in-out infinite
+        }
+
+        .err-float:nth-child(1) {
+            top: 15%;
+            left: 10%;
+            animation-delay: 0s
+        }
+
+        .err-float:nth-child(2) {
+            top: 25%;
+            right: 15%;
+            animation-delay: 2s;
+            font-size: 3rem
+        }
+
+        .err-float:nth-child(3) {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+            font-size: 5rem
+        }
+
+        .err-float:nth-child(4) {
+            bottom: 30%;
+            right: 10%;
+            animation-delay: 6s;
+            font-size: 3.5rem
+        }
+
+        @keyframes errFloat {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg)
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg)
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- 404 PAGE -->
+    <main class="err-page">
+        <!-- Floating decorative elements -->
+        <div class="err-float">👑</div>
+        <div class="err-float">🏰</div>
+        <div class="err-float">🌿</div>
+        <div class="err-float">✨</div>
+
+        <div class="err-page__bg"></div>
+        <div class="err-page__content">
+            <div class="err-page__code">404</div>
+            <h1 class="err-page__title">This Room Doesn't Exist</h1>
+            <p class="err-page__text">It seems you've wandered into a part of the estate that's still under renovation.
+                The page you're looking for may have been moved or no longer exists.</p>
+
+            <div class="err-page__actions">
+                <a href="index.html" class="err-page__btn err-page__btn--primary">
+                    <i class="fa-solid fa-house"></i> Return Home
+                </a>
+                <a href="contact.html" class="err-page__btn err-page__btn--secondary">
+                    <i class="fa-solid fa-envelope"></i> Contact Us
+                </a>
+            </div>
+
+            <div class="err-page__links">
+                <div class="err-page__links-title">Popular Pages</div>
+                <div class="err-page__quick-links">
+                    <a href="rooms.html" class="err-page__quick-link">Rooms</a>
+                    <a href="dining.html" class="err-page__quick-link">Dining</a>
+                    <a href="booking.html" class="err-page__quick-link">Book a Stay</a>
+                    <a href="gallery.html" class="err-page__quick-link">Gallery</a>
+                    <a href="offers.html" class="err-page__quick-link">Offers</a>
+                    <a href="faq.html" class="err-page__quick-link">FAQ</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js" defer></script>
+</body>
+
+</html>

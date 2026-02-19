@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Discover local attractions near Kings Court Hotel — Stratford-upon-Avon, Warwick Castle, the Cotswolds and more." />
+    <title>Local Attractions Blog | Kings Court Hotel</title>
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <style>
+        .bl-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 350px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--clr-cream);
+            overflow: hidden
+        }
+
+        .bl-hero__bg {
+            position: absolute;
+            inset: 0
+        }
+
+        .bl-hero__bg img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .bl-hero__overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, rgba(10, 25, 30, .5), rgba(10, 20, 18, .75));
+            z-index: 1
+        }
+
+        .bl-hero__content {
+            position: relative;
+            z-index: 2
+        }
+
+        .bl-hero__eyebrow {
+            display: block;
+            font-family: var(--font-sans);
+            font-size: .8rem;
+            font-weight: 600;
+            letter-spacing: .2em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            margin-bottom: 1rem
+        }
+
+        .bl-hero__title {
+            font-family: var(--font-serif);
+            font-size: clamp(2.2rem, 5vw, 4rem)
+        }
+
+        .bl-hero__desc {
+            margin-top: 1rem;
+            opacity: .8;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto
+        }
+
+        .bl-main {
+            padding: var(--space-xl) 0
+        }
+
+        .bl-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: var(--space-md)
+        }
+
+        .bl-card {
+            background: var(--clr-white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            border: 1px solid rgba(0, 0, 0, .04)
+        }
+
+        .bl-card:hover {
+            transform: translateY(-6px);
+            box-shadow: var(--shadow-md)
+        }
+
+        .bl-card__img {
+            height: 240px;
+            overflow: hidden
+        }
+
+        .bl-card__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform .6s ease
+        }
+
+        .bl-card:hover .bl-card__img img {
+            transform: scale(1.06)
+        }
+
+        .bl-card__body {
+            padding: 1.5rem
+        }
+
+        .bl-card__tag {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            background: rgba(194, 164, 94, .1);
+            padding: .3rem .8rem;
+            border-radius: 50px;
+            margin-bottom: .75rem
+        }
+
+        .bl-card__title {
+            font-family: var(--font-serif);
+            font-size: 1.3rem;
+            color: var(--clr-forest);
+            line-height: 1.3;
+            margin-bottom: .75rem
+        }
+
+        .bl-card__title a {
+            color: inherit;
+            text-decoration: none;
+            transition: color var(--transition-fast)
+        }
+
+        .bl-card__title a:hover {
+            color: var(--clr-gold)
+        }
+
+        .bl-card__excerpt {
+            font-size: .92rem;
+            color: var(--clr-text-light);
+            line-height: 1.7;
+            margin-bottom: 1rem
+        }
+
+        .bl-card__meta {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            font-size: .8rem;
+            color: var(--clr-text-muted)
+        }
+
+        .bl-card__read {
+            color: var(--clr-gold);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: .85rem;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            transition: color var(--transition-fast)
+        }
+
+        .bl-card__read:hover {
+            color: var(--clr-gold-dark)
+        }
+
+        /* Featured post */
+        .bl-featured {
+            margin-bottom: var(--space-lg)
+        }
+
+        .bl-featured__inner {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            background: var(--clr-white);
+            box-shadow: var(--shadow-md)
+        }
+
+        .bl-featured__img {
+            min-height: 400px
+        }
+
+        .bl-featured__img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover
+        }
+
+        .bl-featured__body {
+            padding: var(--space-lg);
+            display: flex;
+            flex-direction: column;
+            justify-content: center
+        }
+
+        .bl-featured__tag {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: .7rem;
+            font-weight: 600;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--clr-gold);
+            background: rgba(194, 164, 94, .1);
+            padding: .3rem .8rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+            width: fit-content
+        }
+
+        .bl-featured__title {
+            font-family: var(--font-serif);
+            font-size: clamp(1.5rem, 3vw, 2.2rem);
+            color: var(--clr-forest);
+            line-height: 1.2;
+            margin-bottom: 1rem
+        }
+
+        .bl-featured__excerpt {
+            color: var(--clr-text-light);
+            line-height: 1.8;
+            margin-bottom: 1.5rem
+        }
+
+        .bl-featured__link {
+            color: var(--clr-gold);
+            font-weight: 600;
+            text-decoration: none;
+            font-size: .9rem;
+            letter-spacing: .1em;
+            text-transform: uppercase
+        }
+
+        .bl-featured__link:hover {
+            color: var(--clr-gold-dark)
+        }
+
+        @media(max-width:768px) {
+            .bl-hero {
+                height: 40vh;
+                min-height: 280px
+            }
+
+            .bl-featured__inner {
+                grid-template-columns: 1fr
+            }
+
+            .bl-featured__img {
+                min-height: 250px
+            }
+
+            .bl-grid {
+                grid-template-columns: 1fr
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAV -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
+                class="nav__logo-tagline">Hotel &amp; Estate</span></a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu"
+            aria-expanded="false"><span></span><span></span><span></span></button>
+    </nav>
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a><a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a><a href="events.html"
+            class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a><a href="gallery.html"
+            class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a><a href="contact.html"
+            class="nav__mobile-link">Contact</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="bl-hero">
+        <div class="bl-hero__bg"><img src="assets/images/hero/hero-main.jpg" alt="Warwickshire countryside" /></div>
+        <div class="bl-hero__overlay"></div>
+        <div class="bl-hero__content">
+            <span class="bl-hero__eyebrow">Discover Warwickshire</span>
+            <h1 class="bl-hero__title">Local Attractions &amp; Stories</h1>
+            <p class="bl-hero__desc">Explore the best of Shakespeare Country and the Warwickshire countryside from our
+                doorstep.</p>
+        </div>
+    </section>
+
+    <!-- BLOG CONTENT -->
+    <section class="bl-main section">
+        <div class="container">
+            <!-- Featured -->
+            <div class="bl-featured reveal">
+                <div class="bl-featured__inner">
+                    <div class="bl-featured__img">
+                        <img src="assets/images/hero/hero-main.jpg" alt="Stratford-upon-Avon" loading="lazy" />
+                    </div>
+                    <div class="bl-featured__body">
+                        <span class="bl-featured__tag">Featured</span>
+                        <h2 class="bl-featured__title">A Perfect Day in Stratford-upon-Avon</h2>
+                        <p class="bl-featured__excerpt">From Shakespeare's Birthplace to riverside walks and world-class
+                            theatre, discover our curated guide to spending a perfect day in this historic market town,
+                            just 3 miles from Kings Court.</p>
+                        <a href="blog-single.html" class="bl-featured__link">Read Full Guide →</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="bl-grid">
+                <article class="bl-card reveal">
+                    <div class="bl-card__img"><img src="assets/images/rooms/room-suite.jpg" alt="Warwick Castle"
+                            loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Historic Sites</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">Warwick Castle: A Thousand Years of
+                                History</a></h3>
+                        <p class="bl-card__excerpt">Just 8 miles from Kings Court lies one of Britain's finest medieval
+                            fortresses. Explore jousting tournaments, dungeons, and breathtaking views.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1">
+                    <div class="bl-card__img"><img src="assets/images/rooms/room-classic.jpg" alt="Cotswolds village"
+                            loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Countryside</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">The Cotswolds: England's Most Beautiful
+                                Rolling Hills</a></h3>
+                        <p class="bl-card__excerpt">Honey-stone villages, winding lanes and picture-postcard scenery —
+                            the Cotswolds AONB begins just 12 miles from our grounds.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2">
+                    <div class="bl-card__img"><img src="assets/images/hero/hero-main.jpg"
+                            alt="Royal Shakespeare Theatre" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Culture</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">Royal Shakespeare Company: A Theatre
+                                Lover's Guide</a></h3>
+                        <p class="bl-card__excerpt">World-class performances on the banks of the Avon. Our guide to
+                            securing the best seats and making a night of it.</p>
+                        <div class="bl-card__meta">
+                            <span>3 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal">
+                    <div class="bl-card__img"><img src="assets/images/rooms/room-suite.jpg" alt="Countryside walk"
+                            loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Walking</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">5 Scenic Walks from Our Doorstep</a></h3>
+                        <p class="bl-card__excerpt">From strolls along the River Avon to rambles through ancient
+                            woodland, discover walking routes for every ability.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1">
+                    <div class="bl-card__img"><img src="assets/images/rooms/room-classic.jpg" alt="Local dining"
+                            loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food &amp; Drink</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">Local Food Markets &amp; Farm Shops Worth
+                                Visiting</a></h3>
+                        <p class="bl-card__excerpt">Warwickshire is blessed with award-winning producers. Here's where
+                            to find the finest cheeses, meats, and artisan goods.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2">
+                    <div class="bl-card__img"><img src="assets/images/hero/hero-main.jpg" alt="Gardens"
+                            loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Gardens</span>
+                        <h3 class="bl-card__title"><a href="blog-single.html">Stunning English Gardens Within Easy
+                                Reach</a></h3>
+                        <p class="bl-card__excerpt">From Hidcote Manor to Kiftsgate Court, the region boasts some of the
+                            most celebrated gardens in the country.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel &amp; Estate · Est. 1642</div>
+                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 40 acres of private
+                        Warwickshire countryside.</p>
+                    <div class="footer__social"><a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a><a href="#" class="footer__social-link"
+                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="#"
+                            class="footer__social-link" aria-label="Twitter"><i
+                                class="fa-brands fa-x-twitter"></i></a><a href="#" class="footer__social-link"
+                            aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a></div>
+                </div>
+                <nav aria-label="Explore">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="events.html" class="footer__link">Events</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="location.html" class="footer__link">Location</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-phone"></i></span><a href="tel:+441789123456"
+                            class="footer__contact-text">+44 (0)1789 123 456</a></div>
+                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
+                                class="fa-solid fa-envelope"></i></span><a href="mailto:reservations@kingscourt.co.uk"
+                            class="footer__contact-text">reservations@kingscourt.co.uk</a></div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd.</p>
+                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
+                        href="terms.html" class="footer__legal-link">Terms</a></div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+</body>
+
+</html>

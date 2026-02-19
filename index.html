@@ -79,11 +79,17 @@
   ═══════════════════════════════════════ -->
     <section class="hero" id="hero" aria-label="Hero">
 
-        <!-- Background Image -->
+        <!-- Background Video -->
         <div class="hero__bg">
-            <img src="assets/images/hero/hero-main.jpg"
-                alt="Kings Court Hotel — Tudor manor house surrounded by manicured English gardens"
-                fetchpriority="high" />
+            <video class="hero__video" autoplay muted loop playsinline poster="assets/images/hero/hero-main.jpg">
+                <source src="assets/videos/Video.MP4" type="video/mp4">
+                <!-- Fallback for browsers without video support -->
+                <img src="assets/images/hero/hero-main.jpg"
+                    alt="Kings Court Hotel — Tudor manor house surrounded by manicured English gardens" />
+            </video>
+            <!-- Static fallback image (shown on mobile if video is paused) -->
+            <img class="hero__poster" src="assets/images/hero/hero-main.jpg" alt="Kings Court Hotel — Tudor manor house"
+                aria-hidden="true" />
         </div>
 
         <!-- Overlay -->
