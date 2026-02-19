@@ -216,24 +216,4 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
 
-    /* ─── 7. Nav Scroll Behaviour ─── */
-    const nav = document.getElementById('main-nav');
-    if (nav) {
-        window.addEventListener('scroll', () => {
-            nav.classList.toggle('nav--scrolled', window.scrollY > 80);
-        });
-    }
-
-    /* ─── 8. Mobile Menu Toggle ─── */
-    const hamburger = document.getElementById('nav-hamburger');
-    const mobileMenu = document.getElementById('nav-mobile');
-    if (hamburger && mobileMenu) {
-        hamburger.addEventListener('click', () => {
-            const expanded = hamburger.getAttribute('aria-expanded') === 'true';
-            hamburger.setAttribute('aria-expanded', !expanded);
-            hamburger.classList.toggle('active');
-            mobileMenu.classList.toggle('active');
-        });
-    }
-
 });
