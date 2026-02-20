@@ -35,10 +35,10 @@ function createTransporter() {
 // SUBJECT LINES (per form type)
 // ────────────────────────────────────────────────────────────
 const SUBJECTS = {
-    wedding:  '💍 New Wedding Enquiry — Kings Court Hotel',
-    stay:     '🏨 New Stay / Booking Enquiry — Kings Court Hotel',
-    events:   '🎪 New Events Enquiry — Kings Court Hotel',
-    contact:  '✉️ New General Enquiry — Kings Court Hotel',
+    wedding: '💍 New Wedding Enquiry — Kings Court Hotel',
+    stay: '🏨 New Stay / Booking Enquiry — Kings Court Hotel',
+    events: '🎪 New Events Enquiry — Kings Court Hotel',
+    contact: '✉️ New General Enquiry — Kings Court Hotel',
 };
 
 // ────────────────────────────────────────────────────────────
@@ -79,8 +79,8 @@ function buildHotelEmail(type, data) {
 
     const badgeColors = {
         wedding: '#b8860b',
-        stay:    '#2e7d32',
-        events:  '#1565c0',
+        stay: '#2e7d32',
+        events: '#1565c0',
         contact: '#6d4c41',
     };
 
@@ -226,8 +226,8 @@ function buildConfirmationEmail(type, data) {
 // ────────────────────────────────────────────────────────────
 const CONFIRMATION_SUBJECTS = {
     wedding: 'Your Wedding Enquiry — Kings Court Hotel & Estate',
-    stay:    'Your Booking Enquiry — Kings Court Hotel & Estate',
-    events:  'Your Event Enquiry — Kings Court Hotel & Estate',
+    stay: 'Your Booking Enquiry — Kings Court Hotel & Estate',
+    events: 'Your Event Enquiry — Kings Court Hotel & Estate',
     contact: 'Your Enquiry — Kings Court Hotel & Estate',
 };
 
@@ -297,7 +297,7 @@ module.exports = async function handler(req, res) {
         }
 
         const formType = data.formType;
-        const hotelEmail = process.env.HOTEL_EMAIL || 'info@kingscourthotel.co.uk';
+        const hotelEmail = process.env.HOTEL_EMAIL || 'vikrmajeetsingh0096@gmail.com';
         const fromName = process.env.SMTP_FROM_NAME || 'Kings Court Hotel';
         const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
 
