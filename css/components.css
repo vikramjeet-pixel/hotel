@@ -64,14 +64,14 @@
 .nav__links {
     display: flex;
     align-items: center;
-    gap: 2rem;
+    gap: 1.5rem;
 }
 
 .nav__link {
     font-family: var(--font-sans);
-    font-size: 0.72rem;
+    font-size: 0.68rem;
     font-weight: 500;
-    letter-spacing: 0.12em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     color: rgba(245, 241, 232, 0.85);
     transition: color var(--transition-fast);
@@ -176,8 +176,43 @@
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.4s ease, visibility 0.4s ease;
-    padding: 100px 2rem 3rem;
+    padding: 90px 2rem 3rem;
     overflow-y: auto;
+}
+
+/* Mobile close button (X) positioned top-right */
+.nav__mobile-close {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 44px;
+    height: 44px;
+    background: none;
+    border: 1px solid rgba(194, 164, 94, 0.3);
+    border-radius: 50%;
+    color: var(--clr-cream);
+    font-size: 1.2rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+    z-index: 10;
+}
+
+.nav__mobile-close:hover {
+    background: var(--clr-gold);
+    color: var(--clr-forest-dark);
+    border-color: var(--clr-gold);
+}
+
+/* Divider inside mobile menu */
+.nav__mobile-divider {
+    width: 40px;
+    height: 1px;
+    background: var(--clr-gold);
+    opacity: 0.4;
+    margin: 0.5rem 0;
 }
 
 .nav__mobile.active {
@@ -188,10 +223,10 @@
 
 .nav__mobile-link {
     font-family: var(--font-serif);
-    font-size: 1.65rem;
+    font-size: 1.4rem;
     color: rgba(245, 241, 232, 0.85);
     transition: color 0.25s ease, transform 0.25s ease;
-    padding: 0.6rem 0;
+    padding: 0.45rem 0;
     display: block;
     text-align: center;
     position: relative;

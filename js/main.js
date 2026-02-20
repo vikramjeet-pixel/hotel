@@ -26,6 +26,14 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ── Mobile Menu Toggle ── */
   const hamburger = document.getElementById('nav-hamburger');
   const mobileMenu = document.getElementById('nav-mobile');
+  const mobileClose = document.getElementById('nav-mobile-close');
+
+  const closeMobileMenu = () => {
+    hamburger?.classList.remove('active');
+    mobileMenu?.classList.remove('active');
+    document.body.style.overflow = '';
+    hamburger?.setAttribute('aria-expanded', 'false');
+  };
 
   hamburger?.addEventListener('click', () => {
     const isOpen = hamburger.classList.toggle('active');
@@ -34,13 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     hamburger.setAttribute('aria-expanded', isOpen);
   });
 
+  // Close button (X) inside mobile menu
+  mobileClose?.addEventListener('click', closeMobileMenu);
+
   // Close mobile menu on link click
-  mobileMenu?.querySelectorAll('.nav__mobile-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger?.classList.remove('active');
-      mobileMenu?.classList.remove('active');
-      document.body.style.overflow = '';
-    });
+  mobileMenu?.querySelectorAll('.nav__mobile-link, .nav__mobile .btn').forEach(link => {
+    link.addEventListener('click', closeMobileMenu);
+  });
+
+  // Close on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && mobileMenu?.classList.contains('active')) {
+      closeMobileMenu();
+    }
   });
 
   /* ── Scroll Reveal Animation ── */
@@ -68,6 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
     const href = link.getAttribute('href');
     if (href === currentPage || (currentPage === '' && href === 'index.html')) {
       link.style.color = 'var(--clr-gold)';
+    }
+  });
+
+  // Also highlight active mobile nav link
+  document.querySelectorAll('.nav__mobile-link').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
+      link.classList.add('nav__mobile-link--active');
     }
   });
 
