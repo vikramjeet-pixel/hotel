@@ -39,6 +39,7 @@ const SUBJECTS = {
     stay: '🏨 New Stay / Booking Enquiry — Kings Court Hotel',
     events: '🎪 New Events Enquiry — Kings Court Hotel',
     contact: '✉️ New General Enquiry — Kings Court Hotel',
+    dining: '🍽️ New Dining Reservation — Kings Court Hotel',
 };
 
 // ────────────────────────────────────────────────────────────
@@ -75,6 +76,7 @@ function buildHotelEmail(type, data) {
         stay: 'Stay / Booking Enquiry',
         events: 'Event Enquiry',
         contact: 'General Enquiry',
+        dining: 'Dining Reservation',
     };
 
     const badgeColors = {
@@ -82,6 +84,7 @@ function buildHotelEmail(type, data) {
         stay: '#2e7d32',
         events: '#1565c0',
         contact: '#6d4c41',
+        dining: '#8e24aa',
     };
 
     const typeLabel = typeLabels[type] || 'General Enquiry';
@@ -169,6 +172,7 @@ function buildConfirmationEmail(type, data) {
         stay: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your booking enquiry. We look forward to welcoming you to Kings Court Hotel & Estate.`,
         events: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your event enquiry. Kings Court Hotel & Estate is delighted to help you plan your perfect event.`,
         contact: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for getting in touch with Kings Court Hotel & Estate. We've received your message and appreciate you contacting us.`,
+        dining: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your dining reservation request at Kings Court Hotel & Estate. We're looking forward to welcoming you.`,
     };
 
     const promises = {
@@ -176,6 +180,7 @@ function buildConfirmationEmail(type, data) {
         stay: 'Our reservations team will confirm availability and get back to you within 2 hours.',
         events: 'Our events team will prepare a bespoke proposal and respond within 24 hours.',
         contact: 'A member of our team will respond to your enquiry within 24 hours.',
+        dining: 'Our dining reservations team will confirm your table within 2 hours. Please check your email for confirmation.',
     };
 
     const greeting = (greetings[type] || greetings.contact).replace(/\n/g, '<br>');
@@ -229,6 +234,7 @@ const CONFIRMATION_SUBJECTS = {
     stay: 'Your Booking Enquiry — Kings Court Hotel & Estate',
     events: 'Your Event Enquiry — Kings Court Hotel & Estate',
     contact: 'Your Enquiry — Kings Court Hotel & Estate',
+    dining: 'Your Dining Reservation — Kings Court Hotel & Estate',
 };
 
 // ────────────────────────────────────────────────────────────
@@ -251,7 +257,7 @@ function validateRequest(data) {
     if (!data.message || data.message.trim().length < 5) {
         errors.push('Message is required (at least 5 characters).');
     }
-    if (!data.formType || !['wedding', 'stay', 'events', 'contact'].includes(data.formType)) {
+    if (!data.formType || !['wedding', 'stay', 'events', 'contact', 'dining'].includes(data.formType)) {
         errors.push('Invalid form type.');
     }
 

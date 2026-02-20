@@ -456,4 +456,78 @@
         });
     }
 
+
+    // ════════════════════════════════════════════════════════
+    //  5. DINING / RESERVATION FORM (dining.html)
+    // ════════════════════════════════════════════════════════
+    if (document.getElementById('dn-reserve-form')) {
+        createSubmitHandler({
+            formId: 'dn-reserve-form',
+            formType: 'dining',
+            successElId: 'form-success',
+            submitBtnSelector: '#reserve-submit-btn',
+
+            validateFields: function () {
+                let valid = true;
+                let firstInvalid = null;
+
+                const validators = {
+                    'form-first-name': { test: v => v.trim().length >= 2, msg: 'Please enter your first name.' },
+                    'form-last-name': { test: v => v.trim().length >= 2, msg: 'Please enter your last name.' },
+                    'form-email': { test: v => emailRegex.test(v.trim()), msg: 'Please enter a valid email address.' },
+                    'form-phone': { test: v => v.trim().length >= 7, msg: 'Please enter a valid phone number.' },
+                    'form-date': { test: v => { if (!v) return false; return new Date(v) >= new Date(new Date().toDateString()); }, msg: 'Please select a future date.' },
+                    'form-time': { test: v => v !== '', msg: 'Please select a time.' },
+                    'form-guests': { test: v => v !== '', msg: 'Please select the number of guests.' },
+                };
+
+                Object.entries(validators).forEach(([id, rule]) => {
+                    const field = document.getElementById(id);
+                    const errEl = field?.closest('.dn-form__group')?.querySelector('.dn-form__error');
+                    if (!field) return;
+                    if (!rule.test(field.value)) {
+                        field.classList.add('is-error');
+                        if (errEl) errEl.textContent = rule.msg;
+                        if (!firstInvalid) firstInvalid = field;
+                        valid = false;
+                    } else {
+                        field.classList.remove('is-error');
+                        if (errEl) errEl.textContent = '';
+                    }
+                });
+
+                return { valid, firstInvalid };
+            },
+
+            collectData: function () {
+                const firstName = document.getElementById('form-first-name')?.value?.trim() || '';
+                const lastName = document.getElementById('form-last-name')?.value?.trim() || '';
+                const venue = document.getElementById('form-venue')?.value || 'restaurant';
+                const venueName = venue === 'bar' ? 'The Twisted Boot Bar' : 'The Garden Restaurant';
+                const timeSelect = document.getElementById('form-time');
+                const guestsSelect = document.getElementById('form-guests');
+                const occasionSelect = document.getElementById('form-occasion');
+                const requests = document.getElementById('form-requests')?.value?.trim() || 'None';
+
+                return {
+                    fullName: firstName + ' ' + lastName,
+                    email: document.getElementById('form-email')?.value?.trim(),
+                    phone: document.getElementById('form-phone')?.value?.trim(),
+                    subject: 'Dining Reservation — ' + venueName,
+                    message: `Dining reservation at ${venueName}. Date: ${document.getElementById('form-date')?.value}. Time: ${timeSelect?.options[timeSelect.selectedIndex]?.text || ''}. Guests: ${guestsSelect?.value || ''}. Occasion: ${occasionSelect?.options[occasionSelect.selectedIndex]?.text || 'None'}. Special requests: ${requests}.`,
+                };
+            },
+
+            resetFields: function () {
+                const form = document.getElementById('dn-reserve-form');
+                form?.querySelectorAll('.dn-form__input, .dn-form__select, .dn-form__textarea').forEach(el => {
+                    el.value = '';
+                    el.classList.remove('is-error');
+                });
+                const submitBtn = document.getElementById('reserve-submit-btn');
+                if (submitBtn) submitBtn.style.display = 'none';
+            },
+        });
+    }
+
 })();

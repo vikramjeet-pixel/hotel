@@ -195,45 +195,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    form?.addEventListener('submit', (e) => {
-        e.preventDefault();
-
-        // Clear all errors
-        Object.keys(validators).forEach(id => clearError(id));
-
-        let valid = true;
-        let firstErrorId = null;
-
-        Object.entries(validators).forEach(([id, { validate, message }]) => {
-            const input = document.getElementById(id);
-            if (!input) return;
-            if (!validate(input.value)) {
-                showError(id, message);
-                valid = false;
-                if (!firstErrorId) firstErrorId = id;
-            }
-        });
-
-        if (!valid) {
-            // Focus first error
-            document.getElementById(firstErrorId)?.focus();
-            return;
-        }
-
-        // Simulate submission
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin" aria-hidden="true"></i> Sending…';
-
-        setTimeout(() => {
-            form.querySelectorAll('.dn-form__input, .dn-form__select, .dn-form__textarea').forEach(el => {
-                el.value = '';
-            });
-            if (successEl) successEl.hidden = false;
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Confirm Reservation';
-            successEl?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-        }, 1200);
-    });
+    // Form submit is handled by email-handler.js
+    // (validation on submit is performed there)
 
 
     /* ══════════════════════════════════════════
