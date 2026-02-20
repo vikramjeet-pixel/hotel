@@ -1,0 +1,9 @@
+{
+    "name": "kings-court-hotel",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Kings Court Hotel & Estate website with email integration",
+    "dependencies": {
+        "nodemailer": "^6.9.14"
+    }
+}

@@ -217,54 +217,8 @@
         consentBox.addEventListener('change', validateConsent);
     }
 
-    // Form submit
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        let allValid = true;
-        let firstInvalid = null;
-
-        // Validate all required fields
-        Object.keys(validators).forEach((fieldId) => {
-            const valid = validateField(fieldId);
-            if (!valid && !firstInvalid) {
-                firstInvalid = document.getElementById(fieldId);
-            }
-            if (!valid) allValid = false;
-        });
-
-        // Validate consent
-        if (!validateConsent()) {
-            allValid = false;
-            if (!firstInvalid) firstInvalid = document.getElementById('wd-consent');
-        }
-
-        if (!allValid) {
-            if (firstInvalid) {
-                firstInvalid.focus();
-                firstInvalid.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-            return;
-        }
-
-        // Simulate submission
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin" aria-hidden="true"></i> Sending…';
-
-        setTimeout(() => {
-            form.querySelectorAll('.wd-form__input, .wd-form__select, .wd-form__textarea').forEach((el) => {
-                el.value = '';
-                el.classList.remove('is-error');
-            });
-            if (consentBox) consentBox.checked = false;
-
-            submitBtn.style.display = 'none';
-            if (successMsg) {
-                successMsg.hidden = false;
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }, 1800);
-    });
+    // Form submit is handled by email-handler.js
+    // (validation on submit is performed there)
 
 
     /* ─────────────────────────────────────────

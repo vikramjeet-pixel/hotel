@@ -132,7 +132,8 @@
             transition: border-color var(--transition-fast);
             background: var(--clr-cream-light);
             box-sizing: border-box;
-            -webkit-appearance: none
+            -webkit-appearance: none;
+            appearance: none
         }
 
         .bk-form__select {
@@ -402,23 +403,37 @@
                         </div>
                         <div class="bk-form__row">
                             <div class="bk-form__group">
-                                <label class="bk-form__label" for="bk-name">Full Name</label>
-                                <input class="bk-form__input" type="text" id="bk-name" placeholder="Your name"
+                                <label class="bk-form__label" for="bk-name">Full Name *</label>
+                                <input class="bk-form__input" type="text" id="bk-name" placeholder="Your full name"
                                     required />
                             </div>
                             <div class="bk-form__group">
-                                <label class="bk-form__label" for="bk-email">Email</label>
+                                <label class="bk-form__label" for="bk-email">Email Address *</label>
                                 <input class="bk-form__input" type="email" id="bk-email" placeholder="email@example.com"
                                     required />
                             </div>
                         </div>
                         <div class="bk-form__group">
-                            <label class="bk-form__label" for="bk-requests">Special Requests</label>
-                            <input class="bk-form__input" type="text" id="bk-requests"
-                                placeholder="e.g. Late check-in, champagne on arrival" />
+                            <label class="bk-form__label" for="bk-phone">Phone Number *</label>
+                            <input class="bk-form__input" type="tel" id="bk-phone" placeholder="+44 (0)7..." required />
+                        </div>
+                        <div class="bk-form__group">
+                            <label class="bk-form__label" for="bk-requests">Special Requests / Message *</label>
+                            <textarea class="bk-form__input" id="bk-requests" rows="3"
+                                placeholder="e.g. Late check-in, champagne on arrival, any other requirements"
+                                style="min-height:100px;resize:vertical;" required></textarea>
                         </div>
                         <button type="submit" class="bk-form__submit">Confirm Booking Request</button>
                     </form>
+                    <!-- Success message -->
+                    <div id="bk-success" style="display:none;text-align:center;padding:2rem;color:var(--clr-forest);">
+                        <i class="fa-solid fa-circle-check"
+                            style="font-size:3rem;color:var(--clr-gold);margin-bottom:1rem;display:block;"></i>
+                        <h3 style="font-family:var(--font-serif);font-size:1.5rem;margin-bottom:.5rem;">Booking Request
+                            Received!</h3>
+                        <p style="color:var(--clr-text-light);">Thank you! A confirmation email has been sent to your
+                            inbox. Our reservations team will confirm availability within 2 hours.</p>
+                    </div>
                 </div>
 
                 <!-- Summary -->
@@ -579,14 +594,9 @@
                     if (checkout.value && checkout.value <= checkin.value) checkout.value = '';
                 }
             });
-
-            // Form submit
-            document.getElementById('booking-form')?.addEventListener('submit', (e) => {
-                e.preventDefault();
-                alert('Thank you! Your booking request has been received. Our team will confirm via email within 2 hours.');
-            });
         });
     </script>
+    <script src="js/email-handler.js" defer></script>
 </body>
 
 </html>

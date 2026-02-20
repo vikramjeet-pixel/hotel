@@ -373,9 +373,9 @@
                             <div class="ct-form__error" id="ct-email-error">Please enter a valid email address.</div>
                         </div>
                         <div class="ct-form__group">
-                            <label class="ct-form__label" for="ct-phone">Phone Number</label>
+                            <label class="ct-form__label" for="ct-phone">Phone Number *</label>
                             <input class="ct-form__input" type="tel" id="ct-phone" name="phone"
-                                placeholder="+44 (0)7..." />
+                                placeholder="+44 (0)7..." required />
                             <div class="ct-form__error" id="ct-phone-error">Please enter a valid phone number.</div>
                         </div>
                         <div class="ct-form__group">
@@ -518,38 +518,7 @@
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const form = document.getElementById('contact-form');
-            const success = document.getElementById('ct-success');
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            const phoneRegex = /^[\+]?[\d\s\-\(\)]{7,}$/;
-
-            const validate = (id, condition) => {
-                const input = document.getElementById(id);
-                const error = document.getElementById(id + '-error');
-                if (!condition) { input.classList.add('error'); error.classList.add('visible'); return false; }
-                input.classList.remove('error'); error.classList.remove('visible'); return true;
-            };
-
-            form?.addEventListener('submit', (e) => {
-                e.preventDefault();
-                let valid = true;
-                valid = validate('ct-name', document.getElementById('ct-name').value.trim().length >= 2) && valid;
-                valid = validate('ct-email', emailRegex.test(document.getElementById('ct-email').value.trim())) && valid;
-                const phone = document.getElementById('ct-phone').value.trim();
-                if (phone) valid = validate('ct-phone', phoneRegex.test(phone)) && valid;
-                valid = validate('ct-subject', document.getElementById('ct-subject').value.trim().length >= 2) && valid;
-                valid = validate('ct-message', document.getElementById('ct-message').value.trim().length >= 10) && valid;
-                if (valid) { form.style.display = 'none'; success.classList.add('visible'); }
-            });
-
-            // Live clear errors
-            document.querySelectorAll('.ct-form__input,.ct-form__textarea').forEach(input => {
-                input.addEventListener('input', () => { input.classList.remove('error'); const err = document.getElementById(input.id + '-error'); err?.classList.remove('visible'); });
-            });
-        });
-    </script>
+    <script src="js/email-handler.js" defer></script>
 </body>
 
 </html>

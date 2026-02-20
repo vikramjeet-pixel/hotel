@@ -161,35 +161,7 @@
         field.addEventListener('change', () => validateField(id));
     });
 
-    form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        let allValid = true;
-        let firstInvalid = null;
-        Object.keys(validators).forEach(id => {
-            if (!validateField(id)) {
-                allValid = false;
-                if (!firstInvalid) firstInvalid = document.getElementById(id);
-            }
-        });
-        if (!allValid) {
-            firstInvalid?.focus();
-            firstInvalid?.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            return;
-        }
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> Sending…';
-        setTimeout(() => {
-            form.querySelectorAll('.ev-form__input, .ev-form__select, .ev-form__textarea').forEach(el => {
-                el.value = '';
-                el.classList.remove('is-error');
-            });
-            form.querySelectorAll('.ev-form__checkbox').forEach(cb => cb.checked = false);
-            submitBtn.style.display = 'none';
-            if (successMsg) {
-                successMsg.hidden = false;
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        }, 1800);
-    });
+    // Form submit is handled by email-handler.js
+    // (validation on submit is performed there)
 
 })();
