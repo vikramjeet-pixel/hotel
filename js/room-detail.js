@@ -340,65 +340,35 @@ document.addEventListener('DOMContentLoaded', () => {
        URL PARAM — Dynamic room data
        ══════════════════════════════════════════ */
     const roomData = {
-        deluxe: {
-            title: 'Deluxe Room',
-            category: 'Superior Room',
-            price: 195,
-            breadcrumb: 'Deluxe Room'
-        },
-        suite: {
-            title: 'Signature Suite',
-            category: 'Suite',
-            price: 395,
-            breadcrumb: 'Signature Suite'
-        },
-        classic: {
-            title: 'Classic Room',
+        standard: {
+            title: 'Standard Double',
             category: 'Standard Room',
             price: 145,
-            breadcrumb: 'Classic Room'
+            breadcrumb: 'Standard Double'
         },
-        garden: {
-            title: 'Garden Room',
-            category: 'Standard Room',
-            price: 155,
-            breadcrumb: 'Garden Room'
+        premier: {
+            title: 'Premier Double',
+            category: 'Premier Room',
+            price: 195,
+            breadcrumb: 'Premier Double'
         },
-        manor: {
-            title: 'Manor Room',
-            category: 'Superior Room',
-            price: 225,
-            breadcrumb: 'Manor Room'
-        },
-        tudor: {
-            title: 'Tudor Room',
-            category: 'Superior Room',
-            price: 215,
-            breadcrumb: 'Tudor Room'
+        twin: {
+            title: 'Premier Twin',
+            category: 'Premier Room',
+            price: 195,
+            breadcrumb: 'Premier Twin'
         },
         family: {
-            title: 'Family Suite',
-            category: 'Family Suite',
-            price: 295,
-            breadcrumb: 'Family Suite'
-        },
-        royal: {
-            title: 'Royal Suite',
-            category: 'Suite',
-            price: 595,
-            breadcrumb: 'Royal Suite'
-        },
-        courtyard: {
-            title: 'Courtyard Room',
-            category: 'Standard Room',
-            price: 135,
-            breadcrumb: 'Courtyard Room'
+            title: 'Premier Family',
+            category: 'Family Room',
+            price: 245,
+            breadcrumb: 'Premier Family'
         }
     };
 
     const params = new URLSearchParams(window.location.search);
-    const roomKey = params.get('room') || 'deluxe';
-    const room = roomData[roomKey] || roomData.deluxe;
+    const roomKey = params.get('room') || 'premier';
+    const room = roomData[roomKey] || roomData.premier;
 
     // Update page elements
     const titleEl = document.getElementById('rd-title');
