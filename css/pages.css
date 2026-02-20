@@ -142,6 +142,19 @@
     opacity: 0;
 }
 
+/* Make buttons transparent on the hero page */
+.hero__ctas .btn {
+    background: transparent !important;
+    border: 1px solid var(--clr-gold) !important;
+    color: var(--clr-cream) !important;
+    backdrop-filter: blur(2px);
+}
+
+.hero__ctas .btn:hover {
+    background: rgba(194, 164, 94, 0.15) !important;
+    border-color: var(--clr-cream) !important;
+}
+
 /* Booking bar wrapper in hero */
 .hero__booking {
     position: absolute;
