@@ -303,7 +303,7 @@ module.exports = async function handler(req, res) {
         }
 
         const formType = data.formType;
-        const hotelEmail = process.env.HOTEL_EMAIL || 'vikrmajeetsingh0096@gmail.com';
+        const hotelEmail = process.env.HOTEL_EMAIL || 'info@kingscourthotel.co.uk';
         const fromName = process.env.SMTP_FROM_NAME || 'Kings Court Hotel';
         const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
 
