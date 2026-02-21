@@ -8,8 +8,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const filterBtns = document.querySelectorAll('.rooms-filter__btn');
-    const roomCards  = document.querySelectorAll('.rooms-grid .room-card');
-    const noResults  = document.getElementById('rooms-no-results');
+    const roomCards = document.querySelectorAll('.rooms-grid .room-card');
+    const noResults = document.getElementById('rooms-no-results');
 
     // Guard: only run on pages with the filter
     if (!filterBtns.length || !roomCards.length) return;
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ── URL hash filter support ── */
     // e.g. rooms.html#standard will pre-select that filter
     const hash = window.location.hash.replace('#', '');
-    if (hash && ['standard', 'superior', 'family'].includes(hash)) {
+    if (hash && ['single', 'standard-double', 'king', 'twin', 'quad'].includes(hash)) {
         const targetBtn = document.querySelector(`[data-filter="${hash}"]`);
         if (targetBtn) targetBtn.click();
     }

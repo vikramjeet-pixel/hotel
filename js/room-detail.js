@@ -340,35 +340,46 @@ document.addEventListener('DOMContentLoaded', () => {
        URL PARAM — Dynamic room data
        ══════════════════════════════════════════ */
     const roomData = {
-        standard: {
-            title: 'Standard Double',
+        single: {
+            title: 'Single Room',
             category: 'Standard Room',
-            price: 145,
-            breadcrumb: 'Standard Double'
+            price: 115,
+            breadcrumb: 'Single Room',
+            folder: 'single-room'
         },
-        premier: {
-            title: 'Premier Double',
+        'standard-double': {
+            title: 'Standard Double Room',
+            category: 'Double Room',
+            price: 145,
+            breadcrumb: 'Standard Double Room',
+            folder: 'standard-double-room'
+        },
+        king: {
+            title: 'King Room',
             category: 'Premier Room',
             price: 195,
-            breadcrumb: 'Premier Double'
+            breadcrumb: 'King Room',
+            folder: 'king-room'
         },
         twin: {
-            title: 'Premier Twin',
-            category: 'Premier Room',
-            price: 195,
-            breadcrumb: 'Premier Twin'
+            title: 'Twin Room',
+            category: 'Twin Room',
+            price: 175,
+            breadcrumb: 'Twin Room',
+            folder: 'twin-room'
         },
-        family: {
-            title: 'Premier Family',
-            category: 'Family Room',
+        quad: {
+            title: 'Quad Room',
+            category: 'Quad Room',
             price: 245,
-            breadcrumb: 'Premier Family'
+            breadcrumb: 'Quad Room',
+            folder: 'quad-room'
         }
     };
 
     const params = new URLSearchParams(window.location.search);
-    const roomKey = params.get('room') || 'premier';
-    const room = roomData[roomKey] || roomData.premier;
+    const roomKey = params.get('room') || 'king';
+    const room = roomData[roomKey] || roomData.king;
 
     // Update page elements
     const titleEl = document.getElementById('rd-title');
@@ -382,6 +393,23 @@ document.addEventListener('DOMContentLoaded', () => {
     if (breadcrumbEl) breadcrumbEl.textContent = room.breadcrumb;
     if (sidebarPrice) sidebarPrice.textContent = `£${room.price}`;
     if (mobileAmount) mobileAmount.textContent = `£${room.price}`;
+
+    // Update images dynamically
+    const mainImages = document.querySelectorAll('.rd-gallery__slide img');
+    const thumbImages = document.querySelectorAll('.rd-gallery__thumb img');
+    const imgNames = ['mobilescale.avif', 'mobilescale-1.avif', 'mobilescale-2.avif'];
+
+    // Check if lengths match
+    mainImages.forEach((img, idx) => {
+        if (imgNames[idx]) {
+            img.src = `assets/images/${room.folder}/${imgNames[idx]}`;
+        }
+    });
+    thumbImages.forEach((img, idx) => {
+        if (imgNames[idx]) {
+            img.src = `assets/images/${room.folder}/${imgNames[idx]}`;
+        }
+    });
 
     // Update page title
     document.title = `${room.title} | Kings Court Hotel — Tudor Country Escape`;
