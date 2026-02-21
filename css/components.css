@@ -553,6 +553,8 @@
     justify-content: center;
     text-align: center;
     white-space: normal;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
 }
 
 @media (max-width: 420px) {
