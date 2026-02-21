@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Book your stay at Kings Court Hotel. Select dates, choose your room, and get an instant price estimate." />
+        content="Book your stay at Kings Court Hotel. Select dates, choose your room, and get an instant availability check." />
     <title>Book Your Stay | Kings Court Hotel</title>
     <link rel="icon"
         href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
@@ -396,11 +396,11 @@
                         <div class="bk-form__group">
                             <label class="bk-form__label" for="bk-room">Room Type</label>
                             <select class="bk-form__select" id="bk-room">
-                                <option value="classic" data-price="195">Classic Room — £195/night</option>
-                                <option value="deluxe" data-price="275">Deluxe Room — £275/night</option>
-                                <option value="suite" data-price="395">Signature Suite — £395/night</option>
-                                <option value="bridal" data-price="495">Bridal Suite — £495/night</option>
-                                <option value="penthouse" data-price="650">Tudor Penthouse — £650/night</option>
+                                <option value="single">Single Room</option>
+                                <option value="standard-double">Standard Double Room</option>
+                                <option value="king">King Room</option>
+                                <option value="twin">Twin Room</option>
+                                <option value="quad">Quad Room</option>
                             </select>
                         </div>
                         <div class="bk-form__group">
@@ -450,14 +450,12 @@
 
                 <!-- Summary -->
                 <div class="bk-summary reveal reveal--delay-1" id="bk-summary">
-                    <h3 class="bk-summary__title">Pricing Summary</h3>
-                    <div class="bk-summary__row"><span>Room Type</span><span id="sum-room">Classic Room</span></div>
+                    <h3 class="bk-summary__title">Booking Summary</h3>
+                    <div class="bk-summary__row"><span>Room Type</span><span id="sum-room">Single Room</span></div>
                     <div class="bk-summary__row"><span>Check-In</span><span id="sum-checkin">—</span></div>
                     <div class="bk-summary__row"><span>Check-Out</span><span id="sum-checkout">—</span></div>
                     <div class="bk-summary__row"><span>Nights</span><span id="sum-nights">0</span></div>
                     <div class="bk-summary__row"><span>Guests</span><span id="sum-guests">2</span></div>
-                    <div class="bk-summary__row"><span>Rate Per Night</span><span id="sum-rate">£195</span></div>
-                    <div class="bk-summary__total"><span>Estimated Total</span><span id="sum-total">£0</span></div>
                     <div class="bk-summary__badge">
                         <i class="fa-solid fa-shield-halved"></i>
                         <span><strong>Secure Booking</strong> — SSL encrypted. Free cancellation up to 48 hours before
@@ -485,7 +483,7 @@
                 <div class="bk-feature reveal reveal--delay-2">
                     <div class="bk-feature__icon"><i class="fa-solid fa-tags"></i></div>
                     <h3 class="bk-feature__title">Best Rate Guarantee</h3>
-                    <p class="bk-feature__text">Book direct for the lowest price guaranteed</p>
+                    <p class="bk-feature__text">Book direct for the best rate guaranteed</p>
                 </div>
                 <div class="bk-feature reveal reveal--delay-3">
                     <div class="bk-feature__icon"><i class="fa-solid fa-headset"></i></div>
@@ -575,10 +573,8 @@
 
             function updateSummary() {
                 const opt = roomSelect.options[roomSelect.selectedIndex];
-                const price = parseInt(opt.dataset.price);
-                const roomName = opt.textContent.split('—')[0].trim();
+                const roomName = opt.textContent;
                 document.getElementById('sum-room').textContent = roomName;
-                document.getElementById('sum-rate').textContent = '£' + price;
                 document.getElementById('sum-guests').textContent = guests;
 
                 if (checkin.value) {
@@ -593,7 +589,6 @@
                     const ci = new Date(checkin.value), co = new Date(checkout.value);
                     const nights = Math.max(0, Math.round((co - ci) / (1000 * 60 * 60 * 24)));
                     document.getElementById('sum-nights').textContent = nights;
-                    document.getElementById('sum-total').textContent = '£' + (nights * price).toLocaleString();
                 }
             }
 

@@ -434,7 +434,6 @@
                 }
 
                 const roomName = roomSelect?.options[roomSelect.selectedIndex]?.textContent?.split('—')[0]?.trim() || '';
-                const ratePerNight = roomSelect?.options[roomSelect.selectedIndex]?.dataset?.price || '';
 
                 return {
                     fullName: document.getElementById('bk-name')?.value?.trim(),
@@ -445,7 +444,7 @@
                     roomType: roomName,
                     guests: guestCount?.textContent || '2',
                     specialRequests: document.getElementById('bk-requests')?.value?.trim() || 'None',
-                    message: `Booking enquiry for ${roomName}. Check-in: ${checkinVal}, Check-out: ${checkoutVal}. ${nights} night(s) at £${ratePerNight}/night. Estimated total: £${nights * parseInt(ratePerNight || 0)}. Guests: ${guestCount?.textContent || '2'}. Special requests: ${document.getElementById('bk-requests')?.value?.trim() || 'None'}.`,
+                    message: `Booking enquiry for ${roomName}. Check-in: ${checkinVal}, Check-out: ${checkoutVal}. ${nights} night(s). Guests: ${guestCount?.textContent || '2'}. Special requests: ${document.getElementById('bk-requests')?.value?.trim() || 'None'}.`,
                 };
             },
 

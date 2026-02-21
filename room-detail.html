@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Deluxe Room at Kings Court Hotel — four-poster bed, working stone fireplace, garden views. From £195 per night. Book directly for the best rate." />
+        content="Deluxe Room at Kings Court Hotel — four-poster bed, working stone fireplace, garden views. Book directly for the best rate." />
     <meta name="keywords"
         content="Deluxe Room, Kings Court Hotel, Tudor hotel room, four-poster bed, Stratford-upon-Avon accommodation" />
     <meta property="og:title" content="Deluxe Room — Kings Court Hotel" />
@@ -355,7 +355,7 @@
                     </section><!-- /.rd-amenities -->
 
 
-                    
+
 
 
                     <!-- ── GUEST REVIEWS ── -->
@@ -441,7 +441,9 @@
                                     <p class="room-card__desc">Separate sitting room, private terrace, and butler
                                         service.</p>
                                     <div class="room-card__footer">
-                                        <a href="https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/" target="_blank" class="btn btn--primary" aria-label="Check Availability">Check Availability</a>
+                                        <a href="https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/"
+                                            target="_blank" class="btn btn--primary"
+                                            aria-label="Check Availability">Check Availability</a>
                                         <a href="room-detail.html?room=suite" class="btn btn--dark"
                                             id="similar-suite-btn">View Room</a>
                                     </div>
@@ -457,7 +459,9 @@
                                     <p class="room-card__desc">Intimate and cosy with stone walls and courtyard views.
                                     </p>
                                     <div class="room-card__footer">
-                                        <a href="https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/" target="_blank" class="btn btn--primary" aria-label="Check Availability">Check Availability</a>
+                                        <a href="https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/"
+                                            target="_blank" class="btn btn--primary"
+                                            aria-label="Check Availability">Check Availability</a>
                                         <a href="room-detail.html?room=classic" class="btn btn--dark"
                                             id="similar-classic-btn">View Room</a>
                                     </div>
@@ -478,9 +482,9 @@
 
                     <div class="rd-sidebar__inner" id="rd-sidebar-inner">
 
-                        <!-- Price Header -->
-                        <div class="rd-sidebar__price-header">
-                            
+                        <!-- Availability Action -->
+                        <div class="rd-sidebar__action-header" style="flex-direction:row;justify-content:center;margin-bottom:1rem;">
+
                             <div class="rd-sidebar__rating" aria-label="4.9 stars">
                                 <span class="rd-sidebar__stars" aria-hidden="true">★★★★★</span>
                                 <span>4.9</span>
@@ -535,25 +539,11 @@
                                 </div>
                             </div>
 
-                            <!-- Price Summary (shown after dates selected) -->
-                            <div class="rd-avail-form__summary" id="avail-summary" hidden>
-                                <div class="rd-avail-form__summary-row">
-                                    <span id="summary-rate-label">£195 × 1 night</span>
-                                    <span id="summary-rate-total">£195</span>
-                                </div>
-                                <div class="rd-avail-form__summary-row">
-                                    <span>Breakfast (2 guests)</span>
-                                    <span>Included</span>
-                                </div>
-                                <div class="rd-avail-form__summary-row rd-avail-form__summary-row--total">
-                                    <span>Total</span>
-                                    <span id="summary-grand-total">£195</span>
-                                </div>
-                            </div>
-
-                            <button type="submit" class="btn btn--primary rd-avail-form__submit" id="avail-submit">
-                                <i class="fa-solid fa-lock" aria-hidden="true"></i>
-                                Book Now — Best Rate
+                            <button type="button"
+                                onclick="window.open('https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/', '_blank');"
+                                class="btn btn--primary rd-avail-form__submit" id="avail-submit">
+                                <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+                                Check Availability
                             </button>
 
                             <p class="rd-avail-form__note">
@@ -623,10 +613,11 @@
        MOBILE BOOK NOW BAR (bottom fixed)
     ═══════════════════════════════════════ -->
     <div class="rd-mobile-bar" id="rd-mobile-bar" aria-label="Mobile booking bar">
-        
-        <a href="#rd-sidebar" class="btn btn--primary rd-mobile-bar__btn" id="rd-mobile-book-btn">
-            <i class="fa-solid fa-lock" aria-hidden="true"></i>
-            Book Now
+
+        <a href="https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/"
+            target="_blank" class="btn btn--primary rd-mobile-bar__btn" id="rd-mobile-book-btn">
+            <i class="fa-solid fa-calendar-check" aria-hidden="true"></i>
+            Check Availability
         </a>
     </div>
 
