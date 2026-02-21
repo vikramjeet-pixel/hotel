@@ -381,7 +381,7 @@
    ══════════════════════════════════════════ */
 .dn-venue {
     background: var(--clr-cream-light);
-    padding: 5rem 0;
+    padding: 0 0 5rem;
 }
 
 .dn-venue--bar {
@@ -391,7 +391,7 @@
 /* Parallax image strip */
 .dn-venue__parallax {
     position: relative;
-    height: 420px;
+    height: 100vh;
     overflow: hidden;
     margin-bottom: 4rem;
 }
@@ -1340,7 +1340,7 @@
     }
 
     .dn-venue__parallax {
-        height: 280px;
+        height: 100vh;
     }
 
     .dn-venue__highlights {
