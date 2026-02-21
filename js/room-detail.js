@@ -280,15 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (valid) {
-            // Build booking URL with params
-            const params = new URLSearchParams({
-                room: 'deluxe',
-                checkin: checkinEl.value,
-                checkout: checkoutEl.value,
-                adults: document.getElementById('avail-adults')?.value || '2',
-                children: document.getElementById('avail-children')?.value || '0',
-            });
-            window.location.href = `booking.html?${params.toString()}`;
+            window.open('https://www.bestwestern.co.uk/integrated-booking/kings-court-hotel-bw-signature-collection-by-best-western-84411/', '_blank');
         }
     });
 
