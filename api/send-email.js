@@ -142,7 +142,7 @@ function buildHotelEmail(type, data) {
         <div class="wrapper">
             <div class="header">
                 <h1>Kings Court</h1>
-                <p class="tagline">Hotel &amp; Estate · Est. 1642</p>
+                <p class="tagline">Hotel · Est. 1642</p>
                 <div class="gold-line"></div>
             </div>
             <div class="body">
@@ -155,7 +155,7 @@ function buildHotelEmail(type, data) {
                 ${messageHtml}
             </div>
             <div class="footer">
-                <p>Kings Court Hotel &amp; Estate · Welford-on-Avon · Warwickshire CV37 8EX</p>
+                <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
                 <p><a href="tel:+441789123456">+44 (0)1789 123 456</a> · <a href="mailto:info@kingscourthotel.co.uk">info@kingscourthotel.co.uk</a></p>
             </div>
         </div>
@@ -168,11 +168,11 @@ function buildHotelEmail(type, data) {
 // ────────────────────────────────────────────────────────────
 function buildConfirmationEmail(type, data) {
     const greetings = {
-        wedding: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you so much for your wedding enquiry. We're truly delighted that you're considering Kings Court Hotel & Estate for your special day.`,
-        stay: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your booking enquiry. We look forward to welcoming you to Kings Court Hotel & Estate.`,
-        events: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your event enquiry. Kings Court Hotel & Estate is delighted to help you plan your perfect event.`,
-        contact: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for getting in touch with Kings Court Hotel & Estate. We've received your message and appreciate you contacting us.`,
-        dining: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your dining reservation request at Kings Court Hotel & Estate. We're looking forward to welcoming you.`,
+        wedding: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you so much for your wedding enquiry. We're truly delighted that you're considering Kings Court Hotel for your special day.`,
+        stay: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your booking enquiry. We look forward to welcoming you to Kings Court Hotel.`,
+        events: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your event enquiry. Kings Court Hotel is delighted to help you plan your perfect event.`,
+        contact: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for getting in touch with Kings Court Hotel. We've received your message and appreciate you contacting us.`,
+        dining: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your dining reservation request at Kings Court Hotel. We're looking forward to welcoming you.`,
     };
 
     const promises = {
@@ -194,7 +194,7 @@ function buildConfirmationEmail(type, data) {
         <div class="wrapper">
             <div class="header">
                 <h1>Kings Court</h1>
-                <p class="tagline">Hotel &amp; Estate · Est. 1642</p>
+                <p class="tagline">Hotel · Est. 1642</p>
                 <div class="gold-line"></div>
             </div>
             <div class="body">
@@ -217,7 +217,7 @@ function buildConfirmationEmail(type, data) {
                 </p>
             </div>
             <div class="footer">
-                <p>Kings Court Hotel &amp; Estate · Welford-on-Avon · Warwickshire CV37 8EX</p>
+                <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
                 <p><a href="tel:+441789123456">+44 (0)1789 123 456</a> · <a href="https://www.kingscourthotel.co.uk">www.kingscourthotel.co.uk</a></p>
                 <p style="margin-top:12px;font-size:11px;color:rgba(194,164,94,0.6);">This is an automated confirmation. Please do not reply to this email address.</p>
             </div>
@@ -230,11 +230,11 @@ function buildConfirmationEmail(type, data) {
 // CONFIRMATION SUBJECT LINES
 // ────────────────────────────────────────────────────────────
 const CONFIRMATION_SUBJECTS = {
-    wedding: 'Your Wedding Enquiry — Kings Court Hotel & Estate',
-    stay: 'Your Booking Enquiry — Kings Court Hotel & Estate',
-    events: 'Your Event Enquiry — Kings Court Hotel & Estate',
-    contact: 'Your Enquiry — Kings Court Hotel & Estate',
-    dining: 'Your Dining Reservation — Kings Court Hotel & Estate',
+    wedding: 'Your Wedding Enquiry — Kings Court Hotel',
+    stay: 'Your Booking Enquiry — Kings Court Hotel',
+    events: 'Your Event Enquiry — Kings Court Hotel',
+    contact: 'Your Enquiry — Kings Court Hotel',
+    dining: 'Your Dining Reservation — Kings Court Hotel',
 };
 
 // ────────────────────────────────────────────────────────────
