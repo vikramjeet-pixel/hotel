@@ -40,6 +40,14 @@
     object-position: center center;
 }
 
+.hero__video--mobile {
+    display: none;
+}
+
+.hero__video--desktop {
+    display: block;
+}
+
 /* Hide the static poster image by default (video is playing) */
 .hero__poster {
     display: none;

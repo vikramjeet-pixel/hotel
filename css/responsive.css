@@ -94,6 +94,15 @@
         min-width: 100%;
     }
 
+    /* Swap to portrait mobile video */
+    .hero__video--desktop {
+        display: none !important;
+    }
+
+    .hero__video--mobile {
+        display: block !important;
+    }
+
     /* Booking bar — centred at tablet */
     .hero__booking {
         left: 0;
