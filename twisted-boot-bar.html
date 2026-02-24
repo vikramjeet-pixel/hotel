@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="The Twisted Boot Bar at Kings Court Hotel serves a fantastic selection of food and drink for lunch and dinner. Enjoy craft ales, light bites, and relaxed dining." />
+    <meta name="keywords"
+        content="Kings Court dining, Twisted Boot Bar, hotel pub Warwickshire, pub in Stratford-upon-Avon, casual dining" />
+    <meta property="og:title" content="The Twisted Boot Bar — Kings Court Hotel" />
+    <meta property="og:description"
+        content="Relax in our popular Twisted Boot Bar, serving an excellent bar menu, ales, and coffee by a roaring log fire." />
+    <meta property="og:type" content="website" />
+    <title>The Twisted Boot Bar | Kings Court Hotel</title>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/kingscourtlogo.png" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/dining-page.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body class="boot-bar-page">
+
+    <!-- ═══════════════════════════════════════
+       NAVIGATION
+    ═══════════════════════════════════════ -->
+    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
+            <span class="nav__logo-name">Kings Court</span>
+            <span class="nav__logo-tagline">Hotel</span>
+        </a>
+        <ul class="nav__links" role="list">
+            <li><a href="rooms.html" class="nav__link">Rooms</a></li>
+            <li><a href="dining.html" class="nav__link">Dining</a></li>
+            <li><a href="twisted-boot-bar.html" class="nav__link">Twisted Boot Bar</a></li>
+            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
+            <li><a href="events.html" class="nav__link">Events</a></li>
+            <li><a href="offers.html" class="nav__link">Offers</a></li>
+            <li><a href="gallery.html" class="nav__link">Gallery</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+            <li><a href="blog.html" class="nav__link">Blog</a></li>
+            <li><a href="contact.html" class="nav__link">Contact</a></li>
+        </ul>
+        <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
+        <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle mobile menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="nav__mobile" id="nav-mobile" role="dialog" aria-label="Mobile navigation">
+        <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+        </button>
+        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+        <a href="dining.html" class="nav__mobile-link">Dining</a>
+        <a href="twisted-boot-bar.html" class="nav__mobile-link">Twisted Boot Bar</a>
+        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
+        <a href="events.html" class="nav__mobile-link">Events</a>
+        <a href="offers.html" class="nav__mobile-link">Offers</a>
+        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+        <a href="about.html" class="nav__mobile-link">About</a>
+        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <div class="nav__mobile-divider" aria-hidden="true"></div>
+        <a href="blog.html" class="nav__mobile-link">Blog</a>
+        <a href="testimonials.html" class="nav__mobile-link">Reviews</a>
+        <a href="location.html" class="nav__mobile-link">Location</a>
+        <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
+    </div>
+
+    <!-- HERO -->
+    <section class="dn-hero" id="dn-hero" aria-label="Twisted Boot Bar hero"
+        style="height: 60vh; min-height: 400px; position:relative; display:flex; align-items:flex-end;">
+        <div class="dn-hero__bg" id="dn-hero-bg" aria-hidden="true" style="position:absolute; inset:0;">
+            <img src="assets/images/gallery/compressed-kings-court-23.jpg" alt="Twisted Boot Bar - Kings Court Hotel"
+                class="dn-hero__bg-img" id="dn-hero-img" style="width:100%; height:100%; object-fit:cover;" />
+        </div>
+        <div class="dn-hero__overlay" aria-hidden="true"
+            style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
+        <div class="dn-hero__content" style="position:relative; z-index:2; padding:3rem; color:#fff; max-width:800px;">
+            <span class="dn-hero__eyebrow"
+                style="color:var(--clr-gold); font-weight:600; letter-spacing:0.1em; text-transform:uppercase; margin-bottom:1rem; display:block;">The
+                Pub at the Kings Court Hotel</span>
+            <div class="dn-hero__script" aria-hidden="true"
+                style="font-family:var(--font-script); color:var(--clr-gold); font-size:2rem; margin-bottom:0.5rem; transform:rotate(-5deg);">
+                Friendly &amp; Welcoming</div>
+            <h1 class="dn-hero__title"
+                style="font-family:var(--font-serif); font-size:clamp(2.5rem, 5vw, 4rem); line-height:1; margin-bottom:1rem;">
+                The Twisted Boot Bar</h1>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <section class="section" style="background-color: var(--clr-cream-light); padding: 5rem 0;">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto; text-align: center;">
+                <h2
+                    style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--clr-forest); margin-bottom: 2rem;">
+                    A Fantastic Selection of Food and Drink
+                </h2>
+                <div class="gold-line" style="margin: 0 auto 2rem;"></div>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--clr-text); margin-bottom: 1.5rem;">
+                    Our <strong>Twisted Boot Bar (the Pub at the Kings Court Hotel)</strong> serves a fantastic
+                    selection of food and drink for lunch (Tuesday to Sunday) and dinner (Monday to Sunday) until
+                    11.00pm.
+                </p>
+                <p style="font-size: 1.1rem; line-height: 1.8; color: var(--clr-text); margin-bottom: 1.5rem;">
+                    Looking for a place to pop in for a glass of wine or a pint after work? Did you know the Twisted
+                    Boot Bar is separate to the main hotel and has a large outdoor seating area, a great selection of
+                    beers, lagers and ciders as well as a fabulous wine selection and we're a friendly and welcoming
+                    team!
+                </p>
+                <div
+                    style="background: var(--clr-white); padding: 2.5rem; border-radius: var(--radius-md); box-shadow: var(--shadow-sm); margin: 3rem 0; text-align:left;">
+                    <h3
+                        style="font-family: var(--font-serif); font-size: 1.8rem; color: var(--clr-forest); margin-bottom: 1rem;">
+                        Bar and Restaurant Dining</h3>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--clr-text); margin-bottom: 1.5rem;">
+                        Prefer dining in more informal surroundings? Our Kings Court Hotel menus can be served in our
+                        popular, relaxed Twisted Boot Bar, for casual and comfortable dining.
+                    </p>
+                    <p style="font-size: 1.1rem; line-height: 1.8; color: var(--clr-text);">
+                        Relax by our roaring log fire in winter or in our tranquil courtyard area during the spring and
+                        summer months. It's a great place to meet up for a pint, a coffee, a catch up with friends, or a
+                        relaxed lunch in our beautiful location in Kings Coughton, Alcester, Warwickshire.
+                    </p>
+                </div>
+            </div>
+
+            <div
+                style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 4rem;">
+                <div
+                    style="background: var(--clr-white); padding: 2.5rem; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-sm);">
+                    <i class="fa-solid fa-utensils"
+                        style="font-size: 2.5rem; color: var(--clr-gold); margin-bottom: 1.5rem;"></i>
+                    <h3
+                        style="font-family: var(--font-serif); font-size: 1.5rem; color: var(--clr-forest); margin-bottom: 1rem;">
+                        Great Menu Choices</h3>
+                    <p style="color: var(--clr-text-light); margin-bottom: 1.5rem;">
+                        Twisted Boot has an excellent bar menu, with many beers, ales and an extensive Wine List. All
+                        with a great selection of vegetarian, vegan and gluten-free options.
+                    </p>
+                    <ul
+                        style="list-style: none; padding: 0; margin-bottom: 2rem; text-align: left; display: inline-block;">
+                        <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                style="color: var(--clr-gold); margin-right: 0.5rem;"></i> Lunch Menu</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                style="color: var(--clr-gold); margin-right: 0.5rem;"></i> Sunday Lunch Sample Menu</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                style="color: var(--clr-gold); margin-right: 0.5rem;"></i> Evening Menu</li>
+                        <li style="margin-bottom: 0.5rem;"><i class="fa-solid fa-check"
+                                style="color: var(--clr-gold); margin-right: 0.5rem;"></i> Christmas Dining</li>
+                    </ul>
+                    <br>
+                    <a href="assets/menus/dinner-menu.pdf" download class="btn btn--outline-gold"
+                        style="display: inline-block;">View our Selection of Menus</a>
+                </div>
+                <div
+                    style="background: var(--clr-forest); color: var(--clr-cream); padding: 2.5rem; border-radius: var(--radius-md); text-align: center; box-shadow: var(--shadow-sm); display: flex; flex-direction: column; justify-content: center;">
+                    <i class="fa-solid fa-comments"
+                        style="font-size: 2.5rem; color: var(--clr-gold); margin-bottom: 1.5rem;"></i>
+                    <h3
+                        style="font-family: var(--font-serif); font-size: 1.8rem; margin-bottom: 1rem; color: var(--clr-cream);">
+                        Join Us Today</h3>
+                    <p style="margin-bottom: 1.5rem; font-size: 1.1rem;">
+                        Why not pop in after work, lunch time or the weekend for a drink or two. We'd be delighted to
+                        welcome you.
+                    </p>
+                    <a href="mailto:info@kingscourthotel.co.uk" class="btn btn--primary"
+                        style="display: inline-block;"><i class="fa-regular fa-envelope"></i>
+                        info@kingscourthotel.co.uk</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="footer" id="footer" role="contentinfo">
+        <div class="container">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <div class="footer__brand-name">Kings Court</div>
+                    <div class="footer__brand-tagline">Hotel · Est. 1642</div>
+                    <p class="footer__brand-desc">
+                        A magnificent Tudor manor house set within 4 acres of private Warwickshire countryside.
+                    </p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="#" class="footer__social-link" aria-label="Facebook"><i
+                                class="fa-brands fa-facebook-f"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Instagram"><i
+                                class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="footer__social-link" aria-label="Twitter/X"><i
+                                class="fa-brands fa-x-twitter"></i></a>
+                    </div>
+                </div>
+                <nav aria-label="Explore footer navigation">
+                    <div class="footer__col-title">Explore</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="dining.html" class="footer__link">Dining</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
+                        <li><a href="offers.html" class="footer__link">Special Offers</a></li>
+                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                    </ul>
+                </nav>
+                <nav aria-label="Information footer navigation">
+                    <div class="footer__col-title">Information</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="about.html" class="footer__link">About Us</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
+                        <li><a href="privacy-policy.html" class="footer__link">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+                <div>
+                    <div class="footer__col-title">Contact</div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:dining@kingscourt.co.uk"
+                            class="footer__contact-text">dining@kingscourt.co.uk</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 Kings Court Hotel. All rights reserved.</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+    <script src="js/dining.js"></script>
+    <script src="js/email-handler.js"></script>
+
+</body>
+
+</html>

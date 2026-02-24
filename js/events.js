@@ -70,7 +70,7 @@
     const statsEl = document.querySelector('.ev-hero__stats');
     if (statsEl) {
         const nums = statsEl.querySelectorAll('.ev-stat__num');
-        const targets = [5, 300, 28, 40];
+        const targets = [5, 300, 61, 4];
         setTimeout(() => {
             nums.forEach((el, i) => {
                 const target = targets[i];
