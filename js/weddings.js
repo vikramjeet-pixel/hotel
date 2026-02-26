@@ -292,7 +292,7 @@
 
     if (statsEl) {
         const statNums = statsEl.querySelectorAll('.wd-hero__stat-num');
-        const rawValues = ['40', '200', '380', 'Exclusive'];
+        const rawValues = ['4', '200', '380', 'Exclusive'];
         const suffixes = ['', '', '+', ''];
 
         // Trigger after a short delay for dramatic effect
