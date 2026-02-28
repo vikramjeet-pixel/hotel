@@ -1409,3 +1409,35 @@
         padding: 0 1rem;
     }
 }
+/* ─── LIGHT FACILITIES SECTION MODIFIER ─── */
+.ev-facilities-section--light {
+    background: var(--clr-cream);
+}
+.ev-facilities-section--light .ev-section-title {
+    color: var(--clr-forest);
+}
+.ev-facilities-section--light .ev-eyebrow {
+    color: var(--clr-gold);
+}
+.ev-facilities-section--light .ev-section-desc {
+    color: var(--clr-text-light);
+}
+.ev-facilities-section--light .ev-fac-card {
+    background: var(--clr-white);
+    border-color: rgba(194, 164, 94, 0.2);
+}
+.ev-facilities-section--light .ev-fac-card:hover {
+    background: var(--clr-cream-light);
+    border-color: rgba(194, 164, 94, 0.45);
+}
+.ev-facilities-section--light .ev-fac-card__icon-wrap {
+    background: rgba(194, 164, 94, 0.1);
+    border-color: rgba(194, 164, 94, 0.2);
+    color: var(--clr-gold);
+}
+.ev-facilities-section--light .ev-fac-card__title {
+    color: var(--clr-forest-dark);
+}
+.ev-facilities-section--light .ev-fac-card__list li {
+    color: var(--clr-text-light);
+}
