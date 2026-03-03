@@ -728,6 +728,52 @@
     border-bottom: 1px solid rgba(194, 164, 94, 0.15);
 }
 
+.footer__newsletter {
+    border-bottom: 1px solid rgba(194, 164, 94, 0.15);
+    padding-bottom: 2.5rem;
+    margin-bottom: 2.5rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.footer__newsletter-text p {
+    font-size: 0.95rem;
+    color: rgba(245, 241, 232, 0.8);
+    margin-bottom: 0;
+}
+
+.footer__newsletter-form {
+    display: flex;
+    gap: 0.5rem;
+    max-width: 480px;
+    width: 100%;
+}
+
+.footer__newsletter-input {
+    flex: 1;
+    padding: 0.85rem 1.2rem;
+    border-radius: var(--radius-sm);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--clr-cream);
+    outline: none;
+    transition: all var(--transition-base);
+    font-family: var(--font-sans);
+}
+
+.footer__newsletter-input::placeholder {
+    color: rgba(245, 241, 232, 0.5);
+}
+
+.footer__newsletter-input:focus {
+    border-color: var(--clr-gold);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 0 3px rgba(194, 164, 94, 0.1);
+}
+
 .footer__brand-name {
     font-family: var(--font-serif);
     font-size: 1.8rem;

@@ -55,7 +55,6 @@
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="css/popup.css" />
 </head>
 
 <body class="dining-page">
@@ -1242,6 +1241,18 @@
     ═══════════════════════════════════════ -->
     <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
+            <!-- Newsletter -->
+            <div class="footer__newsletter">
+                <div class="footer__newsletter-text">
+                    <h3 class="footer__col-title" style="margin-bottom:0.5rem; color:var(--clr-gold); font-size: 0.9rem;">Subscribe to our Newsletter</h3>
+                    <p style="font-size:0.9rem; color:rgba(245, 241, 232, 0.8); margin-bottom:0;">Exclusive offers and news straight to your inbox.</p>
+                </div>
+                <!-- Inline script handled directly for UI feedback on subscribe -->
+                <form class="footer__newsletter-form" onsubmit="event.preventDefault(); const form = this; const btn = form.querySelector('button'); btn.textContent = 'Wait...'; btn.disabled = true; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email.value }) }).then(res => { if(res.ok) { form.innerHTML = '<div style=\'display:flex; align-items:center; gap:0.5rem; color:var(--clr-gold); font-size:1rem; font-family:var(--font-sans); margin-top:0.5rem;\'><i class=\'fa-solid fa-circle-check\'></i> You are now subscribed!</div>'; } else { throw new Error('Failed'); } }).catch(() => { btn.textContent = 'Subscribe'; btn.disabled = false; alert('Error: Unable to subscribe'); });">
+                    <input class="footer__newsletter-input" type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
+                    <button type="submit" class="btn btn--primary" style="padding:0.8rem 1.8rem; letter-spacing:0.1em;">Subscribe</button>
+                </form>
+            </div>
             <div class="footer__top">
                 <div class="footer__brand">
                     <div class="footer__brand-name">Kings Court</div>
@@ -1305,7 +1316,6 @@
     <script src="js/dining.js"></script>
     <script src="js/email-handler.js"></script>
 
-    <script src="js/popup.js" defer></script>
 </body>
 
 </html>

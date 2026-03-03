@@ -8,18 +8,18 @@ module.exports = async function handler(req, res) {
     }
 
     try {
-        const { name, email, phone } = req.body;
+        const { email } = req.body;
 
-        if (!name || !email || !phone) {
-            return res.status(400).json({ message: 'Missing required fields' });
+        if (!email) {
+            return res.status(400).json({ message: 'Missing required email field' });
         }
 
         const date = new Date().toLocaleString('en-GB', { timeZone: 'Europe/London' });
-        const newRow = { Name: name, Email: email, Phone: phone, DateSubscribed: date };
+        const newRow = { Email: email, DateSubscribed: date };
 
         // When running locally, it writes to the hotel directory.
         // In Vercel serverless environment, the root is read-only, so fallback to /tmp.
-        let filePath = path.join(process.cwd(), 'newsletter_subscribers.xlsx');
+        let filePath = path.join(process.cwd(), 'newsletter_emails.xlsx');
         let workbook;
 
         try {
@@ -27,7 +27,7 @@ module.exports = async function handler(req, res) {
             fs.accessSync(process.cwd(), fs.constants.W_OK);
         } catch (err) {
             // On read-only filesystem (Vercel), switch to /tmp directory
-            filePath = path.join('/tmp', 'newsletter_subscribers.xlsx');
+            filePath = path.join('/tmp', 'newsletter_emails.xlsx');
         }
 
         if (fs.existsSync(filePath)) {
