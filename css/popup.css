@@ -1,0 +1,132 @@
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+}
+
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.popup-content {
+    background: var(--clr-dark);
+    color: var(--clr-light);
+    width: 90%;
+    max-width: 500px;
+    padding: 2.5rem;
+    border-radius: 4px;
+    position: relative;
+    border: 1px solid var(--clr-gold-dark);
+    transform: translateY(20px);
+    transition: transform 0.4s ease;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+.popup-overlay.active .popup-content {
+    transform: translateY(0);
+}
+
+.popup-close {
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    background: none;
+    border: none;
+    color: var(--clr-light);
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.popup-close:hover {
+    color: var(--clr-gold);
+}
+
+.popup-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.popup-title {
+    font-size: 1.8rem;
+    color: var(--clr-gold);
+    margin-bottom: 0.5rem;
+    font-family: var(--ff-serif);
+}
+
+.popup-desc {
+    font-size: 0.95rem;
+    color: var(--clr-light-muted);
+}
+
+.popup-form .form-group {
+    margin-bottom: 1.25rem;
+}
+
+.popup-form label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--clr-gold-light);
+}
+
+.popup-form input {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--clr-light);
+    border-radius: 2px;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.popup-form input:focus {
+    outline: none;
+    border-color: var(--clr-gold);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.popup-btn {
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.popup-success {
+    display: none;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.popup-success.active {
+    display: block;
+}
+
+.popup-success i {
+    font-size: 3rem;
+    color: var(--clr-gold);
+    margin-bottom: 1rem;
+}
+
+.popup-success h3 {
+    font-family: var(--ff-serif);
+    color: var(--clr-light);
+    margin-bottom: 0.5rem;
+}
+
+.popup-form.hidden {
+    display: none;
+}
