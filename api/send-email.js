@@ -156,7 +156,7 @@ function buildHotelEmail(type, data) {
             </div>
             <div class="footer">
                 <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
-                <p><a href="tel:+441789123456">+44 (0)1789 123 456</a> · <a href="mailto:info@kingscourthotel.co.uk">info@kingscourthotel.co.uk</a></p>
+                <p><a href="tel:01789763111">01789 763 111</a> · <a href="mailto:info@kingscourthotel.co.uk">info@kingscourthotel.co.uk</a></p>
             </div>
         </div>
     </body>
@@ -208,7 +208,7 @@ function buildConfirmationEmail(type, data) {
                 </div>
                 <p style="font-size:14px;color:#555;line-height:1.8;margin-top:24px;">
                     In the meantime, if you have any questions please don't hesitate to call us on 
-                    <a href="tel:+441789123456" style="color:#c2a45e;text-decoration:none;font-weight:600;">+44 (0)1789 123 456</a> 
+                    <a href="tel:01789763111" style="color:#c2a45e;text-decoration:none;font-weight:600;">01789 763 111</a> 
                     or reply directly to this email.
                 </p>
                 <p style="font-size:14px;color:#555;line-height:1.8;margin-top:16px;">
@@ -218,7 +218,7 @@ function buildConfirmationEmail(type, data) {
             </div>
             <div class="footer">
                 <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
-                <p><a href="tel:+441789123456">+44 (0)1789 123 456</a> · <a href="https://www.kingscourthotel.co.uk">www.kingscourthotel.co.uk</a></p>
+                <p><a href="tel:01789763111">01789 763 111</a> · <a href="https://www.kingscourthotel.co.uk">www.kingscourthotel.co.uk</a></p>
                 <p style="margin-top:12px;font-size:11px;color:rgba(194,164,94,0.6);">This is an automated confirmation. Please do not reply to this email address.</p>
             </div>
         </div>

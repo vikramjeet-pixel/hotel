@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Guard: only run on pages with the filter
     if (!filterBtns.length || !roomCards.length) return;
-
+ 
     /* ── Count cards per category ── */
     const counts = { all: roomCards.length };
     roomCards.forEach(card => {
@@ -26,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const badge = document.getElementById(`count-${cat}`);
         if (badge) badge.textContent = n;
     });
+
 
     /* ── Filter Logic ── */
     const filterRooms = (activeFilter) => {
@@ -111,5 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
         const targetBtn = document.querySelector(`[data-filter="${hash}"]`);
         if (targetBtn) targetBtn.click();
     }
+
+    /* ── Quick View Button Fix ── */
+    const quickViewButtons = document.querySelectorAll('.room-card__quick-view');
+    quickViewButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = btn.closest('.room-card');
+            const roomCode = card.id.replace('room-', '');
+            window.location.href = `room-detail.html?room=${roomCode}`;
+        });
+    });
 
 });

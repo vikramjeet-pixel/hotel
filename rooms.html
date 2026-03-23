@@ -191,33 +191,33 @@
                 <button class="rooms-filter__btn rooms-filter__btn--active" data-filter="all" id="filter-all"
                     aria-pressed="true">
                     <i class="fa-solid fa-border-all" aria-hidden="true"></i>
-                    All Rooms
+                    <span class="rooms-filter__label">All Rooms</span>
                     <span class="rooms-filter__count" id="count-all">5</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="single" id="filter-single" aria-pressed="false">
                     <i class="fa-solid fa-user" aria-hidden="true"></i>
-                    Single
+                    <span class="rooms-filter__label">Single</span>
                     <span class="rooms-filter__count" id="count-single">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="standard-double" id="filter-standard"
                     aria-pressed="false">
                     <i class="fa-solid fa-bed" aria-hidden="true"></i>
-                    Standard Double
+                    <span class="rooms-filter__label">Standard Double</span>
                     <span class="rooms-filter__count" id="count-standard">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="king" id="filter-king" aria-pressed="false">
                     <i class="fa-solid fa-crown" aria-hidden="true"></i>
-                    King
+                    <span class="rooms-filter__label">King</span>
                     <span class="rooms-filter__count" id="count-king">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="twin" id="filter-twin" aria-pressed="false">
                     <i class="fa-solid fa-bed" aria-hidden="true"></i>
-                    Twin
+                    <span class="rooms-filter__label">Twin</span>
                     <span class="rooms-filter__count" id="count-twin">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="quad" id="filter-quad" aria-pressed="false">
                     <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
-                    Quad
+                    <span class="rooms-filter__label">Quad</span>
                     <span class="rooms-filter__count" id="count-quad">1</span>
                 </button>
             </div>
@@ -516,36 +516,42 @@
                         style="font-family: var(--font-serif); color: var(--clr-forest); margin-bottom: 1.5rem; font-size: 1.3rem; border-bottom: 1px solid var(--clr-gold-light); padding-bottom: 0.5rem;">
                         General Hotel Information &amp; Conditions</h3>
                     <ul style="list-style: none; padding: 0;">
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            Check in: 15:00 | Check out: 11:00</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            Put up-beds (z-bed) available for children. Additional cost &pound;20 per bed</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            The hotel has two sets of interconnecting rooms for families with children, request at time
-                            of booking</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            Cots and highchairs are available upon request</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            We request all bookings are guaranteed with a credit card</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            Full room charge will be made if cancellation occurs with less than 24 hours notice and the
-                            room remaining is not booked</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            Hotel restaurant reservations are recommended to avoid disappointment</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            We reserve the right to change the tariff without prior notice</li>
-                        <li style="margin-bottom: 0.5rem; display: flex; gap: 0.5rem;"><i
-                                class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.3rem;"></i>
-                            To arrange a corporate rate contact <a href="mailto:info@kingscourthotel.co.uk"
-                                style="color: var(--clr-gold-dark);">info@kingscourthotel.co.uk</a></li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>Check in: 15:00 | Check out: 11:00</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>Put up-beds (z-bed) available for children. Additional cost &pound;20 per bed</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>The hotel has two sets of interconnecting rooms for families with children, request at time of booking</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>Cots and highchairs are available upon request</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>We request all bookings are guaranteed with a credit card</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>Full room charge will be made if cancellation occurs with less than 24 hours notice and the room remaining is not booked</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>Hotel restaurant reservations are recommended to avoid disappointment</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span>We reserve the right to change the tariff without prior notice</span>
+                        </li>
+                        <li style="margin-bottom: 0.75rem; display: flex; gap: 0.75rem; align-items: flex-start;">
+                            <i class="fa-solid fa-info-circle" style="color: var(--clr-gold); margin-top: 0.25rem; flex-shrink: 0;"></i>
+                            <span style="word-break: break-word;">To arrange a corporate rate contact <a href="mailto:info@kingscourthotel.co.uk" style="color: var(--clr-gold-dark); white-space: nowrap;">info@kingscourthotel.co.uk</a></span>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -660,18 +666,16 @@
                         Where history, comfort, and nature unite.
                     </p>
                     <div class="footer__social" aria-label="Social media links">
-                        <a href="#" class="footer__social-link" aria-label="Follow us on Facebook">
+                        <a href="https://www.facebook.com/p/Kings-Court-Hotel-100063770730963/" class="footer__social-link" aria-label="Follow us on Facebook">
                             <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="footer__social-link" aria-label="Follow us on Instagram">
+                        <a href="https://www.instagram.com/kings_court_hotel/" class="footer__social-link" aria-label="Follow us on Instagram">
                             <i class="fa-brands fa-instagram" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="footer__social-link" aria-label="Follow us on Twitter/X">
+                        <a href="https://x.com/Kingscourthotel" class="footer__social-link" aria-label="Follow us on Twitter/X">
                             <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
                         </a>
-                        <a href="#" class="footer__social-link" aria-label="Watch us on YouTube">
-                            <i class="fa-brands fa-youtube" aria-hidden="true"></i>
-                        </a>
+                        
                     </div>
                 </div>
 
@@ -706,7 +710,7 @@
                     <div class="footer__col-title">Contact</div>
                     <div class="footer__contact-item">
                         <span class="footer__contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
-                        <a href="tel:+441789123456" class="footer__contact-text">+44 (0)1789 123 456</a>
+                        <a href="tel:01789763111" class="footer__contact-text">01789 763 111</a>
                     </div>
                     <div class="footer__contact-item">
                         <span class="footer__contact-icon" aria-hidden="true"><i
@@ -717,8 +721,7 @@
                     <div class="footer__contact-item">
                         <span class="footer__contact-icon" aria-hidden="true"><i
                                 class="fa-solid fa-location-dot"></i></span>
-                        <span class="footer__contact-text">Kings Court Lane, Welford-on-Avon,<br>Stratford-upon-Avon,
-                            CV37 8EX</span>
+                        <span class="footer__contact-text">Kings Court Hotel<br>Kings Coughton<br>Alcester<br>Warwickshire<br>B49 5QQ</span>
                     </div>
                 </div>
 
