@@ -11,7 +11,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const nav = document.getElementById('main-nav');
 
   const handleNavScroll = () => {
-    if (window.scrollY > 60) {
+    const isSolid = nav?.classList.contains('nav--solid');
+    if (window.scrollY > 60 || isSolid) {
       nav?.classList.add('nav--scrolled');
       nav?.classList.remove('nav--transparent');
     } else {
