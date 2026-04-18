@@ -11,14 +11,8 @@
    ──────────────────────────────────────── */
 
 /* ── Large Desktop (1280px+) ── */
-@media (min-width: 1280px) {
-    .container {
-        padding: 0 3rem;
-    }
-}
-
-/* ── Small Laptops & Large Tablets (max 1150px) ── */
-@media (max-width: 1150px) {
+/* ── Large Desktop & Laptops (max 1280px) ── */
+@media (max-width: 1280px) {
     /* Nav */
     .nav__links,
     .nav__cta {
@@ -27,6 +21,10 @@
 
     .nav__hamburger {
         display: flex;
+    }
+
+    .container {
+        padding: 0 3rem;
     }
 }
 
