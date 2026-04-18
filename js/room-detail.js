@@ -337,35 +337,109 @@ document.addEventListener('DOMContentLoaded', () => {
             category: 'Standard Room',
             price: 115,
             breadcrumb: 'Single Room',
-            folder: 'single-room'
+            folder: 'single-room',
+            tagline: 'Comfortable &amp; Functional',
+            bedType: 'Single Bed',
+            sleeps: '1 Guest',
+            amenityBed: 'Single bed',
+            description: `
+                <p>
+                    Perfect for solo travellers, our Single Room offers a comfortable night's rest with all
+                    modern amenities. Each room features a pocket sprung luxury mattress, flatscreen TV with
+                    Freeview, and complimentary high-speed Wi-Fi.
+                </p>
+                <p>
+                    Tea and coffee making facilities and a hairdryer are provided, along with an en-suite
+                    bathroom. Guests also enjoy free on-site parking and complimentary access to our fitness centre.
+                </p>`
         },
         'standard-double': {
-            title: 'Standard Double Room',
+            title: 'Standard Double En-Suite Room',
             category: 'Double Room',
             price: 145,
             breadcrumb: 'Standard Double Room',
-            folder: 'standard-double-room'
+            folder: 'standard-double-room',
+            tagline: 'Standard, Comfortable, Functional',
+            bedType: 'Queen Size Bed',
+            sleeps: '2 Guests',
+            amenityBed: 'Queen size bed',
+            description: `
+                <p>
+                    Our Standard Double En-Suite Room is a standard, comfortable, and functional room ideal
+                    for couples or solo travellers seeking extra space. Featuring a queen size bed with a
+                    pocket sprung luxury mattress, flatscreen TV with Freeview, and free high-speed Wi-Fi.
+                </p>
+                <p>
+                    Tea and coffee making facilities are provided in every room, along with a hairdryer and
+                    an en-suite bathroom. Guests enjoy free on-site parking and complimentary access to our
+                    fitness centre.
+                </p>`
         },
         king: {
-            title: 'King Room',
+            title: 'Premier Double En-Suite',
             category: 'Premier Room',
             price: 195,
-            breadcrumb: 'King Room',
-            folder: 'king-room'
+            breadcrumb: 'Premier Double En-Suite',
+            folder: 'king-room',
+            tagline: 'Luxurious &amp; Spacious',
+            bedType: 'King-Size Bed',
+            sleeps: '2 Guests',
+            amenityBed: 'King-size bed',
+            description: `
+                <p>
+                    Our Premier Double En-Suite offers luxurious, spacious rooms hand-picked for comfort.
+                    Featuring a king-size bed with a pocket sprung luxury mattress, flatscreen TV with
+                    Freeview, and complimentary high-speed Wi-Fi.
+                </p>
+                <p>
+                    Tea and coffee making facilities are provided, along with a hairdryer and an en-suite
+                    bathroom. Guests also enjoy free on-site parking and complimentary access to our
+                    fitness centre.
+                </p>`
         },
         twin: {
-            title: 'Twin Room',
+            title: 'Premier Twin En-Suite',
             category: 'Twin Room',
             price: 175,
-            breadcrumb: 'Twin Room',
-            folder: 'twin-room'
+            breadcrumb: 'Premier Twin En-Suite',
+            folder: 'twin-room',
+            tagline: 'Luxurious &amp; Spacious',
+            bedType: '2 Single Beds',
+            sleeps: '2 Guests',
+            amenityBed: '2 single beds',
+            description: `
+                <p>
+                    Our Premier Twin En-Suite is a luxurious, spacious room featuring two comfortable single
+                    beds with pocket sprung luxury mattresses, a flatscreen TV with Freeview, and
+                    complimentary high-speed Wi-Fi.
+                </p>
+                <p>
+                    Tea and coffee making facilities are provided in every room, along with a hairdryer and
+                    an en-suite bathroom. Guests enjoy free on-site parking and complimentary access to our
+                    fitness centre.
+                </p>`
         },
         quad: {
-            title: 'Quad Room',
-            category: 'Quad Room',
+            title: 'Premier Family En-Suite Room',
+            category: 'Family Room',
             price: 245,
-            breadcrumb: 'Quad Room',
-            folder: 'quad-room'
+            breadcrumb: 'Premier Family En-Suite Room',
+            folder: 'quad-room',
+            tagline: 'Spacious &amp; Comfortable',
+            bedType: 'Two King-Size Beds',
+            sleeps: '4 Guests',
+            amenityBed: 'Two king-size beds',
+            description: `
+                <p>
+                    Our Premier Family En-Suite Room is a spacious, comfortable room designed for families
+                    and groups. Featuring two king-size beds with pocket sprung luxury mattresses, a
+                    flatscreen TV with Freeview, and complimentary high-speed Wi-Fi.
+                </p>
+                <p>
+                    Tea and coffee making facilities are provided, along with a hairdryer and an en-suite
+                    bathroom. Cots and highchairs are available upon request. Guests enjoy free on-site
+                    parking and complimentary access to our fitness centre.
+                </p>`
         }
     };
 
@@ -386,12 +460,24 @@ document.addEventListener('DOMContentLoaded', () => {
     if (sidebarPrice) sidebarPrice.textContent = `£${room.price}`;
     if (mobileAmount) mobileAmount.textContent = `£${room.price}`;
 
+    // Update dynamic room-specific content
+    const descHeading = document.getElementById('rd-desc-heading');
+    const descBody = document.getElementById('rd-description-body');
+    const bedTypeEl = document.getElementById('rd-bed-type');
+    const sleepsEl = document.getElementById('rd-sleeps');
+    const amenityBedEl = document.getElementById('rd-amenity-bed');
+
+    if (descHeading && room.tagline) descHeading.innerHTML = room.tagline;
+    if (descBody && room.description) descBody.innerHTML = room.description;
+    if (bedTypeEl && room.bedType) bedTypeEl.textContent = room.bedType;
+    if (sleepsEl && room.sleeps) sleepsEl.textContent = room.sleeps;
+    if (amenityBedEl && room.amenityBed) amenityBedEl.textContent = room.amenityBed;
+
     // Update images dynamically
     const mainImages = document.querySelectorAll('.rd-gallery__slide img');
     const thumbImages = document.querySelectorAll('.rd-gallery__thumb img');
     const imgNames = ['mobilescale.avif', 'mobilescale-1.avif', 'mobilescale-2.avif'];
 
-    // Check if lengths match
     mainImages.forEach((img, idx) => {
         if (imgNames[idx]) {
             img.src = `assets/images/${room.folder}/${imgNames[idx]}`;
