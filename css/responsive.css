@@ -17,16 +17,24 @@
     }
 }
 
+/* ── Small Laptops & Large Tablets (max 1150px) ── */
+@media (max-width: 1150px) {
+    /* Nav */
+    .nav__links,
+    .nav__cta {
+        display: none;
+    }
+
+    .nav__hamburger {
+        display: flex;
+    }
+}
+
 /* ── Tablet Landscape (max 1024px) ── */
 @media (max-width: 1024px) {
     :root {
         --space-xl: 4rem;
         --space-xxl: 7rem;
-    }
-
-    /* Nav */
-    .nav__links {
-        gap: 1.25rem;
     }
 
     /* Intro */
