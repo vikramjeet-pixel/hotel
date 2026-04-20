@@ -18,26 +18,155 @@
     <link rel="canonical" href="https://www.kingscourthotel.co.uk/dining.html" />
     <title>Dining | Kings Court Hotel — Garden Dining Room &amp; Twisted Boot Bar</title>
 
-    <!-- Schema.org Markup -->
+    <!-- Schema.org — Restaurant -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
       "@type": "Restaurant",
       "name": "Garden Dining Room at Kings Court Hotel",
-      "image": "https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-13.jpg",
+      "description": "Award-winning restaurant serving seasonal British cuisine crafted from local Warwickshire produce and our kitchen garden. Multiple dining spaces including the Garden Dining Room, Brasserie, and Lantern Dining Room. Offering evening menu, traditional Sunday lunch, Wednesday buffet, and afternoon tea.",
+      "url": "https://www.kingscourthotel.co.uk/dining.html",
+      "telephone": "+441789763111",
+      "email": "info@kingscourthotel.co.uk",
+      "image": [
+        "https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-13.jpg",
+        "https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-15.jpg"
+      ],
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Kings Court Lane, Welford-on-Avon",
-        "addressLocality": "Stratford-upon-Avon",
+        "streetAddress": "Kings Coughton",
+        "addressLocality": "Alcester",
         "addressRegion": "Warwickshire",
-        "postalCode": "CV37 8EX",
-        "addressCountry": "UK"
+        "postalCode": "B49 5QQ",
+        "addressCountry": "GB"
       },
-      "telephone": "+441789123456",
-      "url": "https://www.kingscourthotel.co.uk/dining.html",
-      "servesCuisine": "British",
-      "priceRange": "$$",
-      "description": "Dine at Kings Court Hotel — Garden Dining Room offers seasonal British cuisine, while The Twisted Boot Bar serves craft ales and light bites."
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 52.2530,
+        "longitude": -1.8510
+      },
+      "servesCuisine": ["British", "Contemporary British", "Seasonal"],
+      "priceRange": "£££",
+      "menu": "https://www.kingscourthotel.co.uk/userfile/dining/kingscourta3-menu2026.pdf",
+      "acceptsReservations": true,
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "07:00",
+          "closes": "10:30",
+          "description": "Breakfast"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "12:00",
+          "closes": "14:30",
+          "description": "Lunch"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "15:00",
+          "closes": "17:00",
+          "description": "Afternoon Tea"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+          "opens": "18:30",
+          "closes": "21:30",
+          "description": "Dinner"
+        }
+      ],
+      "hasMenu": [
+        {
+          "@type": "Menu",
+          "name": "Evening Menu",
+          "description": "Seasonal à la carte dining featuring locally sourced British cuisine"
+        },
+        {
+          "@type": "Menu",
+          "name": "Sunday Lunch",
+          "description": "Traditional Sunday roast with 1, 2, or 3 course options from £16.25"
+        },
+        {
+          "@type": "Menu",
+          "name": "Wednesday Unlimited Buffet",
+          "description": "All-you-can-eat buffet lunch every Wednesday at £21.95 per person"
+        },
+        {
+          "@type": "Menu",
+          "name": "Afternoon Tea",
+          "description": "Classic, Signature, and Cream Tea options served daily"
+        }
+      ],
+      "award": "AA Rosette",
+      "starRating": {
+        "@type": "Rating",
+        "ratingValue": "3",
+        "bestRating": "5"
+      },
+      "potentialAction": {
+        "@type": "ReserveAction",
+        "target": {
+          "@type": "EntryPoint",
+          "urlTemplate": "https://www.kingscourthotel.co.uk/dining.html#dn-reserve"
+        },
+        "result": {
+          "@type": "FoodEstablishmentReservation",
+          "name": "Reserve a Table"
+        }
+      }
+    }
+    </script>
+
+    <!-- Schema.org — The Twisted Boot Bar -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BarOrPub",
+      "name": "The Twisted Boot Bar at Kings Court Hotel",
+      "description": "Historic pub bar with inglenook fireplace, craft ales, cocktails, and light bites. Live music every Friday evening. Located within Kings Court Hotel.",
+      "url": "https://www.kingscourthotel.co.uk/twisted-boot-bar.html",
+      "telephone": "+441789763111",
+      "image": "https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-8.jpg",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Kings Coughton",
+        "addressLocality": "Alcester",
+        "addressRegion": "Warwickshire",
+        "postalCode": "B49 5QQ",
+        "addressCountry": "GB"
+      },
+      "servesCuisine": "British Pub",
+      "priceRange": "££",
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday"],
+          "opens": "11:00",
+          "closes": "23:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Friday",
+          "opens": "11:00",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "10:00",
+          "closes": "00:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Sunday",
+          "opens": "12:00",
+          "closes": "22:30"
+        }
+      ]
     }
     </script>
 
