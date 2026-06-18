@@ -63,6 +63,7 @@
     <link rel="stylesheet" href="css/utilities.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/dining-page.css" />
+    <link rel="stylesheet" href="css/christmas-menu.css" />
 
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -235,6 +236,47 @@
                         style="width: 100%; height: auto; border-radius: var(--radius-md); box-shadow: var(--shadow-lg); object-fit: cover; aspect-ratio: 4/5;">
                 </div>
 
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════
+       PHOTO ALBUM SHOWCASE
+    ═══════════════════════════════════════ -->
+    <section class="xmas-menu section" id="photo-album" aria-labelledby="album-heading">
+        <div class="container">
+            <div class="section-header reveal" style="text-align: center;">
+                <span class="section-label">Visual Tour</span>
+                <span class="script-accent">The Twisted Boot</span>
+                <h2 id="album-heading">The Twisted Boot Experience</h2>
+                <div class="gold-line"></div>
+                <p>Flip through our photo album to experience our inviting atmosphere, delicious food, and real ales.</p>
+            </div>
+
+            <div class="flipbook-wrapper reveal">
+                <!-- Flipbook viewport -->
+                <div class="flipbook-viewport">
+                    <div class="flipbook" id="tb-flipbook">
+                        <!-- Static left pane (shows back of flipped page) -->
+                        <div class="flipbook__static-left" id="tb-flipbook-left"></div>
+                        <!-- Leaves are dynamically inserted by JS -->
+                    </div>
+                </div>
+
+                <!-- Ornamental divider -->
+                <div class="flipbook-ornament" aria-hidden="true">✦</div>
+
+                <!-- Controls -->
+                <div class="flipbook-controls">
+                    <button class="flipbook-btn" id="tb-fb-prev" aria-label="Previous page">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="flipbook-dots" id="tb-fb-dots"></div>
+                    <span class="flipbook-progress" id="tb-fb-progress">Cover</span>
+                    <button class="flipbook-btn" id="tb-fb-next" aria-label="Next page">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
             </div>
         </div>
     </section>
@@ -419,6 +461,7 @@
     <script src="js/main.js"></script>
     <script src="js/dining.js"></script>
     <script src="js/email-handler.js"></script>
+    <script src="js/tb-album.js"></script>
 
 </body>
 

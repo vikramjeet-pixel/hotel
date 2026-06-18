@@ -924,6 +924,34 @@
         </div>
     </footer>
 
+    <!-- ═══════════════════════════════════════
+       FIFA 2026 POPUP MODAL
+  ═══════════════════════════════════════ -->
+    <div class="modal-overlay" id="fifa-popup" role="dialog" aria-modal="true" aria-labelledby="fifa-popup-title">
+        <div class="modal-card">
+            <button class="modal-close" id="fifa-popup-close" aria-label="Close popup">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="modal-content">
+                <div class="modal-image">
+                    <img src="assets/images/fifa_2026_promo.png" alt="FIFA 2026 Match Screenings">
+                </div>
+                <div class="modal-text">
+                    <span class="modal-eyebrow">Upcoming Event</span>
+                    <h2 id="fifa-popup-title" class="modal-title">FIFA 2026 Live Screening</h2>
+                    <p class="modal-desc">
+                        Experience the thrill of the FIFA 2026 World Cup at Kings Court Hotel! 
+                        Join us in the Twisted Boot Bar for every match screening. Come and enjoy with us!
+                    </p>
+                    <div class="modal-actions">
+                        <a href="twisted-boot-bar.html" class="btn btn--primary">View Bar Menu</a>
+                        <a href="contact.html" class="btn btn--secondary" style="border-color: var(--clr-forest); color: var(--clr-forest);">Reserve a Table</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- ── Footer Year Script ── -->
     <script>
         document.getElementById('footer-year').textContent = new Date().getFullYear();
@@ -935,6 +963,7 @@
     <script src="js/slider.js" defer></script>
     <script src="js/animations.js" defer></script>
     <script src="js/christmas-menu.js" defer></script>
+    <script src="js/popup.js" defer></script>
 
 </body>
 
