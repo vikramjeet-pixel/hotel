@@ -1289,3 +1289,210 @@
         font-size: 1.2rem;
     }
 }
+
+
+/* ─── OFFERS COMING SOON ─── */
+.offers-coming-soon {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.offers-coming-soon__bg {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+}
+
+.offers-coming-soon__bg img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.offers-coming-soon__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg,
+            rgba(15, 30, 22, 0.78) 0%,
+            rgba(15, 30, 22, 0.65) 50%,
+            rgba(15, 30, 22, 0.85) 100%);
+    z-index: 1;
+}
+
+.offers-coming-soon__particles {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.offers-coming-soon__content {
+    position: relative;
+    z-index: 3;
+    text-align: center;
+    max-width: 700px;
+    padding: 2rem var(--space-md);
+}
+
+.offers-coming-soon__content .breadcrumb {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+    margin-bottom: var(--space-md);
+}
+
+.offers-coming-soon__content .breadcrumb a {
+    color: rgba(255, 255, 255, 0.6);
+    transition: color var(--transition-fast);
+}
+
+.offers-coming-soon__content .breadcrumb a:hover {
+    color: var(--clr-gold);
+}
+
+.offers-coming-soon__icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 2rem;
+    border-radius: 50%;
+    background: linear-gradient(135deg, rgba(194, 164, 94, 0.15), rgba(194, 164, 94, 0.05));
+    border: 2px solid rgba(194, 164, 94, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2.5rem;
+    color: var(--clr-gold);
+    animation: iconPulse 3s ease-in-out infinite;
+    box-shadow: 0 0 40px rgba(194, 164, 94, 0.15);
+}
+
+@keyframes iconPulse {
+    0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 0 40px rgba(194, 164, 94, 0.15);
+    }
+    50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 60px rgba(194, 164, 94, 0.25);
+    }
+}
+
+.offers-coming-soon__eyebrow {
+    display: block;
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--clr-gold-light);
+    margin-bottom: 0.75rem;
+}
+
+.offers-coming-soon__content h1 {
+    font-family: var(--font-serif);
+    color: var(--clr-white);
+    font-size: clamp(2.4rem, 6vw, 4.5rem);
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 1.25rem;
+}
+
+.offers-coming-soon__divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.offers-coming-soon__divider span {
+    display: block;
+    width: 50px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--clr-gold), transparent);
+}
+
+.offers-coming-soon__divider i {
+    color: var(--clr-gold);
+    font-size: 1rem;
+}
+
+.offers-coming-soon__desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    line-height: 1.8;
+    max-width: 550px;
+    margin: 0 auto 2.5rem;
+}
+
+.offers-coming-soon__ctas {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 2.5rem;
+}
+
+.offers-coming-soon__ctas .btn {
+    min-width: 180px;
+}
+
+.offers-coming-soon__contact {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(194, 164, 94, 0.2);
+}
+
+.offers-coming-soon__contact p {
+    color: rgba(255, 255, 255, 0.6);
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    margin-bottom: 0.75rem;
+}
+
+.offers-coming-soon__phone {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--clr-gold);
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    text-decoration: none;
+    transition: color var(--transition-fast), transform var(--transition-fast);
+}
+
+.offers-coming-soon__phone:hover {
+    color: var(--clr-gold-light);
+    transform: scale(1.03);
+}
+
+.offers-coming-soon__phone i {
+    font-size: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .offers-coming-soon__icon {
+        width: 80px;
+        height: 80px;
+        font-size: 2rem;
+    }
+
+    .offers-coming-soon__desc {
+        font-size: 0.95rem;
+    }
+
+    .offers-coming-soon__phone {
+        font-size: 1.2rem;
+    }
+
+    .offers-coming-soon__ctas .btn {
+        min-width: 160px;
+    }
+}

@@ -113,6 +113,25 @@
                         successEl.classList.add('visible');
                         successEl.style.display = 'block';
                         successEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                        // Auto-dismiss after 8 seconds
+                        setTimeout(() => {
+                            successEl.classList.remove('visible');
+                            successEl.style.opacity = '0';
+                            successEl.style.transition = 'opacity 0.5s ease';
+                            setTimeout(() => {
+                                successEl.style.display = 'none';
+                                successEl.hidden = true;
+                                successEl.style.opacity = '';
+                                successEl.style.transition = '';
+                                // Re-show the submit button for another enquiry
+                                if (submitBtn) {
+                                    submitBtn.style.display = '';
+                                    submitBtn.disabled = false;
+                                    submitBtn.innerHTML = originalBtnHtml;
+                                }
+                            }, 500);
+                        }, 8000);
                     }
 
                     if (onSuccess) onSuccess(result);

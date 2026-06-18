@@ -25,8 +25,9 @@
         content="A Tudor country escape near Stratford-upon-Avon. 61 en-suite rooms, award-winning dining &amp; 4 acres of Warwickshire countryside. Book direct for the best rates." />
     <meta name="twitter:image"
         content="https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-2.jpg" />
-    <meta name="twitter:image:alt" content="Kings Court Hotel exterior — Tudor manor house set in Warwickshire countryside" />
-        <link rel="canonical" href="https://www.kingscourthotel.co.uk/" />
+    <meta name="twitter:image:alt"
+        content="Kings Court Hotel exterior — Tudor manor house set in Warwickshire countryside" />
+    <link rel="canonical" href="https://www.kingscourthotel.co.uk/" />
     <title>Kings Court Hotel | A Tudor Country Escape Near Stratford-upon-Avon</title>
 
     <!-- Schema.org — Hotel (Primary) -->
@@ -156,6 +157,7 @@
     <link rel="stylesheet" href="css/pages.css" />
     <link rel="stylesheet" href="css/utilities.css" />
     <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/christmas-menu.css" />
 
     <!-- Font Awesome (icons) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
@@ -534,6 +536,60 @@
 
 
     <!-- ═══════════════════════════════════════
+       CHRISTMAS MENU FLIPBOOK
+  ═══════════════════════════════════════ -->
+    <section class="xmas-menu section" id="christmas-menu" aria-labelledby="xmas-heading">
+        <div class="container">
+
+            <div class="section-header reveal">
+                <span class="section-label">Festive Celebrations</span>
+                <span class="script-accent">Season's Delights</span>
+                <h2 id="xmas-heading">Christmas &amp; New Year's Eve 2026</h2>
+                <div class="gold-line"></div>
+                <p>Flip through our festive brochure — party nights, seasonal menus &amp; celebration packages crafted for a magical winter at Kings Court.</p>
+            </div>
+
+            <div class="flipbook-wrapper reveal">
+
+                <!-- Flipbook viewport -->
+                <div class="flipbook-viewport">
+                    <div class="flipbook" id="flipbook">
+                        <!-- Static left pane (shows back of flipped page) -->
+                        <div class="flipbook__static-left" id="flipbook-left"></div>
+                        <!-- Leaves are dynamically inserted by JS -->
+                    </div>
+                </div>
+
+                <!-- Ornamental divider -->
+                <div class="flipbook-ornament" aria-hidden="true">✦</div>
+
+                <!-- Controls -->
+                <div class="flipbook-controls">
+                    <button class="flipbook-btn" id="fb-prev" aria-label="Previous page">
+                        <i class="fa-solid fa-chevron-left"></i>
+                    </button>
+                    <div class="flipbook-dots" id="fb-dots"></div>
+                    <span class="flipbook-progress" id="fb-progress">Cover</span>
+                    <button class="flipbook-btn" id="fb-next" aria-label="Next page">
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </div>
+
+                <!-- CTA -->
+                <div class="xmas-menu__cta">
+                    <a href="christmasmenu.html" class="btn btn--ghost-gold" id="xmas-full-menu-btn">
+                        View Full Brochure
+                        <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════
        WEDDINGS SECTION
   ═══════════════════════════════════════ -->
     <section class="weddings-section" id="weddings" aria-labelledby="weddings-heading">
@@ -613,7 +669,7 @@
                         <div class="dining-highlight">
                             <div class="dining-highlight__icon">🍲</div>
                             <div class="dining-highlight__title">Regular Services</div>
-                            <p class="dining-highlight__text">Evening Menu, Sunday Lunch &amp; Wednesday 3-Course Buffet
+                            <p class="dining-highlight__text">Dining Menu, Sunday Lunch &amp; Wednesday 3-Course Buffet
                             </p>
                         </div>
                         <div class="dining-highlight">
@@ -699,8 +755,8 @@
                                     class="fa-solid fa-location-dot"></i></span>
                             <div>
                                 <span class="location-detail__label">Address</span>
-                                <span class="location-detail__value">Kings Court Lane,
-                                    Welford-on-Avon,<br>Stratford-upon-Avon, CV37 8EX</span>
+                                <span class="location-detail__value">Kings Coughton,
+                                    Alcester,<br>Warwickshire, B49 5QQ</span>
                             </div>
                         </div>
                         <div class="location-detail">
@@ -878,6 +934,7 @@
     <script src="js/booking.js" defer></script>
     <script src="js/slider.js" defer></script>
     <script src="js/animations.js" defer></script>
+    <script src="js/christmas-menu.js" defer></script>
 
 </body>
 
