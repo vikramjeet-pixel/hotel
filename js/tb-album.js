@@ -6,20 +6,20 @@
     'use strict';
 
     const IMAGES = [
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-27.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-106.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-131.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-76.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-5.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-83.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-124.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-3.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-134.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-63.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-6.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-77.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-128.jpg',
-        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-129.jpg'
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-83.jpg',   // Wide exterior with crowd
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-63.jpg',   // Establishing shot with tree
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-5.jpg',    // Iconic pub sign close-up
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-6.jpg',    // "THE TWISTED BOOT" signage
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-27.jpg',   // Entrance with live musician
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-106.jpg',  // Outdoor atmosphere & crowd
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-124.jpg',  // Musician close-up
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-134.jpg',  // Bar interior, copper lamps
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-77.jpg',   // Staff at beer taps
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-76.jpg',   // Wine & Drinks menu
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-128.jpg',  // Chef grilling at BBQ
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-3.jpg',    // Outdoor terrace with drinks
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-131.jpg',  // Kids on bouncy castle
+        'assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-129.jpg'   // Family fun, wider view
     ];
 
     const book       = document.getElementById('tb-flipbook');
