@@ -13,7 +13,6 @@ The main landing page of the website. It gives visitors a complete overview of t
 *   **Promotional Popup:** A special announcement popup (e.g., FIFA 2026 Live Screening) that appears when guests visit the site.
 *   **Footer:** Quick links, newsletter signup, and contact details.
 
-**2. About Us (`about.html`)**
 Tells the story of the Kings Court Hotel.
 *   **History & Heritage:** Information about the hotel's background and values.
 *   **Our Team:** Introductions to the management and hospitality team.
@@ -87,7 +86,6 @@ Helps guests find their way to the hotel.
 A visual tour of the entire property.
 *   **Albums:** Categorized photos of the exterior, lobby, rooms, dining, and event spaces.
 
-**14. Special Offers (`offers.html`)**
 Current deals and promotions.
 *   **Discount Packages:** Seasonal sales, romantic getaways, or business traveler discounts.
 

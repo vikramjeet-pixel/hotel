@@ -71,14 +71,6 @@ PAGES = {
         "og_image": "assets/images/gallery/compressed-kings-court-14.jpg",
         "twitter_alt": "Conference room at Kings Court Hotel — modern meeting facilities",
     },
-    "offers.html": {
-        "meta_desc": "Exclusive offers and seasonal packages at Kings Court Hotel near Stratford-upon-Avon. Book direct for the best rates on your Warwickshire countryside escape.",
-        "og_title": "Special Offers | Kings Court Hotel",
-        "og_desc": "Book direct and save at Kings Court Hotel. Exclusive seasonal packages, midweek breaks, and special offers for your Tudor country escape near Stratford-upon-Avon.",
-        "twitter_desc": "Save when you book direct at Kings Court Hotel. Exclusive seasonal packages and midweek breaks near Stratford-upon-Avon. Your countryside escape awaits.",
-        "og_image": "assets/images/gallery1/exterior/compressed-kings-court-1.jpg",
-        "twitter_alt": "Kings Court Hotel grounds — Tudor manor countryside setting",
-    },
     "gallery.html": {
         "meta_desc": "Explore Kings Court Hotel in photos — Tudor architecture, landscaped gardens, en-suite rooms, and relaxed dining near Stratford-upon-Avon, Warwickshire.",
         "og_title": "Photo Gallery | Kings Court Hotel",
@@ -94,14 +86,6 @@ PAGES = {
         "twitter_desc": "Find Kings Court Hotel in Warwickshire. 3 miles from Stratford-upon-Avon, 5 mins from M40. 120 free parking spaces, EV charging &amp; easy directions.",
         "og_image": "assets/images/hero/hero-main.jpg",
         "twitter_alt": "Warwickshire countryside surrounding Kings Court Hotel",
-    },
-    "about.html": {
-        "meta_desc": "Discover the heritage of Kings Court Hotel, a Tudor farmhouse estate since 1642. AA 3-Star rated, blending historic charm with modern comfort in Warwickshire.",
-        "og_title": "Our Heritage | Kings Court Hotel",
-        "og_desc": "Since 1642, Kings Court has welcomed guests to Warwickshire. Discover the story behind our AA 3-Star Tudor manor — from farmhouse origins to award-winning hotel.",
-        "twitter_desc": "380 years of history in the heart of Warwickshire. Discover the story behind Kings Court Hotel, from 1642 Tudor farmhouse to award-winning AA 3-Star hotel.",
-        "og_image": "assets/images/gallery/compressed-kings-court-1.jpg",
-        "twitter_alt": "Kings Court Hotel history — Tudor manor house exterior",
     },
     "faq.html": {
         "meta_desc": "Frequently asked questions about Kings Court Hotel near Stratford-upon-Avon. Check-in times, parking, pets, cancellations, weddings, and dining information.",

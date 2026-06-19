@@ -213,22 +213,4 @@ document.addEventListener('DOMContentLoaded', () => {
             window.scrollTo({ top, behavior: 'smooth' });
         });
     });
-
-
-    /* ══════════════════════════════════════════
-       MENU DOWNLOAD — Placeholder feedback
-       ══════════════════════════════════════════ */
-    document.querySelectorAll('.dn-menu-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const original = btn.innerHTML;
-            btn.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i> Menu Downloaded';
-            btn.style.pointerEvents = 'none';
-            setTimeout(() => {
-                btn.innerHTML = original;
-                btn.style.pointerEvents = '';
-            }, 2500);
-        });
-    });
-
 });

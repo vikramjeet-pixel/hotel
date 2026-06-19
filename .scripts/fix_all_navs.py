@@ -10,9 +10,7 @@ desired_desktop_nav = """        <ul class="nav__links" role="list">
             <li><a href="weddings.html" class="nav__link">Weddings</a></li>
             <li><a href="events.html" class="nav__link">Events</a></li>
             <li><a href="conferences.html" class="nav__link">Conferences</a></li>
-            <li><a href="offers.html" class="nav__link">Offers</a></li>
             <li><a href="gallery.html" class="nav__link">Gallery</a></li>
-            <li><a href="about.html" class="nav__link">About</a></li>
             <li><a href="blog.html" class="nav__link">Blog</a></li>
             <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>"""
@@ -27,9 +25,7 @@ desired_mobile_nav = """    <div class="nav__mobile" id="nav-mobile" role="dialo
         <a href="weddings.html" class="nav__mobile-link">Weddings</a>
         <a href="events.html" class="nav__mobile-link">Events</a>
         <a href="conferences.html" class="nav__mobile-link">Conferences</a>
-        <a href="offers.html" class="nav__mobile-link">Offers</a>
         <a href="gallery.html" class="nav__mobile-link">Gallery</a>
-        <a href="about.html" class="nav__mobile-link">About</a>
         <a href="contact.html" class="nav__mobile-link">Contact</a>
         <div class="nav__mobile-divider" aria-hidden="true"></div>
         <a href="blog.html" class="nav__mobile-link">Blog</a>
