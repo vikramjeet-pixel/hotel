@@ -52,7 +52,7 @@ PAGES = {
         "og_title": "Weddings at Kings Court Hotel",
         "og_desc": "Say 'I do' in a 16th-century Tudor manor. Three stunning spaces, 61 guest bedrooms, award-winning catering, and a dedicated wedding coordinator. Enquire today.",
         "twitter_desc": "Your perfect Tudor wedding awaits. Licensed ceremonies, 3 stunning spaces, 61 guest rooms &amp; 4 acres of gardens. Kings Court Hotel, Warwickshire.",
-        "og_image": "assets/images/gallery/wedding-deco.png",
+        "og_image": "assets/images/gallery/compressed-kings-court-44.jpg",
         "twitter_alt": "Wedding reception setup at Kings Court Hotel — Tudor manor wedding venue",
     },
     "events.html": {

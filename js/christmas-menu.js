@@ -258,6 +258,29 @@
         }
     }, { passive: true });
 
+    // ─── Responsive Scaling ───
+    function adjustScale() {
+        const viewportWidth = window.innerWidth;
+        const bookWidth = 640;
+        const desktopWidth = 860;
+        
+        let scale = 1;
+        if (viewportWidth <= 940) {
+            const padding = 40;
+            const availableWidth = viewportWidth - padding;
+            scale = Math.min(1, availableWidth / bookWidth);
+        } else {
+            const padding = 40;
+            const availableWidth = viewportWidth - padding;
+            scale = Math.min(1, availableWidth / desktopWidth);
+        }
+        
+        book.style.setProperty('--book-scale', scale);
+    }
+    
+    window.addEventListener('resize', adjustScale);
+    adjustScale();
+
     // ─── Initialize ───
     goToPage(0);
     updateEdges();

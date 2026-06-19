@@ -89,12 +89,15 @@
 }
 
 .flipbook-viewport {
+    --book-scale: 1;
     perspective: 2400px;
     perspective-origin: 50% 50%;
     display: flex;
     justify-content: center;
+    align-items: center;
     width: 100%;
     padding: 20px 0;
+    height: calc(580px * var(--book-scale) + 40px);
 }
 
 /* ─── The Book ─── */
@@ -103,8 +106,9 @@
     width: 860px;
     height: 580px;
     transform-style: preserve-3d;
-    /* Subtle 3D angle for depth */
-    transform: rotateX(2deg);
+    /* Subtle 3D angle for depth + scale */
+    transform: scale(var(--book-scale)) rotateX(2deg);
+    transform-origin: center center;
 }
 
 /* Book shadow on surface */
@@ -546,6 +550,10 @@
         width: 640px;
         height: 440px;
     }
+    
+    .flipbook-viewport {
+        height: calc(440px * var(--book-scale, 1) + 40px);
+    }
 
     .xmas-menu {
         padding: 4rem 0 3.5rem;
@@ -559,37 +567,6 @@
 
     .xmas-menu .section-header {
         margin-bottom: 2rem;
-    }
-
-    /* Single-page mode on mobile */
-    .flipbook {
-        width: 88vw;
-        max-width: 380px;
-        height: 520px;
-        transform: rotateX(0deg);
-    }
-
-    .flipbook__static-left {
-        display: none;
-    }
-
-    .flipbook__page-edges-left,
-    .flipbook__page-edges {
-        display: none;
-    }
-
-    .flipbook__page {
-        width: 100%;
-    }
-
-    .flipbook__face--front,
-    .flipbook__face--back {
-        border-radius: 6px;
-    }
-
-    .flipbook::before,
-    .flipbook::after {
-        display: none;
     }
 
     .flipbook-shadow {
@@ -607,12 +584,5 @@
 
     .flipbook-wrapper {
         gap: 1.8rem;
-    }
-}
-
-@media (max-width: 400px) {
-    .flipbook {
-        max-width: 310px;
-        height: 430px;
     }
 }
