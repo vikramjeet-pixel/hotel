@@ -916,6 +916,192 @@
     text-decoration: underline;
 }
 
+/* ─── WAKES & CELEBRATIONS OF LIFE ─── */
+.ev-wakes {
+    background-color: var(--clr-white);
+    padding: var(--space-xl) 0;
+    border-bottom: 1px solid rgba(194, 164, 94, 0.2);
+}
+
+.ev-wakes__grid {
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 4rem;
+    align-items: start;
+}
+
+.ev-wakes__details h3 {
+    font-family: var(--font-serif);
+    font-size: 1.8rem;
+    color: var(--clr-forest-dark);
+    margin-bottom: 1.5rem;
+}
+
+.ev-wakes__details p {
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    color: var(--clr-text-light);
+    line-height: 1.8;
+    margin-bottom: 2rem;
+}
+
+.ev-wakes__locations {
+    background: var(--clr-cream-light);
+    border: 1px solid rgba(194, 164, 94, 0.2);
+    border-radius: var(--radius-md);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+}
+
+.ev-wakes__locations-title {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--clr-forest);
+    margin-bottom: 1rem;
+}
+
+.ev-wakes__locations-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--clr-text-light);
+}
+
+.ev-wakes__locations-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.ev-wakes__locations-list li i {
+    font-size: 0.35rem;
+    color: var(--clr-gold);
+}
+
+.ev-wakes__spaces-title {
+    font-family: var(--font-sans);
+    font-size: 1.1rem;
+    color: var(--clr-forest-dark);
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.ev-wakes__spaces-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    color: var(--clr-text-light);
+}
+
+.ev-wakes__spaces-list li {
+    display: flex;
+    gap: 0.8rem;
+}
+
+.ev-wakes__spaces-list li i {
+    color: var(--clr-gold);
+    margin-top: 0.2rem;
+}
+
+.ev-wakes__catering {
+    background: var(--clr-cream-light);
+    border: 1px solid rgba(194, 164, 94, 0.25);
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.ev-wakes__catering-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ev-wakes__catering-eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--clr-gold-dark);
+}
+
+.ev-wakes__catering-title {
+    font-family: var(--font-serif);
+    font-size: 1.5rem;
+    color: var(--clr-forest-dark);
+    margin-top: 0.25rem;
+}
+
+.ev-wakes__catering-desc {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    color: var(--clr-text-light);
+    line-height: 1.6;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.ev-wakes__catering-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.ev-wakes__catering-item {
+    background: var(--clr-white);
+    border: 1px solid rgba(194, 164, 94, 0.15);
+    padding: 1.25rem;
+    border-radius: var(--radius-sm);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ev-wakes__catering-item-title {
+    font-family: var(--font-sans);
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--clr-forest-dark);
+    margin-bottom: 0.25rem;
+}
+
+.ev-wakes__catering-item-desc {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+}
+
+.ev-wakes__catering-item-price {
+    font-family: var(--font-serif);
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--clr-gold-dark);
+    white-space: nowrap;
+}
+
+.ev-wakes__catering-note {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--clr-text-muted);
+    line-height: 1.4;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
+
 /* ─── ENQUIRY FORM ─── */
 .ev-enquiry {
     padding: var(--space-xl) 0;
@@ -1326,6 +1512,11 @@
     .ev-enquiry__aside {
         position: static;
     }
+
+    .ev-wakes__grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
 }
 
 @media (max-width: 900px) {
@@ -1392,6 +1583,10 @@
 
     .ev-rooms__grid {
         gap: 1.25rem;
+    }
+
+    .ev-wakes__locations-list {
+        grid-template-columns: 1fr;
     }
 }
 

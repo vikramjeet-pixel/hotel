@@ -247,9 +247,9 @@
        VENUE CARD — Enquiry pre-fill
     ───────────────────────────────────────── */
     const venueMap = {
-        'venue-great-hall': '101-150',
-        'venue-garden-terrace': '51-100',
-        'venue-oak-room': '1-20'
+        'venue-warwick-barn': '101-150',
+        'venue-garden-terrace': '101-150',
+        'venue-garden-lantern': '51-100'
     };
 
     const guestsSelect = document.getElementById('wd-guests');
@@ -306,5 +306,61 @@
             });
         }, 800);
     }
+
+    /* ─────────────────────────────────────────
+       BRIDEBOOK POPUP WIDGET
+    ───────────────────────────────────────── */
+    const bbWidgetBtn = document.getElementById('bb-widget-btn');
+    const triggerBbPopup = document.getElementById('trigger-bb-popup');
+    const bbWidgetModal = document.getElementById('bb-widget-modal');
+    const bbModalClose = document.getElementById('bb-modal-close');
+    const bbModalCancel = document.getElementById('bb-modal-cancel-btn');
+    const bbModalOverlay = document.getElementById('bb-modal-overlay');
+
+    function openBbModal() {
+        if (bbWidgetModal) {
+            bbWidgetModal.removeAttribute('hidden');
+            // Force reflow
+            bbWidgetModal.offsetHeight;
+            bbWidgetModal.classList.add('is-active');
+            document.body.style.overflow = 'hidden'; // prevent background scrolling
+        }
+    }
+
+    function closeBbModal() {
+        if (bbWidgetModal) {
+            bbWidgetModal.classList.remove('is-active');
+            document.body.style.overflow = '';
+            // Hide after transition completes
+            setTimeout(() => {
+                if (!bbWidgetModal.classList.contains('is-active')) {
+                    bbWidgetModal.setAttribute('hidden', '');
+                }
+            }, 300);
+        }
+    }
+
+    if (bbWidgetBtn) {
+        bbWidgetBtn.addEventListener('click', openBbModal);
+    }
+    if (triggerBbPopup) {
+        triggerBbPopup.addEventListener('click', openBbModal);
+    }
+    if (bbModalClose) {
+        bbModalClose.addEventListener('click', closeBbModal);
+    }
+    if (bbModalCancel) {
+        bbModalCancel.addEventListener('click', closeBbModal);
+    }
+    if (bbModalOverlay) {
+        bbModalOverlay.addEventListener('click', closeBbModal);
+    }
+
+    // Close on Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && bbWidgetModal && !bbWidgetModal.hasAttribute('hidden')) {
+            closeBbModal();
+        }
+    });
 
 })();
