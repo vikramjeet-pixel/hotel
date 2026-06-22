@@ -158,16 +158,23 @@
 
         updateControls();
         updateEdges();
+        updateBookClasses();
 
         // Safety: clear animation lock after max transition time
         setTimeout(() => { isAnimating = false; }, 1200);
     }
 
+    function updateBookClasses() {
+        book.classList.toggle('--closed-front', currentPage === 0);
+        book.classList.toggle('--closed-back', currentPage === totalLeaves);
+    }
+
     function updateLeftPane() {
         if (currentPage === 0) {
             leftPane.innerHTML = '';
-            leftPane.style.background = '#efe9dd';
+            leftPane.style.display = 'none';
         } else {
+            leftPane.style.display = 'block';
             const backImgSrc = IMAGES[(currentPage - 1) * 2 + 1];
             leftPane.style.background = 'none';
             leftPane.innerHTML = `<img src="${backImgSrc}" alt="Christmas Menu" draggable="false">`;
@@ -282,7 +289,9 @@
     adjustScale();
 
     // ─── Initialize ───
-    goToPage(0);
+    updateLeftPane();
+    updateControls();
     updateEdges();
+    updateBookClasses();
 
 })();

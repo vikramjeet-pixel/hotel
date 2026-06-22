@@ -155,7 +155,7 @@ function buildHotelEmail(type, data) {
                 ${messageHtml}
             </div>
             <div class="footer">
-                <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
+                <p>Kings Court Hotel · Kings Coughton · Alcester · Warwickshire B49 5QQ</p>
                 <p><a href="tel:01789763111">01789 763 111</a> · <a href="mailto:info@kingscourthotel.co.uk">info@kingscourthotel.co.uk</a></p>
             </div>
         </div>
@@ -217,7 +217,7 @@ function buildConfirmationEmail(type, data) {
                 </p>
             </div>
             <div class="footer">
-                <p>Kings Court Hotel · Welford-on-Avon · Warwickshire CV37 8EX</p>
+                <p>Kings Court Hotel · Kings Coughton · Alcester · Warwickshire B49 5QQ</p>
                 <p><a href="tel:01789763111">01789 763 111</a> · <a href="https://www.kingscourthotel.co.uk">www.kingscourthotel.co.uk</a></p>
                 <p style="margin-top:12px;font-size:11px;color:rgba(194,164,94,0.6);">This is an automated confirmation. Please do not reply to this email address.</p>
             </div>

@@ -5,10 +5,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description"
-        content="Find Kings Court Hotel near Stratford-upon-Avon. Just 3 miles from town, 5 mins from M40. Free parking, EV charging, and directions by car, train, and air." />
+        content="Find Kings Court Hotel near Stratford-upon-Avon. Over 10 miles from Stratford-upon-Avon, 15 mins from M42. Free parking, EV charging, and directions by car, train, and air." />
     <meta property="og:title" content="Location &amp; Directions | Kings Court Hotel" />
     <meta property="og:description"
-        content="Perfectly positioned in Warwickshire countryside. 3 miles from Stratford-upon-Avon, 5 mins from M40 J15. Free parking with 120 spaces and EV charging on-site." />
+        content="Perfectly positioned in Warwickshire countryside. over 10 miles from Stratford-upon-Avon, 15 mins from M42. Free parking with up to 120 spaces and EV charging on-site." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.kingscourthotel.co.uk/location.html" />
     <meta property="og:image"
@@ -20,7 +20,7 @@
     <meta name="twitter:site" content="@Kingscourthotel" />
     <meta name="twitter:title" content="Location &amp; Directions | Kings Court Hotel" />
     <meta name="twitter:description"
-        content="Find Kings Court Hotel in Warwickshire. 3 miles from Stratford-upon-Avon, 5 mins from M40. 120 free parking spaces, EV charging &amp; easy directions." />
+        content="Find Kings Court Hotel in Warwickshire. over 10 miles from Stratford-upon-Avon, 15 mins from M42. Up to 120 free parking spaces, EV charging &amp; easy directions." />
     <meta name="twitter:image"
         content="https://www.kingscourthotel.co.uk/assets/images/hero/hero-main.jpg" />
     <meta name="twitter:image:alt" content="Warwickshire countryside surrounding Kings Court Hotel" />
@@ -33,7 +33,7 @@
       "@context": "https://schema.org",
       "@type": "Hotel",
       "name": "Kings Court Hotel",
-      "description": "Find Kings Court Hotel near Stratford-upon-Avon. Set within 4 acres of Warwickshire countryside in Kings Coughton, just 3 miles from Stratford-upon-Avon and 5 minutes from M40 Junction 15.",
+      "description": "Find Kings Court Hotel near Stratford-upon-Avon. Set within 4 acres of Warwickshire countryside in Kings Coughton, over 10 miles from Stratford-upon-Avon and 15 minutes from the M42.",
       "url": "https://www.kingscourthotel.co.uk/location.html",
       "telephone": "+441789763111",
       "email": "info@kingscourthotel.co.uk",
@@ -56,7 +56,7 @@
       "isAccessibleForFree": false,
       "smokingAllowed": false,
       "amenityFeature": [
-        { "@type": "LocationFeatureSpecification", "name": "Free On-Site Parking (120 spaces)", "value": true },
+        { "@type": "LocationFeatureSpecification", "name": "Free On-Site Parking (Up to 120 spaces)", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "CCTV Monitored Parking", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "EV Charging Points (4 bays)", "value": true },
         { "@type": "LocationFeatureSpecification", "name": "Disabled Parking Bays", "value": true },
@@ -253,19 +253,24 @@
             letter-spacing: .15em;
             text-transform: uppercase;
             color: var(--clr-gold);
-            margin-bottom: .3rem
+            margin-bottom: .3rem;
+            text-shadow: 0 1px 2px rgba(0,0,0,0.8);
         }
 
         .loc-attr-card__name {
             font-family: var(--font-serif);
             font-size: 1.5rem;
-            margin-bottom: .25rem
+            margin-bottom: .25rem;
+            color: var(--clr-cream);
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
         }
 
         .loc-attr-card__desc {
             font-size: .9rem;
-            opacity: .85;
-            line-height: 1.5
+            opacity: .95;
+            line-height: 1.5;
+            color: var(--clr-cream);
+            text-shadow: 0 1px 3px rgba(0,0,0,0.5);
         }
 
         .loc-parking {
@@ -291,13 +296,15 @@
             font-family: var(--font-serif);
             font-size: clamp(1.8rem, 3vw, 2.5rem);
             margin-bottom: var(--space-sm)
-        }
+        
+            color: var(--clr-cream);}
 
         .loc-parking__text {
             opacity: .85;
             line-height: 1.8;
             margin-bottom: var(--space-sm)
-        }
+        
+            color: var(--clr-cream);}
 
         .loc-parking__features {
             list-style: none;
@@ -359,6 +366,7 @@
             <span class="nav__logo-tagline">Hotel</span>
         </a>
         <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="rooms.html" class="nav__link">Rooms</a></li>
             <li><a href="dining.html" class="nav__link">Dining</a></li>
             <li><a href="twisted-boot-bar.html" class="nav__link">Twisted Boot Bar</a></li>
@@ -383,6 +391,7 @@
         <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
+        <a href="index.html" class="nav__mobile-link">Home</a>
         <a href="rooms.html" class="nav__mobile-link">Rooms</a>
         <a href="dining.html" class="nav__mobile-link">Dining</a>
         <a href="twisted-boot-bar.html" class="nav__mobile-link">Twisted Boot Bar</a>
@@ -420,7 +429,7 @@
             </div>
             <div class="reveal">
                 <iframe
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d78985.97!2d-1.7073!3d52.1936!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4870d4b1e9e1b4b5%3A0x1234567890abcdef!2sStratford-upon-Avon%2C%20UK!5e0!3m2!1sen!2suk!4v1234567890"
+                    src="https://maps.google.com/maps?width=100%25&height=600&hl=en&q=Kings+Court+Hotel,+Kings+Coughton,+Alcester,+Warwickshire,+B49+5QQ&t=&z=14&ie=UTF8&iwloc=B&output=embed"
                     title="Kings Court Hotel location map" allowfullscreen loading="lazy"
                     referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
@@ -439,13 +448,12 @@
                 <div class="loc-dir-card reveal">
                     <div class="loc-dir-card__icon"><i class="fa-solid fa-car"></i></div>
                     <h3 class="loc-dir-card__title">By Car</h3>
-                    <p class="loc-dir-card__text">Just 3 miles from Stratford-upon-Avon and 5 minutes from M40 Junction
-                        15. Follow signs to Welford-on-Avon, then Kings Court Lane. Sat-nav: CV37 8EX.</p>
+                    <p class="loc-dir-card__text">Over 10 miles from Stratford-upon-Avon and 15 minutes from the M42 (Junction 3). Follow signs to Alcester, then Kings Coughton. Sat-nav: B49 5QQ.</p>
                 </div>
                 <div class="loc-dir-card reveal reveal--delay-1">
                     <div class="loc-dir-card__icon"><i class="fa-solid fa-train"></i></div>
                     <h3 class="loc-dir-card__title">By Train</h3>
-                    <p class="loc-dir-card__text">Stratford-upon-Avon station is 3 miles away with regular services from
+                    <p class="loc-dir-card__text">Stratford-upon-Avon station is over 10 miles away with regular services from
                         London Marylebone (2 hrs). Warwick Parkway is 8 miles away. Taxis available at both stations.
                     </p>
                 </div>
@@ -458,8 +466,8 @@
                 <div class="loc-dir-card reveal reveal--delay-3">
                     <div class="loc-dir-card__icon"><i class="fa-solid fa-bus"></i></div>
                     <h3 class="loc-dir-card__title">By Bus</h3>
-                    <p class="loc-dir-card__text">The X18 bus runs between Stratford and Welford-on-Avon hourly. The
-                        nearest stop is a 10-minute walk from the hotel. We offer complimentary pick-up by arrangement.
+                    <p class="loc-dir-card__text">The X18 bus runs between Stratford and Alcester hourly. The
+                        nearest stop is a two-minute walk from the hotel. We offer complimentary pick-up by arrangement.
                     </p>
                 </div>
             </div>
@@ -477,17 +485,17 @@
             </div>
             <div class="loc-attractions__grid">
                 <div class="loc-attr-card reveal">
-                    <img src="assets/images/gallery/blog-theatre.png" alt="Stratford-upon-Avon riverside and Royal Shakespeare Theatre" loading="lazy" />
+                    <img src="assets/images/local_attractions/royal_shakesappear.jpg" alt="Stratford-upon-Avon riverside and Royal Shakespeare Theatre" loading="lazy" />
                     <div class="loc-attr-card__overlay"></div>
                     <div class="loc-attr-card__content">
-                        <span class="loc-attr-card__dist">3 miles away</span>
+                        <span class="loc-attr-card__dist">10+ miles away</span>
                         <h3 class="loc-attr-card__name">Stratford-upon-Avon</h3>
                         <p class="loc-attr-card__desc">Shakespeare's birthplace with theatres, riverside walks and
                             charming Tudor streets.</p>
                     </div>
                 </div>
                 <div class="loc-attr-card reveal reveal--delay-1">
-                    <img src="assets/images/gallery/blog-warwick-castle.png" alt="Historic Warwick Castle towering over the river" loading="lazy" />
+                    <img src="assets/images/local_attractions/warwick%20castle.webp" alt="Historic Warwick Castle towering over the river" loading="lazy" />
                     <div class="loc-attr-card__overlay"></div>
                     <div class="loc-attr-card__content">
                         <span class="loc-attr-card__dist">8 miles away</span>
@@ -497,12 +505,12 @@
                     </div>
                 </div>
                 <div class="loc-attr-card reveal reveal--delay-2">
-                    <img src="assets/images/gallery/blog-cotswolds.png" alt="Rolling hills and honey-stone villages of the Cotswolds" loading="lazy" />
+                    <img src="assets/images/local_attractions/cotswolds.png" alt="Rolling hills and honey-stone villages of the Cotswolds" loading="lazy" />
                     <div class="loc-attr-card__overlay"></div>
                     <div class="loc-attr-card__content">
-                        <span class="loc-attr-card__dist">12 miles away</span>
+                        <span class="loc-attr-card__dist">~30 mins away</span>
                         <h3 class="loc-attr-card__name">The Cotswolds</h3>
-                        <p class="loc-attr-card__desc">Rolling hills, honey-stone villages and quintessential English
+                        <p class="loc-attr-card__desc">Starting at Cheltenham, explore rolling hills, honey-stone villages and quintessential English
                             countryside.</p>
                     </div>
                 </div>
@@ -520,9 +528,9 @@
                     <p class="loc-parking__text">We offer complimentary parking for all hotel guests with ample space
                         for coaches and larger vehicles.</p>
                     <ul class="loc-parking__features">
-                        <li><i class="fa-solid fa-check"></i> 120 complimentary parking spaces</li>
+                        <li><i class="fa-solid fa-check"></i> Up to 120 complimentary parking spaces</li>
                         <li><i class="fa-solid fa-check"></i> CCTV monitored 24/7</li>
-                        <li><i class="fa-solid fa-check"></i> Disabled parking bays available</li>
+                        <li><i class="fa-solid fa-check"></i> Accessible parking bays available</li>
                         <li><i class="fa-solid fa-check"></i> EV charging points (4 bays)</li>
                         <li><i class="fa-solid fa-check"></i> Coach parking by arrangement</li>
                         <li><i class="fa-solid fa-check"></i> Valet parking available on request</li>

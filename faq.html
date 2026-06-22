@@ -46,7 +46,7 @@
           "name": "Is there parking available at the hotel?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes! We offer complimentary on-site parking for all guests with 120 spaces, including disabled bays and 4 EV charging points. The car park is CCTV monitored 24/7. Coach parking is available by prior arrangement."
+            "text": "Yes! We offer complimentary on-site parking for all guests with up to 120 spaces, including disabled bays and 4 EV charging points. The car park is CCTV monitored 24/7. Coach parking is available by prior arrangement."
           }
         },
         {
@@ -54,7 +54,7 @@
           "name": "Are pets allowed at Kings Court Hotel?",
           "acceptedAnswer": {
             "@type": "Answer",
-                        "text": "We welcome well-behaved dogs in our designated pet-friendly Classic Rooms at a supplement of £25 per night. Please inform us at the time of booking. We can provide dog beds, bowls, and our grounds are perfect for walks. Dogs are welcome in the Twisted Boot Bar and other pub areas, but they are not permitted in the dining areas."
+                        "text": "We welcome well-behaved dogs in our designated pet-friendly Classic Rooms at a supplement of £10 per pet, per night. Please inform us at the time of booking. Our grounds are perfect for walks. Dogs are welcome in the Twisted Boot Bar and other pub areas, but they are not permitted in the dining areas."
           }
         },
         {
@@ -70,7 +70,7 @@
           "name": "What is your cancellation policy?",
           "acceptedAnswer": {
             "@type": "Answer",
-                        "text": "Bookings to be made through our website: www.kingscourthotel.co.uk using promo codes above or telephone reception on 01789 763111. Valid credit card required to make reservation. 100% cancellation charges will apply if cancelled within 36 hours of arrival. Rates inclusive of VAT and non-commissionable."
+                        "text": "Bookings to be made through our website: www.kingscourthotel.co.uk using promo codes above or telephone reception on 01789 763111. Valid credit card required to make reservation. 100% cancellation charges will apply if cancelled within 24 hours of arrival. Rates inclusive of VAT and non-commissionable."
           }
         },
         {
@@ -94,7 +94,7 @@
           "name": "Is the hotel accessible for disabled guests?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "We have ground-floor accessible rooms with wide doorways, roll-in showers, and grab rails. Our public areas are wheelchair accessible with ramp access. Please contact us before arrival so we can ensure your stay is as comfortable as possible."
+            "text": "We are not fully accessible throughout the property, but we do have a ramp near reception. We offer one fully wet-room accessible room with a roll-in shower, and another accessible room featuring a shower cabin. Please contact us before arrival to discuss your requirements."
           }
         },
         {
@@ -314,7 +314,8 @@
             font-family: var(--font-serif);
             font-size: clamp(1.5rem, 3vw, 2.2rem);
             margin-bottom: 1rem
-        }
+        
+            color: var(--clr-cream);}
 
         .fq-cta__text {
             opacity: .8;
@@ -322,7 +323,8 @@
             max-width: 500px;
             margin-left: auto;
             margin-right: auto
-        }
+        
+            color: var(--clr-cream);}
 
         .fq-cta__btn {
             display: inline-block;
@@ -368,6 +370,7 @@
         <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
                 class="nav__logo-tagline">Hotel</span></a>
         <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="rooms.html" class="nav__link">Rooms</a></li>
             <li><a href="dining.html" class="nav__link">Dining</a></li>
             <li><a href="twisted-boot-bar.html" class="nav__link">Twisted Boot Bar</a></li>
@@ -392,6 +395,7 @@
         <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
+        <a href="index.html" class="nav__mobile-link">Home</a>
         <a href="rooms.html" class="nav__mobile-link">Rooms</a>
         <a href="dining.html" class="nav__mobile-link">Dining</a>
         <a href="twisted-boot-bar.html" class="nav__mobile-link">Twisted Boot Bar</a>
@@ -489,7 +493,7 @@
                         <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
                     <div class="fq-item__body">
-                        <div class="fq-item__answer">Bookings to be made through our website: <a href="http://www.kingscourthotel.co.uk/" target="_blank" rel="noopener">www.kingscourthotel.co.uk</a> using promo codes above or telephone reception on <strong>01789 763111</strong>. Valid credit card required to make reservation. 100% cancellation charges will apply if cancelled within 36 hours of arrival. Rates inclusive of VAT and non-commissionable.</div>
+                        <div class="fq-item__answer">Bookings to be made through our website: <a href="http://www.kingscourthotel.co.uk/" target="_blank" rel="noopener">www.kingscourthotel.co.uk</a> using promo codes above or telephone reception on <strong>01789 763111</strong>. Valid credit card required to make reservation. 100% cancellation charges will apply if cancelled within 24 hours of arrival. Rates inclusive of VAT and non-commissionable.</div>
                     </div>
                 </div>
                 <div class="fq-item reveal" data-category="booking">
@@ -521,9 +525,7 @@
                         <div class="fq-item__icon"><i class="fa-solid fa-plus"></i></div>
                     </div>
                     <div class="fq-item__body">
-                        <div class="fq-item__answer">We have ground-floor accessible rooms with wide doorways, roll-in
-                            showers, and grab rails. Our public areas are wheelchair accessible with ramp access. Please
-                            contact us before arrival so we can ensure your stay is as comfortable as possible.</div>
+                        <div class="fq-item__answer">We are not fully accessible throughout the property, but we do have a ramp near reception. We offer one fully wet-room accessible room with a roll-in shower, and another accessible room featuring a shower cabin. Please contact us before arrival to discuss your requirements.</div>
                     </div>
                 </div>
 

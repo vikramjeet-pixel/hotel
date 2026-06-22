@@ -476,7 +476,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update images dynamically
     const mainImages = document.querySelectorAll('.rd-gallery__slide img');
     const thumbImages = document.querySelectorAll('.rd-gallery__thumb img');
-    const imgNames = ['mobilescale.avif', 'mobilescale-1.avif', 'mobilescale-2.avif'];
+    const imgNames = ['mobilescale-1.avif', 'mobilescale-2.avif', 'mobilescale.avif'];
 
     mainImages.forEach((img, idx) => {
         if (imgNames[idx]) {

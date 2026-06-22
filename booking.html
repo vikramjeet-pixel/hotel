@@ -29,10 +29,10 @@
         "telephone": "+441789123456",
         "address": {
           "@type": "PostalAddress",
-          "streetAddress": "Kings Court Lane, Welford-on-Avon",
-          "addressLocality": "Stratford-upon-Avon",
+          "streetAddress": "Kings Coughton",
+          "addressLocality": "Alcester",
           "addressRegion": "Warwickshire",
-          "postalCode": "CV37 8EX",
+          "postalCode": "B49 5QQ",
           "addressCountry": "UK"
         }
       }
@@ -93,7 +93,7 @@
             margin-bottom: 1rem
         }
 
-        .bk-hero__title {
+        .bk-hero__title {color: var(--clr-cream);
             font-family: var(--font-serif);
             font-size: clamp(2rem, 5vw, 3.5rem)
         }
@@ -358,6 +358,7 @@
         <a href="index.html" class="nav__logo"><span class="nav__logo-name">Kings Court</span><span
                 class="nav__logo-tagline">Hotel</span></a>
         <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="rooms.html" class="nav__link">Rooms</a></li>
             <li><a href="dining.html" class="nav__link">Dining</a></li>
             <li><a href="twisted-boot-bar.html" class="nav__link">Twisted Boot Bar</a></li>
@@ -382,6 +383,7 @@
         <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
+        <a href="index.html" class="nav__mobile-link">Home</a>
         <a href="rooms.html" class="nav__mobile-link">Rooms</a>
         <a href="dining.html" class="nav__mobile-link">Dining</a>
         <a href="twisted-boot-bar.html" class="nav__mobile-link">Twisted Boot Bar</a>
@@ -416,7 +418,7 @@
                     <p class="bk-form__subtitle">Complete the form below to request a booking. Our team will confirm
                         availability within 2 hours.</p>
                     <form id="booking-form">
-                        <div class="bk-form__row">
+                        <div class="bk-form__row" id="bk-dates-row">
                             <div class="bk-form__group">
                                 <label class="bk-form__label" for="bk-checkin">Check-In Date</label>
                                 <input class="bk-form__input" type="date" id="bk-checkin" required />
@@ -491,7 +493,7 @@
                     <div class="bk-summary__row"><span>Guests</span><span id="sum-guests">2</span></div>
                     <div class="bk-summary__badge">
                         <i class="fa-solid fa-shield-halved"></i>
-                        <span><strong>Secure Booking</strong> — SSL encrypted. 100% cancellation charges apply if cancelled within 36 hours of arrival.</span>
+                        <span><strong>Secure Booking</strong> — SSL encrypted. 100% cancellation charges apply if cancelled within 24 hours of arrival.</span>
                     </div>
                 </div>
             </div>
@@ -510,7 +512,7 @@
                 <div class="bk-feature reveal reveal--delay-1">
                     <div class="bk-feature__icon"><i class="fa-solid fa-calendar-xmark"></i></div>
                     <h3 class="bk-feature__title">Cancellation Policy</h3>
-                    <p class="bk-feature__text">100% cancellation charges apply within 36 hours of arrival</p>
+                    <p class="bk-feature__text">100% cancellation charges apply if cancelled within 24 hours of arrival. For all bookings, we take a card pre-authorisation on arrival for incidentals and restaurant/bar extras. If guests do not wish to provide a card for pre-authorisation, full payment upon arrival is required.</p>
                 </div>
                 <div class="bk-feature reveal reveal--delay-2">
                     <div class="bk-feature__icon"><i class="fa-solid fa-tags"></i></div>
@@ -606,16 +608,69 @@
             const today = new Date().toISOString().split('T')[0];
             checkin.min = today; checkout.min = today;
 
+            // Parse URL parameters
+            const urlParams = new URLSearchParams(window.location.search);
+            
+            // If both dates are provided in the URL, fill them and hide the date inputs
+            if (urlParams.get('checkin') && urlParams.get('checkout')) {
+                checkin.value = urlParams.get('checkin');
+                checkout.value = urlParams.get('checkout');
+                
+                const datesRow = document.getElementById('bk-dates-row');
+                if (datesRow) {
+                    datesRow.style.display = 'none';
+                }
+            } else {
+                if (urlParams.get('checkin')) checkin.value = urlParams.get('checkin');
+                if (urlParams.get('checkout')) checkout.value = urlParams.get('checkout');
+            }
+
+            if (urlParams.get('guests')) {
+                const parsedGuests = parseInt(urlParams.get('guests'), 10);
+                if (!isNaN(parsedGuests) && parsedGuests >= 1 && parsedGuests <= 8) {
+                    guests = parsedGuests;
+                }
+            }
+
+            // Function to auto-suggest room based on guests
+            function autoSuggestRoom() {
+                if (guests === 1) roomSelect.value = 'single';
+                else if (guests === 2) roomSelect.value = 'standard-double';
+                else if (guests === 3 || guests === 4) roomSelect.value = 'quad';
+            }
+
+            // Initialize UI
+            guestCount.textContent = guests;
+            if (urlParams.get('room')) {
+                roomSelect.value = urlParams.get('room');
+            } else {
+                autoSuggestRoom();
+            }
+
             // Guest counter
-            minusBtn.addEventListener('click', () => { if (guests > 1) { guests--; guestCount.textContent = guests; updateSummary(); } });
-            plusBtn.addEventListener('click', () => { if (guests < 8) { guests++; guestCount.textContent = guests; updateSummary(); } });
+            minusBtn.addEventListener('click', () => { 
+                if (guests > 1) { 
+                    guests--; 
+                    guestCount.textContent = guests; 
+                    autoSuggestRoom();
+                    updateSummary(); 
+                } 
+            });
+            plusBtn.addEventListener('click', () => { 
+                if (guests < 8) { 
+                    guests++; 
+                    guestCount.textContent = guests; 
+                    autoSuggestRoom();
+                    updateSummary(); 
+                } 
+            });
 
             // Update summary on changes
             [checkin, checkout, roomSelect].forEach(el => el.addEventListener('change', updateSummary));
 
             function updateSummary() {
                 const opt = roomSelect.options[roomSelect.selectedIndex];
-                const roomName = opt.textContent;
+                const roomName = opt ? opt.textContent : '';
                 document.getElementById('sum-room').textContent = roomName;
                 document.getElementById('sum-guests').textContent = guests;
 
@@ -643,6 +698,9 @@
                     if (checkout.value && checkout.value <= checkin.value) checkout.value = '';
                 }
             });
+
+            // Initial summary update
+            updateSummary();
         });
     </script>
     <script src="js/email-handler.js" defer></script>

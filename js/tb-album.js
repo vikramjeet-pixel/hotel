@@ -159,15 +159,22 @@
 
         updateControls();
         updateEdges();
+        updateBookClasses();
 
         setTimeout(() => { isAnimating = false; }, 1200);
+    }
+
+    function updateBookClasses() {
+        book.classList.toggle('--closed-front', currentPage === 0);
+        book.classList.toggle('--closed-back', currentPage === totalLeaves);
     }
 
     function updateLeftPane() {
         if (currentPage === 0) {
             leftPane.innerHTML = '';
-            leftPane.style.background = '#efe9dd';
+            leftPane.style.display = 'none';
         } else {
+            leftPane.style.display = 'block';
             let backImgSrc = IMAGES[(currentPage - 1) * 2 + 1];
             if (!backImgSrc) {
                 backImgSrc = 'assets/images/gallery/compressed-kings-court-23.jpg';
@@ -277,7 +284,9 @@
     window.addEventListener('resize', adjustScale);
     adjustScale();
 
-    goToPage(0);
+    updateLeftPane();
+    updateControls();
     updateEdges();
+    updateBookClasses();
 
 })();
