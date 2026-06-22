@@ -2144,3 +2144,31 @@
         justify-content: center;
     }
 }
+
+/* ══════════════════════════════════════════
+   WEDDING GALLERY
+   ══════════════════════════════════════════ */
+.wd-gallery {
+    background: var(--clr-cream);
+    padding: 6rem 0;
+}
+
+.wd-gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.wd-gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.wd-gallery-img:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-md);
+}

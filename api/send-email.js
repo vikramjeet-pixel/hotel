@@ -40,6 +40,7 @@ const SUBJECTS = {
     events: '🎪 New Events Enquiry — Kings Court Hotel',
     contact: '✉️ New General Enquiry — Kings Court Hotel',
     dining: '🍽️ New Dining Reservation — Kings Court Hotel',
+    corporate: '💼 New Corporate Enquiry — Kings Court Hotel',
 };
 
 // ────────────────────────────────────────────────────────────
@@ -77,6 +78,7 @@ function buildHotelEmail(type, data) {
         events: 'Event Enquiry',
         contact: 'General Enquiry',
         dining: 'Dining Reservation',
+        corporate: 'Corporate Enquiry',
     };
 
     const badgeColors = {
@@ -85,6 +87,7 @@ function buildHotelEmail(type, data) {
         events: '#1565c0',
         contact: '#6d4c41',
         dining: '#8e24aa',
+        corporate: '#424242',
     };
 
     const typeLabel = typeLabels[type] || 'General Enquiry';
@@ -173,6 +176,7 @@ function buildConfirmationEmail(type, data) {
         events: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your event enquiry. Kings Court Hotel is delighted to help you plan your perfect event.`,
         contact: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for getting in touch with Kings Court Hotel. We've received your message and appreciate you contacting us.`,
         dining: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your dining reservation request at Kings Court Hotel. We're looking forward to welcoming you.`,
+        corporate: `Dear ${escapeHtml(data.fullName || 'Guest')},\n\nThank you for your corporate enquiry at Kings Court Hotel.`,
     };
 
     const promises = {
@@ -181,6 +185,7 @@ function buildConfirmationEmail(type, data) {
         events: 'Our events team will prepare a bespoke proposal and respond within 24 hours.',
         contact: 'A member of our team will respond to your enquiry within 24 hours.',
         dining: 'Our dining reservations team will confirm your table within 2 hours. Please check your email for confirmation.',
+        corporate: 'Our sales team will review your requirements and respond within 24 hours with a tailored proposal.',
     };
 
     const greeting = (greetings[type] || greetings.contact).replace(/\n/g, '<br>');
@@ -235,6 +240,7 @@ const CONFIRMATION_SUBJECTS = {
     events: 'Your Event Enquiry — Kings Court Hotel',
     contact: 'Your Enquiry — Kings Court Hotel',
     dining: 'Your Dining Reservation — Kings Court Hotel',
+    corporate: 'Your Corporate Enquiry — Kings Court Hotel',
 };
 
 // ────────────────────────────────────────────────────────────
@@ -257,7 +263,7 @@ function validateRequest(data) {
     if (!data.message || data.message.trim().length < 5) {
         errors.push('Message is required (at least 5 characters).');
     }
-    if (!data.formType || !['wedding', 'stay', 'events', 'contact', 'dining'].includes(data.formType)) {
+    if (!data.formType || !['wedding', 'stay', 'events', 'contact', 'dining', 'corporate'].includes(data.formType)) {
         errors.push('Invalid form type.');
     }
 
@@ -303,7 +309,14 @@ module.exports = async function handler(req, res) {
         }
 
         const formType = data.formType;
-        const hotelEmail = process.env.HOTEL_EMAIL || 'info@kingscourthotel.co.uk';
+        let hotelEmail = process.env.HOTEL_EMAIL || 'info@kingscourthotel.co.uk';
+        
+        if (formType === 'events' || formType === 'wedding') {
+            hotelEmail = 'events@kingscourthotel.co.uk';
+        } else if (formType === 'corporate') {
+            hotelEmail = 'sales@kingscourthotel.co.uk';
+        }
+
         const fromName = process.env.SMTP_FROM_NAME || 'Kings Court Hotel';
         const fromEmail = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER;
 
