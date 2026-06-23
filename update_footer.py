@@ -56,9 +56,11 @@ new_footer_block = """    <footer class="footer" id="footer" role="contentinfo">
                     <div class="footer__col-title">Stay &amp; Rooms</div>
                     <ul class="footer__links" role="list">
                         <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
-                        <li><a href="room-detail.html?room=standard-double" class="footer__link">Standard Double Room</a></li>
-                        <li><a href="room-detail.html?room=king" class="footer__link">Premier Double Room</a></li>
-                        <li><a href="room-detail.html?room=quad" class="footer__link">Premier Family Room</a></li>
+                        <li><a href="room-detail.html?room=single" class="footer__link">Single Room</a></li>
+                        <li><a href="room-detail.html?room=standard-double" class="footer__link">Double Room</a></li>
+                        <li><a href="room-detail.html?room=king" class="footer__link">King Room</a></li>
+                        <li><a href="room-detail.html?room=twin" class="footer__link">Twin Room</a></li>
+                        <li><a href="room-detail.html?room=quad" class="footer__link">Quad Room</a></li>
                         <li><a href="conferences.html#groups" class="footer__link">Group Bookings</a></li>
                         <li><a href="booking.html" class="footer__link">Book Your Stay</a></li>
                     </ul>

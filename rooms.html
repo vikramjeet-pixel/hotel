@@ -37,7 +37,7 @@
       "name": "Kings Court Hotel",
       "url": "https://www.kingscourthotel.co.uk/rooms.html",
       "image": "https://www.kingscourthotel.co.uk/assets/images/gallery/compressed-kings-court-3-1.jpg",
-      "description": "Explore our 61 individually designed en-suite bedrooms at Kings Court Hotel — from Single to Premier Family rooms, each blending Tudor character with modern comfort.",
+      "description": "Explore our 61 individually designed en-suite bedrooms at Kings Court Hotel — from Single Room to Quad Room, each blending Tudor character with modern comfort.",
       "telephone": "+441789763111",
       "email": "info@kingscourthotel.co.uk",
       "address": {
@@ -61,7 +61,7 @@
           "@type": "HotelRoom",
           "name": "Single Room",
           "description": "Perfect for solo travellers, our Single Rooms offer a comfortable night's rest with all modern amenities including free high-speed Wi-Fi, flatscreen TV with Freeview, tea and coffee making facilities, and en-suite bathroom.",
-          "image": "https://www.kingscourthotel.co.uk/assets/images/single-room/mobilescale-2.avif",
+          "image": "https://www.kingscourthotel.co.uk/assets/images/single-room/mobilescale-1.avif",
           "bed": {
             "@type": "BedDetails",
             "typeOfBed": "Single",
@@ -81,7 +81,7 @@
         },
         {
           "@type": "HotelRoom",
-          "name": "Standard Double En-Suite Room",
+          "name": "Double Room",
           "description": "Standard, comfortable, and functional room featuring a queen size bed with pocket sprung mattress, en-suite bathroom, free Wi-Fi, Freeview TV, and complimentary tea and coffee making facilities.",
           "image": "https://www.kingscourthotel.co.uk/assets/images/standard-double-room/mobilescale-1.avif",
           "bed": {
@@ -103,7 +103,7 @@
         },
         {
           "@type": "HotelRoom",
-          "name": "Premier Double En-Suite",
+          "name": "King Room",
           "description": "Luxurious, spacious rooms hand-picked for comfort, featuring a king-size bed with pocket sprung luxury mattress, modern en-suite facilities, free high-speed Wi-Fi, and Freeview TV. Our most popular room category.",
           "image": "https://www.kingscourthotel.co.uk/assets/images/king-room/mobilescale-1.avif",
           "bed": {
@@ -125,7 +125,7 @@
         },
         {
           "@type": "HotelRoom",
-          "name": "Premier Twin En-Suite",
+          "name": "Twin Room",
           "description": "Luxurious, spacious twin room featuring two comfortable single beds with pocket sprung luxury mattresses and modern en-suite facilities. Ideal for friends, colleagues, or family members travelling together.",
           "image": "https://www.kingscourthotel.co.uk/assets/images/twin-room/mobilescale-1.avif",
           "bed": {
@@ -146,7 +146,7 @@
         },
         {
           "@type": "HotelRoom",
-          "name": "Premier Family En-Suite Room",
+          "name": "Quad Room",
           "description": "Spacious, comfortable family room featuring two king-size beds with pocket sprung luxury mattresses. Cots and highchairs available on request. Ideal for families or groups of up to 4 guests.",
           "image": "https://www.kingscourthotel.co.uk/assets/images/quad-room/mobilescale-1.avif",
           "bed": {
@@ -382,22 +382,22 @@
                 <button class="rooms-filter__btn" data-filter="standard-double" id="filter-standard"
                     aria-pressed="false">
                     <i class="fa-solid fa-bed" aria-hidden="true"></i>
-                    <span class="rooms-filter__label">Standard Double</span>
+                    <span class="rooms-filter__label">Double Room</span>
                     <span class="rooms-filter__count" id="count-standard">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="king" id="filter-king" aria-pressed="false">
                     <i class="fa-solid fa-crown" aria-hidden="true"></i>
-                    <span class="rooms-filter__label">King</span>
+                    <span class="rooms-filter__label">King Room</span>
                     <span class="rooms-filter__count" id="count-king">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="twin" id="filter-twin" aria-pressed="false">
                     <i class="fa-solid fa-bed" aria-hidden="true"></i>
-                    <span class="rooms-filter__label">Twin</span>
+                    <span class="rooms-filter__label">Twin Room</span>
                     <span class="rooms-filter__count" id="count-twin">1</span>
                 </button>
                 <button class="rooms-filter__btn" data-filter="quad" id="filter-quad" aria-pressed="false">
                     <i class="fa-solid fa-people-roof" aria-hidden="true"></i>
-                    <span class="rooms-filter__label">Quad</span>
+                    <span class="rooms-filter__label">Quad Room</span>
                     <span class="rooms-filter__count" id="count-quad">1</span>
                 </button>
             </div>
@@ -449,9 +449,9 @@
                 </article>
 
                 <!-- ── STANDARD DOUBLE ── -->
-                <article class="room-card reveal reveal--delay-1" data-category="standard-double" id="room-standard">
+                <article class="room-card reveal reveal--delay-1" data-category="standard-double" id="room-standard-double">
                     <div class="room-card__image">
-                        <img src="assets/images/standard-double-room/mobilescale-1.avif" alt="Standard Double Room"
+                        <img src="assets/images/standard-double-room/mobilescale-1.avif" alt="Double Room"
                             loading="lazy" />
                         <div class="room-card__image-overlay" aria-hidden="true">
                             <span class="room-card__quick-view">Quick View</span>
@@ -459,7 +459,7 @@
                     </div>
                     <div class="room-card__body">
                         <div class="room-card__category-tag">Double Room</div>
-                        <h3 class="room-card__title">Standard Double En-Suite Room</h3>
+                        <h3 class="room-card__title">Double Room</h3>
                         <p class="room-card__desc">
                             Standard, comfortable, and functional room featuring a queen size bed with pocket sprung
                             mattress, en-suite bathroom, and tea/coffee making facilities.
@@ -496,8 +496,8 @@
                         </div>
                     </div>
                     <div class="room-card__body">
-                        <div class="room-card__category-tag">Premier Room</div>
-                        <h3 class="room-card__title">Premier Double En-Suite</h3>
+                        <div class="room-card__category-tag">King Room</div>
+                        <h3 class="room-card__title">King Room</h3>
                         <p class="room-card__desc">
                             Luxurious, spacious rooms hand-picked for comfort, featuring a king-size bed with
                             pocket sprung luxury mattress and modern en-suite facilities.
@@ -534,7 +534,7 @@
                     </div>
                     <div class="room-card__body">
                         <div class="room-card__category-tag">Twin Room</div>
-                        <h3 class="room-card__title">Premier Twin En-Suite</h3>
+                        <h3 class="room-card__title">Twin Room</h3>
                         <p class="room-card__desc">
                             Luxurious, spacious twin room featuring two comfortable single beds with pocket
                             sprung luxury mattresses and modern en-suite facilities.
@@ -572,7 +572,7 @@
                     </div>
                     <div class="room-card__body">
                         <div class="room-card__category-tag">Quad Room</div>
-                        <h3 class="room-card__title">Premier Family En-Suite Room</h3>
+                        <h3 class="room-card__title">Quad Room</h3>
                         <p class="room-card__desc">
                             Spacious, comfortable family room featuring two king-size beds with pocket sprung luxury
                             mattresses. Cots and highchairs available on request.
@@ -583,7 +583,7 @@
                             <span class="room-card__amenity"><i class="fa-solid fa-people-roof" aria-hidden="true"></i>
                                 Sleeps up to 4</span>
                             <span class="room-card__amenity"><i class="fa-solid fa-baby-carriage"
-                                    aria-hidden="true"></i> Cots Available</span>
+                                     aria-hidden="true"></i> Cots Available</span>
                             <span class="room-card__amenity"><i class="fa-solid fa-tv" aria-hidden="true"></i>
                                 Freeview TV</span>
                         </div>
@@ -833,7 +833,7 @@
     <!-- ═══════════════════════════════════════
        FOOTER
     ═══════════════════════════════════════ -->
-            <footer class="footer" id="footer" role="contentinfo">
+                <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
 
             <!-- Newsletter -->
@@ -888,9 +888,11 @@
                     <div class="footer__col-title">Stay &amp; Rooms</div>
                     <ul class="footer__links" role="list">
                         <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
-                        <li><a href="room-detail.html?room=standard-double" class="footer__link">Standard Double Room</a></li>
-                        <li><a href="room-detail.html?room=king" class="footer__link">Premier Double Room</a></li>
-                        <li><a href="room-detail.html?room=quad" class="footer__link">Premier Family Room</a></li>
+                        <li><a href="room-detail.html?room=single" class="footer__link">Single Room</a></li>
+                        <li><a href="room-detail.html?room=standard-double" class="footer__link">Double Room</a></li>
+                        <li><a href="room-detail.html?room=king" class="footer__link">King Room</a></li>
+                        <li><a href="room-detail.html?room=twin" class="footer__link">Twin Room</a></li>
+                        <li><a href="room-detail.html?room=quad" class="footer__link">Quad Room</a></li>
                         <li><a href="conferences.html#groups" class="footer__link">Group Bookings</a></li>
                         <li><a href="booking.html" class="footer__link">Book Your Stay</a></li>
                     </ul>
