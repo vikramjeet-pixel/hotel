@@ -644,66 +644,141 @@
     </section>
 
     <!-- FOOTER -->
-    <footer class="footer" id="footer" role="contentinfo">
+            <footer class="footer" id="footer" role="contentinfo">
         <div class="container">
+
             <!-- Newsletter -->
             <div class="footer__newsletter">
                 <div class="footer__newsletter-text">
-                    <h3 class="footer__col-title" style="margin-bottom:0.5rem; color:var(--clr-gold); font-size: 0.9rem;">Subscribe to our Newsletter</h3>
-                    <p style="font-size:0.9rem; color:rgba(245, 241, 232, 0.8); margin-bottom:0;">Exclusive offers and news straight to your inbox.</p>
+                    <h3 class="footer__col-title"
+                        style="margin-bottom:0.5rem; color:var(--clr-gold); font-size: 0.9rem;">Subscribe to our
+                        Newsletter</h3>
+                    <p style="font-size:0.9rem; color:rgba(245, 241, 232, 0.8); margin-bottom:0;">Exclusive offers and
+                        news straight to your inbox.</p>
                 </div>
                 <!-- Inline script handled directly for UI feedback on subscribe -->
-                <form class="footer__newsletter-form" onsubmit="event.preventDefault(); const form = this; const btn = form.querySelector('button'); btn.textContent = 'Wait...'; btn.disabled = true; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email.value }) }).then(res => { if(res.ok) { form.innerHTML = '<div style=\'display:flex; align-items:center; gap:0.5rem; color:var(--clr-gold); font-size:1rem; font-family:var(--font-sans); margin-top:0.5rem;\'><i class=\'fa-solid fa-circle-check\'></i> You are now subscribed!</div>'; } else { throw new Error('Failed'); } }).catch(() => { btn.textContent = 'Subscribe'; btn.disabled = false; alert('Error: Unable to subscribe'); });">
-                    <input class="footer__newsletter-input" type="email" name="email" placeholder="Email Address" required aria-label="Email Address" autocomplete="email">
-                    <button type="submit" class="btn btn--primary" style="padding:0.8rem 1.8rem; letter-spacing:0.1em;">Subscribe</button>
+                <form class="footer__newsletter-form"
+                    onsubmit="event.preventDefault(); const form = this; const btn = form.querySelector('button'); btn.textContent = 'Wait...'; btn.disabled = true; fetch('/api/subscribe', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ email: form.email.value }) }).then(res => { if(res.ok) { form.innerHTML = '<div style=\'display:flex; align-items:center; gap:0.5rem; color:var(--clr-gold); font-size:1rem; font-family:var(--font-sans); margin-top:0.5rem;\'><i class=\'fa-solid fa-circle-check\'></i> You are now subscribed!</div>'; } else { throw new Error('Failed'); } }).catch(() => { btn.textContent = 'Subscribe'; btn.disabled = false; alert('Error: Unable to subscribe'); });">
+                    <input class="footer__newsletter-input" type="email" name="email" placeholder="Email Address"
+                        required aria-label="Email Address" autocomplete="email">
+                    <button type="submit" class="btn btn--primary"
+                        style="padding:0.8rem 1.8rem; letter-spacing:0.1em;">Subscribe</button>
                 </form>
             </div>
             <div class="footer__top">
+
+                <!-- Brand -->
                 <div class="footer__brand">
                     <div class="footer__brand-name">Kings Court</div>
-                    <div class="footer__brand-tagline">Hotel · Est. 1642</div>
-                    <p class="footer__brand-desc">A magnificent Tudor manor house set within 4 acres of private
-                        Warwickshire countryside.</p>
-                    <div class="footer__social"><a href="https://www.facebook.com/p/Kings-Court-Hotel-100063770730963/" class="footer__social-link" aria-label="Facebook"><i
-                                class="fa-brands fa-facebook-f"></i></a><a href="https://www.instagram.com/kings_court_hotel/" class="footer__social-link"
-                            aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a><a href="https://x.com/Kingscourthotel"
-                            class="footer__social-link" aria-label="Twitter"><i
-                                class="fa-brands fa-x-twitter"></i></a></div>
+                    <div class="footer__brand-tagline" style="margin-bottom: 0.5rem;">Hotel · Est. 1642</div>
+                    <div style="font-size: 0.72rem; letter-spacing: 0.05em; color: rgba(245, 241, 232, 0.8); margin-bottom: 1.25rem; font-family: var(--font-sans);">
+                        Proudly part of the <a href="https://www.bestwestern.co.uk/?_gl=1*1t3q5ez*_up*MQ..*_gs*MQ..&gclid=CjwKCAjw9NjRBhATEiwA_p2J8evGTTBs0pSYfLhGKbJHrkZMftXG6sGn0NAMd4YOdEcxJP6GPCwqcRoC48gQAvD_BwE" target="_blank" rel="noopener" style="color: var(--clr-gold); text-decoration: none; font-weight: 600;">Best Western</a> chain
+                    </div>
+                    <p class="footer__brand-desc">
+                        A magnificent Tudor manor house set within 4 acres of private Warwickshire countryside.
+                        Where history, comfort, and nature unite.
+                    </p>
+                    <div class="footer__social" aria-label="Social media links">
+                        <a href="https://www.facebook.com/p/Kings-Court-Hotel-100063770730963/"
+                            class="footer__social-link" aria-label="Follow us on Facebook">
+                            <i class="fa-brands fa-facebook-f" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://www.instagram.com/kings_court_hotel/" class="footer__social-link"
+                            aria-label="Follow us on Instagram">
+                            <i class="fa-brands fa-instagram" aria-hidden="true"></i>
+                        </a>
+                        <a href="https://x.com/Kingscourthotel" class="footer__social-link"
+                            aria-label="Follow us on Twitter/X">
+                            <i class="fa-brands fa-x-twitter" aria-hidden="true"></i>
+                        </a>
+                    </div>
                 </div>
-                <nav aria-label="Explore">
-                    <div class="footer__col-title">Explore</div>
+
+                <!-- Stay & Rooms -->
+                <nav aria-label="Stay and Rooms footer navigation">
+                    <div class="footer__col-title">Stay &amp; Rooms</div>
                     <ul class="footer__links" role="list">
-                        <li><a href="rooms.html" class="footer__link">Rooms</a></li>
-                        <li><a href="dining.html" class="footer__link">Dining</a></li>
-                        <li><a href="weddings.html" class="footer__link">Weddings</a></li>
-                        <li><a href="events.html" class="footer__link">Events</a></li>
-                        <li><a href="gallery.html" class="footer__link">Gallery</a></li>
+                        <li><a href="rooms.html" class="footer__link">Rooms &amp; Suites</a></li>
+                        <li><a href="room-detail.html?room=standard-double" class="footer__link">Standard Double Room</a></li>
+                        <li><a href="room-detail.html?room=king" class="footer__link">Premier Double Room</a></li>
+                        <li><a href="room-detail.html?room=quad" class="footer__link">Premier Family Room</a></li>
+                        <li><a href="conferences.html#groups" class="footer__link">Group Bookings</a></li>
+                        <li><a href="booking.html" class="footer__link">Book Your Stay</a></li>
                     </ul>
                 </nav>
-                <nav aria-label="Information">
+
+                <!-- Dining & Events -->
+                <nav aria-label="Dining and Events footer navigation">
+                    <div class="footer__col-title">Dining &amp; Events</div>
+                    <ul class="footer__links" role="list">
+                        <li><a href="dining.html" class="footer__link">The Restaurant</a></li>
+                        <li><a href="dining.html#dn-restaurant" class="footer__link">Restaurant &amp; Brasserie</a></li>
+                        <li><a href="twisted-boot-bar.html" class="footer__link">Twisted Boot Pub</a></li>
+                        <li><a href="dining.html#dn-tea" class="footer__link">Afternoon Tea</a></li>
+                        <li><a href="dining.html#dn-reserve" class="footer__link">Book a Table</a></li>
+                        <li><a href="weddings.html" class="footer__link">Weddings &amp; Celebrations</a></li>
+                        <li><a href="conferences.html" class="footer__link">Conferences &amp; Corporate</a></li>
+                        <li><a href="events.html" class="footer__link">Special Events</a></li>
+                        <li><a href="twisted-boot-bar.html#regular-events" class="footer__link">Regular Pub Events</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Information -->
+                <nav aria-label="Information footer navigation">
                     <div class="footer__col-title">Information</div>
                     <ul class="footer__links" role="list">
-                        <li><a href="location.html" class="footer__link">Location</a></li>
-                        <li><a href="faq.html" class="footer__link">FAQ</a></li>
-                        <li><a href="contact.html" class="footer__link">Contact</a></li>
-                        <li><a href="privacy-policy.html" class="footer__link">Privacy</a></li>
+                        <li><a href="location.html" class="footer__link">Location &amp; Directions</a></li>
+                        <li><a href="gallery.html" class="footer__link">Photo Gallery</a></li>
+                        <li><a href="faq.html" class="footer__link">FAQs</a></li>
+                        <li><a href="testimonials.html" class="footer__link">Guest Testimonials</a></li>
+                        <li><a href="blog.html" class="footer__link">Blog &amp; News</a></li>
+                        <li><a href="contact.html" class="footer__link">Contact Us</a></li>
                     </ul>
                 </nav>
+
+                <!-- Contact -->
                 <div>
                     <div class="footer__col-title">Contact</div>
-                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
-                                class="fa-solid fa-phone"></i></span><a href="tel:01789763111"
-                            class="footer__contact-text">01789 763 111</a></div>
-                    <div class="footer__contact-item"><span class="footer__contact-icon"><i
-                                class="fa-solid fa-envelope"></i></span><a href="mailto:info@kingscourthotel.co.uk"
-                            class="footer__contact-text">info@kingscourthotel.co.uk</a></div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i class="fa-solid fa-phone"></i></span>
+                        <a href="tel:01789763111" class="footer__contact-text">01789 763 111</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i
+                                class="fa-solid fa-envelope"></i></span>
+                        <a href="mailto:info@kingscourthotel.co.uk"
+                            class="footer__contact-text">info@kingscourthotel.co.uk</a>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i
+                                class="fa-solid fa-location-dot"></i></span>
+                        <span class="footer__contact-text">Kings Court Hotel<br>Kings
+                            Coughton<br>Alcester<br>Warwickshire<br>B49 5QQ</span>
+                    </div>
+                    <div class="footer__contact-item">
+                        <span class="footer__contact-icon" aria-hidden="true"><i class="fa-regular fa-clock"></i></span>
+                        <span class="footer__contact-text">Reception: 7:00 am to 11:00 pm<br>Check-in: 3pm · Check-out:
+                            11am</span>
+                    </div>
+                </div>
+
+            </div><!-- /.footer__top -->
+
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; <span id="footer-year"></span> Kings Court Hotel Ltd. All rights reserved.
+                    <span class="footer__flowbyte" style="margin-left: 0.5rem;">| Powered by <a
+                            href="https://flowbyte-wheat.vercel.app/index.html?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn0WV1pTxV5fh2fciBs34u2GB-hqIJTrQAjTHVlCz1dlLYGThiXEFipBu7Cyo_aem_eFbH01EHMW8XiicLOTEGeQ"
+                            target="_blank"
+                            style="color: var(--clr-gold); text-decoration: none; font-weight: 600; letter-spacing: 0.05em;">FLOWBYTE</a></span>
+                </p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Privacy Policy</a>
+                    <a href="terms.html" class="footer__legal-link">Terms &amp; Conditions</a>
+                    <a href="sitemap.xml" class="footer__legal-link">Sitemap</a>
                 </div>
             </div>
-            <div class="footer__bottom">
-                <p class="footer__copyright">&copy; <span id="footer-year"></span> Kings Court Hotel Ltd. <span class="footer__flowbyte" style="margin-left: 0.5rem;">| Powered by <a href="https://flowbyte-wheat.vercel.app/index.html?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGn0WV1pTxV5fh2fciBs34u2GB-hqIJTrQAjTHVlCz1dlLYGThiXEFipBu7Cyo_aem_eFbH01EHMW8XiicLOTEGeQ" target="_blank" style="color: var(--clr-gold); text-decoration: none; font-weight: 600; letter-spacing: 0.05em;">FLOWBYTE</a></span></p>
-                <div class="footer__legal"><a href="privacy-policy.html" class="footer__legal-link">Privacy</a><a
-                        href="terms.html" class="footer__legal-link">Terms</a></div>
-            </div>
+
         </div>
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>

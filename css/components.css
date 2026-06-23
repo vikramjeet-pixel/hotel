@@ -872,7 +872,7 @@
 
 .footer__top {
     display: grid;
-    grid-template-columns: 1.4fr 1fr 1fr 1fr;
+    grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
     gap: var(--space-lg);
     padding-bottom: var(--space-lg);
     border-bottom: 1px solid rgba(194, 164, 94, 0.15);
