@@ -47,8 +47,28 @@ document.addEventListener('DOMContentLoaded', () => {
   mobileClose?.addEventListener('click', closeMobileMenu);
 
   // Close mobile menu on link click
-  mobileMenu?.querySelectorAll('.nav__mobile-link, .nav__mobile .btn').forEach(link => {
+  mobileMenu?.querySelectorAll('.nav__mobile-link, .nav__mobile-sublink, .nav__mobile .btn').forEach(link => {
+    if (link.classList.contains('nav__mobile-dropdown-toggle')) return;
     link.addEventListener('click', closeMobileMenu);
+  });
+
+  /* ── Mobile Dropdown Accordion Toggle ── */
+  mobileMenu?.querySelectorAll('.nav__mobile-dropdown-toggle').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      const parent = btn.parentElement;
+      const isActive = parent.classList.contains('active');
+      
+      // Close other mobile dropdowns
+      mobileMenu.querySelectorAll('.nav__mobile-dropdown').forEach(item => {
+        item.classList.remove('active');
+      });
+      
+      if (!isActive) {
+        parent.classList.add('active');
+      }
+    });
   });
 
   // Close on Escape key
@@ -79,18 +99,34 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Active Nav Link Highlight ── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
-  document.querySelectorAll('.nav__link').forEach(link => {
+  document.querySelectorAll('.nav__link, .nav__dropdown-menu a, .nav__mobile-sublink, .nav__mobile-link').forEach(link => {
+    if (link.classList.contains('nav__mobile-dropdown-toggle')) return;
     const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.style.color = 'var(--clr-gold)';
-    }
-  });
-
-  // Also highlight active mobile nav link
-  document.querySelectorAll('.nav__mobile-link').forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPage || (currentPage === '' && href === 'index.html')) {
-      link.classList.add('nav__mobile-link--active');
+    if (href && (href === currentPage || href.startsWith(currentPage + '#'))) {
+      if (link.classList.contains('nav__mobile-sublink') || link.closest('.nav__mobile-links')) {
+        link.classList.add('nav__mobile-link--active');
+        
+        // Highlight mobile parent trigger
+        const mobileDropdownParent = link.closest('.nav__mobile-dropdown');
+        if (mobileDropdownParent) {
+          const trigger = mobileDropdownParent.querySelector('.nav__mobile-dropdown-toggle');
+          if (trigger) {
+            trigger.classList.add('nav__mobile-link--active');
+            mobileDropdownParent.classList.add('active'); // Expand active accordion
+          }
+        }
+      } else {
+        link.style.color = 'var(--clr-gold)';
+        
+        // Highlight desktop parent trigger
+        const dropdownParent = link.closest('.nav__dropdown');
+        if (dropdownParent) {
+          const trigger = dropdownParent.querySelector('.nav__dropdown-trigger');
+          if (trigger) {
+            trigger.style.color = 'var(--clr-gold)';
+          }
+        }
+      }
     }
   });
 

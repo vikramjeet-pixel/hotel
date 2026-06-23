@@ -78,25 +78,46 @@
     <!-- ═══════════════════════════════════════
        NAVIGATION
   ═══════════════════════════════════════ -->
-    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
             <span class="nav__logo-name">Kings Court</span>
             <span class="nav__logo-tagline">Hotel</span>
         </a>
 
         <ul class="nav__links" role="list">
-            <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="rooms.html" class="nav__link">Rooms</a></li>
-            <li><a href="dining.html" class="nav__link">Dining</a></li>
-            <li><a href="twisted-boot-bar.html" class="nav__link">Twisted Boot Bar</a></li>
-            <li><a href="weddings.html" class="nav__link">Weddings</a></li>
-            <li><a href="events.html" class="nav__link">Events</a></li>
-            <li><a href="conferences.html" class="nav__link">Conferences</a></li>
+            <li class="nav__dropdown">
+                <a href="#" class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                    Stay <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <ul class="nav__dropdown-menu" role="menu">
+                    <li><a href="conferences.html#groups" role="menuitem">Groups</a></li>
+                    <li><a href="conferences.html" role="menuitem">Corporate</a></li>
+                </ul>
+            </li>
+            <li class="nav__dropdown">
+                <a href="#" class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                    Dining <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <ul class="nav__dropdown-menu" role="menu">
+                    <li><a href="dining.html" role="menuitem">The Restaurant</a></li>
+                    <li><a href="twisted-boot-bar.html" role="menuitem">Twisted Boot Pub</a></li>
+                </ul>
+            </li>
+            <li class="nav__dropdown">
+                <a href="#" class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
+                    Events <i class="fa-solid fa-chevron-down"></i>
+                </a>
+                <ul class="nav__dropdown-menu" role="menu">
+                    <li><a href="weddings.html" role="menuitem">Weddings</a></li>
+                    <li><a href="conferences.html" role="menuitem">Conferences</a></li>
+                    <li><a href="index.html#christmas-menu" role="menuitem">Christmas 2026</a></li>
+                    <li><a href="twisted-boot-bar.html#regular-events" role="menuitem">Twisted Boot regular events</a></li>
+                </ul>
+            </li>
             <li><a href="gallery.html" class="nav__link">Gallery</a></li>
             <li><a href="location.html" class="nav__link">Location</a></li>
             <li><a href="faq.html" class="nav__link">FAQ</a></li>
-            <li><a href="blog.html" class="nav__link">Blog</a></li>
-            <li><a href="contact.html" class="nav__link">Contact</a></li>
         </ul>
 
         <a href="booking.html" class="nav__cta" id="nav-book-btn">Book Now</a>
@@ -113,18 +134,45 @@
         <button class="nav__mobile-close" id="nav-mobile-close" aria-label="Close menu">
             <i class="fa-solid fa-xmark"></i>
         </button>
-        <a href="index.html" class="nav__mobile-link">Home</a>
-        <a href="rooms.html" class="nav__mobile-link">Rooms</a>
-        <a href="dining.html" class="nav__mobile-link">Dining</a>
-        <a href="twisted-boot-bar.html" class="nav__mobile-link">Twisted Boot Bar</a>
-        <a href="weddings.html" class="nav__mobile-link">Weddings</a>
-        <a href="events.html" class="nav__mobile-link">Events</a>
-        <a href="conferences.html" class="nav__mobile-link">Conferences</a>
-        <a href="gallery.html" class="nav__mobile-link">Gallery</a>
-        <a href="location.html" class="nav__mobile-link">Location</a>
-        <a href="faq.html" class="nav__mobile-link">FAQ</a>
-        <a href="blog.html" class="nav__mobile-link">Blog</a>
-        <a href="contact.html" class="nav__mobile-link">Contact</a>
+        <div class="nav__mobile-links">
+            <a href="rooms.html" class="nav__mobile-link">Rooms</a>
+            
+            <div class="nav__mobile-dropdown">
+                <button class="nav__mobile-link nav__mobile-dropdown-toggle">
+                    Stay <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="nav__mobile-dropdown-menu">
+                    <a href="conferences.html#groups" class="nav__mobile-sublink">Groups</a>
+                    <a href="conferences.html" class="nav__mobile-sublink">Corporate</a>
+                </div>
+            </div>
+
+            <div class="nav__mobile-dropdown">
+                <button class="nav__mobile-link nav__mobile-dropdown-toggle">
+                    Dining <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="nav__mobile-dropdown-menu">
+                    <a href="dining.html" class="nav__mobile-sublink">The Restaurant</a>
+                    <a href="twisted-boot-bar.html" class="nav__mobile-sublink">Twisted Boot Pub</a>
+                </div>
+            </div>
+
+            <div class="nav__mobile-dropdown">
+                <button class="nav__mobile-link nav__mobile-dropdown-toggle">
+                    Events <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div class="nav__mobile-dropdown-menu">
+                    <a href="weddings.html" class="nav__mobile-sublink">Weddings</a>
+                    <a href="conferences.html" class="nav__mobile-sublink">Conferences</a>
+                    <a href="index.html#christmas-menu" class="nav__mobile-sublink">Christmas 2026</a>
+                    <a href="twisted-boot-bar.html#regular-events" class="nav__mobile-sublink">Twisted Boot regular events</a>
+                </div>
+            </div>
+
+            <a href="gallery.html" class="nav__mobile-link">Gallery</a>
+            <a href="location.html" class="nav__mobile-link">Location</a>
+            <a href="faq.html" class="nav__mobile-link">FAQ</a>
+        </div>
         <div class="nav__mobile-divider" aria-hidden="true"></div>
         <a href="booking.html" class="btn btn--primary" style="margin-top:1rem;">Book Your Stay</a>
     </div>
