@@ -40,6 +40,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
             </li>
             <li><a href="gallery.html" class="nav__link">Gallery</a></li>
             <li><a href="location.html" class="nav__link">Location</a></li>
+            <li><a href="blog.html" class="nav__link">Blog</a></li>
             <li><a href="faq.html" class="nav__link">FAQ</a></li>
         </ul>
 
@@ -94,6 +95,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
 
             <a href="gallery.html" class="nav__mobile-link">Gallery</a>
             <a href="location.html" class="nav__mobile-link">Location</a>
+            <a href="blog.html" class="nav__mobile-link">Blog</a>
             <a href="faq.html" class="nav__mobile-link">FAQ</a>
         </div>
         <div class="nav__mobile-divider" aria-hidden="true"></div>

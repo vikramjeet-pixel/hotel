@@ -293,6 +293,29 @@
             color: var(--clr-gold-dark)
         }
 
+        .blog-filter-btn {
+            background: transparent;
+            color: var(--clr-forest);
+            border: 1px solid rgba(31, 58, 46, 0.25);
+            font-family: var(--font-sans);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all var(--transition-fast);
+            padding: 0.6rem 1.4rem;
+            font-size: 0.85rem;
+            border-radius: 50px;
+            margin: 0.25rem;
+        }
+
+        .blog-filter-btn:hover,
+        .blog-filter-btn.active {
+            background: var(--clr-forest);
+            color: var(--clr-cream);
+            border-color: var(--clr-forest);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-sm);
+        }
+
         @media(max-width:768px) {
             .bl-hero {
                 height: 40vh;
@@ -317,7 +340,7 @@
 <body>
 
     <!-- NAV -->
-        <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+                <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
         <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
             <span class="nav__logo-name">Kings Court</span>
             <span class="nav__logo-tagline">Hotel</span>
@@ -356,6 +379,7 @@
             </li>
             <li><a href="gallery.html" class="nav__link">Gallery</a></li>
             <li><a href="location.html" class="nav__link">Location</a></li>
+            <li><a href="blog.html" class="nav__link">Blog</a></li>
             <li><a href="faq.html" class="nav__link">FAQ</a></li>
         </ul>
 
@@ -410,6 +434,7 @@
 
             <a href="gallery.html" class="nav__mobile-link">Gallery</a>
             <a href="location.html" class="nav__mobile-link">Location</a>
+            <a href="blog.html" class="nav__mobile-link">Blog</a>
             <a href="faq.html" class="nav__mobile-link">FAQ</a>
         </div>
         <div class="nav__mobile-divider" aria-hidden="true"></div>
@@ -431,14 +456,25 @@
     <!-- BLOG CONTENT -->
     <section class="bl-main section">
         <div class="container">
+            
+            <!-- Category Filter Bar -->
+            <div class="blog-filters" role="tablist" aria-label="Blog categories filter" style="display: flex; justify-content: center; gap: 0.5rem; margin-bottom: 3.5rem; flex-wrap: wrap;">
+                <button class="blog-filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+                <button class="blog-filter-btn" data-filter="heritage" role="tab" aria-selected="false">Local Attractions &amp; Heritage</button>
+                <button class="blog-filter-btn" data-filter="weddings" role="tab" aria-selected="false">Weddings &amp; Celebrations</button>
+                <button class="blog-filter-btn" data-filter="food-drink" role="tab" aria-selected="false">Food, Drink &amp; Nightlife</button>
+                <button class="blog-filter-btn" data-filter="outdoor" role="tab" aria-selected="false">Outdoor Activities &amp; Wellness</button>
+                <button class="blog-filter-btn" data-filter="business-travel" role="tab" aria-selected="false">Business, Local Events &amp; Travel</button>
+            </div>
+
             <!-- Featured -->
-            <div class="bl-featured reveal">
+            <div class="bl-featured reveal" data-category="heritage">
                 <div class="bl-featured__inner">
                     <div class="bl-featured__img">
                         <img src="assets/images/gallery/compressed-kings-court-46.jpg" alt="Stratford-upon-Avon" loading="lazy" />
                     </div>
                     <div class="bl-featured__body">
-                        <span class="bl-featured__tag">Featured</span>
+                        <span class="bl-featured__tag">Local Attractions &amp; Heritage</span>
                         <h2 class="bl-featured__title">A Perfect Day in Stratford-upon-Avon</h2>
                         <p class="bl-featured__excerpt">From Shakespeare's Birthplace to riverside walks and world-class
                             theatre, discover our curated guide to spending a perfect day in this historic market town,
@@ -450,11 +486,11 @@
 
             <!-- Grid -->
             <div class="bl-grid">
-                <article class="bl-card reveal">
+                <article class="bl-card reveal" data-category="business-travel">
                     <div class="bl-card__img"><img src="assets/images/gallery/compressed-kings-court-2.jpg"
                             alt="Hotel exterior" loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Airport Travel</span>
+                        <span class="bl-card__tag">Business, Local Events &amp; Travel</span>
                         <h3 class="bl-card__title"><a href="blog-birmingham-airport.html">Convenient Hotel Near
                                 Birmingham Airport with Parking</a></h3>
                         <p class="bl-card__excerpt">Start your trip the right way by booking a relaxing stopover before
@@ -465,11 +501,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-1">
+                <article class="bl-card reveal reveal--delay-1" data-category="business-travel">
                     <div class="bl-card__img"><img src="assets/images/local_attractions/ev.jpg"
                             alt="Hotel exterior with EV charging" loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Sustainable Travel</span>
+                        <span class="bl-card__tag">Business, Local Events &amp; Travel</span>
                         <h3 class="bl-card__title"><a href="blog-ev-charging.html">Stay at a Hotel with EV Charging On
                                 Site</a></h3>
                         <p class="bl-card__excerpt">Enjoy comfortable accommodation with convenient on-site EV chargers
@@ -480,11 +516,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-2">
+                <article class="bl-card reveal reveal--delay-2" data-category="heritage">
                     <div class="bl-card__img"><img src="assets/images/local_attractions/warwick castle.webp"
                             alt="Warwick Castle" loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Historic Sites</span>
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
                         <h3 class="bl-card__title"><a href="blog-single.html">Warwick Castle: A Thousand Years of
                                 History</a></h3>
                         <p class="bl-card__excerpt">Just 19 miles from Kings Court lies one of Britain's finest medieval
@@ -495,11 +531,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-1">
+                <article class="bl-card reveal reveal--delay-1" data-category="outdoor">
                     <div class="bl-card__img"><img src="assets/images/local_attractions/cotswolds.png"
                             alt="Cotswolds countryside" loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Countryside</span>
+                        <span class="bl-card__tag">Outdoor Activities &amp; Wellness</span>
                         <h3 class="bl-card__title"><a href="blog-single.html">The Cotswolds: England's Most Beautiful
                                 Rolling Hills</a></h3>
                         <p class="bl-card__excerpt">Honey-stone villages, winding lanes and picture-postcard scenery —
@@ -510,11 +546,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-2">
+                <article class="bl-card reveal reveal--delay-2" data-category="heritage">
                     <div class="bl-card__img"><img src="assets/images/local_attractions/royal_shakesappear.jpg"
                             alt="Royal Shakespeare Theatre" loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Culture</span>
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
                         <h3 class="bl-card__title"><a href="blog-single.html">Royal Shakespeare Company: A Theatre
                                 Lover's Guide</a></h3>
                         <p class="bl-card__excerpt">World-class performances on the banks of the Avon. Our guide to
@@ -525,11 +561,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal">
+                <article class="bl-card reveal" data-category="outdoor">
                     <div class="bl-card__img"><img src="assets/images/gallery1/exterior/compressed-kings-court-45-1.jpg" alt="Scenic countryside walk"
                             loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Walking</span>
+                        <span class="bl-card__tag">Outdoor Activities &amp; Wellness</span>
                         <h3 class="bl-card__title"><a href="blog-single.html">5 Scenic Walks from Our Doorstep</a></h3>
                         <p class="bl-card__excerpt">From strolls along the River Avon to rambles through ancient
                             woodland, discover walking routes for every ability.</p>
@@ -539,11 +575,11 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-1">
+                <article class="bl-card reveal reveal--delay-1" data-category="food-drink">
                     <div class="bl-card__img"><img src="assets/images/gallery1/dining/compressed-kings-court-43.jpg" alt="Local dining at Kings Court"
                             loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Food &amp; Drink</span>
+                        <span class="bl-card__tag">Food, Drink &amp; Nightlife</span>
                         <h3 class="bl-card__title"><a href="blog-single.html">Local Food Markets &amp; Farm Shops Worth
                                 Visiting</a></h3>
                         <p class="bl-card__excerpt">Warwickshire is blessed with award-winning producers. Here's where
@@ -554,18 +590,698 @@
                         </div>
                     </div>
                 </article>
-                <article class="bl-card reveal reveal--delay-2">
-                    <div class="bl-card__img"><img src="assets/images/gallery1/exterior/compressed-kings-court-46.jpg" alt="Kings Court Hotel gardens"
+                <article class="bl-card reveal reveal--delay-2" data-category="weddings">
+                    <div class="bl-card__img"><img src="assets/images/gallery/compressed-kings-court-44.jpg" alt="Wedding ceremony at Kings Court"
                             loading="lazy" /></div>
                     <div class="bl-card__body">
-                        <span class="bl-card__tag">Gardens</span>
-                        <h3 class="bl-card__title"><a href="blog-single.html">Stunning English Gardens Within Easy
-                                Reach</a></h3>
-                        <p class="bl-card__excerpt">From Hidcote Manor to Kiftsgate Court, the region boasts some of the
-                            most celebrated gardens in the country.</p>
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="weddings.html">Planning Your Dream Wedding in the Warwickshire Countryside</a></h3>
+                        <p class="bl-card__excerpt">From stunning Tudor architecture to manicured lawns, discover why Kings Court is the region's most beloved wedding venue.</p>
                         <div class="bl-card__meta">
                             <span>5 min read</span>
-                            <a href="blog-single.html" class="bl-card__read">Read More →</a>
+                            <a href="weddings.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- New local attractions & heritage blogs -->
+                <article class="bl-card reveal" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/gallery1/exterior/compressed-kings-court-3-1.jpg" alt="Coughton Court" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-coughton-court.html">The Ultimate Guide to Visiting Coughton Court</a></h3>
+                        <p class="bl-card__excerpt">Discover the history of this stunning Tudor manor house, its gardens, and key visiting tips just 5 minutes from the hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-coughton-court.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/gallery1/exterior/compressed-kings-court-46.jpg" alt="Ragley Hall" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-ragley-hall.html">Behind the Gates of Ragley Hall: What to See and Do</a></h3>
+                        <p class="bl-card__excerpt">Explore the Palladian grandeur, Capability Brown parklands, and major seasonal events near Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-ragley-hall.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/gallery1/dining/compressed-kings-court-43.jpg" alt="Alcester Heritage Centre" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-alcester-heritage.html">Exploring the Roman History of Alcester</a></h3>
+                        <p class="bl-card__excerpt">Spend a day at the Alcester Heritage Centre discovering archaeology, pottery, and the town's Roman heritage.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-alcester-heritage.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/local_attractions/royal_shakesappear.jpg" alt="Stratford-upon-Avon" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-stratford-itinerary.html">Walking in Shakespeare’s Footsteps: A 1-Day Itinerary</a></h3>
+                        <p class="bl-card__excerpt">Follow our curated guide to birthplaces, theatres, and historic spots in Stratford-upon-Avon.</p>
+                        <div class="bl-card__meta">
+                            <span>8 min read</span>
+                            <a href="blog-stratford-itinerary.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/local_attractions/royal_shakesappear.jpg" alt="Anne Hathaway's Cottage" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-anne-hathaway.html">The Romance of Anne Hathaway’s Cottage</a></h3>
+                        <p class="bl-card__excerpt">Explore the romantic history, beautiful orchards, and visiting tips for this famous thatched cottage.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-anne-hathaway.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/gallery1/exterior/compressed-kings-court-2.jpg" alt="Kinwarton Dovecote" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-kinwarton-dovecote.html">Hidden Medieval History: Kinwarton Dovecote</a></h3>
+                        <p class="bl-card__excerpt">Visit this rare circular 14th-century stone dovecote located just a short walk from Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-kinwarton-dovecote.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/local_attractions/warwick castle.webp" alt="Warwick Castle" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-day-trips-alcester.html">Day Trips from Alcester: Warwick Castle &amp; Beyond</a></h3>
+                        <p class="bl-card__excerpt">Plan the perfect day trip to historic fortresses and honey-stone Cotswolds villages near Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-day-trips-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/gallery/compressed-kings-court-2.jpg" alt="Kings Court Hotel" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-kings-court-history.html">A History of Kings Court: From 1800s to Today</a></h3>
+                        <p class="bl-card__excerpt">Discover the agricultural roots, elegant architecture, and evolution of our historic Alcester hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-kings-court-history.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/local_attractions/cotswolds.png" alt="Cotswolds" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-national-trust-warwickshire.html">The Best National Trust Properties in Warwickshire</a></h3>
+                        <p class="bl-card__excerpt">Explore spectacular moated manors, topiary masterpieces, and historic deer parks in South Warwickshire.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-national-trust-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="heritage">
+                    <div class="bl-card__img"><img src="assets/images/local_attractions/cotswolds.png" alt="Evesham Blossom Trail" loading="lazy" /></div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Local Attractions &amp; Heritage</span>
+                        <h3 class="bl-card__title"><a href="blog-evesham-blossom.html">A Guide to the Vale of Evesham Blossom Trail</a></h3>
+                        <p class="bl-card__excerpt">Plan a spectacular spring drive or cycle tour through 45 miles of pink and white orchards.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-evesham-blossom.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-ring" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-warwickshire-wedding.html">How to Plan a Perfect Warwickshire Countryside Wedding</a></h3>
+                        <p class="bl-card__excerpt">Plan your dream day with our guide to countryside wedding venues Warwickshire, including outdoor ceremonies and courtyard receptions.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-warwickshire-wedding.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-camera" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-alcester-wedding-photos.html">The Best Photo Spots in and Around Alcester for Wedding Pictures</a></h3>
+                        <p class="bl-card__excerpt">Explore the most scenic wedding photography locations Alcester has to offer, from historic brickwork to private walled gardens.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-alcester-wedding-photos.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-list-check" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-warwickshire-wedding-checklist.html">What to Look for in a Warwickshire Wedding Venue Checklist</a></h3>
+                        <p class="bl-card__excerpt">Our comprehensive guide on how to choose a wedding venue Warwickshire couples can use to verify capacity, catering, and accommodation.</p>
+                        <div class="bl-card__meta">
+                            <span>7 min read</span>
+                            <a href="blog-warwickshire-wedding-checklist.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-utensils" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-historic-banquet.html">Hosting a Historic Banquet: A Look Inside Our Event Spaces</a></h3>
+                        <p class="bl-card__excerpt">Discover the ultimate banquet hall hire Alcester options for weddings, reunions, and corporate galas inside our 19th-century farmstead.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-historic-banquet.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-cake-candles" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-anniversary-party.html">How to Throw a Stress-Free Anniversary Party or Family Reunion</a></h3>
+                        <p class="bl-card__excerpt">Expert advice on selecting party venues near Stratford-upon-Avon, organizing menus, and arranging overnight stays.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-anniversary-party.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-champagne-glasses" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-courtyard-reception.html">Why a Courtyard Reception is Perfect for Summer Celebrations</a></h3>
+                        <p class="bl-card__excerpt">Learn why our historic courtyard is the premier outdoor courtyard wedding venue Midlands couples choose for summer evenings.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-courtyard-reception.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-handshake" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-warwickshire-wedding-suppliers.html">A Guide to Local Warwickshire Wedding Suppliers (Florists &amp; More)</a></h3>
+                        <p class="bl-card__excerpt">Build your dream vendor team with our curated list of trusted local wedding suppliers Warwickshire.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-warwickshire-wedding-suppliers.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-mug-hot" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-tea-baby-shower.html">The Art of the Perfect Afternoon Tea Baby Shower</a></h3>
+                        <p class="bl-card__excerpt">Nostalgic and elegant baby shower ideas. Discover the premier afternoon tea baby shower venue Alcester has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-tea-baby-shower.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-snowflake" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-winter-wedding.html">How to Plan a Winter Wedding: Cosy Ideas from Kings Court</a></h3>
+                        <p class="bl-card__excerpt">Crisp air, log fires, and seasonal menus at one of the finest winter wedding venues Warwickshire has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-winter-wedding.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="weddings">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-comments" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Weddings &amp; Celebrations</span>
+                        <h3 class="bl-card__title"><a href="blog-event-coordinator-questions.html">Questions to Ask Your Hotel Event Coordinator Before Booking</a></h3>
+                        <p class="bl-card__excerpt">Essential check-list questions when reviewing hotel event venues Alcester to ensure your banquet runs smoothly.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-event-coordinator-questions.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-utensils" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-sunday-roast-alcester.html">Where to Find the Best Sunday Roast Near Alcester</a></h3>
+                        <p class="bl-card__excerpt">Indulge in the finest Sunday roasts near Alcester. Read our guide to finding the best Sunday lunch Alcester has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-sunday-roast-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-mug-hot" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-afternoon-tea-history.html">The History of the British Afternoon Tea (and How We Serve it at Kings Court)</a></h3>
+                        <p class="bl-card__excerpt">Discover the fascinating history of British afternoon tea and learn how we serve the best afternoon tea Alcester Warwickshire has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-afternoon-tea-history.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-leaf" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-local-produce-alcester.html">Locally Sourced: Meet the Warwickshire Ingredients on Our Seasonal Menu</a></h3>
+                        <p class="bl-card__excerpt">Learn about the local suppliers and ingredients on our seasonal menu. Discover why we lead restaurants in Alcester local produce sourcing.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-local-produce-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-beer-mug-empty" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-real-ales-gin.html">The Ultimate Guide to Local Real Ales and Gin in the Midlands</a></h3>
+                        <p class="bl-card__excerpt">Discover local real ales and craft gins in Warwickshire. Read our guide to finding traditional pubs Alcester area has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-real-ales-gin.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-map-location-dot" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-alcester-dining-guide.html">Alcester Dining Guide: Where to Eat in the Historic Town Centre</a></h3>
+                        <p class="bl-card__excerpt">Read our comprehensive Alcester dining guide. Discover the best places to eat in Alcester, from cozy Tudor pubs to elegant hotel restaurants.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-alcester-dining-guide.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-calendar-day" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-midweek-dining-alcester.html">Why Mid-Week Dining is the New Friday Night Out</a></h3>
+                        <p class="bl-card__excerpt">Discover why mid-week dining is the perfect choice. Find the best restaurants Alcester weekday dinner options at Kings Court Hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-midweek-dining-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-umbrella-beach" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-al-fresco-dining.html">Al Fresco Dining: The Best Beer Gardens and Terraces in Alcester</a></h3>
+                        <p class="bl-card__excerpt">Find the best outdoor dining Alcester spots. Explore the beautiful beer garden, courtyard, and terrace spaces at Kings Court Hotel this summer.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-al-fresco-dining.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-wine-glass" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-wine-pairing-alcester.html">How to Match the Perfect Wine with British Comfort Food</a></h3>
+                        <p class="bl-card__excerpt">Learn the secrets to matching wine with classic British dishes. Book a food and wine pairing Alcester restaurant table at Kings Court Hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-wine-pairing-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-egg" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-breakfast-alcester.html">The Best Spots for a Hearty Breakfast Before Exploring Warwickshire</a></h3>
+                        <p class="bl-card__excerpt">Fuel your day of exploring with a hearty breakfast. Learn where to find the best Full English breakfast Alcester has to offer.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-breakfast-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="food-drink">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-fire" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Food, Drink & Nightlife</span>
+                        <h3 class="bl-card__title"><a href="blog-perfect-steak-alcester.html">Our Chef’s Secret to the Perfect Modern British Steak</a></h3>
+                        <p class="bl-card__excerpt">Discover the art of cooking the perfect steak. Visit the premier steak restaurant Alcester option inside the Garden Restaurant at Kings Court.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-perfect-steak-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-tree" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-oversley-wood-trails.html">The Best Walking Trails in Oversley Wood: Routes and Wildlife</a></h3>
+                        <p class="bl-card__excerpt">Plan your walking adventure with our guide to Oversley Wood walking trails Alcester. Discover wildlife and hiking routes.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-oversley-wood-trails.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-seedling" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-bluebell-woods-warwickshire.html">Where to See Bluebells in South Warwickshire This Spring</a></h3>
+                        <p class="bl-card__excerpt">Find the best bluebell woods Warwickshire has to offer this spring. Read our guide to visiting Oversley Wood and other local bluebell hotspots.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-bluebell-woods-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-bicycle" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-heart-of-england-cycling.html">A Cyclist’s Guide to the Heart of England Way</a></h3>
+                        <p class="bl-card__excerpt">Explore the best cycling routes near Alcester and the Heart of England Way. Plan your cycling holiday with storage and routes.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-heart-of-england-cycling.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-water" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-riverside-walks-warwickshire.html">Riverside Walks: Exploring the River Arrow and River Alne</a></h3>
+                        <p class="bl-card__excerpt">Discover the most peaceful riverside walks Warwickshire has to offer. Walk along the River Arrow and River Alne starting directly from Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-riverside-walks-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-golf-ball-tee" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-golf-breaks-warwickshire.html">The Best Golf Courses Near Alcester and Stratford-upon-Avon</a></h3>
+                        <p class="bl-card__excerpt">Plan your perfect golfing holiday with our guide to golf breaks Warwickshire. Discover the best courses near Alcester and Stratford.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-golf-breaks-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-mountain" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-northern-cotswolds-guide.html">A Weekend Guide to the Northern Cotswolds from Alcester</a></h3>
+                        <p class="bl-card__excerpt">Explore the honey-stone villages of the northern Cotswolds. Read our guide to exploring northern Cotswolds from Warwickshire.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-northern-cotswolds-guide.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-dumbbell" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-hotel-gym-alcester.html">How to Stay Fit on the Road: A Guide to Our On-Site Gym</a></h3>
+                        <p class="bl-card__excerpt">Stay active during your business trip or holiday. Discover our on-site fitness facilities and hotels with gym Alcester options at Kings Court.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-hotel-gym-alcester.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-leaf" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-autumn-walks-warwickshire.html">Autumn Colour Walks in the South Warwickshire Countryside</a></h3>
+                        <p class="bl-card__excerpt">Discover the most scenic autumn walks Warwickshire has to offer. Find maps and guides to Oversley Wood and local trails in Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-autumn-walks-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-dove" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-tiddesley-wood-walks.html">Birdwatching in Warwickshire: What to Spot at Tiddesley Wood</a></h3>
+                        <p class="bl-card__excerpt">Plan your nature walk with our guide to Tiddesley Wood nature reserve walks. Discover birdwatching and woodland trails near Alcester.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-tiddesley-wood-walks.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="outdoor">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-suitcase" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Outdoor Activities & Wellness</span>
+                        <h3 class="bl-card__title"><a href="blog-staycation-packing-list.html">The Ultimate Packing Checklist for a British Countryside Staycation</a></h3>
+                        <p class="bl-card__excerpt">Prepare for your countryside escape with our ultimate countryside staycation packing list UK. Pack the right gear for walking and dining.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-staycation-packing-list.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-car" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-nec-birmingham-hotel.html">Why Alcester is the Perfect Hub for NEC Birmingham Attendees</a></h3>
+                        <p class="bl-card__excerpt">Skip the busy city hotels. Discover why Alcester is the ideal base and hotels near NEC Birmingham with parking options.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-nec-birmingham-hotel.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-briefcase" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-choose-conference-space.html">How to Choose the Best Conference Space in South Warwickshire</a></h3>
+                        <p class="bl-card__excerpt">Learn how to choose the right meeting facilities. Discover our leading conference venues Alcester meeting rooms at Kings Court Hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-choose-conference-space.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-store" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-alcester-street-market.html">A Local’s Guide to the Alcester Street Market (June Edition)</a></h3>
+                        <p class="bl-card__excerpt">Plan your visit to the famous Alcester Street Market in June. Find details on Alcester Street Market dates info and local guides.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-alcester-street-market.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-flag" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-alcester-mop-fair.html">What to Expect at the Historic Alcester Mop Fair in October</a></h3>
+                        <p class="bl-card__excerpt">Discover the history of the Alcester Mop Fair. Find details on Alcester Mop Fair events, dates, funfairs, and local history.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-alcester-mop-fair.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-gift" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-christmas-markets-warwickshire.html">The Ultimate Guide to Shopping the Alcester Winter & Christmas Markets</a></h3>
+                        <p class="bl-card__excerpt">Plan your festive shopping trip with our guide to Christmas markets Warwickshire. Find dates and locations in Alcester and Stratford.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-christmas-markets-warwickshire.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-charging-station" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-eco-friendly-ev.html">Eco-Friendly Travel: Hotels with EV Charging in Alcester</a></h3>
+                        <p class="bl-card__excerpt">Travel green in Warwickshire. Learn about our on-site electric vehicle chargers and hotels with EV charging Alcester options at Kings Court.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-eco-friendly-ev.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-hotel" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-booking-direct-rates.html">Why Booking Direct Always Guarantees the Best Hotel Rates</a></h3>
+                        <p class="bl-card__excerpt">Learn the benefits of booking directly with hotels. Find the best deals and cheap hotel rooms Alcester book direct options at Kings Court.</p>
+                        <div class="bl-card__meta">
+                            <span>4 min read</span>
+                            <a href="blog-booking-direct-rates.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-plane" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-airport-directions.html">Travelling to Warwickshire: Directions from Birmingham Airport (BHX)</a></h3>
+                        <p class="bl-card__excerpt">Get detailed travel directions from Birmingham Airport (BHX) to Alcester. Learn how to get to Alcester from Birmingham Airport.</p>
+                        <div class="bl-card__meta">
+                            <span>5 min read</span>
+                            <a href="blog-airport-directions.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-1" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-people-group" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-corporate-team-building.html">Corporate Retreat Ideas: Team Building Activities in the Midlands</a></h3>
+                        <p class="bl-card__excerpt">Plan your next corporate retreat in the Midlands. Discover why we lead team building venues Warwickshire options at Kings Court Hotel.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-corporate-team-building.html" class="bl-card__read">Read More →</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="bl-card reveal reveal--delay-2" data-category="business-travel">
+                    <div class="bl-card__img" style="background: linear-gradient(135deg, var(--clr-forest-dark) 0%, var(--clr-forest) 100%); display: flex; align-items: center; justify-content: center; height: 240px; color: var(--clr-gold);">
+                        <i class="fa-solid fa-clock" style="font-size: 3rem;"></i>
+                    </div>
+                    <div class="bl-card__body">
+                        <span class="bl-card__tag">Business, Local Events & Travel</span>
+                        <h3 class="bl-card__title"><a href="blog-weekend-in-alcester.html">The Perfect 48 Hours in Alcester: A Weekend Itinerary</a></h3>
+                        <p class="bl-card__excerpt">Plan your perfect 48-hour countryside escape. Discover the ultimate weekend in Alcester things to do guide, featuring historic sights.</p>
+                        <div class="bl-card__meta">
+                            <span>6 min read</span>
+                            <a href="blog-weekend-in-alcester.html" class="bl-card__read">Read More →</a>
                         </div>
                     </div>
                 </article>
@@ -712,6 +1428,47 @@
         </div>
     </footer>
     <script>document.getElementById('footer-year').textContent = new Date().getFullYear();</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const filterBtns = document.querySelectorAll('.blog-filter-btn');
+            const featuredPost = document.querySelector('.bl-featured');
+            const blogCards = document.querySelectorAll('.bl-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    // Update active button state
+                    filterBtns.forEach(b => {
+                        b.classList.remove('active');
+                        b.setAttribute('aria-selected', 'false');
+                    });
+                    btn.classList.add('active');
+                    btn.setAttribute('aria-selected', 'true');
+
+                    const filterValue = btn.getAttribute('data-filter');
+
+                    // Filter Featured Post
+                    if (featuredPost) {
+                        const featuredCategory = featuredPost.getAttribute('data-category');
+                        if (filterValue === 'all' || featuredCategory === filterValue) {
+                            featuredPost.style.display = 'block';
+                        } else {
+                            featuredPost.style.display = 'none';
+                        }
+                    }
+
+                    // Filter Grid Cards
+                    blogCards.forEach(card => {
+                        const cardCategory = card.getAttribute('data-category');
+                        if (filterValue === 'all' || cardCategory === filterValue) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
     <script src="js/main.js" defer></script>
     <script src="js/animations.js" defer></script>
 </body>
