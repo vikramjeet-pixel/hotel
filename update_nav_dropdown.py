@@ -8,6 +8,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
         </a>
 
         <ul class="nav__links" role="list">
+            <li><a href="index.html" class="nav__link">Home</a></li>
             <li><a href="rooms.html" class="nav__link">Rooms</a></li>
             <li class="nav__dropdown">
                 <a href="#" class="nav__link nav__dropdown-trigger" aria-haspopup="true" aria-expanded="false">
@@ -59,6 +60,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
             <i class="fa-solid fa-xmark"></i>
         </button>
         <div class="nav__mobile-links">
+            <a href="index.html" class="nav__mobile-link">Home</a>
             <a href="rooms.html" class="nav__mobile-link">Rooms</a>
             
             <div class="nav__mobile-dropdown">
