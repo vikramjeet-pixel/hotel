@@ -99,33 +99,73 @@ document.addEventListener('DOMContentLoaded', () => {
 
   /* ── Active Nav Link Highlight ── */
   const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  const currentHash = window.location.hash;
+  const bestMatches = [];
+
   document.querySelectorAll('.nav__link, .nav__dropdown-menu a, .nav__mobile-sublink, .nav__mobile-link').forEach(link => {
     if (link.classList.contains('nav__mobile-dropdown-toggle')) return;
+    if (link.classList.contains('nav__dropdown-trigger')) return; // skip trigger itself from matching directly
+
     const href = link.getAttribute('href');
-    if (href && (href === currentPage || href.startsWith(currentPage + '#'))) {
-      if (link.classList.contains('nav__mobile-sublink') || link.closest('.nav__mobile-links')) {
-        link.classList.add('nav__mobile-link--active');
-        
-        // Highlight mobile parent trigger
-        const mobileDropdownParent = link.closest('.nav__mobile-dropdown');
-        if (mobileDropdownParent) {
-          const trigger = mobileDropdownParent.querySelector('.nav__mobile-dropdown-toggle');
-          if (trigger) {
-            trigger.classList.add('nav__mobile-link--active');
-            mobileDropdownParent.classList.add('active'); // Expand active accordion
+    if (!href) return;
+
+    // Split href into path and hash
+    const [hrefPath, hrefHash] = href.split('#');
+    const cleanHrefPath = hrefPath || 'index.html';
+
+    if (cleanHrefPath === currentPage) {
+      let score = 0;
+      if (hrefHash) {
+        if (currentHash === '#' + hrefHash) {
+          score = 2; // Perfect page + hash match
+        } else {
+          score = 0; // Hash mismatch, do not match
+        }
+      } else {
+        if (!currentHash) {
+          score = 2; // Perfect page-only match (no hash on either)
+        } else {
+          score = 1; // Page match, but URL has hash and link does not
+        }
+      }
+
+      if (score > 0) {
+        bestMatches.push({ link, score });
+      }
+    }
+  });
+
+  // Find the highest score
+  const maxScore = Math.max(...bestMatches.map(m => m.score), 0);
+  const activeMatches = bestMatches.filter(m => m.score === maxScore);
+  const highlightedDropdowns = new Set();
+
+  activeMatches.forEach(({ link }) => {
+    if (link.classList.contains('nav__mobile-sublink') || link.closest('.nav__mobile-links')) {
+      link.classList.add('nav__mobile-link--active');
+      
+      const mobileDropdownParent = link.closest('.nav__mobile-dropdown');
+      if (mobileDropdownParent) {
+        const trigger = mobileDropdownParent.querySelector('.nav__mobile-dropdown-toggle');
+        if (trigger) {
+          trigger.classList.add('nav__mobile-link--active');
+          mobileDropdownParent.classList.add('active');
+        }
+      }
+    } else {
+      const dropdownParent = link.closest('.nav__dropdown');
+      if (dropdownParent) {
+        const trigger = dropdownParent.querySelector('.nav__dropdown-trigger');
+        if (trigger) {
+          // Highlight only one dropdown parent to prevent double desktop highlight
+          if (highlightedDropdowns.size === 0 || highlightedDropdowns.has(dropdownParent)) {
+            link.style.color = 'var(--clr-gold)';
+            trigger.style.color = 'var(--clr-gold)';
+            highlightedDropdowns.add(dropdownParent);
           }
         }
       } else {
         link.style.color = 'var(--clr-gold)';
-        
-        // Highlight desktop parent trigger
-        const dropdownParent = link.closest('.nav__dropdown');
-        if (dropdownParent) {
-          const trigger = dropdownParent.querySelector('.nav__dropdown-trigger');
-          if (trigger) {
-            trigger.style.color = 'var(--clr-gold)';
-          }
-        }
       }
     }
   });

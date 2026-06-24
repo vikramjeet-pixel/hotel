@@ -74,10 +74,13 @@
     <!-- ═══════════════════════════════════════
        NAVIGATION
     ═══════════════════════════════════════ -->
-                    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
-        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home">
-            <span class="nav__logo-name">Kings Court</span>
-            <span class="nav__logo-tagline">Hotel</span>
+                                    <nav class="nav nav--transparent" id="main-nav" role="navigation" aria-label="Main navigation">
+        <a href="index.html" class="nav__logo" aria-label="Kings Court Hotel Home" style="display: flex; flex-direction: row; align-items: center; gap: 0.75rem;">
+            <img src="assets/images/logo.gif" alt="Kings Court Hotel Logo" class="nav__logo-img" style="height: 40px; width: 40px; flex-shrink: 0;" />
+            <div class="nav__logo-text" style="display: flex; flex-direction: column; align-items: flex-start; gap: 0;">
+                <span class="nav__logo-name">Kings Court</span>
+                <span class="nav__logo-tagline">Hotel</span>
+            </div>
         </a>
 
         <ul class="nav__links" role="list">
@@ -179,10 +182,10 @@
 
     <!-- HERO -->
     <section class="dn-hero" id="dn-hero" aria-label="Twisted Boot Bar hero"
-        style="height: 60vh; min-height: 400px; position:relative; display:flex; align-items:flex-end;">
+        style="height: 100vh; min-height: 800px; position:relative; display:flex; align-items:flex-end;">
         <div class="dn-hero__bg" id="dn-hero-bg" aria-hidden="true" style="position:absolute; inset:0;">
-            <img src="assets/twisted boot bar/Twisted_Boot_Re-launch_Beadie_Photography-83.jpg" alt="The Twisted Boot Bar exterior — a beautiful sunny day with guests enjoying drinks in the courtyard"
-                class="dn-hero__bg-img" id="dn-hero-img" style="width:100%; height:100%; object-fit:cover;" />
+            <img src="assets/twisted boot bar/twisted_boot_hero.png" alt="The Twisted Boot Bar exterior — a beautiful sunny day with guests enjoying drinks in the courtyard"
+                class="dn-hero__bg-img" id="dn-hero-img" style="width:100%; height:115%; object-fit:cover; object-position:center;" />
         </div>
         <div class="dn-hero__overlay" aria-hidden="true"
             style="position:absolute; inset:0; background:linear-gradient(to top, rgba(0,0,0,0.8), transparent);"></div>
