@@ -187,28 +187,29 @@
         }
         
         @media (max-width: 768px) {
-            .calendar-grid {
-                display: flex;
-                flex-direction: column;
-                gap: 0;
+            .calendar-header h2 {
+                font-size: 1.5rem;
             }
             .calendar-day-header {
-                display: none;
+                font-size: 0.7rem;
+                padding: 0.5rem 0.2rem;
             }
             .calendar-day {
-                min-height: auto;
-                border-bottom: 1px solid #eee;
-                display: flex;
-                padding: 1rem;
-                align-items: flex-start;
-                gap: 1rem;
+                min-height: 80px;
+                padding: 0.2rem;
             }
-            .calendar-day.empty {
-                display: none;
+            .date-num {
+                font-size: 0.8rem;
+                top: 2px;
+                right: 2px;
             }
             .event-badge {
-                display: inline-block;
-                margin-right: 0.5rem;
+                font-size: 0.65rem;
+                padding: 0.1rem 0.3rem;
+                margin-top: 1rem;
+            }
+            .event-badge .fa-solid {
+                display: none; /* Hide icons to save space on mobile */
             }
         }
         /* Event Modal Styles */
