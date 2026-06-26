@@ -35,78 +35,81 @@
     <link rel="stylesheet" href="css/events-page.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <style>
-        /* Custom Coming Soon styles to guarantee Premium Aesthetics */
-        .cs-section {
-            padding: 8rem 0;
+        /* Custom Styles for Group Stays Page */
+        .gr-types {
+            padding: 6rem 0;
             background-color: var(--clr-cream-light);
+        }
+        .gr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+            margin-top: 3rem;
+        }
+        .gr-card {
+            background-color: var(--clr-white);
+            border-radius: var(--radius-md);
+            padding: 3rem 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: transform var(--transition-base), box-shadow var(--transition-base);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            border-top: 4px solid transparent;
+        }
+        .gr-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+            border-top: 4px solid var(--clr-gold);
+        }
+        .gr-card__icon {
+            font-size: 2.5rem;
+            color: var(--clr-gold);
+            margin-bottom: 1.5rem;
+        }
+        .gr-card__title {
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
+            color: var(--clr-forest);
+            margin-bottom: 0.5rem;
+        }
+        .gr-card__desc {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            line-height: 1.6;
+            color: var(--clr-text-light);
+        }
+
+        .step-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
             text-align: center;
+            margin-top: 3rem;
+        }
+        .step-item {
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
-            min-height: 60vh;
+            padding: 2rem;
         }
-        .cs-container {
-            max-width: 750px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        .cs-icon {
-            font-size: 3.5rem;
-            color: var(--clr-gold);
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
-        }
-        .cs-title {
+        .step-num {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--clr-gold);
+            color: white;
             font-family: var(--font-serif);
-            font-size: clamp(2.2rem, 5vw, 3.5rem);
-            color: var(--clr-forest);
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-        }
-        .cs-subtitle {
-            font-family: var(--font-sans);
-            font-size: 1.15rem;
-            line-height: 1.8;
-            color: var(--clr-text);
-            margin-bottom: 3rem;
-        }
-        .cs-divider {
+            font-size: 1.5rem;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 1rem;
-            margin: 1.5rem 0 2rem;
-            width: 100%;
+            margin-bottom: 1.5rem;
         }
-        .cs-divider span {
-            height: 1px;
-            background-color: var(--clr-gold);
-            width: 80px;
-        }
-        .cs-divider i {
-            color: var(--clr-gold);
-            font-size: 1rem;
-        }
-        .cs-actions {
-            display: flex;
-            gap: 1.5rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                opacity: 1;
-            }
-            50% {
-                transform: scale(1.05);
-                opacity: 0.8;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
+        .step-title {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            color: var(--clr-forest);
         }
     </style>
 </head>
@@ -221,7 +224,7 @@
     </div>
 
     <!-- ═══ HERO ═══ -->
-    <section class="ev-hero" id="ev-hero" aria-label="Group stays coming soon hero">
+    <section class="ev-hero" id="ev-hero" aria-label="Group stays hero">
         <div class="ev-hero__bg" aria-hidden="true">
             <img src="assets/images/gallery/compressed-kings-court-13.jpg"
                 alt="Group stays at Kings Court Hotel" class="ev-hero__bg-img" id="ev-hero-img" />
@@ -235,40 +238,162 @@
                 <span aria-current="page">Group Bookings</span>
             </nav>
             <span class="ev-hero__eyebrow">Group Stays &amp; Multi-Room Bookings</span>
-            <h1 class="ev-hero__title">Group Bookings<br>Coming Soon</h1>
+            <h1 class="ev-hero__title">Group Stays Made Simple</h1>
             <div class="ev-hero__divider" aria-hidden="true">
                 <span></span><i class="fa-solid fa-users"></i><span></span>
             </div>
-            <p class="ev-hero__subtitle">We are currently crafting a dedicated experience for sports teams, coach tours, family gatherings, and large groups. Check back soon for custom packages, menu options, and room block tools.</p>
+            <p class="ev-hero__subtitle">From corporate travel and training groups to leisure breaks, sports teams and private gatherings, Kings Court Hotel offers flexible group accommodation in Warwickshire.</p>
             <div class="ev-hero__actions">
-                <a href="contact.html" class="btn btn--primary ev-hero__cta" id="hero-contact-btn">
-                    <i class="fa-regular fa-envelope" aria-hidden="true"></i> Contact Group Booking Team
+                <a href="#ev-enquiry" class="btn btn--primary ev-hero__cta" id="hero-contact-btn">
+                     Make a Group Enquiry
                 </a>
-                <a href="corporate-stays.html" class="btn ev-hero__ghost" id="hero-corporate-btn">
-                    View Corporate Stays
+                <a href="#" class="btn ev-hero__ghost">
+                     Download Group Brochure
                 </a>
             </div>
         </div>
     </section>
 
-    <!-- ═══ COMING SOON CONTENT ═══ -->
-    <section class="cs-section">
-        <div class="cs-container">
-            <i class="fa-solid fa-hourglass-half cs-icon"></i>
-            <h2 class="cs-title">Dedicated Group Solutions</h2>
-            <div class="cs-divider">
-                <span></span><i class="fa-solid fa-star"></i><span></span>
+    <!-- ═══ TYPES OF GROUPS ACCOMMODATED ═══ -->
+    <section class="gr-types" id="types-accommodated">
+        <div class="container">
+            <div class="ev-section-header" style="text-align: center; margin-bottom: 2rem;">
+                <h2 style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--clr-forest);">Perfect for Groups of All Kinds</h2>
+                <p style="margin-top: 1rem; color: var(--clr-text-light); max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.6;">We specialise in group hotel bookings in Warwickshire, with flexible accommodation to suit business travel, leisure groups, sports teams and private celebrations.</p>
             </div>
-            <p class="cs-subtitle">
-                Whether you are organizing a coach tour exploring the Warwickshire countryside, coordinating accommodations for a sports team, or keeping friends and family together for a large celebration, our upcoming group stays portal will provide flexible allocations, dedicated internal support, and custom group dining rates.
-            </p>
-            <div class="cs-actions">
-                <a href="tel:01789763111" class="btn btn--primary">
-                    <i class="fa-solid fa-phone"></i> Call Group Bookings
-                </a>
-                <a href="contact.html" class="btn btn--ghost" style="border: 1px solid var(--clr-forest); color: var(--clr-forest);">
-                    Send an Enquiry
-                </a>
+
+            <div class="gr-grid">
+                <div class="gr-card">
+                    <i class="fa-solid fa-briefcase gr-card__icon"></i>
+                    <h3 class="gr-card__title">Corporate and business travel</h3>
+                    <p class="gr-card__desc">Corporate and business travel</p>
+                </div>
+                <div class="gr-card">
+                    <i class="fa-solid fa-chalkboard-user gr-card__icon"></i>
+                    <h3 class="gr-card__title">Training courses and away days</h3>
+                    <p class="gr-card__desc">Training and away days</p>
+                </div>
+                <div class="gr-card">
+                    <i class="fa-solid fa-trophy gr-card__icon"></i>
+                    <h3 class="gr-card__title">Sports teams and supporters</h3>
+                    <p class="gr-card__desc">Sports teams and supporters</p>
+                </div>
+                <div class="gr-card">
+                    <i class="fa-solid fa-bus-simple gr-card__icon"></i>
+                    <h3 class="gr-card__title">Coach and tour groups</h3>
+                    <p class="gr-card__desc">Coach and tour groups</p>
+                </div>
+                <div class="gr-card">
+                    <i class="fa-solid fa-cake-candles gr-card__icon"></i>
+                    <h3 class="gr-card__title">Family gatherings</h3>
+                    <p class="gr-card__desc">Family celebrations</p>
+                </div>
+                <div class="gr-card">
+                    <i class="fa-solid fa-calendar-days gr-card__icon"></i>
+                    <h3 class="gr-card__title">Long stay and contractor</h3>
+                    <p class="gr-card__desc">Contractor and long stays</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ HOW IT WORKS ═══ -->
+    <section class="gr-types" style="background-color: var(--clr-white);">
+        <div class="container">
+            <div class="ev-section-header" style="text-align: center;">
+                <h2 style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--clr-forest);">Start Planning Your Group Stay</h2>
+            </div>
+            
+            <div class="step-grid">
+                <div class="step-item">
+                    <div class="step-num">1</div>
+                    <h3 class="step-title">Complete the enquiry form</h3>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">2</div>
+                    <h3 class="step-title">We prepare your quote</h3>
+                </div>
+                <div class="step-item">
+                    <div class="step-num">3</div>
+                    <h3 class="step-title">Receive your tailored options</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ ENQUIRY SECTION ═══ -->
+    <section class="ev-enquiry" id="ev-enquiry" aria-labelledby="enquiry-heading">
+        <div class="container">
+            <div class="ev-enquiry__layout" style="display: block;">
+                <!-- Form -->
+                <div class="ev-enquiry__form-wrap reveal" style="max-width: 800px; margin: 0 auto; background-color: var(--clr-cream-light);">
+                    <form class="ev-form" id="group-enquiry-form" novalidate aria-label="Group stays booking enquiry form">
+                        <div class="ev-form__section-title">Your Details</div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-name">Name <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="text" id="gr-name" name="name" placeholder="Full Name" required />
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-email">Email Address <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="email" id="gr-email" name="email" placeholder="Email" required />
+                            </div>
+                        </div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-phone">Phone Number <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="tel" id="gr-phone" name="phone" placeholder="Phone" required />
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-company">Company or organisation</label>
+                                <input class="ev-form__input" type="text" id="gr-company" name="company" placeholder="Organisation" />
+                            </div>
+                        </div>
+
+                        <div class="ev-form__section-title" style="margin-top: 2rem;">Group Details</div>
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-type">Group type <span class="ev-form__req">*</span></label>
+                                <select class="ev-form__select" id="gr-type" name="grouptype" required>
+                                    <option value="" disabled selected>Select group type</option>
+                                    <option value="corporate">Corporate & Business</option>
+                                    <option value="training">Training Courses & Away Days</option>
+                                    <option value="sports">Sports Teams</option>
+                                    <option value="tours">Coach & Tour Groups</option>
+                                    <option value="family">Family Gatherings</option>
+                                    <option value="contractor">Long Stay / Contractor</option>
+                                </select>
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-guests">Number of guests <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="number" id="gr-guests" name="guests" placeholder="10" required />
+                            </div>
+                        </div>
+
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-rooms">Number of rooms required <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="number" id="gr-rooms" name="rooms" placeholder="5" required />
+                            </div>
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-arrival">Arrival date (DD/MM/YY) <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="date" id="gr-arrival" name="arrival" required />
+                            </div>
+                        </div>
+
+                        <div class="ev-form__row">
+                            <div class="ev-form__group">
+                                <label class="ev-form__label" for="gr-nights">Number of nights <span class="ev-form__req">*</span></label>
+                                <input class="ev-form__input" type="number" id="gr-nights" name="nights" placeholder="2" required />
+                            </div>
+                            <div class="ev-form__group"></div> <!-- Empty for alignment -->
+                        </div>
+
+                        <button class="btn btn--primary ev-form__submit" type="submit" style="margin-top: 1rem;">
+                            Submit Group Enquiry
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
