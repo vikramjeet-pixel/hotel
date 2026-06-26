@@ -61,7 +61,8 @@ new_footer_block = """    <footer class="footer" id="footer" role="contentinfo">
                         <li><a href="room-detail.html?room=king" class="footer__link">King Room</a></li>
                         <li><a href="room-detail.html?room=twin" class="footer__link">Twin Room</a></li>
                         <li><a href="room-detail.html?room=quad" class="footer__link">Quad Room</a></li>
-                        <li><a href="conferences.html#groups" class="footer__link">Group Bookings</a></li>
+                        <li><a href="groups.html" class="footer__link">Group Bookings</a></li>
+                        <li><a href="corporate-stays.html" class="footer__link">Corporate Stays</a></li>
                         <li><a href="booking.html" class="footer__link">Book Your Stay</a></li>
                     </ul>
                 </nav>

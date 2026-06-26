@@ -18,8 +18,8 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
                     Stay <i class="fa-solid fa-chevron-down"></i>
                 </a>
                 <ul class="nav__dropdown-menu" role="menu">
-                    <li><a href="conferences.html#groups" role="menuitem">Groups</a></li>
-                    <li><a href="conferences.html" role="menuitem">Corporate</a></li>
+                    <li><a href="groups.html" role="menuitem">Groups</a></li>
+                    <li><a href="corporate-stays.html" role="menuitem">Corporate Stays</a></li>
                 </ul>
             </li>
             <li class="nav__dropdown">
@@ -71,8 +71,8 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
                     Stay <i class="fa-solid fa-chevron-down"></i>
                 </button>
                 <div class="nav__mobile-dropdown-menu">
-                    <a href="conferences.html#groups" class="nav__mobile-sublink">Groups</a>
-                    <a href="conferences.html" class="nav__mobile-sublink">Corporate</a>
+                    <a href="groups.html" class="nav__mobile-sublink">Groups</a>
+                    <a href="corporate-stays.html" class="nav__mobile-sublink">Corporate Stays</a>
                 </div>
             </div>
 
