@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin: Manage Regular Events</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/base.css" />
+    <link rel="stylesheet" href="css/layout.css" />
+    <link rel="stylesheet" href="css/components.css" />
+    <link rel="stylesheet" href="css/utilities.css" />
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        body {
+            background-color: var(--clr-cream-light);
+            font-family: var(--font-sans);
+        }
+        .admin-container {
+            max-width: 800px;
+            margin: 3rem auto;
+            background: white;
+            padding: 3rem;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-lg);
+        }
+        .admin-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--clr-gold);
+            padding-bottom: 1rem;
+        }
+        .admin-header h1 {
+            font-family: var(--font-serif);
+            color: var(--clr-forest);
+        }
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: bold;
+            color: var(--clr-forest);
+        }
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 0.8rem;
+            border: 1px solid #ccc;
+            border-radius: var(--radius-sm);
+            font-size: 1rem;
+            font-family: var(--font-sans);
+        }
+        .btn-add {
+            background: var(--clr-forest);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.3s ease;
+        }
+        .btn-add:hover {
+            background: #112822;
+        }
+        .events-list {
+            margin-top: 3rem;
+        }
+        .event-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            background: #f9f9f9;
+            border-left: 4px solid var(--clr-gold);
+            margin-bottom: 1rem;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+        }
+        .event-details strong {
+            font-size: 1.1rem;
+            color: var(--clr-forest);
+            display: block;
+            margin-bottom: 0.2rem;
+        }
+        .event-details span {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        .btn-delete {
+            background: #e74c3c;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm);
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .btn-delete:hover {
+            background: #c0392b;
+        }
+        .status-msg {
+            padding: 1rem;
+            border-radius: var(--radius-sm);
+            margin-bottom: 1.5rem;
+            display: none;
+        }
+        .status-msg.success {
+            background: #d4edda;
+            color: #155724;
+            display: block;
+        }
+        .status-msg.error {
+            background: #f8d7da;
+            color: #721c24;
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="admin-container">
+        <div class="admin-header">
+            <h1>Manage Calendar Events</h1>
+            <p>Add or remove regular events from the Twisted Boot calendar.</p>
+        </div>
+
+        <div id="statusMessage" class="status-msg"></div>
+
+        <form id="addEventForm">
+            <div class="form-group">
+                <label for="eventTitle">Event Title / Occasion (e.g., "Halloween Party")</label>
+                <input type="text" id="eventTitle" required placeholder="Enter event title">
+            </div>
+
+            <div class="form-group">
+                <label for="eventType">Type of Party / Event</label>
+                <select id="eventType" required>
+                    <option value="music">Live Music</option>
+                    <option value="quiz">Pub Quiz</option>
+                    <option value="food">Food Special</option>
+                    <option value="party">Private Party</option>
+                    <option value="other">Other Event</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="eventDate">Date</label>
+                <input type="date" id="eventDate" required>
+            </div>
+
+            <div class="form-group">
+                <label for="eventTime">Timing (e.g., "7:00 PM - 11:00 PM")</label>
+                <input type="text" id="eventTime" required placeholder="Enter event time">
+            </div>
+
+            <div class="form-group">
+                <label for="eventPrice">Price / Tickets</label>
+                <input type="text" id="eventPrice" placeholder="e.g., Free, £10 on the door">
+            </div>
+
+            <div class="form-group">
+                <label for="eventLink">Booking / Info Link</label>
+                <input type="url" id="eventLink" placeholder="https://...">
+            </div>
+
+            <div class="form-group">
+                <label for="eventDesc">More Details (Optional)</label>
+                <textarea id="eventDesc" rows="3" style="width: 100%; padding: 0.8rem; border: 1px solid #ccc; border-radius: 4px; font-family: inherit;" placeholder="Enter additional details"></textarea>
+            </div>
+
+            <button type="submit" class="btn-add">Add Event to Calendar</button>
+        </form>
+
+        <div class="events-list">
+            <h2 style="font-family: var(--font-serif); color: var(--clr-forest); border-bottom: 1px solid #ccc; padding-bottom: 0.5rem; margin-bottom: 1.5rem;">Current Events</h2>
+            <div id="eventsContainer">
+                <p>Loading events...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const dayNames = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+        let events = [];
+
+        async function fetchEvents() {
+            try {
+                const response = await fetch('/api/events?t=' + new Date().getTime());
+                if (response.ok) {
+                    events = await response.json();
+                    renderEvents();
+                } else {
+                    showStatus('Failed to load events.', 'error');
+                }
+            } catch (err) {
+                console.error(err);
+                showStatus('Error connecting to server.', 'error');
+            }
+        }
+
+        async function saveEvents() {
+            try {
+                const response = await fetch('/api/events', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ events })
+                });
+                
+                if (response.ok) {
+                    showStatus('Events saved successfully!', 'success');
+                    renderEvents();
+                } else {
+                    showStatus('Failed to save events.', 'error');
+                }
+            } catch (err) {
+                console.error(err);
+                showStatus('Error saving to server.', 'error');
+            }
+        }
+
+        function renderEvents() {
+            const container = document.getElementById('eventsContainer');
+            if (events.length === 0) {
+                container.innerHTML = '<p>No events found. Add one above!</p>';
+                return;
+            }
+
+            container.innerHTML = '';
+            events.forEach((ev, index) => {
+                const div = document.createElement('div');
+                div.className = 'event-item';
+                div.innerHTML = `
+                    <div class="event-details">
+                        <strong>${ev.title}</strong>
+                        <span>${ev.date} &middot; ${ev.time} &middot; Category: ${ev.type}</span>
+                        ${ev.desc ? `<span style="display:block; margin-top:0.3rem; font-size:0.85rem; color:#888;">${ev.desc}</span>` : ''}
+                    </div>
+                    <button class="btn-delete" onclick="deleteEvent(${index})"><i class="fa-solid fa-trash"></i> Delete</button>
+                `;
+                container.appendChild(div);
+            });
+        }
+
+        function deleteEvent(index) {
+            if(confirm('Are you sure you want to delete this event?')) {
+                events.splice(index, 1);
+                saveEvents();
+            }
+        }
+
+        document.getElementById('addEventForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newEvent = {
+                title: document.getElementById('eventTitle').value,
+                type: document.getElementById('eventType').value,
+                date: document.getElementById('eventDate').value,
+                time: document.getElementById('eventTime').value,
+                price: document.getElementById('eventPrice').value,
+                link: document.getElementById('eventLink').value,
+                desc: document.getElementById('eventDesc').value
+            };
+
+            events.push(newEvent);
+            
+            // Clear form
+            document.getElementById('eventTitle').value = '';
+            document.getElementById('eventDate').value = '';
+            document.getElementById('eventTime').value = '';
+            document.getElementById('eventPrice').value = '';
+            document.getElementById('eventLink').value = '';
+            document.getElementById('eventDesc').value = '';
+            
+            saveEvents();
+        });
+
+        function showStatus(msg, type) {
+            const statusDiv = document.getElementById('statusMessage');
+            statusDiv.textContent = msg;
+            statusDiv.className = `status-msg ${type}`;
+            setTimeout(() => {
+                statusDiv.className = 'status-msg';
+            }, 3000);
+        }
+
+        // Initialize
+        fetchEvents();
+    </script>
+</body>
+</html>

@@ -39,7 +39,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
                     <li><a href="weddings.html" role="menuitem">Weddings</a></li>
                     <li><a href="conferences.html" role="menuitem">Conferences</a></li>
                     <li><a href="index.html#christmas-menu" role="menuitem">Christmas 2026</a></li>
-                    <li><a href="twisted-boot-bar.html#regular-events" role="menuitem">Twisted Boot regular events</a></li>
+                    <li><a href="twisted-boot-regular-events.html" role="menuitem">Twisted Boot regular events</a></li>
                 </ul>
             </li>
             <li><a href="gallery.html" class="nav__link">Gallery</a></li>
@@ -94,7 +94,7 @@ new_nav_block = """    <nav class="nav nav--transparent" id="main-nav" role="nav
                     <a href="weddings.html" class="nav__mobile-sublink">Weddings</a>
                     <a href="conferences.html" class="nav__mobile-sublink">Conferences</a>
                     <a href="index.html#christmas-menu" class="nav__mobile-sublink">Christmas 2026</a>
-                    <a href="twisted-boot-bar.html#regular-events" class="nav__mobile-sublink">Twisted Boot regular events</a>
+                    <a href="twisted-boot-regular-events.html" class="nav__mobile-sublink">Twisted Boot regular events</a>
                 </div>
             </div>
 

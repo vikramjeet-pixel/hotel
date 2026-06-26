@@ -49,6 +49,17 @@ app.post('/api/send-email', async (req, res) => {
     }
 });
 
+// Route our /api/events
+app.all('/api/events', async (req, res) => {
+    try {
+        const handler = require('./api/events');
+        await handler(req, res);
+    } catch (error) {
+        console.error("API Error:", error);
+        res.status(500).json({ message: "Internal Server Error" });
+    }
+});
+
 app.listen(port, () => {
     console.log(`\n✅ Local Kings Court Dev Server is running at: http://localhost:${port}`);
     console.log("-> Open this URL in your web browser to test the forms and Newsletter!");
