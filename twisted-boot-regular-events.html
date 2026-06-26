@@ -302,6 +302,29 @@
             background: #112822;
             color: white;
         }
+
+        .mobile-back-btn {
+            display: none;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--clr-gold);
+            text-decoration: none;
+            font-family: var(--font-sans, sans-serif);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1rem;
+            border-radius: var(--radius-sm, 4px);
+            margin-left: auto;
+        }
+
+        @media (max-width: 1280px) {
+            .mobile-back-btn {
+                display: inline-flex;
+            }
+        }
     </style>
 </head>
 
@@ -317,6 +340,11 @@
                 <span class="nav__logo-name" style="color:white;">Kings Court</span>
                 <span class="nav__logo-tagline" style="color:var(--clr-gold);">Hotel</span>
             </div>
+        </a>
+
+        <!-- Mobile Back Button -->
+        <a href="twisted-boot-bar.html" class="mobile-back-btn">
+            <i class="fa-solid fa-arrow-left"></i> Back
         </a>
 
         <ul class="nav__links" role="list">
