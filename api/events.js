@@ -1,7 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+const { kv } = require('@vercel/kv');
 
-const eventsFilePath = path.join(__dirname, '..', 'events.json');
+const ADMIN_PASSWORD = "kingscourt2026"; // Hardcoded simple password
 
 module.exports = async function handler(req, res) {
     // CORS headers
@@ -14,30 +13,40 @@ module.exports = async function handler(req, res) {
         return res.status(200).end();
     }
 
-    try {
-        if (req.method === 'GET') {
-            // Read events from file
-            if (fs.existsSync(eventsFilePath)) {
-                const data = fs.readFileSync(eventsFilePath, 'utf8');
-                return res.status(200).json(JSON.parse(data));
-            } else {
-                return res.status(200).json([]);
-            }
-        } else if (req.method === 'POST') {
-            // Write events to file (expected body: { events: [...] } or a single event action, but let's just accept the full array for simplicity of saving state)
-            const { events } = req.body;
-            
-            if (!Array.isArray(events)) {
-                return res.status(400).json({ message: 'Invalid data format, expected an array of events.' });
-            }
-
-            fs.writeFileSync(eventsFilePath, JSON.stringify(events, null, 2), 'utf8');
-            return res.status(200).json({ message: 'Events saved successfully.' });
-        } else {
-            return res.status(405).json({ message: 'Method Not Allowed' });
+    if (req.method === 'GET') {
+        try {
+            // Fetch events from Vercel KV
+            const data = await kv.get('hotel_events');
+            return res.status(200).json(data || []);
+        } catch (error) {
+            console.error('Error reading from KV:', error);
+            return res.status(500).json({ error: 'Failed to read events' });
         }
-    } catch (error) {
-        console.error('Events API Error:', error);
-        return res.status(500).json({ message: 'Failed to process request', error: String(error) });
     }
-}
+
+    if (req.method === 'POST') {
+        let body = '';
+        req.on('data', chunk => {
+            body += chunk.toString();
+        });
+        req.on('end', async () => {
+            try {
+                const payload = JSON.parse(body);
+                
+                // Password protection
+                if (payload.password !== ADMIN_PASSWORD) {
+                    return res.status(401).json({ error: 'Unauthorized: Incorrect password' });
+                }
+
+                // Save events to Vercel KV
+                await kv.set('hotel_events', payload.events);
+                return res.status(200).json({ success: true });
+            } catch (error) {
+                console.error('Error writing to KV:', error);
+                return res.status(500).json({ error: 'Failed to save events' });
+            }
+        });
+    } else {
+        res.status(405).json({ error: 'Method not allowed' });
+    }
+};

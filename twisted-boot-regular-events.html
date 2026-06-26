@@ -434,7 +434,7 @@
 
             async function loadEvents() {
                 try {
-                    const response = await fetch('/events.json?t=' + new Date().getTime());
+                    const response = await fetch('/api/events?t=' + new Date().getTime());
                     if (response.ok) {
                         window.calendarEventsData = await response.json();
                         eventsData = window.calendarEventsData;
